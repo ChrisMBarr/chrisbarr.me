@@ -1,0 +1,32 @@
+name: 🚀 Deploy website via FTPS
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  web-deploy:
+      name: 🎉 Deploy
+      runs-on: ubuntu-latest
+      steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Upload files via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ./
+          protocol: ftps
+          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.vscode*/**
+            **/node_modules/**
+            package.json
+            README.md
