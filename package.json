@@ -1,0 +1,19 @@
+{
+  "name": "chrisbarr.me",
+  "version": "1.0.0",
+  "description": "Chris Barr's Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FiniteLooper/chrisbarr.me.git"
+  },
+  "author": "Chris Barr",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/FiniteLooper/chrisbarr.me/issues"
+  },
+  "homepage": "https://chrisbarr.me"
+}
