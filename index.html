@@ -124,7 +124,7 @@
               >
               |
               <a
-                href="http://finitelooper.github.io/LyricConverter/"
+                href="http://LyricConverter.net"
                 target="_blank"
               >
                 <svg class="bi" role="img">
@@ -141,7 +141,6 @@
                 <img
                   src="https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true"
                   alt="LyricConverter Screen Recording"
-                  
                 />
               </a>
             </div>
@@ -154,183 +153,81 @@
           <svg class="bi" role="img">
             <use xlink:href="#code" />
           </svg>
-          Open Source Project: songpro-javascript
+          Open Source Projects: Song Lyric File Format Parsing
         </h2>
         <div class="project-content">
           <div class="row">
             <div class="col">
-              <strong>Tech Stack</strong>: TypeScript 5, Jest
               <p>
-                <a
-                  href="https://github.com/SongProOrg/songpro-javascript"
-                  target="_blank"
-                >
-                  <svg class="bi" role="img">
-                    <use xlink:href="#github" />
-                  </svg>
-                  Source Code</a
-                >
+                While developing the LyricConverter project mentioned above I to
+                separate the concerns of my code. The parsing or building of any
+                individual file format could be made into its own project to be
+                used stand-alone. I wanted to move as much code out of
+                LyricConverter as I could, while also making useful NPM packages
+                for other developers to consume.
               </p>
 
               <p>
-                <strong>SongPro</strong> is a text format for transcribing
-                songs. It features information about songs, lyrics, chords,
-                riffs, and guitar tabs. The
-                <strong>songpro-javascript</strong> project is a small library
-                that can parse these SongPro text files, and extract the data
-                into a meaningful JSON object.
+                Currently this has been done for three of the many formats
+                LyricConverter supports. I created the parser for
+                <strong>SongShow Plus</strong> files, and a parser and a file
+                builder for <strong>OpenLyrics XML</strong> files from scratch.
+                Both of these projects have with 100% or over 99% code coverage,
+                clean code enforced by linting, and a CI/CD system for new
+                contributions.
               </p>
+
               <p>
-                While developing the LyricConverter project mentioned above, I
-                wanted to add support for the SongPro file format and found this
-                library. Even though it was managed by the organization that
-                makes SongPro, unfortunately the project was broken and not well
-                maintained. I could not make it work in my project.
-              </p>
-              <p>
-                I forked this project on github and completely rewrote it in
-                TypeScript 5 to make it easier to maintain, safer to code
-                against, and to give any TypeScript consumers of this package a
-                better development experience with the generated type
-                definitions that TypeScript offers. I added more unit tests and
-                this project now has 100% code coverage!
-              </p>
-              <p>
-                After the rewrite I made a pull request which was thankfully
-                well received and merged in! While I did not originally create
-                this project, I have somewhat unofficially taken ownership of it
-                by rewriting it, and my github account was added as a
-                contributor to the project.
+                The other project deals with parsing the
+                <strong>SongPro</strong> file format. I did not originally
+                create this parser library, but when I found it and it was
+                broken and not well maintained. I forked this project on github
+                and completely rewrote it in TypeScript 5 to make it easier to
+                maintain, safer to code against, and to give any TypeScript
+                consumers of this package a better development experience with
+                the generated type definitions that TypeScript offers. I added
+                more unit tests and this project now has 100% code coverage!
+                Because of my contributions to this project I have been made a
+                contributor for their project.
               </p>
             </div>
             <div class="col">
-              <strong>An example SongPro file</strong>
-              <pre>
-@title=Escape Capsule
-@artist=Brian Kelly
-!bandcamp=https://spilth.bandcamp.com/track/escape-capsule
-
-# Verse 1
-
-Climb a-[D]board [A]
-I've been [Bm]waiting for you [F#m]
-Climb a-[G]board [D]
-You'll be [Asus4]safe in [A7]here
-
-# Chorus 1
-
-[G] I'm a [D]rocket [F#]made for your pro-[Bm]tection
-You're [G]safe with me, un-[A]til you leave
-
-# Solo
-
-| [Em] | [D] | [Em] | [D] |
-| [Em] | [D] | [Em] | [F#] |
-| [B] | [B] | [Bm] | [Bm] |</pre
-              >
-
-              <strong
-                >The output from songpro-javascript after parsing that
-                song</strong
-              >
-              <pre>
-{
-  attrs: {
-    title: "Escape Capsule",
-    artist: "Brian Kelly"
-  },
-  custom: {
-    bandcamp: "https://spilth.bandcamp.com/track/escape-capsule"
-  },
-  sections: [
-    {
-      name: "Verse 1",
-      lines: [
-        {
-          parts: [
-            { chord: "", lyric: "Climb a-" },
-            { chord: "D", lyric: "board" },
-            { chord: "A", lyric: "" }
-          ],
-        },
-        {
-          parts: [
-            { chord: "", lyric: "I've been" },
-            { chord: "Bm", lyric: "waiting for you" },
-            { chord: "F#m", lyric: "" }
-          ],
-        },
-        {
-          parts: [
-            { chord: "", lyric: "Climb a-" },
-            { chord: "G", lyric: "board" },
-            { chord: "D", lyric: "" }
-          ],
-        },
-        {
-          parts: [
-            { chord: "", lyric: "You'll be" },
-            { chord: "Asus4", lyric: "safe in" },
-            { chord: "A7", lyric: "here" }
-          ],
-        },
-      ],
-    },
-    {
-      name: "Chorus 1",
-      lines: [
-        {
-          parts: [
-            { chord: "G", lyric: "I'm a" },
-            { chord: "D", lyric: "rocket" },
-            { chord: "F#", lyric: "made for your pro-" },
-            { chord: "Bm", lyric: "tection" }
-          ],
-        },
-        {
-          parts: [
-            { chord: "", lyric: "You're" },
-            { chord: "G", lyric: "safe with me, un-" },
-            { chord: "A", lyric: "til you leave" }
-          ],
-        },
-      ],
-    },
-    {
-      name: "Solo",
-      lines: [
-        {
-          parts: [],
-          measures: [
-            { chords: ["Em"] },
-            { chords: ["D"] },
-            { chords: ["Em"] },
-            { chords: ["D"] }
-          ],
-        },
-        {
-          parts: [],
-          measures: [
-            { chords: ["Em"] },
-            { chords: ["D"] },
-            { chords: ["Em"] },
-            { chords: ["F#"] }
-          ],
-        },
-        {
-          parts: [],
-          measures: [
-            { chords: ["B"] },
-            { chords: ["B"] },
-            { chords: ["Bm"] },
-            { chords: ["Bm"] }
-          ],
-        },
-      ],
-    },
-  ],
-};</pre
-              >
+              <strong>Tech Stacks</strong>: TypeScript 5, Jest
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/FiniteLooper/OpenLyrics-Parser"
+                    target="_blank"
+                  >
+                    <svg class="bi" role="img">
+                      <use xlink:href="#github" />
+                    </svg>
+                    OpenLyrics-Parser</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/FiniteLooper/SongShowPlus-Parser"
+                    target="_blank"
+                  >
+                    <svg class="bi" role="img">
+                      <use xlink:href="#github" />
+                    </svg>
+                    SongShowPlus-Parser</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/SongProOrg/songpro-javascript"
+                    target="_blank"
+                  >
+                    <svg class="bi" role="img">
+                      <use xlink:href="#github" />
+                    </svg>
+                    songpro-javascript</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </div>
