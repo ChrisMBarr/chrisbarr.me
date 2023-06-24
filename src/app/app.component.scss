@@ -1,0 +1,51 @@
+@use "../variables" as *;
+
+header {
+  //appearance
+  background: $color-bg;
+
+  //layout
+  padding: $spacing;
+
+  //display
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    //text
+    font-weight: $font-weight-thin;
+    font-size: 70px;
+    color: $color-highlight;
+    text-transform: uppercase;
+    line-height: 1;
+
+    //layout
+    margin: 0;
+  }
+
+  nav {
+    order: -1;
+
+    a {
+      //text
+      font-size: 20px;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      //layout
+      padding: $spacing-sm;
+
+      &.active {
+        color: $color-text;
+      }
+    }
+  }
+}
+
+main {
+  padding: $spacing;
+  font-size: $font-size-content;
+}

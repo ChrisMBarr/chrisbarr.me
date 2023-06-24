@@ -2,18 +2,67 @@
   "name": "chrisbarr.me",
   "version": "1.0.0",
   "description": "Chris Barr's Website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Chris Barr",
+  "license": "none",
+  "homepage": "https://chrisbarr.me",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FiniteLooper/chrisbarr.me.git"
   },
-  "author": "Chris Barr",
-  "license": "none",
   "bugs": {
     "url": "https://github.com/FiniteLooper/chrisbarr.me/issues"
   },
-  "homepage": "https://chrisbarr.me"
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "dev:ssr": "ng run chrisbarr.me:serve-ssr",
+    "serve:ssr": "node dist/chrisbarr.me/server/main.js",
+    "build:ssr": "ng build && ng run chrisbarr.me:server",
+    "prerender": "ng run chrisbarr.me:prerender"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.1.2",
+    "@angular/common": "^16.1.2",
+    "@angular/compiler": "^16.1.2",
+    "@angular/core": "^16.1.2",
+    "@angular/forms": "^16.1.2",
+    "@angular/platform-browser": "^16.1.2",
+    "@angular/platform-browser-dynamic": "^16.1.2",
+    "@angular/platform-server": "^16.1.2",
+    "@angular/router": "^16.1.2",
+    "@nguniversal/express-engine": "^16.1.0",
+    "express": "^4.18.2",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.5.3",
+    "zone.js": "~0.13.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.1",
+    "@angular-eslint/builder": "16.0.3",
+    "@angular-eslint/eslint-plugin": "16.0.3",
+    "@angular-eslint/eslint-plugin-template": "16.0.3",
+    "@angular-eslint/schematics": "16.0.3",
+    "@angular-eslint/template-parser": "16.0.3",
+    "@angular/cli": "~16.1.1",
+    "@angular/compiler-cli": "^16.1.2",
+    "@nguniversal/builders": "^16.1.0",
+    "@types/express": "^4.17.17",
+    "@types/jasmine": "~4.3.4",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "5.60.0",
+    "@typescript-eslint/parser": "5.60.0",
+    "eslint": "^8.43.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.1",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
+  }
 }

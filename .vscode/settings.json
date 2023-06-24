@@ -4,8 +4,9 @@
     "**/.gitkeep": true,
     ".angular": true,
     ".editorconfig": true,
-    ".prettierrc": true,
+    ".prettierrc": false,
     "coverage": true,
+    "design": true,
     "dist": true,
     "node_modules": true
   },

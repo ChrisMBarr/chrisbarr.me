@@ -1,0 +1,13 @@
+<header>
+  <h1>Chris Barr</h1>
+  <nav>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">About</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/dev">Dev</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/design">Design</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/photo">Photo</a>
+  </nav>
+</header>
+
+<main role="main">
+  <router-outlet></router-outlet>
+</main>
