@@ -1,4 +1,10 @@
 {
-  "words": [],
-  "ignorePaths": ["package.json"]
+  "words": [
+    "chrisbarr",
+    "lightroom",
+    "photoshop"
+  ],
+  "ignorePaths": [
+    "package.json"
+  ]
 }

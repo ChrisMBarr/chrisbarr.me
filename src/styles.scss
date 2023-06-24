@@ -1,6 +1,8 @@
+@use "/node_modules/bootstrap/scss/bootstrap-grid.scss" as bootstrap;
 @use "variables" as *;
 
-html,body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -15,7 +17,7 @@ html {
 
 a {
   color: $color-highlight;
-}y
+}
 
 h1,
 h2,

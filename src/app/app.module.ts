@@ -7,9 +7,10 @@ import { AboutComponent } from './about/about.component';
 import { DevComponent } from './dev/dev.component';
 import { DesignComponent } from './design/design.component';
 import { PhotoComponent } from './photo/photo.component';
+import { SkillComponent } from './about/skill/skill.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, DevComponent, DesignComponent, PhotoComponent],
+  declarations: [AppComponent, AboutComponent, DevComponent, DesignComponent, PhotoComponent, SkillComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

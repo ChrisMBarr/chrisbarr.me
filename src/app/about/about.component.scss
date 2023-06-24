@@ -3,9 +3,23 @@
 img {
   border-radius: 100%;
   border: 2px solid $color-highlight;
-  max-width: 350px;
+  max-width: 100%; //size to the column it's contained in
 }
 
-h2 {
 
+#skills {
+  background-color: lighten($color-bg, 10%);
+  padding: $spacing 0;
+  text-align: center;
+
+  #skills-container {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+#contact {
+  svg {
+    fill: $color-text;
+  }
 }
