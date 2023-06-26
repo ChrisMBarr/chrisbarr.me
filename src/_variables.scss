@@ -47,6 +47,7 @@ $spacing-lg: calc($spacing * 1.5);
 $radius: 0.5rem;
 $anim-duration: 300ms;
 $backdrop-blur: 10px;
+$ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 
 //==================================
 //HEADER/NAV

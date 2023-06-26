@@ -3,6 +3,8 @@
 
 $section-min-height: 500px;
 
+
+
 .section-container {
   min-height: $section-min-height;
 
@@ -113,7 +115,16 @@ $section-min-height: 500px;
     min-height: 650px;
   }
 
-  #skills-icons-container {
+  @keyframes scale-in {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  &-icons-container {
     text-align: center;
 
     //size/position
@@ -142,6 +153,23 @@ $section-min-height: 500px;
 
     @include media-breakpoint-up(lg, $grid-breakpoints) {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+    > * {
+      //default until class is added
+      transform: scale(0);
+    }
+
+    &.animated > * {
+      animation: scale-in 300ms $ease-out-back;
+      animation-fill-mode: both;
+
+      @for $i from 1 through 21 {
+        &:nth-child(#{$i}) {
+          animation-delay: 40ms * $i;
+        }
+      }
     }
   }
 

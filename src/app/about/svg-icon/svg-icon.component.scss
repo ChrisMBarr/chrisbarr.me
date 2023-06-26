@@ -25,8 +25,7 @@
     width: 200%;
     font-weight: $font-weight-thin;
     text-align: center;
-    z-index: 10;
-    transition: $anim-duration opacity, $anim-duration transform;
+    transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
     transform: translate(-25%, -10px);
 
     span {
@@ -35,14 +34,16 @@
       border-radius: $radius;
       white-space: nowrap;
 
-      @include shadow('lg');
+      @include shadow("lg");
     }
   }
 
   &:hover {
+    z-index: 10;
+
     svg {
       transform: scale(1.1);
-      @include shadow('lg');
+      @include shadow("lg");
     }
     h3 {
       opacity: 1;
