@@ -2,7 +2,8 @@
   "words": [
     "chrisbarr",
     "lightroom",
-    "photoshop"
+    "photoshop",
+    "stackoverflow"
   ],
   "ignorePaths": [
     "package.json"

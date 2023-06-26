@@ -161,7 +161,14 @@ $section-min-height: 500px;
 
 #contact {
   padding: $spacing 0;
-  svg {
-    fill: $color-text;
+
+  .section-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #social {
+    display: flex;
+    gap: $spacing;
   }
 }
