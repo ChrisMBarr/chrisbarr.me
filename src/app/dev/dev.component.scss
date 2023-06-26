@@ -1,1 +1,25 @@
 @use "../../variables" as *;
+
+app-dev {
+  app-svg-icon {
+    svg {
+      fill: $color-text;
+      vertical-align: bottom;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  a {
+    app-svg-icon svg {
+      fill: $color-highlight;
+    }
+  }
+
+  section {
+    padding: $spacing;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

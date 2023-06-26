@@ -258,6 +258,9 @@ app-about {
       }
 
       app-svg-icon {
+        svg {
+          fill: $color-text;
+        }
         h3 {
           span {
             background-color: $color-highlight;

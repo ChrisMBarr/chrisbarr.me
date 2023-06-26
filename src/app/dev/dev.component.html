@@ -1,1 +1,112 @@
-<p>dev works!</p>
+<section>
+  <h2 class="project-title">Lyric Converter</h2>
+  <div class="project-content">
+    <div class="row">
+      <div class="col">
+        <p>
+          <strong>LyricConverter</strong> is a project I've built and improved, on and off, for years. It was made to extract song
+          data and lyrics from many popular church lyric display software packages and convert them to other formats. Many of
+          these church software packages do not have great import/export tools so I wanted to build something to help people keep
+          their song libraries as they migrated to new software.
+        </p>
+
+        <p>
+          LyricConverter will take raw file input by dragging files into the browser or manually choosing files, extract all
+          relevant song information from
+          <strong>8 different input file formats</strong> to get them into a standard format used internally. Then the songs are
+          converted into one of the <strong>6 possible output formats</strong> the user can select, or they can simply view the
+          song information right there on the site. If a file output format is chosen, the user can choose to download the files
+          as a compressed .zip file or as individual files.
+        </p>
+
+        <p>
+          All of the file parsing, extraction, creation, and saving takes place client side within the Angular app nearly
+          instantaneously, even for hundreds of songs at once!
+        </p>
+
+        <p>
+          Originally written in PHP many years ago, I rewrote it all with client side JavaScript libraries. In recent years this
+          code became cumbersome and difficult to manage or improve upon. I recently completely rewrote it in TypeScript with
+          Angular 16, and it is now extremely maintainable and easier to improve upon.
+          <strong>It has 200+ unit tests to ensure code quality with over 99% code coverage</strong>. Code linting rules are
+          enforced, and github actions will enforce these code quality tools are run when anyone makes a pull request.
+        </p>
+      </div>
+      <div class="col">
+        <p class="mt-0"><strong>Tech Stack</strong>: TypeScript 5, Angular 16, RXJS, SCSS, Bootstrap, Jasmine</p>
+        <a href="http://LyricConverter.net" target="_blank">LyricConverter.net</a> |
+        <a href="https://github.com/FiniteLooper/LyricConverter" target="_blank"> <app-svg-icon icon="github" /> Source Code</a>
+        <hr />
+        <a
+          href="https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true"
+          class="thumb thumb-full"
+          title="LyricConverter - Convert between song lyric file format">
+          <img
+            src="https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true"
+            alt="LyricConverter Screen Recording" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="project-title">Song Lyric File Format Parsing</h2>
+  <div class="project-content">
+    <div class="row">
+      <div class="col">
+        <p>
+          While developing the LyricConverter project mentioned above I had to separate the concerns of my code. The parsing or
+          building of any individual file format needed be made into its own project to be used stand-alone. I wanted to move as
+          much code out of LyricConverter as I could, while also making useful NPM packages for other developers to use.
+        </p>
+
+        <p>
+          Currently this has been done for four of the many formats LyricConverter supports. I created a parser for
+          <strong>SongShow Plus</strong> files, a parser and a file builder for <strong>ProPresenter XML</strong> files, and a
+          parser and a file builder for <strong>OpenLyrics XML</strong> files. All of these projects have 100% (or over 99+%) code
+          coverage, clean code enforced by linting, and a CI/CD system for new contributions. As far as I know, there are no other
+          similar projects online anywhere to deal with these file types.
+        </p>
+
+        <p>
+          The fourth project deals with parsing the
+          <strong>SongPro</strong> file format. I did not originally create this parser library, but when I discovered it I was frustrated because it was
+          broken in a way where I could not use it in LyricConverter. I forked this project on github and completely rewrote it in TypeScript 5 to make it
+          easier to maintain, safer to code against, and to give any TypeScript consumers of this package a better development
+          experience with the generated type definitions. I added more unit tests and this project now has
+          100% code coverage! Because of my contributions to this project I have been made a contributor for <a href="https://github.com/SongProOrg">the SongPro organization</a>.
+        </p>
+      </div>
+      <div class="col">
+        <strong>Tech Stacks</strong>: TypeScript 5, Jest
+        <ul>
+          <li>
+            <a href="https://github.com/FiniteLooper/ProPresenter-Parser" target="_blank">
+              <app-svg-icon icon="github" />
+              ProPresenter-Parser</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/FiniteLooper/OpenLyrics-Parser" target="_blank">
+              <app-svg-icon icon="github" />
+              OpenLyrics-Parser</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/FiniteLooper/SongShowPlus-Parser" target="_blank">
+              <app-svg-icon icon="github" />
+              SongShowPlus-Parser</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/SongProOrg/songpro-javascript" target="_blank">
+              <app-svg-icon icon="github" />
+              songpro-javascript</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
