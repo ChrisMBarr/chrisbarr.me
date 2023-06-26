@@ -20,10 +20,17 @@ $color-text: #fff;
 $color-highlight: #a76253;
 
 //==================================
+// SPECIAL PROPERTY COLORS
+$selection-color-bg: $color-highlight;
+$selection-color-text: $color-text;
+$scrollbar-width: 8px;
+$scrollbar-color-track: darken($color-bg, 5%);
+$scrollbar-color-thumb: $color-highlight;
+
+//==================================
 // FONTS
 //https://fonts.google.com/specimen/Roboto+Flex?query=roboto
 $font-family: "Roboto Flex", sans-serif;
-$font-size-content: 1.2rem;
 $font-size-sm: 0.75rem;
 $font-weight-thin: 100;
 $font-weight-light: 300;
@@ -36,17 +43,38 @@ $spacing-sm: calc($spacing / 2);
 $spacing-lg: calc($spacing * 1.5);
 
 //==================================
-// RADIUS
+// MISC
 $radius: 0.5rem;
-
-//==================================
-// ANIMATIONS
 $anim-duration: 300ms;
+$backdrop-blur: 10px;
 
 //==================================
-//APP COMPONENTS
+//HEADER/NAV
 $header-height: 102px;
+$header-padding: $spacing;
+$header-color-bg-default:$color-bg;
+$header-color-bg-desktop: rgba($header-color-bg-default, 0.85);
+$header-blur-bg-desktop: $backdrop-blur;
+$header-z-index-desktop: 100;
+$header-title-font-size: 70px;
+$header-title-font-weight: $font-weight-thin;
+$nav-margin-default: $spacing 0 0 0;
+$nav-margin-desktop: 0;
+$nav-link-font-size: 20px;
+$nav-link-font-weight: $font-weight-medium;
+$nav-link-padding: $spacing-sm;
+$nav-link-hover-color: $color-text;
+$nav-link-hover-bg: rgba($color-highlight, .5);
+$nav-link-active-color: $color-text;
 
+//==================================
+//MAIN
+$main-padding: 0 0 $spacing 0;
+$main-font-size: 1.2rem;
+
+
+//==================================
+//MIXINS
 @mixin shadow($size: "") {
   //shadows from https://tailwindcss.com/docs/drop-shadow#adding-a-drop-shadow
   @if ($size == "sm") {

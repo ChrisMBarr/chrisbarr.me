@@ -26,7 +26,7 @@
   }
 }
 
-@keyframes rotate {
+@keyframes anim-intro-rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -36,17 +36,17 @@
 }
 
 #intro-animation {
-  --size: 150vw;
+  $anim-intro-size: 150vw;
 
-  width: var(--size);
-  height: var(--size);
+  width: $anim-intro-size;
+  height: $anim-intro-size;
   background-image: linear-gradient($color-bg 50%, rgba($color-highlight, .4));
-  animation: rotate 20s linear infinite;
+  animation: anim-intro-rotate 20s linear infinite;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: calc((var(--size) / 2) * -1) 0 0 calc(var(--size) / 2 * -1);
+  margin: calc(($anim-intro-size / 2) * -1) 0 0 calc(($anim-intro-size / 2) * -1);
   z-index: -1;
 }
 

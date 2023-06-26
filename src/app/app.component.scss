@@ -3,10 +3,10 @@
 
 header {
   //appearance
-  background: $color-bg;
+  background: $header-color-bg-default;
 
   //layout
-  padding: $spacing;
+  padding: $header-padding;
 
   //display
   display: flex;
@@ -16,21 +16,21 @@ header {
 
   @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
     //appearance
-    background: rgba($color-bg, 0.8);
-    backdrop-filter: blur(10px);
+    background: $header-color-bg-desktop;
+    backdrop-filter: blur($header-blur-bg-desktop);
 
     //layout - sticky header for desktop sizes
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: $header-z-index-desktop;
 
     flex-direction: row;
   }
 
   h1 {
     //text
-    font-weight: $font-weight-thin;
-    font-size: 70px;
+    font-weight: $header-title-font-weight;
+    font-size: $header-title-font-size;
     color: $color-highlight;
     text-transform: uppercase;
     line-height: 1;
@@ -40,31 +40,36 @@ header {
   }
 
   nav {
-    margin-top: $spacing;
+    margin: $nav-margin-default;
 
     @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
       order: -1;
-      margin-top: 0;
+      margin: $nav-margin-desktop;
     }
 
     a {
       //text
-      font-size: 20px;
-      font-weight: $font-weight-medium;
+      font-size: $nav-link-font-size;
+      font-weight: $nav-link-font-weight;
       text-decoration: none;
       text-transform: uppercase;
 
       //layout
-      padding: $spacing-sm;
+      padding: $nav-link-padding;
+
+      &:hover:not(.active) {
+        color: $nav-link-hover-color;
+        background-color:$nav-link-hover-bg;
+      }
 
       &.active {
-        color: $color-text;
+        color: $nav-link-active-color;
       }
     }
   }
 }
 
 main {
-  padding: 0 0 $spacing 0;
-  font-size: $font-size-content;
+  padding: $main-padding;
+  font-size: $main-font-size;
 }

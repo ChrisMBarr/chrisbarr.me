@@ -7,6 +7,26 @@
   box-sizing: border-box;
 }
 
+* {
+  scrollbar-width: $scrollbar-width;
+  scrollbar-color: $scrollbar-color-track $scrollbar-color-thumb;
+}
+
+::selection {
+  background-color: $selection-color-bg;
+  color: $selection-color-text;
+}
+
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+  background-color: $scrollbar-color-track;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color-thumb;
+  border: 2px solid $scrollbar-color-track;
+}
+
 html,
 body {
   margin: 0;
