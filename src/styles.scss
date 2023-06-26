@@ -37,8 +37,8 @@ html {
   background-color: $color-bg;
   color: $color-text;
   font-family: $font-family;
-
   font-weight: $font-weight-light;
+  overflow-y: scroll; //scrollbar always visible to prevent jump when content length changes
 }
 
 a {

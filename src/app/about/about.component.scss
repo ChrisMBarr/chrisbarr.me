@@ -1,10 +1,10 @@
 @use "../../variables" as *;
 @use "../../../node_modules/bootstrap/scss/mixins" as *;
 
+$section-min-height: 500px;
+
 .section-container {
-  //each section can be as tall as the screen, but never more than 1000px
-  // height: 100vh;
-  // max-height: 1000px;
+  min-height: $section-min-height;
 
   display: flex;
   align-items: center;
@@ -35,24 +35,31 @@
   }
 }
 
-#intro-animation {
-  $anim-intro-size: 150vw;
-
-  width: $anim-intro-size;
-  height: $anim-intro-size;
-  background-image: linear-gradient($color-bg 50%, rgba($color-highlight, .4));
-  animation: anim-intro-rotate 20s linear infinite;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: calc(($anim-intro-size / 2) * -1) 0 0 calc(($anim-intro-size / 2) * -1);
-  z-index: -1;
-}
-
 #intro {
+  --anim-intro-size: 150vw;
+  $img-size: 300px;
+  $container-width-desktop: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
+
   overflow: hidden;
   position: relative;
+
+  @media screen and (min-height: 100vw) {
+    //when the screen is taller than it is wide
+    --anim-intro-size: 150vh;
+  }
+
+  &-animation {
+    height: var(--anim-intro-size);
+    width: var(--anim-intro-size);
+    background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
+    animation: anim-intro-rotate 20s linear infinite;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: calc((var(--anim-intro-size) / 2) * -1) 0 0 calc((var(--anim-intro-size) / 2) * -1);
+    z-index: -1;
+  }
 
   .section-container {
     padding: $spacing;
@@ -62,7 +69,8 @@
   img {
     border-radius: 100%;
     border: 2px solid $color-highlight;
-    max-width: 50%;
+    max-height: $img-size;
+    max-width: $img-size;
   }
 
   #greeting-desktop {
@@ -70,9 +78,14 @@
   }
 
   @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @media screen and (min-height: $section-min-height) {
+      // only set this when at a desktop width AND the height is over the min-height set
+      max-height: calc(100vh - $header-height);
+    }
+
     .section-container {
       flex-direction: row;
-      width: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
+      width: $container-width-desktop;
       margin: 0 auto;
     }
 
@@ -85,7 +98,6 @@
     }
 
     img {
-      max-width: 300px;
       margin-right: $spacing;
     }
   }
@@ -96,6 +108,10 @@
   background-size: cover;
   background-attachment: fixed;
   padding: $spacing 0;
+
+  .section-container {
+    min-height: 650px;
+  }
 
   #skills-icons-container {
     text-align: center;
@@ -144,6 +160,7 @@
 }
 
 #contact {
+  padding: $spacing 0;
   svg {
     fill: $color-text;
   }
