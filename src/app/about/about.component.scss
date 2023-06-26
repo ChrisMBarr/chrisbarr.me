@@ -1,20 +1,114 @@
 @use "../../variables" as *;
+@use "../../../node_modules/bootstrap/scss/mixins" as *;
 
-img {
-  border-radius: 100%;
-  border: 2px solid $color-highlight;
-  max-width: 100%; //size to the column it's contained in
+.section-container {
+  //each section can be as tall as the screen, but never more than 1000px
+  // height: 100vh;
+  // max-height: 1000px;
+
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    //each section can be as tall as the screen, but never more than 1000px
+    height: calc(100vh - $header-height);
+    max-height: 1000px;
+  }
 }
 
+#intro {
+
+  .section-container {
+    padding: 0 $spacing;
+    flex-direction: column;
+  }
+
+  img {
+    border-radius: 100%;
+    border: 2px solid $color-highlight;
+    max-width: 50%;
+  }
+
+  #greeting-desktop {
+    display: none;
+  }
+
+  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    .section-container {
+      flex-direction: row;
+      width: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
+      margin: 0 auto;
+    }
+
+    #greeting-mobile {
+      display: none;
+    }
+
+    #greeting-desktop {
+      display: block;
+    }
+
+    img {
+      max-width: 300px;
+      margin-right: $spacing;
+    }
+  }
+}
+
+.section-title {
+  position: sticky;
+  top: $header-height;
+  margin: $spacing;
+  font-weight: $font-weight-thin;
+}
 
 #skills {
-  background-color: lighten($color-bg, 10%);
-  padding: $spacing 0;
-  text-align: center;
+  background: url("../../../src/assets/img/skills-bg.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
-  #skills-container {
+  #skills-icons-container {
+    text-align: center;
+
+    //size/position
     margin: 0 auto;
-    width: 80%;
+
+    //background/shape
+    background: rgba(#fff, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: $radius;
+
+    //grid
+    display: grid;
+    gap: $spacing;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include media-breakpoint-up(sm, $grid-breakpoints) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: $spacing-lg;
+      padding: $spacing-lg;
+    }
+
+    @include media-breakpoint-up(lg, $grid-breakpoints) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  footer{
+    text-align: right;
+    padding: 0 $spacing-sm;
+    font-size: $font-size-sm;
+    transform: translateY(100%); //push it below the image BG
+    opacity: 0.5;
+    transition: 0.4s opacity;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

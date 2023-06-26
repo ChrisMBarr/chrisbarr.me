@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./skill.component.scss'],
 })
 export class SkillComponent {
-  @Input() type: string | null = null;
+  @Input() icon: string | null = null;
 }

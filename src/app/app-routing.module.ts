@@ -6,10 +6,10 @@ import { DesignComponent } from './design/design.component';
 import { PhotoComponent } from './photo/photo.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent, },
-  { path: 'dev', component: DevComponent, pathMatch: 'full' },
-  { path: 'design', component: DesignComponent, pathMatch: 'full' },
-  { path: 'photo', component: PhotoComponent, pathMatch: 'full' },
+  { path: '', component: AboutComponent, title: 'Chris Barr - About' },
+  { path: 'dev', component: DevComponent, title: 'Chris Barr - Dev', pathMatch: 'full' },
+  { path: 'design', component: DesignComponent, title: 'Chris Barr - Design', pathMatch: 'full' },
+  { path: 'photo', component: PhotoComponent, title: 'Chris Barr - Photo', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];
 

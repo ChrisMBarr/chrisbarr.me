@@ -1,14 +1,33 @@
+// @import '../node_modules/bootstrap/scss/variables';
+@use '../node_modules/bootstrap/scss/mixins' as *;
+
+
+//==================================
+//GRID
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+$grid-desktop-min-size: md;
+
+
 //==================================
 // COLORS
 $color-bg: #424153;
 $color-text: #FFF;
 $color-highlight: #a76253;
 
+
 //==================================
 // FONTS
 //https://fonts.google.com/specimen/Roboto+Flex?query=roboto
 $font-family: 'Roboto Flex', sans-serif;
 $font-size-content: 1.2rem;
+$font-size-sm: 0.75rem;
 $font-weight-thin: 100;
 $font-weight-light: 300;
 $font-weight-medium: 500;
@@ -18,3 +37,14 @@ $font-weight-medium: 500;
 // SPACING
 $spacing: 1rem;
 $spacing-sm: calc($spacing / 2);
+$spacing-lg: calc($spacing * 1.5);
+
+
+//==================================
+// RADIUS
+$radius: 0.5rem;
+
+
+//==================================
+//APP COMPONENTS
+$header-height: 102px;

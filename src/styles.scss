@@ -1,5 +1,11 @@
-@use "/node_modules/bootstrap/scss/bootstrap-grid.scss" as bootstrap;
+// @use "/node_modules/bootstrap/scss/bootstrap-grid.scss" as bootstrap;
 @use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html,
 body {

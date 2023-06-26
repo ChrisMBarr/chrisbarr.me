@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../../node_modules/bootstrap/scss/mixins" as *;
 
 header {
   //appearance
@@ -9,9 +10,22 @@ header {
 
   //display
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    //appearance
+    background: rgba($color-bg, 0.8);
+    backdrop-filter: blur(10px);
+
+    //layout - sticky header for desktop sizes
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    flex-direction: row;
+  }
 
   h1 {
     //text
@@ -26,7 +40,12 @@ header {
   }
 
   nav {
-    order: -1;
+    margin-top: $spacing;
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      order: -1;
+      margin-top: 0;
+    }
 
     a {
       //text
@@ -46,6 +65,10 @@ header {
 }
 
 main {
-  padding: $spacing 0;
+  padding: 0 0 $spacing 0;
   font-size: $font-size-content;
+
+  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    margin-top: $header-height;
+  }
 }

@@ -1,0 +1,12 @@
+@use "../../../variables" as *;
+@use "../../../../node_modules/bootstrap/scss/mixins" as *;
+
+svg {
+  height: 75px;
+  width: 75px;
+
+  @include media-breakpoint-up(sm, $grid-breakpoints) {
+    height: auto;
+    width: auto;
+  }
+}
