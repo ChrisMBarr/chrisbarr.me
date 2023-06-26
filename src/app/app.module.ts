@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { DevComponent } from './dev/dev.component';
 import { DesignComponent } from './design/design.component';
 import { PhotoComponent } from './photo/photo.component';
-import { SvgIconComponent } from './about/svg-icon/svg-icon.component';
+import { SvgIconComponent } from './svg-icon/svg-icon.component';
 import { ContactFormComponent } from './about/contact-form/contact-form.component';
 
 @NgModule({

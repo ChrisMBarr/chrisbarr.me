@@ -1,204 +1,270 @@
 @use "../../variables" as *;
 @use "../../../node_modules/bootstrap/scss/mixins" as *;
 
-$section-min-height: 500px;
-
-
-
-.section-container {
-  min-height: $section-min-height;
-
-  display: flex;
-  align-items: center;
-
-  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-    //each section can be as tall as the screen, but never more than 1000px
-    height: 100vh;
-    max-height: 1000px;
-  }
-}
-
-.section-title {
-  margin: 0 $spacing $spacing $spacing;
-  font-weight: $font-weight-thin;
-
-  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-    position: sticky;
-    top: $header-height;
-  }
-}
-
-@keyframes anim-intro-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-
-#intro {
-  --anim-intro-size: 150vw;
-  $img-size: 300px;
-  $container-width-desktop: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
-
-  overflow: hidden;
-  position: relative;
-
-  @media screen and (min-height: 100vw) {
-    //when the screen is taller than it is wide
-    --anim-intro-size: 150vh;
-  }
-
-  &-animation {
-    height: var(--anim-intro-size);
-    width: var(--anim-intro-size);
-    background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
-    animation: anim-intro-rotate 20s linear infinite;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: calc((var(--anim-intro-size) / 2) * -1) 0 0 calc((var(--anim-intro-size) / 2) * -1);
-    z-index: -1;
-  }
+app-about {
+  $section-min-height: 500px;
 
   .section-container {
-    padding: $spacing;
-    flex-direction: column;
+    min-height: $section-min-height;
+
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      //each section can be as tall as the screen, but never more than 1000px
+      height: 100vh;
+      max-height: 1000px;
+    }
   }
 
-  img {
-    border-radius: 100%;
-    border: 2px solid $color-highlight;
-    max-height: $img-size;
-    max-width: $img-size;
+  .section-title {
+    margin: 0 $spacing $spacing $spacing;
+    font-weight: $font-weight-thin;
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      position: sticky;
+      top: $header-height;
+    }
   }
 
-  #greeting-desktop {
-    display: none;
+  @keyframes anim-intro-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
   }
 
-  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-    @media screen and (min-height: $section-min-height) {
-      // only set this when at a desktop width AND the height is over the min-height set
-      max-height: calc(100vh - $header-height);
+  #intro {
+    --anim-intro-size: 150vw;
+    $img-size: 300px;
+    $container-width-desktop: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
+
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-height: 100vw) {
+      //when the screen is taller than it is wide
+      --anim-intro-size: 150vh;
+    }
+
+    &-animation {
+      height: var(--anim-intro-size);
+      width: var(--anim-intro-size);
+      background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
+      animation: anim-intro-rotate 20s linear infinite;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: calc((var(--anim-intro-size) / 2) * -1) 0 0 calc((var(--anim-intro-size) / 2) * -1);
+      z-index: -1;
     }
 
     .section-container {
-      flex-direction: row;
-      width: $container-width-desktop;
-      margin: 0 auto;
-    }
-
-    #greeting-mobile {
-      display: none;
-    }
-
-    #greeting-desktop {
-      display: block;
+      padding: $spacing;
+      flex-direction: column;
     }
 
     img {
-      margin-right: $spacing;
+      border-radius: 100%;
+      border: 2px solid $color-highlight;
+      max-height: $img-size;
+      max-width: $img-size;
     }
-  }
-}
 
-#skills {
-  background: url("../../../src/assets/img/skills-bg.jpg") no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: $spacing 0;
-
-  .section-container {
-    min-height: 650px;
-  }
-
-  @keyframes scale-in {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
-  &-icons-container {
-    text-align: center;
-
-    //size/position
-    margin: 0 auto;
-
-    //background/shape
-    background: rgba(#fff, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: $radius;
-
-    //grid
-    display: grid;
-    gap: $spacing;
-    padding: $spacing;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    @include media-breakpoint-up(sm, $grid-breakpoints) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    #greeting-desktop {
+      display: none;
     }
 
     @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: $spacing-lg;
-      padding: $spacing-lg;
-    }
+      @media screen and (min-height: $section-min-height) {
+        // only set this when at a desktop width AND the height is over the min-height set
+        max-height: calc(100vh - $header-height);
+      }
 
-    @include media-breakpoint-up(lg, $grid-breakpoints) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
+      .section-container {
+        flex-direction: row;
+        width: $container-width-desktop;
+        margin: 0 auto;
+      }
 
+      #greeting-mobile {
+        display: none;
+      }
 
-    > * {
-      //default until class is added
-      transform: scale(0);
-    }
+      #greeting-desktop {
+        display: block;
+      }
 
-    &.animated > * {
-      animation: scale-in 300ms $ease-out-back;
-      animation-fill-mode: both;
-
-      @for $i from 1 through 21 {
-        &:nth-child(#{$i}) {
-          animation-delay: 40ms * $i;
-        }
+      img {
+        margin-right: $spacing;
       }
     }
   }
 
-  footer {
-    text-align: right;
-    padding: 0 $spacing-sm;
-    font-size: $font-size-sm;
-    transform: translateY(100%); //push it below the image BG
-    opacity: 0.5;
-    transition: 0.4s opacity;
+  //View encapsulation is disabled so we can style these icons here instead of inside that component
+  app-svg-icon {
+    width: 100%;
+    position: relative;
+
+    svg {
+      //smaller size on mobile sizes
+      height: 75px;
+      width: 75px;
+      transition: $anim-duration transform;
+
+      @include media-breakpoint-up(sm, $grid-breakpoints) {
+        //mack to normal sizes for larger screens
+        height: 96px;
+        width: 96px;
+      }
+    }
+
+    h3 {
+      position: absolute;
+      margin: 0;
+      opacity: 0;
+      width: 200%;
+      font-weight: $font-weight-thin;
+      text-align: center;
+      transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
+      transform: translate(-25%, -10px);
+
+      span {
+        background-color: $color-bg;
+        padding: $spacing-sm;
+        border-radius: $radius;
+        white-space: nowrap;
+
+        @include shadow("lg");
+      }
+    }
 
     &:hover {
-      opacity: 1;
+      z-index: 10;
+
+      svg {
+        transform: scale(1.1);
+        @include shadow("lg");
+      }
+      h3 {
+        opacity: 1;
+        transform: translate(-25%, 0);
+      }
     }
   }
-}
 
-#contact {
-  padding: $spacing 0;
+  #skills {
+    background: url("../../../src/assets/img/skills-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: $spacing 0;
 
-  .section-container {
-    flex-direction: column;
-    justify-content: center;
-    max-height: 300px;
-    min-height: auto;
+    .section-container {
+      min-height: 650px;
+    }
+
+    @keyframes scale-in {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    &-icons-container {
+      text-align: center;
+
+      //size/position
+      margin: 0 auto;
+
+      //background/shape
+      background: rgba(#fff, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: $radius;
+
+      //grid
+      display: grid;
+      gap: $spacing;
+      padding: $spacing;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      @include media-breakpoint-up(sm, $grid-breakpoints) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: $spacing-lg;
+        padding: $spacing-lg;
+      }
+
+      @include media-breakpoint-up(lg, $grid-breakpoints) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      > * {
+        //default until class is added
+        transform: scale(0);
+      }
+
+      &.animated > * {
+        animation: scale-in 300ms $ease-out-back;
+        animation-fill-mode: both;
+
+        @for $i from 1 through 21 {
+          &:nth-child(#{$i}) {
+            animation-delay: 40ms * $i;
+          }
+        }
+      }
+    }
+
+    footer {
+      text-align: right;
+      padding: 0 $spacing-sm;
+      font-size: $font-size-sm;
+      transform: translateY(calc(100% + $spacing)); //push it below the image BG
+      opacity: 0.5;
+      transition: 0.4s opacity;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
-  #social {
-    display: flex;
-    gap: $spacing;
+  #contact {
+    padding: $spacing 0;
+
+    .section-container {
+      flex-direction: column;
+      justify-content: center;
+      max-height: 300px;
+      min-height: auto;
+    }
+
+    #social {
+      display: grid;
+      gap: $spacing;
+      grid-template-columns: 1fr 1fr;
+
+      @include media-breakpoint-up(sm, $grid-breakpoints) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: $spacing-lg;
+      }
+
+      app-svg-icon {
+        h3 {
+          span {
+            background-color: $color-highlight;
+            color: $color-text;
+          }
+        }
+      }
+    }
   }
 }
