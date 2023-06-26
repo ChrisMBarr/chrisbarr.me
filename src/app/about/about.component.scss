@@ -165,6 +165,8 @@ $section-min-height: 500px;
   .section-container {
     flex-direction: column;
     justify-content: center;
+    max-height: 300px;
+    min-height: auto;
   }
 
   #social {
