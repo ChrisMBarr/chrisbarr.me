@@ -67,8 +67,4 @@ header {
 main {
   padding: 0 0 $spacing 0;
   font-size: $font-size-content;
-
-  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-    margin-top: $header-height;
-  }
 }

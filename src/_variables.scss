@@ -1,6 +1,5 @@
 // @import '../node_modules/bootstrap/scss/variables';
-@use '../node_modules/bootstrap/scss/mixins' as *;
-
+@use "../node_modules/bootstrap/scss/mixins" as *;
 
 //==================================
 //GRID
@@ -10,28 +9,25 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1400px,
 );
 $grid-desktop-min-size: md;
-
 
 //==================================
 // COLORS
 $color-bg: #424153;
-$color-text: #FFF;
+$color-text: #fff;
 $color-highlight: #a76253;
-
 
 //==================================
 // FONTS
 //https://fonts.google.com/specimen/Roboto+Flex?query=roboto
-$font-family: 'Roboto Flex', sans-serif;
+$font-family: "Roboto Flex", sans-serif;
 $font-size-content: 1.2rem;
 $font-size-sm: 0.75rem;
 $font-weight-thin: 100;
 $font-weight-light: 300;
 $font-weight-medium: 500;
-
 
 //==================================
 // SPACING
@@ -39,12 +35,39 @@ $spacing: 1rem;
 $spacing-sm: calc($spacing / 2);
 $spacing-lg: calc($spacing * 1.5);
 
-
 //==================================
 // RADIUS
 $radius: 0.5rem;
 
+//==================================
+// ANIMATIONS
+$anim-duration: 300ms;
 
 //==================================
 //APP COMPONENTS
 $header-height: 102px;
+
+@mixin shadow($size: "") {
+  //shadows from https://tailwindcss.com/docs/drop-shadow#adding-a-drop-shadow
+  @if ($size == "sm") {
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  }
+  @if ($size == "") {
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  }
+  @if ($size == "md") {
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  }
+  @if ($size == "lg") {
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  }
+  @if ($size == "xl") {
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  }
+  @if ($size == "2xl") {
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  }
+  @if ($size == "none") {
+    filter: drop-shadow(0 0 #0000);
+  }
+}

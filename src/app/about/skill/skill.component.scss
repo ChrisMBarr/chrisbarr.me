@@ -1,12 +1,52 @@
 @use "../../../variables" as *;
 @use "../../../../node_modules/bootstrap/scss/mixins" as *;
 
-svg {
-  height: 75px;
-  width: 75px;
+:host {
+  width: 100%;
+  position: relative;
 
-  @include media-breakpoint-up(sm, $grid-breakpoints) {
-    height: auto;
-    width: auto;
+  svg {
+    //smaller size on mobile sizes
+    height: 75px;
+    width: 75px;
+    transition: $anim-duration transform;
+
+    @include media-breakpoint-up(sm, $grid-breakpoints) {
+      //mack to normal sizes for larger screens
+      height: auto;
+      width: auto;
+    }
+  }
+
+  h3 {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    width: 200%;
+    font-weight: $font-weight-thin;
+    text-align: center;
+    z-index: 10;
+    transition: $anim-duration opacity, $anim-duration transform;
+    transform: translate(-25%, -10px);
+
+    span {
+      background-color: $color-bg;
+      padding: $spacing-sm;
+      border-radius: $radius;
+      white-space: nowrap;
+
+      @include shadow('lg');
+    }
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.1);
+      @include shadow('lg');
+    }
+    h3 {
+      opacity: 1;
+      transform: translate(-25%, 0);
+    }
   }
 }

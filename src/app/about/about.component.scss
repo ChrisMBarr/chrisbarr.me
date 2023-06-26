@@ -11,15 +11,51 @@
 
   @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
     //each section can be as tall as the screen, but never more than 1000px
-    height: calc(100vh - $header-height);
+    height: 100vh;
     max-height: 1000px;
   }
 }
 
+.section-title {
+  margin: 0 $spacing $spacing $spacing;
+  font-weight: $font-weight-thin;
+
+  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    position: sticky;
+    top: $header-height;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+#intro-animation {
+  --size: 150vw;
+
+  width: var(--size);
+  height: var(--size);
+  background-image: linear-gradient($color-bg 50%, rgba($color-highlight, .4));
+  animation: rotate 20s linear infinite;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc((var(--size) / 2) * -1) 0 0 calc(var(--size) / 2 * -1);
+  z-index: -1;
+}
+
 #intro {
+  overflow: hidden;
+  position: relative;
 
   .section-container {
-    padding: 0 $spacing;
+    padding: $spacing;
     flex-direction: column;
   }
 
@@ -55,17 +91,11 @@
   }
 }
 
-.section-title {
-  position: sticky;
-  top: $header-height;
-  margin: $spacing;
-  font-weight: $font-weight-thin;
-}
-
 #skills {
   background: url("../../../src/assets/img/skills-bg.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding: $spacing 0;
 
   #skills-icons-container {
     text-align: center;
@@ -81,6 +111,7 @@
     //grid
     display: grid;
     gap: $spacing;
+    padding: $spacing;
     grid-template-columns: 1fr 1fr 1fr;
 
     @include media-breakpoint-up(sm, $grid-breakpoints) {
@@ -98,7 +129,7 @@
     }
   }
 
-  footer{
+  footer {
     text-align: right;
     padding: 0 $spacing-sm;
     font-size: $font-size-sm;
