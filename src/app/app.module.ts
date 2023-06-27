@@ -26,5 +26,4 @@ import { ContactFormComponent } from './about/contact-form/contact-form.componen
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppModule {}
