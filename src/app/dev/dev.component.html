@@ -5,6 +5,10 @@
   </p>
 </section>
 
+<ng-template #lightboxTemplate let-data="data">
+  <span class="lightbox-template">{{ data?.alt }}</span>
+</ng-template>
+
 <section class="portfolio-section">
   <h2 class="portfolio-section-title">Lyric Converter</h2>
   <div class="portfolio-section-content">
@@ -40,18 +44,13 @@
         </p>
       </div>
       <div class="col">
-        <p class="mt-0"><strong>Tech Stack</strong>: TypeScript 5, Angular 16, RXJS, SCSS, Bootstrap, Jasmine</p>
+        <p><strong>Tech Stack</strong>: TypeScript 5, Angular 16, RXJS, SCSS, Bootstrap, Jasmine</p>
         <a href="http://LyricConverter.net" target="_blank">LyricConverter.net</a> |
         <a href="https://github.com/FiniteLooper/LyricConverter" target="_blank"> <app-svg-icon icon="github" /> Source Code</a>
         <hr />
-        <!-- <a
-          href="https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true"
-          class="thumb thumb-full"
-          title="LyricConverter - Convert between song lyric file format"> -->
-          <img
-            src="https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true"
-            alt="LyricConverter Screen Recording" />
-        <!-- </a> -->
+        <a class="lightbox-thumb" *ngFor="let item of items; index as i" [lightbox]="i">
+          <img [src]="item.data.src" [alt]="item.data.alt" />
+        </a>
       </div>
     </div>
   </div>

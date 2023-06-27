@@ -1,1 +1,98 @@
-<p>design works!</p>
+<ng-template #lightboxTemplate let-data="data">
+  <span class="lightbox-template">{{ data?.alt }}</span>
+</ng-template>
+
+<section class="portfolio-section">
+  <div class="portfolio-section-content">
+    <p>
+      This page contains some of the web and other design-related projects I've worked on over the years. There are many more
+      proprietary internal projects for companies that I cannot share publicly.
+    </p>
+    <p>
+      Some of my free time is spent working on personal or open source project, some of which you can find on the
+      <a routerLink="/dev">dev page</a>.
+    </p>
+  </div>
+</section>
+
+<section class="portfolio-section">
+  <h2 class="portfolio-section-title">AccountChek</h2>
+  <div class="portfolio-section-content">
+    <p>
+      At <strong>FormFree</strong> I was tasked with redesigning their user-facing <em>AccountChek</em> application. The purpose
+      of <em>AccountChek</em> is to allow a potential home buyer to more easily share their banking details with a mortgage lender
+      than is possible with traditional methods. <em>AccountChek</em> was written in an older version of Angular and had a very
+      plain design.
+    </p>
+
+    <p>
+      I created a more modern design that featured background colors and shapes as an enlarged version of the
+      <em>AccountChek</em> logo. The design process was a long collaboration between me and the stakeholders regarding the
+      appearance, the suitability for present needs, and the capacity to address future components that were in the planning
+      stages.
+    </p>
+
+    <p>
+      With this new design in mind, I rebuilt the application in the latest version of Angular available at that time. I was
+      intentional about ensuring accessibility for users with poor vision, colorblindness, requiring screen readers, or limited to
+      keyboard-only access. I placed strong emphasis on test-driven-design by writing over 540+ unit tests that passed on multiple
+      web browsers checked with BrowserStack. This application has very strict code quality controls enforced by TypeScript build
+      options and code linting.
+    </p>
+
+    <p>
+      In a few months, with only light guidance from others, I successfully redesigned and rebuilt the
+      <em>AccountChek</em> application for <strong>FormFree</strong>.
+    </p>
+
+    <strong>Tech Stack</strong>: TypeScript 4, Angular 8, SCSS, Bootstrap, ASP.NET MVC, Jasmine
+
+    <h3>Previous <em>AccountChek</em> Design - Desktop</h3>
+    <div class="lightbox-thumbs-container">
+      <a
+        class="lightbox-thumb"
+        *ngFor="let item of accountChekPrevDesktop; index as i"
+        [lightbox]="i"
+        [gallery]="'accountChekPrevDesktop'">
+        <img [src]="item.data.thumb" [alt]="item.data.alt" />
+        <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+      </a>
+    </div>
+
+    <h3>My <em>AccountChek</em> Redesign - Desktop</h3>
+    <div class="lightbox-thumbs-container">
+      <a
+        class="lightbox-thumb"
+        *ngFor="let item of accountChekRedesignDesktop; index as i"
+        [lightbox]="i"
+        [gallery]="'accountChekRedesignDesktop'">
+        <img [src]="item.data.thumb" [alt]="item.data.alt" />
+        <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+      </a>
+    </div>
+
+    <h3>Previous <em>AccountChek</em> Design - Mobile</h3>
+    <div class="lightbox-thumbs-container">
+      <a
+        class="lightbox-thumb"
+        *ngFor="let item of accountChekPrevMobile; index as i"
+        [lightbox]="i"
+        [gallery]="'accountChekPrevMobile'">
+        <img [src]="item.data.thumb" [alt]="item.data.alt" />
+        <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+      </a>
+    </div>
+
+    <h3>My <em>AccountChek</em> Redesign - Mobile</h3>
+    <div class="lightbox-thumbs-container">
+      <a
+        class="lightbox-thumb"
+        *ngFor="let item of accountChekRedesignMobile; index as i"
+        [lightbox]="i"
+        [gallery]="'accountChekRedesignMobile'">
+        <img [src]="item.data.thumb" [alt]="item.data.alt" />
+        <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+      </a>
+    </div>
+  </div>
+</section>

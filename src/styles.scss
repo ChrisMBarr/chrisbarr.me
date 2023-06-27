@@ -1,4 +1,7 @@
+@use "../node_modules/bootstrap/scss/mixins" as *;
 @use "variables" as *;
+
+
 
 *,
 *::before,
@@ -42,20 +45,20 @@ html {
 
 a {
   color: $color-highlight;
-  $link-color-light: lighten($color-highlight, 20%);
+  transition: color $anim-duration;
 
   &:hover,
   &:focus {
-    color: $link-color-light;
+    color: $color-highlight-light;
   }
 
   &:active {
-    color: lighten($link-color-light, 10%);
+    color: lighten($color-highlight-light, 10%);
   }
 
   &:focus-visible {
     outline: 2px solid $color-highlight;
-    box-shadow: 0 0 5px rgba($link-color-light, 0.3), inset 0 0 5px rgba($link-color-light, 0.3);
+    box-shadow: 0 0 5px rgba($color-highlight-light, 0.3), inset 0 0 5px rgba($color-highlight-light, 0.3);
     border-radius: $radius-sm;
   }
 }
@@ -71,52 +74,6 @@ b {
   font-weight: $font-weight-medium;
 }
 
-//===============================================
-//Basic grid without using bootstrap
-.row {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 0.5rem;
-  display: grid;
-}
-
-@media only screen and (min-width: 576px) {
-  /* Screens wider than most mobile */
-  .row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-//===============================================
-//Portfolio Sections
-.portfolio-section {
-  padding: $spacing;
-  margin: $spacing-lg 0;
-  background-color: darken($color-bg, 5%);
-
-  &-title {
-    margin: 0;
-    font-weight: $font-weight-light;
-    font-size: 2.5rem;
-  }
-
-  &-content {
-    margin-top: $spacing;
-
-    p:first-child {
-      margin-top: 0;
-    }
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  a {
-    svg {
-      fill: currentColor;
-      vertical-align: bottom;
-      width: 24px;
-      height: 24px;
-    }
-  }
-}
+@import "global-styles/utilities";
+@import "global-styles/portfolio";
+@import "global-styles/lightbox";

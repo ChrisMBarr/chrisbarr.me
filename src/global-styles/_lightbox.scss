@@ -1,0 +1,72 @@
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "../variables" as *;
+
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+.g-backdrop {
+  background-color: rgba(darken($color-bg, 20%), 0.85) !important;
+}
+
+.lightbox {
+  &-thumbs-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: $spacing;
+
+    .lightbox-thumb{
+      img {
+        max-height: 150px;
+      }
+    }
+  }
+
+  &-thumb {
+    border: 1px solid $color-highlight;
+    border-radius: $radius;
+    overflow: hidden;
+    display: inline-block;
+    transition: border-color $anim-duration;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+
+    &-title {
+      border-top: 1px solid $color-highlight;
+      text-align: center;
+      width: 100%;
+      font-size: $font-size-sm;
+      padding: $spacing-xs;
+    }
+
+    img {
+      display: block;
+      transition: filter $anim-duration;
+    }
+
+    &:hover {
+      border-color: $color-highlight-light;
+      img {
+        filter: saturate(1.25);
+      }
+    }
+  }
+
+  &-template {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: $spacing-sm;
+    background-color: rgba($color-bg, 0.85);
+    transform: translateY(100%);
+    transition: transform $anim-duration;
+  }
+}
+
+.g-slider-content:hover {
+  .lightbox-template {
+    transform: translateY(0);
+  }
+}

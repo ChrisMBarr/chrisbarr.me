@@ -1,4 +1,3 @@
-// @import '../node_modules/bootstrap/scss/variables';
 @use "../node_modules/bootstrap/scss/mixins" as *;
 
 //==================================
@@ -18,6 +17,7 @@ $grid-desktop-min-size: md;
 $color-bg: #424153;
 $color-text: #fff;
 $color-highlight: #a76253;
+$color-highlight-light: lighten($color-highlight, 20%);
 
 //==================================
 // SPECIAL PROPERTY COLORS
@@ -31,7 +31,8 @@ $scrollbar-color-thumb: $color-highlight;
 // FONTS
 //https://fonts.google.com/specimen/Roboto+Flex?query=roboto
 $font-family: "Roboto Flex", sans-serif;
-$font-size-sm: 0.75rem;
+$font-size-sm: 0.9rem;
+$font-size-xs: 0.75rem;
 $font-weight-thin: 100;
 $font-weight-light: 300;
 $font-weight-medium: 500;
@@ -39,6 +40,7 @@ $font-weight-medium: 500;
 //==================================
 // SPACING
 $spacing: 1rem;
+$spacing-xs: calc($spacing / 4);
 $spacing-sm: calc($spacing / 2);
 $spacing-lg: calc($spacing * 1.5);
 

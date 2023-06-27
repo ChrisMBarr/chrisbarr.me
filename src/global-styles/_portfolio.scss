@@ -1,0 +1,46 @@
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "../variables" as *;
+
+$color-portfolio-section-bg: darken($color-bg, 5%);
+
+.portfolio-section {
+  padding: $spacing;
+  margin: $spacing-lg auto;
+  background-color: $color-portfolio-section-bg;
+
+  max-width: calc(breakpoint-min(lg, $grid-breakpoints));
+
+  &-title {
+    margin: 0;
+    font-weight: $font-weight-light;
+    font-size: 2.5rem;
+
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      position: sticky;
+      top: $header-height;
+      background-color: $color-portfolio-section-bg;
+    }
+  }
+
+  &-content {
+    margin-top: $spacing;
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    svg {
+      fill: currentColor;
+      vertical-align: bottom;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

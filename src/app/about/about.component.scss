@@ -104,7 +104,7 @@ app-about {
       pointer-events: none;
 
       opacity: 0;
-      transition: opacity 400ms;
+      transition: opacity $anim-duration;
 
       &.shown {
         opacity: 1;
@@ -243,20 +243,20 @@ app-about {
       display: grid;
       gap: $spacing;
       padding: $spacing;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
 
       @include media-breakpoint-up(sm, $grid-breakpoints) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
       }
 
       @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
         gap: $spacing-lg;
         padding: $spacing-lg;
       }
 
       @include media-breakpoint-up(lg, $grid-breakpoints) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(7, 1fr);
       }
 
       > * {
@@ -265,7 +265,7 @@ app-about {
       }
 
       &.animated > * {
-        animation: scale-in 300ms $ease-out-back;
+        animation: scale-in $anim-duration $ease-out-back;
         animation-fill-mode: both;
 
         @for $i from 1 through 21 {
@@ -279,7 +279,7 @@ app-about {
     footer {
       text-align: right;
       padding: 0 $spacing-sm;
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
       transform: translateY(calc(100% + $spacing)); //push it below the image BG
       opacity: 0.5;
       transition: 0.4s opacity;
@@ -303,10 +303,10 @@ app-about {
     #social {
       display: grid;
       gap: $spacing;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
 
       @include media-breakpoint-up(sm, $grid-breakpoints) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         gap: $spacing-lg;
       }
 
