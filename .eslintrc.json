@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.(app|spec|server).json"]
+        "project": ["tsconfig.(app|server).json"]
       },
       "extends": [
         "eslint:recommended",

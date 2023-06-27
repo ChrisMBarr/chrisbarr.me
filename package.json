@@ -17,7 +17,6 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "lint": "ng lint",
     "dev:ssr": "ng run chrisbarr.me:serve-ssr",
     "serve:ssr": "node dist/chrisbarr.me/server/main.js",
@@ -58,12 +57,6 @@
     "@typescript-eslint/parser": "5.60.0",
     "bootstrap": "^5.3.0",
     "eslint": "^8.43.0",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.2",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.1",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.1.3"
   }
 }
