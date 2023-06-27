@@ -36,6 +36,18 @@ app-about {
     }
   }
 
+  @keyframes anim-arrow-bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
   #intro {
     --anim-intro-size: 150vw;
     $img-size: 300px;
@@ -54,7 +66,6 @@ app-about {
       width: var(--anim-intro-size);
       background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
       animation: anim-intro-rotate 20s linear infinite;
-
       position: absolute;
       top: 50%;
       left: 50%;
@@ -62,9 +73,51 @@ app-about {
       z-index: -1;
     }
 
+    &-noise-svg {
+      //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode
+      height: 0px;
+      width: 0px;
+      overflow: hidden;
+      opacity: 0;
+      position: absolute;
+      z-index: -999;
+      left: 0;
+      top: 0;
+    }
+
+    &-grain {
+      filter: url(#noiseFilter);
+      mix-blend-mode: multiply;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &-arrow {
+      font-size: 35px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+
+      opacity: 0;
+      transition: opacity 400ms;
+
+      &.shown {
+        opacity: 1;
+        animation: anim-arrow-bounce 2s infinite;
+      }
+    }
+
     .section-container {
       padding: $spacing;
       flex-direction: column;
+
+      position: relative;
+      z-index: 1;
     }
 
     img {
@@ -79,15 +132,15 @@ app-about {
     }
 
     @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
-      @media screen and (min-height: $section-min-height) {
-        // only set this when at a desktop width AND the height is over the min-height set
-        max-height: calc(100vh - $header-height);
-      }
-
       .section-container {
         flex-direction: row;
         width: $container-width-desktop;
         margin: 0 auto;
+
+        @media screen and (min-height: $section-min-height) {
+          // only set this when at a desktop width AND the height is over the min-height set
+          height: calc(100vh - $header-height);
+        }
       }
 
       #greeting-mobile {

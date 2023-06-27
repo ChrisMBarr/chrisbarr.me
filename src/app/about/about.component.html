@@ -1,5 +1,5 @@
 <section id="intro">
-  <div class="section-container">
+  <div class="section-container" #introContainer>
     <h2 id="greeting-mobile">Hi, I'm Chris</h2>
     <img src="/assets/img/me.jpg" alt="Photo of Chris Barr" />
     <div>
@@ -10,6 +10,17 @@
       </p>
     </div>
   </div>
+  <div id="intro-arrow" #introArrow>🡓</div>
+  <svg id="intro-noise-svg">
+    <filter id='noiseFilter'>
+      <feTurbulence
+        type='fractalNoise'
+        baseFrequency='6.29'
+        numOctaves='6'
+        stitchTiles='stitch' />
+    </filter>
+  </svg>
+  <div id="intro-grain"></div>
   <div id="intro-animation"></div>
 </section>
 
