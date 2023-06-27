@@ -42,6 +42,22 @@ html {
 
 a {
   color: $color-highlight;
+  $link-color-light: lighten($color-highlight, 20%);
+
+  &:hover,
+  &:focus {
+    color: $link-color-light;
+  }
+
+  &:active {
+    color: lighten($link-color-light, 10%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-highlight;
+    box-shadow: 0 0 5px rgba($link-color-light, 0.3), inset 0 0 5px rgba($link-color-light, 0.3);
+    border-radius: $radius-sm;
+  }
 }
 
 h1,
@@ -54,7 +70,6 @@ strong,
 b {
   font-weight: $font-weight-medium;
 }
-
 
 //Basic grid without using bootstrap
 .row {

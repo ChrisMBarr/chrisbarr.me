@@ -3,7 +3,7 @@
 app-dev {
   app-svg-icon {
     svg {
-      fill: $color-text;
+      fill: currentColor;
       vertical-align: bottom;
       width: 24px;
       height: 24px;
@@ -11,12 +11,18 @@ app-dev {
   }
   a {
     app-svg-icon svg {
-      fill: $color-highlight;
+      fill: currentColor;
     }
   }
 
   section {
     padding: $spacing;
+    margin: $spacing;
+    background-color: darken($color-bg, 5%);
+
+    h2{
+      margin-top: 0;
+    }
 
     img {
       max-width: 100%;
