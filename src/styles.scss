@@ -71,6 +71,7 @@ b {
   font-weight: $font-weight-medium;
 }
 
+//===============================================
 //Basic grid without using bootstrap
 .row {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -82,5 +83,40 @@ b {
   /* Screens wider than most mobile */
   .row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+//===============================================
+//Portfolio Sections
+.portfolio-section {
+  padding: $spacing;
+  margin: $spacing-lg 0;
+  background-color: darken($color-bg, 5%);
+
+  &-title {
+    margin: 0;
+    font-weight: $font-weight-light;
+    font-size: 2.5rem;
+  }
+
+  &-content {
+    margin-top: $spacing;
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    svg {
+      fill: currentColor;
+      vertical-align: bottom;
+      width: 24px;
+      height: 24px;
+    }
   }
 }
