@@ -1,5 +1,5 @@
 @use "../../node_modules/bootstrap/scss/mixins" as *;
-@use "../variables" as *;
+@use "variables" as *;
 
 $color-portfolio-section-bg: darken($color-bg, 5%);
 

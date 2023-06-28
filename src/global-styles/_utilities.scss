@@ -1,5 +1,5 @@
 @use "../../node_modules/bootstrap/scss/mixins" as *;
-@use "../variables" as *;
+@use "variables" as *;
 
 .row {
   grid-template-columns: repeat(1, 1fr);
