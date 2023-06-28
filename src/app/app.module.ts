@@ -14,6 +14,8 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
 // import { ContactFormComponent } from './about/contact-form/contact-form.component';
 import { GalleryModule } from 'ng-gallery';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
+import { IsStickyDirective } from './directives/is-sticky.directive';
 
 @NgModule({
   declarations: [
