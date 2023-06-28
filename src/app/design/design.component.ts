@@ -233,10 +233,16 @@ export class DesignComponent implements AfterViewInit {
 
   missionTogo: CustomImageItem[] = [
     new CustomImageItem({
-      thumb: 'assets/design/Mission Togo/Mission Togo Home_Thumb.png',
-      src: 'assets/design/Mission Togo/Mission Togo Home.png',
-      alt: 'Mission Togo - Home Page',
-      thumbTitle: 'Home Page',
+      thumb: 'assets/design/Mission Togo/Mission Togo About_Thumb.png',
+      src: 'assets/design/Mission Togo/Mission Togo About.png',
+      alt: 'Mission Togo - About Page',
+      thumbTitle: 'About Page',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/Mission Togo/Mission Togo Photos_Thumb.png',
+      src: 'assets/design/Mission Togo/Mission Togo Photos.png',
+      alt: 'Mission Togo - Photos Page',
+      thumbTitle: 'Photos Page',
     }),
   ];
 

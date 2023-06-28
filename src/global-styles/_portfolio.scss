@@ -4,17 +4,27 @@
 $color-portfolio-section-bg: darken($color-bg, 5%);
 
 .portfolio-section {
-  padding: $spacing;
   margin: $spacing-lg auto;
-  background-color: $color-portfolio-section-bg;
+
 
   max-width: calc(breakpoint-min(lg, $grid-breakpoints));
 
+  &.portfolio-section-has-thumbs {
+    max-width: 100%;
+
+    .portfolio-section-content {
+      @include media-breakpoint-up(xl, $grid-breakpoints) {
+        display: flex;
+        gap: $spacing;
+      }
+    }
+  }
+
   &-title {
     margin: 0;
+    padding: $spacing;
     font-weight: $font-weight-light;
-    font-size: 2.5rem;
-
+    font-size: $font-size-lg;
 
     @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
       position: sticky;
@@ -23,13 +33,31 @@ $color-portfolio-section-bg: darken($color-bg, 5%);
       backdrop-filter: blur($header-blur-bg-desktop);
       z-index: 10;
     }
+
+    + .portfolio-section-content {
+      margin-top: $spacing;
+    }
   }
 
   &-content {
-    margin-top: $spacing;
+    padding: $spacing;
+    background-color: $color-portfolio-section-bg;
 
     p:first-child {
       margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(xl, $grid-breakpoints) {
+      &-description {
+        flex-basis: 40%;
+      }
+      &-thumbs {
+        flex-basis: 60%;
+      }
     }
   }
 

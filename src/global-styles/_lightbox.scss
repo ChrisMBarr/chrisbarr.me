@@ -10,8 +10,20 @@
 .lightbox {
   &-thumbs-container {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: $spacing;
+
+    @include media-breakpoint-up(sm, $grid-breakpoints) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include media-breakpoint-up(lg, $grid-breakpoints) {
+      grid-template-columns: repeat(7, 1fr);
+    }
 
     .lightbox-thumb {
       position: relative;

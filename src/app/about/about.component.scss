@@ -25,6 +25,16 @@ app-about {
       position: sticky;
       top: $header-height;
     }
+
+    @include media-breakpoint-up(lg, $grid-breakpoints) {
+      font-size: $font-size-lg;
+    }
+
+    @include media-breakpoint-up(xl, $grid-breakpoints) {
+      max-width: breakpoint-min(xl, $grid-breakpoints);
+      margin-left:auto;
+      margin-right:auto;
+    }
   }
 
   @keyframes anim-intro-rotate {

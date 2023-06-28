@@ -12,7 +12,7 @@
   </div>
 </ng-template>
 
-<section class="portfolio-section">
+<section class="portfolio-section portfolio-section-intro">
   <div class="portfolio-section-content">
     <p>
       This page contains some of the web and other design-related projects I've worked on over the years. There are many more
@@ -25,122 +25,136 @@
   </div>
 </section>
 
-<section class="portfolio-section">
+<section class="portfolio-section portfolio-section-has-thumbs">
   <h2 class="portfolio-section-title">Project: AccountChek</h2>
   <div class="portfolio-section-content">
-    <p>
-      At <strong>FormFree</strong> I was tasked with redesigning their user-facing <em>AccountChek</em> application. The purpose
-      of <em>AccountChek</em> is to allow a potential home buyer to more easily share their banking details with a mortgage lender
-      than is possible with traditional methods. <em>AccountChek</em> was written in an older version of Angular and had a very
-      plain design.
-    </p>
+    <div class="portfolio-section-content-description">
+      <p>
+        At <strong>FormFree</strong> I was tasked with redesigning their user-facing <em>AccountChek</em> application. The purpose
+        of <em>AccountChek</em> is to allow a potential home buyer to more easily share their banking details with a mortgage
+        lender than is possible with traditional methods. <em>AccountChek</em> was written in an older version of Angular and had
+        a very plain design.
+      </p>
 
-    <p>
-      I created a more modern design that featured background colors and shapes as an enlarged version of the
-      <em>AccountChek</em> logo. The design process was a long collaboration between me and the stakeholders regarding the
-      appearance, the suitability for present needs, and the capacity to address future components that were in the planning
-      stages.
-    </p>
+      <p>
+        I created a more modern design that featured background colors and shapes as an enlarged version of the
+        <em>AccountChek</em> logo. The design process was a long collaboration between me and the stakeholders regarding the
+        appearance, the suitability for present needs, and the capacity to address future components that were in the planning
+        stages.
+      </p>
 
-    <p>
-      With this new design in mind, I rebuilt the application in the latest version of Angular available at that time. I was
-      intentional about ensuring accessibility for users with poor vision, colorblindness, requiring screen readers, or limited to
-      keyboard-only access. I placed strong emphasis on test-driven-design by writing over 540+ unit tests that passed on multiple
-      web browsers checked with BrowserStack. This application has very strict code quality controls enforced by TypeScript build
-      options and code linting.
-    </p>
+      <p>
+        With this new design in mind, I rebuilt the application in the latest version of Angular available at that time. I was
+        intentional about ensuring accessibility for users with poor vision, colorblindness, requiring screen readers, or limited
+        to keyboard-only access. I placed strong emphasis on test-driven-design by writing over 540+ unit tests that passed on
+        multiple web browsers checked with BrowserStack. This application has very strict code quality controls enforced by
+        TypeScript build options and code linting.
+      </p>
 
-    <p>
-      In a few months, with only light guidance from others, I successfully redesigned and rebuilt the
-      <em>AccountChek</em> application for <strong>FormFree</strong>.
-    </p>
+      <p>
+        In a few months, with only light guidance from others, I successfully redesigned and rebuilt the
+        <em>AccountChek</em> application for <strong>FormFree</strong>.
+      </p>
+    </div>
+    <div class="portfolio-section-content-thumbs">
+      <strong>Tech Stack</strong>: TypeScript 4, Angular 8, SCSS, Bootstrap, ASP.NET MVC, Jasmine
 
-    <strong>Tech Stack</strong>: TypeScript 4, Angular 8, SCSS, Bootstrap, ASP.NET MVC, Jasmine
+      <h3>Previous <em>AccountChek</em> Design - Desktop</h3>
+      <ng-container
+        *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekPrevDesktop, id: 'accountChekPrevDesktop' }" />
 
-    <h3>Previous <em>AccountChek</em> Design - Desktop</h3>
-    <ng-container
-      *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekPrevDesktop, id: 'accountChekPrevDesktop' }" />
+      <h3>My <em>AccountChek</em> Redesign - Desktop</h3>
+      <ng-container
+        *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekRedesignDesktop, id: 'accountChekRedesignDesktop' }" />
 
-    <h3>My <em>AccountChek</em> Redesign - Desktop</h3>
-    <ng-container
-      *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekRedesignDesktop, id: 'accountChekRedesignDesktop' }" />
+      <h3>Previous <em>AccountChek</em> Design - Mobile</h3>
+      <ng-container
+        *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekPrevMobile, id: 'accountChekPrevMobile' }" />
 
-    <h3>Previous <em>AccountChek</em> Design - Mobile</h3>
-    <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekPrevMobile, id: 'accountChekPrevMobile' }" />
-
-    <h3>My <em>AccountChek</em> Redesign - Mobile</h3>
-    <ng-container
-      *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekRedesignMobile, id: 'accountChekRedesignMobile' }" />
+      <h3>My <em>AccountChek</em> Redesign - Mobile</h3>
+      <ng-container
+        *ngTemplateOutlet="thumbLinksTemplate; context: { list: accountChekRedesignMobile, id: 'accountChekRedesignMobile' }" />
+    </div>
   </div>
 </section>
 
-<section class="portfolio-section">
+<section class="portfolio-section portfolio-section-has-thumbs">
   <h2 class="portfolio-section-title">Project: Smoke-Test</h2>
   <div class="portfolio-section-content">
-    <p>
-      At <strong>Life After Normal</strong> I helped create <em>Smoke-Test</em>. The philosophy behind <em>Smoke-Test</em> is that
-      no matter how many automated tests are used to assess an application, manual testing by a real person is still necessary to
-      ensure a high-quality application. The purpose of <em>Smoke-Test</em> was to allow QA and software testers to more easily
-      manage information and steps for manually testing complex applications. Test managers could record exactly what a tester
-      would need to do for each unique manual test in an application. Tests could be distributed to multiple people to be run
-      simultaneously and to collect results and feedback in real time.
-    </p>
+    <div class="portfolio-section-content-description">
+      <p>
+        At <strong>Life After Normal</strong> I helped create <em>Smoke-Test</em>. The philosophy behind <em>Smoke-Test</em> is
+        that no matter how many automated tests are used to assess an application, manual testing by a real person is still
+        necessary to ensure a high-quality application. The purpose of <em>Smoke-Test</em> was to allow QA and software testers to
+        more easily manage information and steps for manually testing complex applications. Test managers could record exactly
+        what a tester would need to do for each unique manual test in an application. Tests could be distributed to multiple
+        people to be run simultaneously and to collect results and feedback in real time.
+      </p>
 
-    <p>
-      I designed the original branding for the logo, website, and emails. I created and implemented the design for
-      <em>Smoke-Test</em>, which was built in Angular on top of an ASP MVC backend.
-    </p>
+      <p>
+        I designed the original branding for the logo, website, and emails. I created and implemented the design for
+        <em>Smoke-Test</em>, which was built in Angular on top of an ASP MVC backend.
+      </p>
 
-    <p>
-      Unfortunately, the <em>Smoke-Test</em> project was shut down before customers could be secured. Below are my design mockups.
-    </p>
-
-    <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: smokeTest, id: 'smokeTest' }" />
+      <p>
+        Unfortunately, the <em>Smoke-Test</em> project was shut down before customers could be secured. Here are my design
+        mockups.
+      </p>
+    </div>
+    <div class="portfolio-section-content-thumbs">
+      <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: smokeTest, id: 'smokeTest' }" />
+    </div>
   </div>
 </section>
 
-<section class="portfolio-section">
+<section class="portfolio-section portfolio-section-has-thumbs">
   <h2 class="portfolio-section-title">Pro Bono Project: Mission Togo</h2>
   <div class="portfolio-section-content">
-    <p>
-      Togo is a small country in western Africa. In 2010 I was part of a mission team to Gbentchal ("ben-jaal"), a village in the
-      northern area of the country in great need of help. As the team photographer and videographer, my role was to document all
-      aspects of our main project, which was a children's sports camp. Other groups before and after ours assisted with drilling a
-      fresh water well, planting crops, and helping to build a school.
-    </p>
+    <div class="portfolio-section-content-description">
+      <p>
+        Togo is a small country in western Africa. In 2010 I was part of a mission team to Gbentchal ("ben-jaal"), a village in
+        the northern area of the country in great need of help. As the team photographer and videographer, my role was to document
+        all aspects of our main project, which was a children's sports camp. Other groups before and after ours assisted with
+        drilling a fresh water well, planting crops, and helping to build a school.
+      </p>
 
-    <p>
-      To raise awareness of the needs and raise funds for a return trip in 2012, I designed and built a website. The website
-      provided information, photos, videos, and accepted donations via PayPal. It was built in PHP on top of Expression Engine.
-      The photos, and videos featured on the website were all shot by me as well.
-    </p>
-
-    <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: missionTogo, id: 'missionTogo' }" />
+      <p>
+        To raise awareness of the needs and raise funds for a return trip in 2012, I designed and built a website. The website
+        provided information, photos, videos, and accepted donations via PayPal. It was built in PHP on top of Expression Engine.
+        The photos, and videos featured on the website were all shot by me as well.
+      </p>
+    </div>
+    <div class="portfolio-section-content-thumbs">
+      <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: missionTogo, id: 'missionTogo' }" />
+    </div>
   </div>
 </section>
 
-<section class="portfolio-section">
+<section class="portfolio-section portfolio-section-has-thumbs">
   <h2 class="portfolio-section-title">Eject Media - Early Career Projects</h2>
   <div class="portfolio-section-content">
-    <p>
-      After graduating from college in 2006, I moved to Panama City, Florida to start a small web design company with a friend.
-      Our company, <strong>Eject Media</strong>, had a diverse clientele, ranging from photographers and businesses to church
-      ministries and musicians. We partnered with a local recording studio to not only build websites for their new and featured
-      artists, but to also create their CD covers, posters, and other print materials.
-    </p>
+    <div class="portfolio-section-content-description">
+      <p>
+        After graduating from college in 2006, I moved to Panama City, Florida to start a small web design company with a friend.
+        Our company, <strong>Eject Media</strong>, had a diverse clientele, ranging from photographers and businesses to church
+        ministries and musicians. We partnered with a local recording studio to not only build websites for their new and featured
+        artists, but to also create their CD covers, posters, and other print materials.
+      </p>
 
-    <p>
-      We wanted to allow our clients to have control over the content of their own sites, but minus the complexity of the CMS's of
-      the time. To address this, I built a custom CMS, based on PHP and MySQL, which we added onto every site we built. This
-      allowed our clients to control the most basic features, such as adding, editing, and re-ordering posts, and uploading
-      photos. Most of our clients were not "technical" people and they appreciated the simplicity of our custom CMS.
-    </p>
+      <p>
+        We wanted to allow our clients to have control over the content of their own sites, but minus the complexity of the CMS's
+        of the time. To address this, I built a custom CMS, based on PHP and MySQL, which we added onto every site we built. This
+        allowed our clients to control the most basic features, such as adding, editing, and re-ordering posts, and uploading
+        photos. Most of our clients were not "technical" people and they appreciated the simplicity of our custom CMS.
+      </p>
 
-    <p>
-      Most of these sites are no longer online, but the images below show a sampling of the work I did for
-      <strong>Eject Media</strong>.
-    </p>
-
-    <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: ejm, id: 'ejm' }" />
+      <p>
+        Most of these sites are no longer online, but these images show a sampling of the work I did for
+        <strong>Eject Media</strong>.
+      </p>
+    </div>
+    <div class="portfolio-section-content-thumbs">
+      <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: ejm, id: 'ejm' }" />
+    </div>
   </div>
 </section>
