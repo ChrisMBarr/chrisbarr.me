@@ -3,6 +3,10 @@
 
 .card {
   margin: $spacing-lg $spacing;
+  border-radius: $radius;
+  border: 1px solid $color-content-light;
+  background-color: $color-content-dark;
+
   @include shadow(md);
 
   &-title {
@@ -10,9 +14,17 @@
     padding: $spacing;
     font-weight: $font-weight-light;
     font-size: $font-size-lg;
-    border: 1px solid $color-content-light;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid $color-content-light;
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
+
+    &.is-stuck {
+      border-top-color: $color-content-light;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      @include shadow(md);
+    }
 
     @include breakpoint($grid-desktop-min-size) {
       position: sticky;
@@ -24,16 +36,12 @@
 
     + .card-content {
       border-top-width: 0;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+
     }
   }
 
   &-content {
     padding: $spacing;
-    border-radius: $radius;
-    border: 1px solid $color-content-light;
-    background-color: $color-content-dark;
 
     p:first-child {
       margin-top: 0;

@@ -23,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DesignComponent,
     // PhotoComponent,
     SvgIconComponent,
+    ParallaxScrollDirective,
+    IsStickyDirective,
     // ContactFormComponent,
   ],
   imports: [

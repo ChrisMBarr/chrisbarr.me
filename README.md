@@ -5,7 +5,6 @@ http://chrisbarr.me
 # TODO - Soon
 * Verify good sizes on all screens
 * page transition animations
-* sticky directive to add styles
 * touch lightbox
 * SVG's to symbols on main page
 
