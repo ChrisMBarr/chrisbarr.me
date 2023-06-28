@@ -103,7 +103,6 @@ export class DesignComponent implements AfterViewInit {
       thumbTitle: 'Success',
     }),
   ];
-
   accountChekPrevMobile: CustomImageItem[] = [
     new CustomImageItem({
       thumb: 'assets/design/FormFree/Previous Design/previous-mobile-1-login_Thumb.png',
@@ -193,6 +192,167 @@ export class DesignComponent implements AfterViewInit {
     }),
   ];
 
+  smokeTest: CustomImageItem[] = [
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/02 - Desktop Site_Thumb.png',
+      src: 'assets/design/SmokeTest/02 - Desktop Site.png',
+      alt: 'Smoke Test - Desktop',
+      thumbTitle: 'Desktop',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/03 - Desktop Site - opened menu_Thumb.png',
+      src: 'assets/design/SmokeTest/03 - Desktop Site - opened menu.png',
+      alt: 'Smoke Test - Desktop - Opened Menu',
+      thumbTitle: 'Desktop - Menu',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/05 - Mobile Site_Thumb.png',
+      src: 'assets/design/SmokeTest/05 - Mobile Site.png',
+      alt: 'Smoke Test - Mobile',
+      thumbTitle: 'Mobile',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/06 - Mobile Site - Open Menu_Thumb.png',
+      src: 'assets/design/SmokeTest/06 - Mobile Site - Open Menu.png',
+      alt: 'Smoke Test - Mobile - Sidebar',
+      thumbTitle: 'Mobile - Sidebar',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/01 - Style Guide_Thumb.png',
+      src: 'assets/design/SmokeTest/01 - Style Guide.png',
+      alt: 'Smoke Test - Style Guide',
+      thumbTitle: 'Style Guide',
+    }),
+    new CustomImageItem({
+      thumb: 'assets/design/SmokeTest/07 - Settings Content Example_Thumb.png',
+      src: 'assets/design/SmokeTest/07 - Settings Content Example.png',
+      alt: 'Smoke Test - Settings Content Example',
+      thumbTitle: 'Settings Content Example',
+    }),
+  ];
+
+  missionTogo: CustomImageItem[] = [
+    new CustomImageItem({
+      thumb: 'assets/design/Mission Togo/Mission Togo Home_Thumb.png',
+      src: 'assets/design/Mission Togo/Mission Togo Home.png',
+      alt: 'Mission Togo - Home Page',
+      thumbTitle: 'Home Page',
+    }),
+  ];
+
+  ejm: CustomImageItem[] = [
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/ejm_admin.png',
+      thumb: 'assets/design/Eject Media/ejm_admin_Thumb.png',
+      alt: 'Eject Media - Custom CMS/Admin Area',
+      thumbTitle: 'Custom CMS',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/amy_web.png',
+      thumb: 'assets/design/Eject Media/amy_web_Thumb.png',
+      alt: 'Eject Media - Amy Gann - Web',
+      thumbTitle: 'Amy Gann - Web',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/awcsite.jpg',
+      thumb: 'assets/design/Eject Media/awcsite_Thumb.jpg',
+      alt: 'Eject Media - Auto Warehousing Company',
+      thumbTitle: 'Auto Warehousing Company',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/bethany_web.jpg',
+      thumb: 'assets/design/Eject Media/bethany_web_Thumb.jpg',
+      alt: 'Eject Media - Bethany Kirkland - Web',
+      thumbTitle: 'Bethany Kirkland - Web',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/hp_wired.jpg',
+      thumb: 'assets/design/Eject Media/hp_wired_Thumb.jpg',
+      alt: 'Eject Media - HP Wired',
+      thumbTitle: 'HP Wired',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/Paradigm Music Group.png',
+      thumb: 'assets/design/Eject Media/Paradigm Music Group_Thumb.png',
+      alt: 'Eject Media - Paradigm Music Group',
+      thumbTitle: 'Paradigm Music Group',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/RedBirdGallerySite.jpg',
+      thumb: 'assets/design/Eject Media/RedBirdGallerySite_Thumb.jpg',
+      alt: 'Eject Media - Red Bird Gallery',
+      thumbTitle: 'Red Bird Gallery',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/tammy_web_happy.png',
+      thumb: 'assets/design/Eject Media/tammy_web_happy_Thumb.png',
+      alt: 'Eject Media - Tammy Kirkland - Web',
+      thumbTitle: 'Tammy Kirkland - Web',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/tammy_web_xmas.jpg',
+      thumb: 'assets/design/Eject Media/tammy_web_xmas_Thumb.jpg',
+      alt: 'Eject Media - Tammy Kirkland - Web (Christmas)',
+      thumbTitle: 'Tammy Kirkland - Web (Christmas)',
+    }),
+
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/undivided_web.png',
+      thumb: 'assets/design/Eject Media/undivided_web_Thumb.png',
+      alt: 'Eject Media - Undivided - Web',
+      thumbTitle: 'Undivided - Web',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/amy_cd.png',
+      thumb: 'assets/design/Eject Media/amy_cd_Thumb.png',
+      alt: 'Eject Media - Amy Gann - CD',
+      thumbTitle: 'Amy Gann - CD',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/darlene_cd.png',
+      thumb: 'assets/design/Eject Media/darlene_cd_Thumb.png',
+      alt: 'Eject Media - Darlene Chapman',
+      thumbTitle: 'Darlene Chapman',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/tammy_happy.png',
+      thumb: 'assets/design/Eject Media/tammy_happy_Thumb.png',
+      alt: 'Eject Media - Tammy Kirkland - CD',
+      thumbTitle: 'Tammy Kirkland - CD',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/Tammy_christmas.png',
+      thumb: 'assets/design/Eject Media/Tammy_christmas_Thumb.png',
+      alt: 'Eject Media - Tammy Kirkland - CD (Christmas)',
+      thumbTitle: 'Tammy Kirkland - CD (Christmas)',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/Undivided_cd.png',
+      thumb: 'assets/design/Eject Media/Undivided_cd_Thumb.png',
+      alt: 'Eject Media - Undivided - CD',
+      thumbTitle: 'Undivided - CD',
+    }),
+
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/bethany_card.jpg',
+      thumb: 'assets/design/Eject Media/bethany_card_Thumb.jpg',
+      alt: 'Eject Media - Bethany Kirkland - Card',
+      thumbTitle: 'Bethany Kirkland - Card',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/ejm_card_old.jpg',
+      thumb: 'assets/design/Eject Media/ejm_card_old_Thumb.jpg',
+      alt: 'Eject Media - Older Business Card',
+      thumbTitle: 'Eject Media Old Business Card',
+    }),
+    new CustomImageItem({
+      src: 'assets/design/Eject Media/ejm_card_new.jpg',
+      thumb: 'assets/design/Eject Media/ejm_card_new_Thumb.jpg',
+      alt: 'Eject Media - Newer Business Card',
+      thumbTitle: 'Eject Media New Business Card',
+    }),
+  ];
+
   constructor(public gallery: Gallery) {}
 
   ngAfterViewInit() {
@@ -200,6 +360,9 @@ export class DesignComponent implements AfterViewInit {
     this.createLightbox('accountChekRedesignDesktop', this.accountChekRedesignDesktop);
     this.createLightbox('accountChekPrevMobile', this.accountChekPrevMobile);
     this.createLightbox('accountChekRedesignMobile', this.accountChekRedesignMobile);
+    this.createLightbox('smokeTest', this.smokeTest);
+    this.createLightbox('missionTogo', this.missionTogo);
+    this.createLightbox('ejm', this.ejm);
   }
 
   private createLightbox(groupName: string, images: CustomImageItem[]) {
@@ -207,7 +370,7 @@ export class DesignComponent implements AfterViewInit {
 
     lightboxRef.setConfig({
       counter: false,
-      thumbPosition:'left',
+      thumbPosition: 'left',
       thumbAutosize: true,
       slidingDirection: 'vertical',
       itemTemplate: this.lightboxTemplate,

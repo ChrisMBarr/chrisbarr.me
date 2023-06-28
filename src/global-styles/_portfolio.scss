@@ -19,7 +19,9 @@ $color-portfolio-section-bg: darken($color-bg, 5%);
     @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
       position: sticky;
       top: $header-height;
-      background-color: $color-portfolio-section-bg;
+      background: $header-color-bg-desktop;
+      backdrop-filter: blur($header-blur-bg-desktop);
+      z-index: 10;
     }
   }
 
