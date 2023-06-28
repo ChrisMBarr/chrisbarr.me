@@ -2,14 +2,20 @@
 @use "variables" as *;
 
 .row {
-  grid-template-columns: repeat(1, 1fr);
-  gap: 0.5rem;
   display: grid;
-}
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing;
 
-@media only screen and (min-width: 576px) {
-  /* Screens wider than most mobile */
-  .row {
+  @include breakpoint(md) {
+    //Screens wider than most mobile
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.row-xl {
+    grid-template-columns: repeat(1, 1fr);
+    @include breakpoint(xl) {
+      //Screens wider than most mobile
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }

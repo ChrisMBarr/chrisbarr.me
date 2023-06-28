@@ -13,15 +13,15 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $spacing;
 
-    @include media-breakpoint-up(sm, $grid-breakpoints) {
+    @include breakpoint(sm) {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @include breakpoint($grid-desktop-min-size) {
       grid-template-columns: repeat(5, 1fr);
     }
 
-    @include media-breakpoint-up(lg, $grid-breakpoints) {
+    @include breakpoint(lg) {
       grid-template-columns: repeat(7, 1fr);
     }
 
@@ -31,6 +31,7 @@
       &-bg {
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center center;
 
         position: absolute;
         top: 0;
@@ -47,7 +48,7 @@
         margin: auto 0;
         z-index: 1;
 
-        @include shadow('lg');
+        @include shadow('md');
       }
 
       &-title {
@@ -56,7 +57,7 @@
         width: 100%;
         font-size: $font-size-sm;
         padding: $spacing-xs;
-        background-color: $color-bg;
+        background-color: $color-content-light;
         z-index: 1;
       }
     }
@@ -66,7 +67,7 @@
     border: 1px solid $color-highlight;
     border-radius: $radius;
     overflow: hidden;
-    transition: border-color $anim-duration;
+    transition: border-color $anim-duration, color $anim-duration;
 
     display: flex;
     flex-direction: column;

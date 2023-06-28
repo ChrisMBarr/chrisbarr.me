@@ -1,0 +1,59 @@
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "variables" as *;
+
+.card {
+  margin: $spacing-lg $spacing;
+  @include shadow(md);
+
+  &-title {
+    margin: 0;
+    padding: $spacing;
+    font-weight: $font-weight-light;
+    font-size: $font-size-lg;
+    border: 1px solid $color-content-light;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+
+    @include breakpoint($grid-desktop-min-size) {
+      position: sticky;
+      top: $header-height;
+      background: rgba($color-content-dark, 0.85);
+      backdrop-filter: blur($header-blur-bg-desktop);
+      z-index: 10;
+    }
+
+    + .card-content {
+      border-top-width: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &-content {
+    padding: $spacing;
+    border-radius: $radius;
+    border: 1px solid $color-content-light;
+    background-color: $color-content-dark;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    svg {
+      fill: currentColor;
+      vertical-align: bottom;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

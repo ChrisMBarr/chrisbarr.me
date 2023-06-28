@@ -14,7 +14,7 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+  @include breakpoint($grid-desktop-min-size) {
     //appearance
     background: $header-color-bg-desktop;
     backdrop-filter: blur($header-blur-bg-desktop);
@@ -42,7 +42,7 @@ header {
   nav {
     margin: $nav-margin-default;
 
-    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @include breakpoint($grid-desktop-min-size) {
       order: -1;
       margin: $nav-margin-desktop;
     }

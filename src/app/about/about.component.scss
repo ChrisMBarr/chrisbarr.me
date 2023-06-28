@@ -15,7 +15,7 @@ app-about {
     display: flex;
     align-items: center;
 
-    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @include breakpoint($grid-desktop-min-size) {
       //each section can be as tall as the screen, but never more than 1000px
       height: 100vh;
       max-height: 1000px;
@@ -26,17 +26,17 @@ app-about {
     margin: 0 $spacing $spacing $spacing;
     font-weight: $font-weight-thin;
 
-    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @include breakpoint($grid-desktop-min-size) {
       position: sticky;
       top: $header-height;
     }
 
-    @include media-breakpoint-up(lg, $grid-breakpoints) {
+    @include breakpoint(lg) {
       font-size: $font-size-lg;
     }
 
-    @include media-breakpoint-up(xl, $grid-breakpoints) {
-      max-width: breakpoint-min(xl, $grid-breakpoints);
+    @include breakpoint(xl) {
+      max-width: breakpoint-size(xl);
       margin-left:auto;
       margin-right:auto;
     }
@@ -66,7 +66,7 @@ app-about {
   #intro {
     --anim-intro-size: 150vw;
     $img-size: 300px;
-    $container-width-desktop: calc(breakpoint-min($grid-desktop-min-size, $grid-breakpoints) - ($spacing * 2));
+    $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacing * 2));
 
     overflow: hidden;
     position: relative;
@@ -146,7 +146,7 @@ app-about {
       display: none;
     }
 
-    @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+    @include breakpoint($grid-desktop-min-size) {
       .section-container {
         flex-direction: row;
         width: $container-width-desktop;
@@ -183,7 +183,7 @@ app-about {
       width: $skills-icon-size-default;
       transition: $anim-duration transform;
 
-      @include media-breakpoint-up(sm, $grid-breakpoints) {
+      @include breakpoint(sm) {
         //mack to normal sizes for larger screens
         height: $skills-icon-size-desktop;
         width: $skills-icon-size-desktop;
@@ -224,11 +224,17 @@ app-about {
     }
   }
 
-  #skills {
-    background: url("../../../src/assets/img/skills-bg.jpg") no-repeat;
-    background-size: cover;
+  #skills,
+  #contact {
     background-attachment: fixed;
+    background-position-x: center; //position-y will be handled by parallax directive
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: $spacing 0;
+  }
+
+  #skills {
+    background-image: url("../../../src/assets/img/skills-bg.jpg");
 
     @keyframes scale-in {
       from {
@@ -256,17 +262,17 @@ app-about {
       padding: $spacing;
       grid-template-columns: repeat(3, 1fr);
 
-      @include media-breakpoint-up(sm, $grid-breakpoints) {
+      @include breakpoint(sm) {
         grid-template-columns: repeat(4, 1fr);
       }
 
-      @include media-breakpoint-up($grid-desktop-min-size, $grid-breakpoints) {
+      @include breakpoint($grid-desktop-min-size) {
         grid-template-columns: repeat(5, 1fr);
         gap: $spacing-lg;
         padding: $spacing-lg;
       }
 
-      @include media-breakpoint-up(lg, $grid-breakpoints) {
+      @include breakpoint(lg) {
         grid-template-columns: repeat(7, 1fr);
       }
 
@@ -301,10 +307,7 @@ app-about {
   }
 
   #contact {
-    background: url("../../../src/assets/img/contact-bg.jpg") no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: $spacing 0;
+    background-image: url("../../../src/assets/img/contact-bg.jpg");
 
     .section-container {
       flex-direction: column;
@@ -318,7 +321,7 @@ app-about {
       gap: $spacing;
       grid-template-columns: repeat(2, 1fr);
 
-      @include media-breakpoint-up(sm, $grid-breakpoints) {
+      @include breakpoint(sm) {
         grid-template-columns: repeat(4, 1fr);
         gap: $spacing-lg;
       }

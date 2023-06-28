@@ -7,7 +7,9 @@ http://chrisbarr.me
 * page transition animations
 * sticky directive to add styles
 * touch lightbox
+* SVG's to symbols on main page
 
 # TODO - Later
 * Contact form that sends email
 * photos section + togo videos
+* dev/design/photos get sub-pages

@@ -18,6 +18,8 @@ $color-bg: #424153;
 $color-text: #fff;
 $color-highlight: #ff6853;
 $color-highlight-light: lighten($color-highlight, 20%);
+$color-content-dark: darken($color-bg, 3%);
+$color-content-light: lighten($color-bg, 5%);
 
 //==================================
 // SPECIAL PROPERTY COLORS
@@ -69,7 +71,7 @@ $nav-link-font-size: 20px;
 $nav-link-font-weight: $font-weight-medium;
 $nav-link-padding: $spacing-sm;
 $nav-link-hover-color: $color-text;
-$nav-link-hover-bg: rgba($color-highlight, .5);
+$nav-link-hover-bg: rgba($color-highlight, .25);
 $nav-link-active-color: $color-text;
 
 //==================================
@@ -78,13 +80,25 @@ $main-font-size: 1.2rem;
 
 
 //==================================
-//MIXINS
+//MIXINS & functions
+
+//rename bootstrap functions/mixins so we don't have to pass around so many variables
+@function breakpoint-size($size){
+  @return breakpoint-min($size, $grid-breakpoints);
+}
+
+@mixin breakpoint($size){
+  @include media-breakpoint-up($size, $grid-breakpoints) {
+    @content;
+  }
+}
+
 @mixin shadow($size: "") {
   //shadows from https://tailwindcss.com/docs/drop-shadow#adding-a-drop-shadow
   @if ($size == "sm") {
     filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
   }
-  @if ($size == "") {
+  @if ($size == "") { //default size
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   }
   @if ($size == "md") {
