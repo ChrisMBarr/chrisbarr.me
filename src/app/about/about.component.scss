@@ -1,8 +1,13 @@
 @use "../../global-styles/variables" as *;
 @use "../../../node_modules/bootstrap/scss/mixins" as *;
 
+$section-min-height: 500px;
+$skills-icon-size-default: 75px;
+$skills-icon-size-desktop: 96px;
+$skills-icons-count: 26;
+$skills-icons-animation-delay: 40ms;
+
 app-about {
-  $section-min-height: 500px;
 
   .section-container {
     min-height: $section-min-height;
@@ -174,14 +179,14 @@ app-about {
 
     svg {
       //smaller size on mobile sizes
-      height: 75px;
-      width: 75px;
+      height: $skills-icon-size-default;
+      width: $skills-icon-size-default;
       transition: $anim-duration transform;
 
       @include media-breakpoint-up(sm, $grid-breakpoints) {
         //mack to normal sizes for larger screens
-        height: 96px;
-        width: 96px;
+        height: $skills-icon-size-desktop;
+        width: $skills-icon-size-desktop;
       }
     }
 
@@ -224,10 +229,6 @@ app-about {
     background-size: cover;
     background-attachment: fixed;
     padding: $spacing 0;
-
-    .section-container {
-      min-height: 650px;
-    }
 
     @keyframes scale-in {
       from {
@@ -278,9 +279,9 @@ app-about {
         animation: scale-in $anim-duration $ease-out-back;
         animation-fill-mode: both;
 
-        @for $i from 1 through 21 {
+        @for $i from 1 through $skills-icons-count {
           &:nth-child(#{$i}) {
-            animation-delay: 40ms * $i;
+            animation-delay: $skills-icons-animation-delay * $i;
           }
         }
       }
@@ -290,9 +291,8 @@ app-about {
       text-align: right;
       padding: 0 $spacing-sm;
       font-size: $font-size-xs;
-      transform: translateY(calc(100% + $spacing)); //push it below the image BG
       opacity: 0.5;
-      transition: 0.4s opacity;
+      transition: $anim-duration opacity;
 
       &:hover {
         opacity: 1;
@@ -301,6 +301,9 @@ app-about {
   }
 
   #contact {
+    background: url("../../../src/assets/img/contact-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     padding: $spacing 0;
 
     .section-container {
@@ -326,7 +329,6 @@ app-about {
         }
         h3 {
           span {
-            background-color: $color-highlight;
             color: $color-text;
           }
         }

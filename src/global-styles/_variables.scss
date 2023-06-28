@@ -16,7 +16,7 @@ $grid-desktop-min-size: md;
 // COLORS
 $color-bg: #424153;
 $color-text: #fff;
-$color-highlight: #a76253;
+$color-highlight: #ff6853;
 $color-highlight-light: lighten($color-highlight, 20%);
 
 //==================================
@@ -74,7 +74,6 @@ $nav-link-active-color: $color-text;
 
 //==================================
 //MAIN
-$main-padding: 0 0 $spacing 0;
 $main-font-size: 1.2rem;
 
 

@@ -6,7 +6,6 @@ http://chrisbarr.me
 * Verify good sizes on all screens
 * page transition animations
 * sticky directive to add styles
-* brighter highlight color
 * touch lightbox
 
 # TODO - Later
