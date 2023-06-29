@@ -29,7 +29,7 @@
     @include breakpoint($grid-desktop-min-size) {
       position: sticky;
       top: $header-height;
-      background: rgba($color-content-dark, 0.85);
+      background: rgba($color-content-dark, $transparency);
       backdrop-filter: blur($header-blur-bg-desktop);
       z-index: 10;
     }

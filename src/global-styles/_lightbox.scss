@@ -4,7 +4,7 @@
 @import "~@angular/cdk/overlay-prebuilt.css";
 
 .g-backdrop {
-  background-color: rgba(darken($color-bg, 20%), 0.85) !important;
+  background-color: rgba(darken($color-bg, 20%), $transparency) !important;
 }
 
 .lightbox {
@@ -98,7 +98,7 @@
     width: 100%;
     text-align: center;
     padding: $spacing-sm;
-    background-color: rgba($color-bg, 0.85);
+    background-color: rgba(#000, .5);
     transform: translateY(0);
     transition: transform $anim-duration;
   }

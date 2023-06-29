@@ -50,6 +50,7 @@ $spacing-lg: calc($spacing * 1.5);
 //==================================
 // MISC
 $radius: 0.5rem;
+$transparency: 0.85;
 $radius-sm: calc($radius / 2);
 $anim-duration: 300ms;
 $backdrop-blur: 10px;
@@ -60,7 +61,7 @@ $ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 $header-height: 102px;
 $header-padding: $spacing;
 $header-color-bg-default:$color-bg;
-$header-color-bg-desktop: rgba($header-color-bg-default, 0.85);
+$header-color-bg-desktop: rgba($header-color-bg-default, $transparency);
 $header-blur-bg-desktop: $backdrop-blur;
 $header-z-index: 100;
 $header-title-font-size: 70px;
