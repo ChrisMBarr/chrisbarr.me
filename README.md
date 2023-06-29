@@ -6,7 +6,6 @@ http://chrisbarr.me
 * Verify good sizes on all screens
 * page transition animations
 * navigation animations
-* SVG's to symbols on main page
 
 # TODO - Later
 * Contact form that sends email

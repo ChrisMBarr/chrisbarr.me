@@ -7,333 +7,329 @@ $skills-icon-size-desktop: 96px;
 $skills-icons-count: 26;
 $skills-icons-animation-delay: 40ms;
 
-app-about {
+.section-container {
+  min-height: $section-min-height;
+
+  display: flex;
+  align-items: center;
+
+  @include breakpoint($grid-desktop-min-size) {
+    //each section can be as tall as the screen, but never more than 1000px
+    height: 100vh;
+    max-height: 1000px;
+  }
+}
+
+.section-title {
+  margin: 0 $spacing $spacing $spacing;
+  font-weight: $font-weight-thin;
+
+  @include breakpoint($grid-desktop-min-size) {
+    position: sticky;
+    top: $header-height;
+  }
+
+  @include breakpoint(lg) {
+    font-size: $font-size-lg;
+  }
+
+  @include breakpoint(xl) {
+    max-width: breakpoint-size(xl);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@keyframes anim-intro-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes anim-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+#intro {
+  --anim-intro-size: 150vw;
+  $img-size: 300px;
+  $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacing * 2));
+
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (min-height: 100vw) {
+    //when the screen is taller than it is wide
+    --anim-intro-size: 150vh;
+  }
+
+  &-animation {
+    height: var(--anim-intro-size);
+    width: var(--anim-intro-size);
+    background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
+    animation: anim-intro-rotate 20s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: calc((var(--anim-intro-size) / 2) * -1) 0 0 calc((var(--anim-intro-size) / 2) * -1);
+    z-index: -1;
+  }
+
+  &-noise-svg {
+    //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: -999;
+    left: 0;
+    top: 0;
+  }
+
+  &-grain {
+    filter: url(#noiseFilter);
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &-arrow {
+    font-size: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity $anim-duration;
+
+    &.shown {
+      opacity: 1;
+      animation: anim-arrow-bounce 2s infinite;
+    }
+  }
 
   .section-container {
-    min-height: $section-min-height;
+    padding: $spacing;
+    flex-direction: column;
 
-    display: flex;
-    align-items: center;
-
-    @include breakpoint($grid-desktop-min-size) {
-      //each section can be as tall as the screen, but never more than 1000px
-      height: 100vh;
-      max-height: 1000px;
-    }
-  }
-
-  .section-title {
-    margin: 0 $spacing $spacing $spacing;
-    font-weight: $font-weight-thin;
-
-    @include breakpoint($grid-desktop-min-size) {
-      position: sticky;
-      top: $header-height;
-    }
-
-    @include breakpoint(lg) {
-      font-size: $font-size-lg;
-    }
-
-    @include breakpoint(xl) {
-      max-width: breakpoint-size(xl);
-      margin-left:auto;
-      margin-right:auto;
-    }
-  }
-
-  @keyframes anim-intro-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(359deg);
-    }
-  }
-
-  @keyframes anim-arrow-bounce {
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: none;
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-
-  #intro {
-    --anim-intro-size: 150vw;
-    $img-size: 300px;
-    $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacing * 2));
-
-    overflow: hidden;
     position: relative;
+    z-index: 1;
+  }
 
-    @media screen and (min-height: 100vw) {
-      //when the screen is taller than it is wide
-      --anim-intro-size: 150vh;
-    }
+  img {
+    border-radius: 100%;
+    border: 2px solid $color-highlight;
+    max-height: $img-size;
+    max-width: $img-size;
+  }
 
-    &-animation {
-      height: var(--anim-intro-size);
-      width: var(--anim-intro-size);
-      background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
-      animation: anim-intro-rotate 20s linear infinite;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: calc((var(--anim-intro-size) / 2) * -1) 0 0 calc((var(--anim-intro-size) / 2) * -1);
-      z-index: -1;
-    }
+  #greeting-desktop {
+    display: none;
+  }
 
-    &-noise-svg {
-      //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode
-      height: 0px;
-      width: 0px;
-      overflow: hidden;
-      opacity: 0;
-      position: absolute;
-      z-index: -999;
-      left: 0;
-      top: 0;
-    }
+  @include breakpoint($grid-desktop-min-size) {
+    .section-container {
+      flex-direction: row;
+      width: $container-width-desktop;
+      margin: 0 auto;
 
-    &-grain {
-      filter: url(#noiseFilter);
-      mix-blend-mode: multiply;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-
-    &-arrow {
-      font-size: 35px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      pointer-events: none;
-
-      opacity: 0;
-      transition: opacity $anim-duration;
-
-      &.shown {
-        opacity: 1;
-        animation: anim-arrow-bounce 2s infinite;
+      @media screen and (min-height: $section-min-height) {
+        // only set this when at a desktop width AND the height is over the min-height set
+        height: calc(100vh - $header-height);
       }
     }
 
-    .section-container {
-      padding: $spacing;
-      flex-direction: column;
-
-      position: relative;
-      z-index: 1;
-    }
-
-    img {
-      border-radius: 100%;
-      border: 2px solid $color-highlight;
-      max-height: $img-size;
-      max-width: $img-size;
-    }
-
-    #greeting-desktop {
+    #greeting-mobile {
       display: none;
     }
 
-    @include breakpoint($grid-desktop-min-size) {
-      .section-container {
-        flex-direction: row;
-        width: $container-width-desktop;
-        margin: 0 auto;
+    #greeting-desktop {
+      display: block;
+    }
 
-        @media screen and (min-height: $section-min-height) {
-          // only set this when at a desktop width AND the height is over the min-height set
-          height: calc(100vh - $header-height);
-        }
-      }
+    img {
+      margin-right: $spacing;
+    }
+  }
+}
 
-      #greeting-mobile {
-        display: none;
-      }
+.icon {
+  width: 100%;
+  position: relative;
 
-      #greeting-desktop {
-        display: block;
-      }
+  svg {
+    //smaller size on mobile sizes
+    height: $skills-icon-size-default;
+    width: $skills-icon-size-default;
+    transition: $anim-duration transform;
 
-      img {
-        margin-right: $spacing;
-      }
+    @include breakpoint(sm) {
+      //mack to normal sizes for larger screens
+      height: $skills-icon-size-desktop;
+      width: $skills-icon-size-desktop;
     }
   }
 
-  //View encapsulation is disabled so we can style these icons here instead of inside that component
-  app-svg-icon {
-    width: 100%;
-    position: relative;
+  h3 {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    width: 200%;
+    font-weight: $font-weight-thin;
+    text-align: center;
+    transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
+    transform: translate(-25%, -10px);
+
+    span {
+      background-color: $color-bg;
+      padding: $spacing-sm;
+      border-radius: $radius;
+      white-space: nowrap;
+
+      @include shadow("lg");
+    }
+  }
+
+  &:hover {
+    z-index: 10;
 
     svg {
-      //smaller size on mobile sizes
-      height: $skills-icon-size-default;
-      width: $skills-icon-size-default;
-      transition: $anim-duration transform;
-
-      @include breakpoint(sm) {
-        //mack to normal sizes for larger screens
-        height: $skills-icon-size-desktop;
-        width: $skills-icon-size-desktop;
-      }
+      transform: scale(1.1);
+      @include shadow("lg");
     }
-
     h3 {
-      position: absolute;
-      margin: 0;
-      opacity: 0;
-      width: 200%;
-      font-weight: $font-weight-thin;
-      text-align: center;
-      transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
-      transform: translate(-25%, -10px);
+      opacity: 1;
+      transform: translate(-25%, 0);
+    }
+  }
+}
 
-      span {
-        background-color: $color-bg;
-        padding: $spacing-sm;
-        border-radius: $radius;
-        white-space: nowrap;
+#skills,
+#contact {
+  background-attachment: fixed;
+  background-position-x: center; //position-y will be handled by parallax directive
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $spacing 0;
+}
 
-        @include shadow("lg");
+#skills {
+  background-image: url("../../../src/assets/img/skills-bg.jpg");
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  &-icons-container {
+    text-align: center;
+
+    //size/position
+    margin: 0 auto;
+
+    //background/shape
+    background: rgba(#fff, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: $radius;
+
+    //grid
+    display: grid;
+    gap: $spacing;
+    padding: $spacing;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($grid-desktop-min-size) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: $spacing-lg;
+      padding: $spacing-lg;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    > * {
+      //default until class is added
+      transform: scale(0);
+    }
+
+    &.animated > * {
+      animation: scale-in $anim-duration $ease-out-back;
+      animation-fill-mode: both;
+
+      @for $i from 1 through $skills-icons-count {
+        &:nth-child(#{$i}) {
+          animation-delay: $skills-icons-animation-delay * $i;
+        }
       }
     }
+  }
+
+  footer {
+    text-align: right;
+    padding: 0 $spacing-sm;
+    font-size: $font-size-xs;
+    opacity: 0.5;
+    transition: $anim-duration opacity;
 
     &:hover {
-      z-index: 10;
+      opacity: 1;
+    }
+  }
+}
 
+#contact {
+  background-image: url("../../../src/assets/img/contact-bg.jpg");
+
+  .section-container {
+    flex-direction: column;
+    justify-content: center;
+    max-height: 300px;
+    min-height: auto;
+  }
+
+  #social {
+    display: grid;
+    gap: $spacing;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-lg;
+    }
+
+    .icon {
       svg {
-        transform: scale(1.1);
-        @include shadow("lg");
+        fill: $color-text;
       }
       h3 {
-        opacity: 1;
-        transform: translate(-25%, 0);
-      }
-    }
-  }
-
-  #skills,
-  #contact {
-    background-attachment: fixed;
-    background-position-x: center; //position-y will be handled by parallax directive
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: $spacing 0;
-  }
-
-  #skills {
-    background-image: url("../../../src/assets/img/skills-bg.jpg");
-
-    @keyframes scale-in {
-      from {
-        transform: scale(0);
-      }
-      to {
-        transform: scale(1);
-      }
-    }
-
-    &-icons-container {
-      text-align: center;
-
-      //size/position
-      margin: 0 auto;
-
-      //background/shape
-      background: rgba(#fff, 0.5);
-      backdrop-filter: blur(10px);
-      border-radius: $radius;
-
-      //grid
-      display: grid;
-      gap: $spacing;
-      padding: $spacing;
-      grid-template-columns: repeat(3, 1fr);
-
-      @include breakpoint(sm) {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      @include breakpoint($grid-desktop-min-size) {
-        grid-template-columns: repeat(5, 1fr);
-        gap: $spacing-lg;
-        padding: $spacing-lg;
-      }
-
-      @include breakpoint(lg) {
-        grid-template-columns: repeat(7, 1fr);
-      }
-
-      > * {
-        //default until class is added
-        transform: scale(0);
-      }
-
-      &.animated > * {
-        animation: scale-in $anim-duration $ease-out-back;
-        animation-fill-mode: both;
-
-        @for $i from 1 through $skills-icons-count {
-          &:nth-child(#{$i}) {
-            animation-delay: $skills-icons-animation-delay * $i;
-          }
-        }
-      }
-    }
-
-    footer {
-      text-align: right;
-      padding: 0 $spacing-sm;
-      font-size: $font-size-xs;
-      opacity: 0.5;
-      transition: $anim-duration opacity;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-
-  #contact {
-    background-image: url("../../../src/assets/img/contact-bg.jpg");
-
-    .section-container {
-      flex-direction: column;
-      justify-content: center;
-      max-height: 300px;
-      min-height: auto;
-    }
-
-    #social {
-      display: grid;
-      gap: $spacing;
-      grid-template-columns: repeat(2, 1fr);
-
-      @include breakpoint(sm) {
-        grid-template-columns: repeat(4, 1fr);
-        gap: $spacing-lg;
-      }
-
-      app-svg-icon {
-        svg {
-          fill: $color-text;
-        }
-        h3 {
-          span {
-            color: $color-text;
-          }
+        span {
+          color: $color-text;
         }
       }
     }

@@ -12,12 +12,8 @@
   </div>
   <div id="intro-arrow" #introArrow>🡓</div>
   <svg id="intro-noise-svg">
-    <filter id='noiseFilter'>
-      <feTurbulence
-        type='fractalNoise'
-        baseFrequency='6.29'
-        numOctaves='6'
-        stitchTiles='stitch' />
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch" />
     </filter>
   </svg>
   <div id="intro-grain"></div>
@@ -28,32 +24,32 @@
   <h2 class="section-title">Skills</h2>
   <div class="section-container">
     <div id="skills-icons-container" #skillsIconsContainer>
-      <app-svg-icon icon="html5" name="HTML 5" />
-      <app-svg-icon icon="css3" name="CSS 3" />
-      <app-svg-icon icon="sass" name="SCSS/SASS" />
-      <app-svg-icon icon="typescript" name="Typescript" />
-      <app-svg-icon icon="javascript" name="Javascript" />
-      <app-svg-icon icon="bootstrap" name="Bootstrap" />
-      <app-svg-icon icon="tailwind" name="Tailwind CSS" />
-      <app-svg-icon icon="angular" name="Angular 16" />
-      <app-svg-icon icon="dotnet" name=".NET Core/MVC" />
-      <app-svg-icon icon="git" name="GIT" />
-      <app-svg-icon icon="npm" name="NPM" />
-      <app-svg-icon icon="node" name="Node.js" />
-      <app-svg-icon icon="gulp" name="Gulp" />
-      <app-svg-icon icon="eslint" name="ES Lint" />
-      <app-svg-icon icon="jest" name="Jest" />
-      <app-svg-icon icon="jasmine" name="Jasmine" />
-      <app-svg-icon icon="karma" name="Karma" />
-      <app-svg-icon icon="jquery" name="jQuery" />
-      <app-svg-icon icon="jira" name="Jira" />
-      <app-svg-icon icon="trello" name="Trello" />
-      <app-svg-icon icon="vscode" name="VS Code" />
-      <app-svg-icon icon="visualstudio" name="Visual Studio" />
-      <app-svg-icon icon="photoshop" name="Photoshop" />
-      <app-svg-icon icon="illustrator" name="Illustrator" />
-      <app-svg-icon icon="xd" name="Adobe XD" />
-      <app-svg-icon icon="lightroom" name="Lightroom" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'typescript', name: 'TypeScript 5' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'javascript', name: 'Javascript' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'node', name: 'Node.js' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'gulp', name: 'Gulp' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'eslint', name: 'ES Lint' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jest', name: 'Jest' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jasmine', name: 'Jasmine' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'karma', name: 'Karma' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jquery', name: 'jQuery' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jira', name: 'Jira' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'trello', name: 'Trello' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'vscode', name: 'VS Code' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'visualstudio', name: 'Visual Studio' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'photoshop', name: 'Photoshop' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'illustrator', name: 'Illustrator' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'xd', name: 'Adobe XD' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'lightroom', name: 'Lightroom' }" />
     </div>
   </div>
   <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>
@@ -64,23 +60,31 @@
   <div class="section-container">
     <div id="social">
       <a href="https://hachyderm.io/@FiniteLooper" rel="me" target="_blank">
-        <app-svg-icon icon="mastodon" name="Mastodon" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'mastodon', name: 'Mastodon' }" />
       </a>
 
       <a href="http://github.com/FiniteLooper" target="_blank">
-        <app-svg-icon icon="github" name="Github" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'github', name: 'Github' }" />
       </a>
 
       <a href="https://www.linkedin.com/in/chrismbarr/" target="_blank">
-        <app-svg-icon icon="linkedin" name="LinkedIn" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'linkedin', name: 'LinkedIn' }" />
       </a>
 
       <a href="https://stackoverflow.com/users/79677/finitelooper" target="_blank">
-        <app-svg-icon icon="stackoverflow" name="Stack Overflow" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'stackoverflow', name: 'Stack Overflow' }" />
       </a>
     </div>
 
     <!-- <app-contact-form></app-contact-form> -->
-
   </div>
 </section>
+
+<ng-template #icon let-id="id" let-name="name">
+  <div class="icon">
+    <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
+    <h3>
+      <span>{{ name }}</span>
+    </h3>
+  </div>
+</ng-template>

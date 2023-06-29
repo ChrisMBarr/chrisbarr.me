@@ -1,11 +1,10 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, ViewChild, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class AboutComponent implements OnInit {
   private readonly window: Window = this.document.defaultView as Window;
