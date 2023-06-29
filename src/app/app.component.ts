@@ -7,34 +7,32 @@ import { NavigationEnd, Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations:[
+  animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [
-        style({position: 'relative'}),
-        query(':enter, :leave', [
-          style({
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%'
-          })
-        ], {optional: true}),
-        query(':enter', [
-          style({opacity: '0'})
-        ], {optional: true}),
-        query(':leave', animateChild(), {optional: true}),
+        style({ position: 'relative' }),
+        query(
+          ':enter, :leave',
+          [
+            style({
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+            }),
+          ],
+          { optional: true }
+        ),
+        query(':enter', [style({ opacity: '0' })], { optional: true }),
+        query(':leave', animateChild(), { optional: true }),
         group([
-          query(':leave', [
-            animate('250ms', style({opacity: '0'}))
-          ], {optional: true}),
-          query(':enter', [
-            animate('250ms', style({opacity: '1'}))
-          ], {optional: true})
+          query(':leave', [animate('250ms', style({ opacity: '0' }))], { optional: true }),
+          query(':enter', [animate('250ms', style({ opacity: '1' }))], { optional: true }),
         ]),
-        query(':enter', animateChild(), {optional: true}),
-      ])
-    ])
-  ]
+        query(':enter', animateChild(), { optional: true }),
+      ]),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
   public enableAnimation = false;
@@ -49,17 +47,18 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.window.scrollTo({ top: 0 });
+        if (typeof this.window.scrollTo === 'function') {
+          this.window.scrollTo({ top: 0 });
+        }
 
         const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`[href="${event.url}"]`);
         if (activeLink) {
           this.positionNavHighlight(activeLink);
         }
 
-        if (!this.enableAnimation)
-      {
-        setTimeout(() => this.enableAnimation = true, 10);//settimeout to not trigger animation right at the end of this cycle
-      }
+        if (!this.enableAnimation) {
+          setTimeout(() => (this.enableAnimation = true), 10); //settimeout to not trigger animation right at the end of this cycle
+        }
       }
     });
   }
@@ -76,10 +75,13 @@ export class AppComponent implements OnInit {
   }
 
   private positionNavHighlight(link: HTMLElement) {
-    const rect = link.getBoundingClientRect();
-    this.navActiveBg.nativeElement.style.top = `${rect.top}px`;
-    this.navActiveBg.nativeElement.style.left = `${rect.left}px`;
-    this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
-    this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
+    //prevent errors on SSR build
+    if (typeof link.getBoundingClientRect === 'function') {
+      const rect = link.getBoundingClientRect();
+      this.navActiveBg.nativeElement.style.top = `${rect.top}px`;
+      this.navActiveBg.nativeElement.style.left = `${rect.left}px`;
+      this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
+      this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
+    }
   }
 }

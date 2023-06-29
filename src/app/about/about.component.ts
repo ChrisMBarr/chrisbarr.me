@@ -17,16 +17,19 @@ export class AboutComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private readonly document: Document) {}
 
   ngOnInit(): void {
-    //Only show the arrow animation if the intro area is smaller than it's max height
-    //This means the screen is small enough to not show the next section top, so we want
-    //to only show an arrow if it might not be obvious that there is more content
-    const maxHeight = parseInt(getComputedStyle(this.introContainer.nativeElement).getPropertyValue('max-height'), 10);
-    const actualHeight = this.introContainer.nativeElement.getBoundingClientRect().height;
+    //prevent a build error for SSR
+    if (typeof getComputedStyle === 'function') {
+      //Only show the arrow animation if the intro area is smaller than it's max height
+      //This means the screen is small enough to not show the next section top, so we want
+      //to only show an arrow if it might not be obvious that there is more content
+      const maxHeight = parseInt(getComputedStyle(this.introContainer.nativeElement).getPropertyValue('max-height'), 10);
+      const actualHeight = this.introContainer.nativeElement.getBoundingClientRect().height;
 
-    if (actualHeight <= maxHeight) {
-      this.arrowTimer = setTimeout(() => {
-        this.introContainer.nativeElement.classList.add('show-arrow');
-      }, 5000);
+      if (actualHeight <= maxHeight) {
+        this.arrowTimer = setTimeout(() => {
+          this.introContainer.nativeElement.classList.add('show-arrow');
+        }, 5000);
+      }
     }
   }
 
