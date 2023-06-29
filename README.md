@@ -3,7 +3,6 @@ http://chrisbarr.me
 
 
 # TODO - Soon
-* Verify good sizes on all screens
 * page transition animations
 * navigation animations
 
