@@ -5,7 +5,7 @@ http://chrisbarr.me
 # TODO - Soon
 * Verify good sizes on all screens
 * page transition animations
-* touch lightbox
+* navigation animations
 * SVG's to symbols on main page
 
 # TODO - Later

@@ -376,9 +376,7 @@ export class DesignComponent implements AfterViewInit {
 
     lightboxRef.setConfig({
       counter: false,
-      thumbPosition: 'left',
       thumbAutosize: true,
-      slidingDirection: 'vertical',
       itemTemplate: this.lightboxTemplate,
     });
 
