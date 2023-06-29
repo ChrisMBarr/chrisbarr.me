@@ -9,7 +9,6 @@ import { Component, ElementRef, HostListener, Inject, ViewChild, OnInit } from '
 export class AboutComponent implements OnInit {
   private readonly window: Window = this.document.defaultView as Window;
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;
-  @ViewChild('introArrow', { static: true }) private introArrow!: ElementRef<HTMLElement>;
   @ViewChild('skillsIconsContainer', { static: true }) private skillsIconsContainer!: ElementRef<HTMLElement>;
 
   private arrowTimer?: ReturnType<typeof setTimeout>;
@@ -26,7 +25,7 @@ export class AboutComponent implements OnInit {
 
     if (actualHeight <= maxHeight) {
       this.arrowTimer = setTimeout(() => {
-        this.introArrow.nativeElement.classList.add('shown');
+        this.introContainer.nativeElement.classList.add('show-arrow');
       }, 5000);
     }
   }
@@ -36,7 +35,7 @@ export class AboutComponent implements OnInit {
     if (this.arrowTimer) {
       clearTimeout(this.arrowTimer);
       this.arrowTimer = undefined;
-      this.introArrow.nativeElement.classList.remove('shown');
+      this.introContainer.nativeElement.classList.remove('show-arrow');
     }
 
     if (!this.skillAnimationTriggered) {

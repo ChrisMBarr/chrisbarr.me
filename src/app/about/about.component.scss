@@ -74,7 +74,9 @@ $skills-icons-animation-delay: 40ms;
     --anim-intro-size: 150vh;
   }
 
-  &-animation {
+  &::before {
+    //This is the spinning gradient animation
+    content: "";
     height: var(--anim-intro-size);
     width: var(--anim-intro-size);
     background-image: linear-gradient($color-bg 50%, rgba($color-highlight, 0.4));
@@ -86,29 +88,33 @@ $skills-icons-animation-delay: 40ms;
     z-index: -1;
   }
 
-  &-arrow {
-    font-size: 35px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    pointer-events: none;
-
-    opacity: 0;
-    transition: opacity $anim-duration;
-
-    &.shown {
-      opacity: 1;
-      animation: anim-arrow-bounce 2s infinite;
-    }
-  }
-
   .section-container {
     padding: $spacing;
     flex-direction: column;
 
     position: relative;
     z-index: 1;
+
+    &::before {
+      //This is the bouncing arrow
+      content: "🡓";
+      font-size: 35px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+
+      opacity: 0;
+      transition: opacity $anim-duration;
+    }
+
+    &.show-arrow {
+      &::before {
+        opacity: 1;
+        animation: anim-arrow-bounce 2s infinite;
+      }
+    }
   }
 
   img {
