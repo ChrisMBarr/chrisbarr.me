@@ -62,7 +62,7 @@ $header-padding: $spacing;
 $header-color-bg-default:$color-bg;
 $header-color-bg-desktop: rgba($header-color-bg-default, 0.85);
 $header-blur-bg-desktop: $backdrop-blur;
-$header-z-index-desktop: 100;
+$header-z-index: 100;
 $header-title-font-size: 70px;
 $header-title-font-weight: $font-weight-thin;
 $nav-margin-default: $spacing 0 0 0;

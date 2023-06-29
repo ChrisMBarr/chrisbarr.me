@@ -1,10 +1,11 @@
 <header>
-  <h1>Chris Barr</h1>
-  <nav>
+  <h1 id="title">Chris Barr</h1>
+  <nav id="navigation" #navContainer>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">About</a>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/dev">Dev</a>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/design">Design</a>
     <!-- <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/photo">Photo</a> -->
+    <span id="navigation-active-bg" #navActiveBg></span>
   </nav>
 </header>
 

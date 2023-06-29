@@ -7,6 +7,8 @@ header {
 
   //layout
   padding: $header-padding;
+  position: relative;
+  z-index: $header-z-index;
 
   //display
   display: flex;
@@ -22,50 +24,56 @@ header {
     //layout - sticky header for desktop sizes
     position: sticky;
     top: 0;
-    z-index: $header-z-index-desktop;
 
     flex-direction: row;
   }
+}
 
-  h1 {
-    //text
-    font-weight: $header-title-font-weight;
-    font-size: $header-title-font-size;
-    color: $color-highlight;
-    text-transform: uppercase;
-    line-height: 1;
+#title {
+  //text
+  font-weight: $header-title-font-weight;
+  font-size: $header-title-font-size;
+  color: $color-highlight;
+  text-transform: uppercase;
+  line-height: 1;
 
-    //layout
-    margin: 0;
+  //layout
+  margin: 0;
+}
+
+#navigation {
+  margin: $nav-margin-default;
+
+  @include breakpoint($grid-desktop-min-size) {
+    order: -1;
+    margin: $nav-margin-desktop;
   }
 
-  nav {
-    margin: $nav-margin-default;
+  > * {
+    //text
+    font-size: $nav-link-font-size;
+    font-weight: $nav-link-font-weight;
+    text-decoration: none;
+    text-transform: uppercase;
 
-    @include breakpoint($grid-desktop-min-size) {
-      order: -1;
-      margin: $nav-margin-desktop;
+    //layout
+    padding: $nav-link-padding;
+
+    &:hover {
+      color: $nav-link-hover-color;
     }
 
-    a {
-      //text
-      font-size: $nav-link-font-size;
-      font-weight: $nav-link-font-weight;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      //layout
-      padding: $nav-link-padding;
-
-      &:hover:not(.active) {
-        color: $nav-link-hover-color;
-        background-color:$nav-link-hover-bg;
-      }
-
-      &.active {
-        color: $nav-link-active-color;
-      }
+    &.active {
+      color: $nav-link-active-color;
     }
+  }
+
+  &-active-bg {
+    position: absolute;
+    background-color: $nav-link-hover-bg;
+    z-index: -1;
+
+    transition: all $anim-duration*1.5 $ease-out-back;
   }
 }
 
