@@ -226,8 +226,12 @@ $skills-icons-animation-delay: 40ms;
   background-attachment: fixed;
   background-position-x: center; //position-y will be handled by parallax directive
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   padding: $spacing 0;
+
+  @include breakpoint(xxl) {
+    background-size: cover;
+  }
 }
 
 #skills {

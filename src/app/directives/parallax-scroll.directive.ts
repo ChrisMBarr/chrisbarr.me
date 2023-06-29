@@ -4,7 +4,6 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[appParallaxScroll]',
 })
 export class ParallaxScrollDirective {
-  private readonly scale = 0.1;
   constructor(private el: ElementRef<HTMLElement>) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -13,12 +12,12 @@ export class ParallaxScrollDirective {
     const rect = this.el.nativeElement.getBoundingClientRect();
 
     if (rect.top < win.innerHeight) {
-      const total = ( win.scrollY) / (rect.bottom + rect.height);
-      const pct = total * 100;
+      const scrollableDistance = window.innerHeight + rect.height;
+      const scrolled = window.innerHeight - rect.top;
+      const pct = (scrolled / scrollableDistance) * 100;
+      const invertedPct = 100 - pct
 
-      // console.log(win.scrollY, rect.top, rect.bottom, `pct: ${Math.round(pct)}%`);
-
-      this.el.nativeElement.style.backgroundPositionY = `${win.scrollY * this.scale}px`;
+      this.el.nativeElement.style.backgroundPositionY = `${invertedPct}%`;
     }
   }
 }
