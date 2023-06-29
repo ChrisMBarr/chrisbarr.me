@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //3rd party modules
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { LightboxModule } from 'ng-gallery/lightbox';
 import { GalleryModule } from 'ng-gallery';
 
@@ -35,6 +36,8 @@ import { IsStickyDirective } from './directives/is-sticky.directive';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxGoogleAnalyticsModule.forRoot(isDevMode() ? '' : 'G-XBQPNRYEHJ'),
+    NgxGoogleAnalyticsRouterModule,
     GalleryModule,
     LightboxModule,
     FormsModule,
