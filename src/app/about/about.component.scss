@@ -191,6 +191,8 @@ $skills-icons-animation-delay: 40ms;
     }
   }
 
+  &:focus,
+  &:focus-within,
   &:hover {
     z-index: 10;
 

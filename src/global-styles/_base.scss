@@ -53,12 +53,12 @@ a {
   &:active {
     color: lighten($color-highlight-light, 10%);
   }
+}
 
-  &:focus-visible {
-    outline: 2px solid $color-highlight;
-    box-shadow: 0 0 5px rgba($color-highlight-light, 0.3), inset 0 0 5px rgba($color-highlight-light, 0.3);
-    border-radius: $radius-sm;
-  }
+:focus-visible {
+  outline: 2px solid $color-highlight;
+  box-shadow: 0 0 5px rgba($color-highlight-light, 0.3), inset 0 0 5px rgba($color-highlight-light, 0.3);
+  border-radius: $radius-sm;
 }
 
 h1,

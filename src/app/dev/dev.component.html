@@ -56,7 +56,7 @@
           >
           <hr />
           <a class="lightbox-thumb" *ngFor="let item of items; index as i" [lightbox]="i">
-            <img [src]="item.data.src" [alt]="item.data.alt" />
+            <img [src]="item.data.src" [alt]="item.data.alt" tabindex="0" />
           </a>
         </div>
       </div>

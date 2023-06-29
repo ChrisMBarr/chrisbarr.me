@@ -4,7 +4,7 @@
 
 <ng-template #thumbLinksTemplate let-list="list" let-id="id">
   <div class="lightbox-thumbs-container">
-    <a class="lightbox-thumb" *ngFor="let item of list; index as i" [lightbox]="i" [gallery]="id">
+    <a class="lightbox-thumb" tabindex="0" *ngFor="let item of list; index as i" [lightbox]="i" [gallery]="id">
       <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
       <img [src]="item.data.thumb" [alt]="item.data.alt" />
       <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
