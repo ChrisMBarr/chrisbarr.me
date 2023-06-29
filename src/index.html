@@ -16,6 +16,12 @@
   <body>
     <app-root></app-root>
 
+    <svg id="bg-noise">
+      <filter id="noiseFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch" />
+      </filter>
+    </svg>
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol id="angular" viewBox="0 0 48 48">
         <path fill="#bdbdbd" d="M23.933 2L3 9.285 6.308 36.408 23.955 46 41.693 36.278 45 9.156z"></path>

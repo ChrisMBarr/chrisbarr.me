@@ -86,28 +86,6 @@ $skills-icons-animation-delay: 40ms;
     z-index: -1;
   }
 
-  &-noise-svg {
-    //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode
-    height: 0px;
-    width: 0px;
-    overflow: hidden;
-    opacity: 0;
-    position: absolute;
-    z-index: -999;
-    left: 0;
-    top: 0;
-  }
-
-  &-grain {
-    filter: url(#noiseFilter);
-    mix-blend-mode: multiply;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
   &-arrow {
     font-size: 35px;
     position: absolute;
