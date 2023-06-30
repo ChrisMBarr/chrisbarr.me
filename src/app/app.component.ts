@@ -37,8 +37,10 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   public enableAnimation = false;
   private readonly window: Window = this.document.defaultView as Window;
+  private winWidth = this.window.innerWidth;
   private resizeDebounce?: number;
 
+  @ViewChild('header') private header!: ElementRef<HTMLElement>;
   @ViewChild('navContainer') private navContainer!: ElementRef<HTMLElement>;
   @ViewChild('navActiveBg') private navActiveBg!: ElementRef<HTMLElement>;
 
@@ -64,26 +66,36 @@ export class AppComponent implements OnInit {
 
     //trigger manually after initial load
     //Firefox needs this so the first positioning is re-calculated after a short delay
-    this.onWindowScroll()
+    this.onWindowResize();
   }
 
   @HostListener('window:resize', ['$event'])
-  onWindowScroll(): void {
-    this.window.clearTimeout(this.resizeDebounce);
-    this.resizeDebounce = this.window.setTimeout(() => {
-      const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`.active`);
-      if (activeLink) {
-        this.positionNavHighlight(activeLink);
-      }
-    }, 200);
+  onWindowResize(): void {
+    //iOS triggers resize events on scroll, this checks if it has actually changed or not
+    if (this.window.innerWidth !== this.winWidth) {
+      this.window.clearTimeout(this.resizeDebounce);
+      this.resizeDebounce = this.window.setTimeout(() => {
+        this.winWidth = this.window.innerWidth;
+        const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`.active`);
+        if (activeLink) {
+          this.positionNavHighlight(activeLink);
+        }
+      }, 200);
+    }
   }
 
   private positionNavHighlight(link: HTMLElement) {
     //prevent errors on SSR build
     if (typeof link.getBoundingClientRect === 'function') {
       const rect = link.getBoundingClientRect();
-      this.navActiveBg.nativeElement.style.top = `${rect.top}px`;
-      this.navActiveBg.nativeElement.style.left = `${rect.left}px`;
+
+      //Correctly position for mobile devices
+      const headerIsRelative = this.window.getComputedStyle(this.header.nativeElement).position === 'relative'
+      const offsetTop = headerIsRelative ? document.documentElement.scrollTop : 0;
+      const offsetLeft = headerIsRelative ? document.documentElement.scrollLeft : 0;
+
+      this.navActiveBg.nativeElement.style.top = `${rect.top + offsetTop}px`;
+      this.navActiveBg.nativeElement.style.left = `${rect.left + offsetLeft}px`;
       this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
       this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
     }

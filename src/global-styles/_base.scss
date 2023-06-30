@@ -84,23 +84,26 @@ b {
   top: 0;
 }
 
-body::before {
-  //noise/grain texture on the background
+@include breakpoint($grid-desktop-min-size) {
+  //Only add the texture for large screen sizes - bad performance on mobile
+  body::before {
+    //noise/grain texture on the background
 
-  //Make the pseudo-element render
-  content: "";
+    //Make the pseudo-element render
+    content: "";
 
-  //Apply from SVG, and mix the colors with whatever is behind it
-  filter: url(#noiseFilter);
-  mix-blend-mode: multiply;
+    //Apply from SVG, and mix the colors with whatever is behind it
+    filter: url(#noiseFilter);
+    mix-blend-mode: multiply;
 
-  //clicks pass through
-  pointer-events: none;
+    //clicks pass through
+    pointer-events: none;
 
-  //Cover entire page
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    //Cover entire page
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
