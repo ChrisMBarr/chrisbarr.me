@@ -61,6 +61,10 @@ export class AppComponent implements OnInit {
         }
       }
     });
+
+    //trigger manually after initial load
+    //Firefox needs this so the first positioning is re-calculated after a short delay
+    this.onWindowScroll()
   }
 
   @HostListener('window:resize', ['$event'])

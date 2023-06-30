@@ -1,5 +1,4 @@
 @use "../../global-styles/variables" as *;
-@use "../../../node_modules/bootstrap/scss/mixins" as *;
 
 $section-min-height: 500px;
 $skills-icon-size-default: 75px;
@@ -187,7 +186,7 @@ $skills-icons-animation-delay: 40ms;
       border-radius: $radius;
       white-space: nowrap;
 
-      @include shadow("lg");
+      @include drop-shadow("lg");
     }
   }
 
@@ -198,7 +197,7 @@ $skills-icons-animation-delay: 40ms;
 
     svg {
       transform: scale(1.1);
-      @include shadow("lg");
+      @include drop-shadow("lg");
     }
     h3 {
       opacity: 1;

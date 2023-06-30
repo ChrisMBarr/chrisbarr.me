@@ -85,9 +85,19 @@ b {
 }
 
 body::before {
+  //noise/grain texture on the background
+
+  //Make the pseudo-element render
   content: "";
+
+  //Apply from SVG, and mix the colors with whatever is behind it
   filter: url(#noiseFilter);
   mix-blend-mode: multiply;
+
+  //clicks pass through
+  pointer-events: none;
+
+  //Cover entire page
   position: fixed;
   top: 0;
   left: 0;
