@@ -6,7 +6,7 @@
   border: 1px solid $color-content-light;
   background-color: $color-content-dark;
 
-  @include box-shadow(md);
+  box-shadow: shadow(md);
 
   &-title {
     margin: 0;
@@ -22,7 +22,7 @@
       border-top-color: $color-content-light;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      @include box-shadow(md);
+      box-shadow: shadow(md);
     }
 
     @include breakpoint($grid-desktop-min-size) {
