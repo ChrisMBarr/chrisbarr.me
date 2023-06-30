@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": ["projects/**/*", "/src/app/about/contact-form/**/*", "/src/app/photo/**/*"],
   "overrides": [
     {
       "files": ["*.ts"],

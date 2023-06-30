@@ -21,7 +21,8 @@
     "dev:ssr": "ng run chrisbarr.me:serve-ssr",
     "serve:ssr": "node dist/chrisbarr.me/server/main.js",
     "build:ssr": "ng build && ng run chrisbarr.me:server",
-    "prerender": "ng run chrisbarr.me:prerender"
+    "prerender": "ng run chrisbarr.me:prerender",
+    "gh-deploy": "npm run lint && npm run prerender"
   },
   "private": true,
   "dependencies": {
