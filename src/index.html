@@ -16,13 +16,60 @@
   <body>
     <app-root></app-root>
 
-    <svg id="bg-noise">
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden-svg" id="bg-noise">
       <filter id="noiseFilter">
         <feTurbulence type="fractalNoise" baseFrequency="6.29" numOctaves="6" stitchTiles="stitch" />
       </filter>
     </svg>
 
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden-svg">
+      <defs>
+        <linearGradient
+          id="rxjs-linear-gradient"
+          x1="53.5"
+          y1="36.29"
+          x2="177.94"
+          y2="168.67"
+          gradientTransform="translate(0 284) scale(1 -1)"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#e01d84" />
+          <stop offset=".4" stop-color="#df1d85" />
+          <stop offset=".77" stop-color="#932c87" />
+          <stop offset="1" stop-color="#5d2f88" />
+        </linearGradient>
+        <radialGradient
+          id="rxjs-radial-gradient"
+          cx="190.17"
+          cy="226.58"
+          fx="190.17"
+          fy="226.58"
+          r="121.58"
+          gradientTransform="translate(-.17 269.21) rotate(.14) scale(1 -.84)"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#e01d84" />
+          <stop offset=".14" stop-color="#de1e85" />
+          <stop offset=".28" stop-color="#d62085" />
+          <stop offset=".43" stop-color="#c92386" />
+          <stop offset=".59" stop-color="#b72786" />
+          <stop offset=".74" stop-color="#9d2b87" />
+          <stop offset=".89" stop-color="#7c2e88" />
+          <stop offset="1" stop-color="#5d2f88" />
+        </radialGradient>
+        <linearGradient
+          id="rxjs-linear-gradient-2"
+          x1="83.21"
+          y1="221.66"
+          x2="137.32"
+          y2="221.66"
+          gradientTransform="translate(0 284) scale(1 -1)"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#e01d84" />
+          <stop offset=".24" stop-color="#da1e85" />
+          <stop offset=".66" stop-color="#c72085" />
+          <stop offset="1" stop-color="#b52284" />
+        </linearGradient>
+      </defs>
+
       <symbol id="angular" viewBox="0 0 48 48">
         <path fill="#bdbdbd" d="M23.933 2L3 9.285 6.308 36.408 23.955 46 41.693 36.278 45 9.156z"></path>
         <path fill="#b71c1c" d="M42.818 10.527L24 4.135 24 43.695 39.832 35.017z"></path>
@@ -31,6 +78,21 @@
         <path fill="#eee" d="M11.013 34L15.422 34 24 15.504 24 5.996z"></path>
         <path fill="#bdbdbd" d="M24 24H30V28H24z"></path>
         <path fill="#eee" d="M18 24H24V28H18z"></path>
+      </symbol>
+
+      <symbol id="rxjs" viewBox="0 0 283.5 283.5">
+        <path
+          d="m29.6,175.3c-5.2-16.2-6.7-33.3-3.7-50.9,1.3-7.3,3.3-14.3,5.5-21.4,0,0,13.8-45.3,60.5-66,0,0,16.1-8.5,40.3-9.1,0,0-3.3-3.2-5.4-4.6-11.4-7.6-28.4-10.1-38.7.6-3.1,3.2-5.7,6.7-8.6,9.9-3.3,3.6-7.3,6.6-11.9,8.3-4,1.5-8,1.2-12.1,1.9-4.2.7-8.5,2.2-11.9,4.9-3.7,3-5.2,7-5.6,11.6-.4,3.6-.3,7.3-.5,10.9-.5,10.6-3.9,13.6-11.5,19.5-3.2,2.4-5.9,5.6-7.9,9-6,10.6,3.6,21.6,4.1,32.3.1,2.2-.1,4.4-.9,6.5-.8,2.3-2.4,3.8-3.7,5.7-1.8,2.5-3,5.5-2.5,8.6s2.1,6,3.6,8.7c2.9,4.8,6.5,9.1,10.3,13.2.2,0,.4.2.6.4"
+          fill="#e32286" />
+        <path
+          d="m220.4,213.7c23-10,32.8-27.3,32.8-27.3,21.5-29.3,14.2-60.2,14.2-60.2-13.7,29.8-26.2,38-26.2,38,33.7-51.3.2-82.3.2-82.3,13.7,29.2-4.5,64.8-4.5,64.8-15.3,32.2-37,43.7-37,43.7,24.2,4.5,42-11.8,42-11.8-34.7,37.5-72.3,35.7-72.3,35.7,15.8,17.7,39.5,16.2,39.5,16.2-31,7.3-60.1-3-84-22.9-4.5-3.7-8.8-7.7-12.8-12,0,0-3.6-3.8-4.3-4.8l-.1-.1c-.5,18.5,18.8,35.7,18.8,35.7-24.2-10-35.3-31.7-35.3-31.7,0,0-16.3-27.8-4.5-59.5s47.5-38.5,47.5-38.5c29.5,14.3,54.5,18.8,54.5,18.8,52.7,8.8,49.7-17,49.7-17,.5-22.2-33-45.8-33-45.8-59.7-44.3-113.7-15.7-113.7-15.7C45.2,57.7,31.4,103,31.4,103c-2.2,7.1-4.2,14.1-5.5,21.4-5.1,29.7,2.6,57.8,19.3,82.8,26,38.8,68.2,52.2,68.2,52.2,62.5,21.2,105.2-10,105.2-10,39.3-27,47.2-58.2,47.2-58.2-31.7,24.8-45.4,22.5-45.4,22.5Zm-48.8-145.9c3,0,5.4,2.4,5.4,5.4s-2.4,5.4-5.4,5.4-5.4-2.4-5.4-5.4,2.4-5.4,5.4-5.4Z"
+          fill="url(#rxjs-linear-gradient)" />
+        <path
+          d="m238.5,98.4c.5-22.2-33-45.8-33-45.8-59.7-44.2-113.7-15.6-113.7-15.6C45.1,57.7,31.3,103,31.3,103c-2.7,7.7-5.1,19.5-5.1,19.5-2.9,14.8-1.6,28.5-1.6,28.5,1.2,13.1,4.1,21.9,4.1,21.9,3,9.4,4.4,12.3,4.4,12.3-.1-.3-.6-2.5-.6-2.5,0,0-4.2-20.2-.3-39.6,0,0,3.4-20.2,17.2-35.8,0,0,22.4-31.9,64.1-19.4,0,0,9,3.2,12.1,4.8,3.1,1.5,8.5,3.8,8.5,3.8,29.5,14.3,54.5,18.8,54.5,18.8,52.9,8.9,49.9-16.9,49.9-16.9Zm-66.9-19.7c-3,0-5.4-2.4-5.4-5.4s2.4-5.4,5.4-5.4,5.4,2.4,5.4,5.4-2.4,5.4-5.4,5.4Z"
+          fill="url(#rxjs-radial-gradient)" />
+        <path
+          d="m137.4,58.2l-34.1-10.6c-.2,0-1.2-.5-3,0,0,0-20.1,5.1-16.6,16.1,0,0,2.1,6.9,7.8,13.6l37.5-1.8,8.4-17.3Z"
+          fill="url(#rxjs-linear-gradient-2)" />
       </symbol>
 
       <symbol id="typescript" viewBox="0 0 48 48">

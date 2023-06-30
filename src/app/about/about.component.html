@@ -15,7 +15,7 @@
 <section id="skills" appParallaxScroll>
   <h2 class="section-title">Skills</h2>
   <div class="section-container">
-    <div id="skills-icons-container" role="list" tabindex="0" aria-label="Skills" #skillsIconsContainer>
+    <div id="skills-icons-container" role="list" tabindex="0" #skillsIconsContainer>
       <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
@@ -24,6 +24,7 @@
       <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'rxjs', name: 'RXJS' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
       <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />

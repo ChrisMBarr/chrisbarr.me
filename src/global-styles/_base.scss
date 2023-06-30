@@ -72,8 +72,8 @@ b {
   font-weight: $font-weight-medium;
 }
 
-#bg-noise {
-  //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode
+.hidden-svg {
+  //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode and gradients
   height: 0px;
   width: 0px;
   overflow: hidden;
