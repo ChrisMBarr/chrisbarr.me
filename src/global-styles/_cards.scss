@@ -5,7 +5,7 @@
   border-radius: $radius;
   border: 1px solid $color-content-light;
   background-color: $color-content-dark;
-
+  position: relative; //keeps cards above the BG noise/grain texture
   box-shadow: shadow(md);
 
   &-title {
