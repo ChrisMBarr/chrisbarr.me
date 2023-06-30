@@ -1,4 +1,4 @@
-name: 🚀 Deploy website via FTPS
+name: 🚀 Build & Deploy via FTPS
 on:
   workflow_dispatch:
   push:
@@ -14,20 +14,17 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
+      - name: Install, Lint, & Build 🔧
+        run: |
+          npm ci
+          npm run gh-deploy
+
       - name: 📂 Upload files via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: chrisbarr.me
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          local-dir: ./dist/chrisbarr.me/browser/
           server-dir: ./
           protocol: ftps
-          dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.vscode*/**
-            **/node_modules/**
-            package.json
-            README.md
