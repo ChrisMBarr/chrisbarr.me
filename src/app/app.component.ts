@@ -65,14 +65,15 @@ export class AppComponent implements OnInit {
     });
 
     //trigger manually after initial load
-    //Firefox needs this so the first positioning is re-calculated after a short delay
-    this.onWindowResize();
+    //Some browsers need this so the first positioning (due to routing) is re-calculated after a short delay
+    //This is due to things like fonts being loaded that might cause element sizes to be different
+    this.onWindowResize(true);
   }
 
   @HostListener('window:resize', ['$event'])
-  onWindowResize(): void {
+  onWindowResize(force = false): void {
     //iOS triggers resize events on scroll, this checks if it has actually changed or not
-    if (this.window.innerWidth !== this.winWidth) {
+    if (this.window.innerWidth !== this.winWidth || force) {
       this.window.clearTimeout(this.resizeDebounce);
       this.resizeDebounce = this.window.setTimeout(() => {
         this.winWidth = this.window.innerWidth;
