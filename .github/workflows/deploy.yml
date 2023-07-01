@@ -14,7 +14,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: Install, Lint, & Build 🔧
+      - name: 🔧 Install, Lint, & Build
         run: |
           npm ci
           npm run gh-deploy
