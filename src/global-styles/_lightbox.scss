@@ -1,0 +1,110 @@
+@use "variables" as *;
+
+@import "~@angular/cdk/overlay-prebuilt.css";
+
+.g-backdrop {
+  background-color: rgba(darken($color-bg, 20%), $transparency) !important;
+}
+
+.lightbox {
+  &-thumbs-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing;
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($grid-desktop-min-size) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint(xxl) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .lightbox-thumb {
+      position: relative;
+
+      &-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+
+        opacity: 0.5;
+        filter: blur(2px) grayscale(1);
+      }
+
+      img {
+        max-height: 150px;
+        margin: auto 0;
+        z-index: 1;
+
+        box-shadow: shadow('md');
+      }
+
+      &-title {
+        border-top: 1px solid $color-highlight;
+        text-align: center;
+        width: 100%;
+        font-size: $font-size-sm;
+        padding: $spacing-xs;
+        background-color: $color-content-light;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-thumb {
+    border: 1px solid $color-highlight;
+    border-radius: $radius;
+    overflow: hidden;
+    transition: border-color $anim-duration, color $anim-duration;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+
+    img {
+      display: block;
+      transition: filter $anim-duration;
+    }
+
+    &:hover {
+      border-color: $color-highlight-light;
+    }
+  }
+
+  &-template {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: $spacing-sm;
+    background-color: rgba(#000, .5);
+    transform: translateY(0);
+    transition: transform $anim-duration;
+  }
+}
+
+.g-slider-content:hover {
+  .lightbox-template {
+    transform: translateY(100%);
+  }
+}

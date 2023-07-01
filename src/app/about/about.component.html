@@ -1,0 +1,91 @@
+<section id="intro">
+  <div class="section-container" aria-label="Introduction" tabindex="0" #introContainer>
+    <h2 id="greeting-mobile">Hi, I'm Chris</h2>
+    <img src="/assets/img/me.jpg" alt="Photo of Chris Barr" />
+    <div>
+      <h2 id="greeting-desktop">Hi, I'm Chris</h2>
+      <p>
+        I&apos;m a web developer and designer in Charlotte, NC. I&apos;ve been in the web programming field for over 12 years. I
+        primarily work with Angular and Typescript, along with all the standard web languages.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" appParallaxScroll>
+  <h2 class="section-title">Skills</h2>
+  <div class="section-container">
+    <div id="skills-icons-container" role="list" tabindex="0" #skillsIconsContainer>
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'typescript', name: 'TypeScript 5' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'javascript', name: 'Javascript' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'rxjs', name: 'RXJS' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'node', name: 'Node.js' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'gulp', name: 'Gulp' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'eslint', name: 'ES Lint' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jest', name: 'Jest' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jasmine', name: 'Jasmine' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'karma', name: 'Karma' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jquery', name: 'jQuery' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'jira', name: 'Jira' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'trello', name: 'Trello' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'vscode', name: 'VS Code' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'visualstudio', name: 'Visual Studio' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'photoshop', name: 'Photoshop' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'illustrator', name: 'Illustrator' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'xd', name: 'Adobe XD' }" />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'lightroom', name: 'Lightroom' }" />
+    </div>
+  </div>
+  <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>
+</section>
+
+<section id="contact" appParallaxScroll>
+  <h2 class="section-title">Contact</h2>
+
+  <div class="section-container">
+    <div id="social" tabindex="0" aria-label="Social Media Links">
+      <ng-container
+        *ngTemplateOutlet="
+          icon;
+          context: { id: 'mastodon', name: 'Mastodon', href: 'https://hachyderm.io/@FiniteLooper', rel: 'me' }
+        " />
+      <ng-container *ngTemplateOutlet="icon; context: { id: 'github', name: 'Github', href: 'http://github.com/FiniteLooper' }" />
+      <ng-container
+        *ngTemplateOutlet="
+          icon;
+          context: { id: 'linkedin', name: 'LinkedIn', href: 'https://www.linkedin.com/in/chrismbarr/' }
+        " />
+      <ng-container
+        *ngTemplateOutlet="
+          icon;
+          context: { id: 'stackoverflow', name: 'Stack Overflow', href: 'https://stackoverflow.com/users/79677/finitelooper' }
+        " />
+    </div>
+
+    <!-- <app-contact-form></app-contact-form> -->
+  </div>
+</section>
+
+<ng-template #icon let-id="id" let-name="name" let-href="href" let-rel="rel">
+  <div *ngIf="!href" class="icon" role="listitem" [attr.aria-label]="name">
+    <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
+    <h3 aria-hidden="true">
+      <span>{{ name }}</span>
+    </h3>
+  </div>
+  <a *ngIf="href" class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
+    <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
+    <h3 aria-hidden="true">
+      <span>{{ name }}</span>
+    </h3>
+  </a>
+</ng-template>

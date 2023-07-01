@@ -1,0 +1,16 @@
+{
+  "words": [
+    "Chek",
+    "chrisbarr",
+    "Gbentchal",
+    "jaal",
+    "lightbox",
+    "lightroom",
+    "photoshop",
+    "stackoverflow",
+    "videographer"
+  ],
+  "ignorePaths": [
+    "package.json"
+  ]
+}

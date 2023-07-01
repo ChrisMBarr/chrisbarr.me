@@ -1,0 +1,7 @@
+@use "../node_modules/bootstrap/scss/mixins" as *;
+@use "global-styles/variables" as *;
+
+@import "global-styles/base";
+@import "global-styles/utilities";
+@import "global-styles/cards";
+@import "global-styles/lightbox";

@@ -1,0 +1,21 @@
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "variables" as *;
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing;
+
+  @include breakpoint(md) {
+    //Screens wider than most mobile
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.row-xl {
+    grid-template-columns: repeat(1, 1fr);
+    @include breakpoint(xl) {
+      //Screens wider than most mobile
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

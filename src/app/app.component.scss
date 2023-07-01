@@ -1,0 +1,82 @@
+@use "../global-styles/variables" as *;
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+
+header {
+  //appearance
+  background: $header-color-bg-default;
+
+  //layout
+  padding: $header-padding;
+  position: relative;
+  z-index: $header-z-index;
+
+  //display
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint($grid-desktop-min-size) {
+    //appearance
+    background: $header-color-bg-desktop;
+    backdrop-filter: blur($header-blur-bg-desktop);
+
+    //layout - sticky header for desktop sizes
+    position: sticky;
+    top: 0;
+
+    flex-direction: row;
+  }
+}
+
+#title {
+  //text
+  font-weight: $header-title-font-weight;
+  font-size: $header-title-font-size;
+  color: $color-highlight;
+  text-transform: uppercase;
+  line-height: 1;
+
+  //layout
+  margin: 0;
+}
+
+#navigation {
+  margin: $nav-margin-default;
+
+  @include breakpoint($grid-desktop-min-size) {
+    order: -1;
+    margin: $nav-margin-desktop;
+  }
+
+  > * {
+    //text
+    font-size: $nav-link-font-size;
+    font-weight: $nav-link-font-weight;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    //layout
+    padding: $nav-link-padding;
+
+    &:hover {
+      color: $nav-link-hover-color;
+    }
+
+    &.active {
+      color: $nav-link-active-color;
+    }
+  }
+
+  &-active-bg {
+    position: absolute;
+    background-color: $nav-link-hover-bg;
+    z-index: -1;
+
+    transition: all $anim-duration*1.5 $ease-out-back;
+  }
+}
+
+main {
+  font-size: $main-font-size;
+}

@@ -5,7 +5,9 @@
     ".angular": true,
     ".editorconfig": true,
     ".prettierrc": true,
+    ".prettierignore": true,
     "coverage": true,
+    "design": true,
     "dist": true,
     "node_modules": true
   },

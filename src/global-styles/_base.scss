@@ -1,0 +1,109 @@
+@use "../../node_modules/bootstrap/scss/mixins" as *;
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: $scrollbar-width;
+  scrollbar-color: $scrollbar-color-track $scrollbar-color-thumb;
+}
+
+::selection {
+  background-color: $selection-color-bg;
+  color: $selection-color-text;
+}
+
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+  background-color: $scrollbar-color-track;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color-thumb;
+  border: 2px solid $scrollbar-color-track;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-family;
+  font-weight: $font-weight-light;
+  overflow-y: scroll; //scrollbar always visible to prevent jump when content length changes
+}
+
+a {
+  color: $color-highlight;
+  transition: color $anim-duration;
+
+  &:hover,
+  &:focus {
+    color: $color-highlight-light;
+  }
+
+  &:active {
+    color: lighten($color-highlight-light, 10%);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid $color-highlight;
+  box-shadow: 0 0 5px rgba($color-highlight-light, 0.3), inset 0 0 5px rgba($color-highlight-light, 0.3);
+  border-radius: $radius-sm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: $font-weight-medium;
+}
+
+.hidden-svg {
+  //hide this but keep is visible/available. Setting display:none screws up the mix-blend-mode and gradients
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: -999;
+  left: 0;
+  top: 0;
+}
+
+@include breakpoint($grid-desktop-min-size) {
+  //Only add the texture for large screen sizes - bad performance on mobile
+  body::before {
+    //noise/grain texture on the background
+
+    //Make the pseudo-element render
+    content: "";
+
+    //Apply from SVG, and mix the colors with whatever is behind it
+    filter: url(#noiseFilter);
+    mix-blend-mode: multiply;
+
+    //clicks pass through
+    pointer-events: none;
+
+    //Cover entire page
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
