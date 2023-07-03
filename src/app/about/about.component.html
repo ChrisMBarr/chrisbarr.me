@@ -13,36 +13,50 @@
 </section>
 
 <section id="skills" appParallaxScroll>
-  <h2 class="section-title">Skills</h2>
-  <div class="section-container">
-    <div id="skills-icons-container" role="list" tabindex="0" #skillsIconsContainer>
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'typescript', name: 'TypeScript 5' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'javascript', name: 'Javascript' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'rxjs', name: 'RXJS' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'node', name: 'Node.js' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'gulp', name: 'Gulp' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'eslint', name: 'ES Lint' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'jest', name: 'Jest' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'jasmine', name: 'Jasmine' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'karma', name: 'Karma' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'jquery', name: 'jQuery' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'jira', name: 'Jira' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'trello', name: 'Trello' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'vscode', name: 'VS Code' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'visualstudio', name: 'Visual Studio' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'photoshop', name: 'Photoshop' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'illustrator', name: 'Illustrator' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'xd', name: 'Adobe XD' }" />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'lightroom', name: 'Lightroom' }" />
+  <div class="section-container" #skillsContainer>
+    <div class="skills-icons-card" tabindex="0" #firstSkillsIconsCard>
+      <h3 class="skills-icons-card-title">Languages</h3>
+      <div class="skills-icons-card-icons" role="list">
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'typescript', name: 'TypeScript 5' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'javascript', name: 'Javascript' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
+      </div>
+    </div>
+
+    <div class="skills-icons-card" tabindex="0">
+      <h3 class="skills-icons-card-title">Frameworks</h3>
+      <div class="skills-icons-card-icons" role="list">
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'node', name: 'Node.js' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'rxjs', name: 'RXJS' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'eslint', name: 'ES Lint' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'gulp', name: 'Gulp' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'jest', name: 'Jest' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'jasmine', name: 'Jasmine' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'karma', name: 'Karma' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'jquery', name: 'jQuery' }" />
+      </div>
+    </div>
+
+    <div class="skills-icons-card" tabindex="0">
+      <h3 class="skills-icons-card-title">Software</h3>
+      <div class="skills-icons-card-icons" role="list">
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'vscode', name: 'VS Code' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'visualstudio', name: 'Visual Studio' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'photoshop', name: 'Photoshop' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'illustrator', name: 'Illustrator' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'xd', name: 'Adobe XD' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'lightroom', name: 'Lightroom' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'jira', name: 'Jira' }" />
+        <ng-container *ngTemplateOutlet="icon; context: { id: 'trello', name: 'Trello' }" />
+      </div>
     </div>
   </div>
   <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>

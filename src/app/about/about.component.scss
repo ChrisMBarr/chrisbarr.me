@@ -6,40 +6,6 @@ $skills-icon-size-desktop: 96px;
 $skills-icons-count: 27;
 $skills-icons-animation-delay: 40ms;
 
-.section-container {
-  min-height: $section-min-height;
-
-  display: flex;
-  align-items: center;
-
-  @include breakpoint($grid-desktop-min-size) {
-    //each section can be as tall as the screen, but never more than 1000px
-    height: 100vh;
-    max-height: 1000px;
-  }
-}
-
-.section-title {
-  margin: 0 $spacing $spacing $spacing;
-  font-weight: $font-weight-thin;
-  text-shadow: shadow('xl');
-
-  @include breakpoint($grid-desktop-min-size) {
-    position: sticky;
-    top: $header-height;
-  }
-
-  @include breakpoint(lg) {
-    font-size: $font-size-lg;
-  }
-
-  @include breakpoint(xl) {
-    max-width: breakpoint-size(xl);
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @keyframes anim-intro-rotate {
   0% {
     transform: rotate(0deg);
@@ -58,6 +24,51 @@ $skills-icons-animation-delay: 40ms;
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes anim-scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.section-container {
+  min-height: $section-min-height;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @include breakpoint($grid-desktop-min-size) {
+    //each section can be as tall as the screen, but never more than 1000px
+    min-height: 100vh;
+    max-height: 1000px;
+  }
+}
+
+.section-title {
+  margin: 0 $spacing $spacing $spacing;
+  font-weight: $font-weight-thin;
+  text-shadow: shadow("xl");
+
+  @include breakpoint($grid-desktop-min-size) {
+    position: sticky;
+    top: $header-height;
+  }
+
+  @include breakpoint(lg) {
+    font-size: $font-size-lg;
+  }
+
+  @include breakpoint(xl) {
+    max-width: breakpoint-size(xl);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -90,7 +101,6 @@ $skills-icons-animation-delay: 40ms;
 
   .section-container {
     padding: $spacing;
-    flex-direction: column;
 
     position: relative;
     z-index: 1;
@@ -139,7 +149,7 @@ $skills-icons-animation-delay: 40ms;
 
       @media screen and (min-height: $section-min-height) {
         // only set this when at a desktop width AND the height is over the min-height set
-        height: calc(100vh - $header-height);
+        min-height: calc(100vh - $header-height);
       }
     }
 
@@ -227,61 +237,8 @@ $skills-icons-animation-delay: 40ms;
 #skills {
   background-image: url("../../../src/assets/img/skills-bg.jpg");
 
-  @keyframes scale-in {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
-  &-icons-container {
-    text-align: center;
-
-    //size/position
-    margin: 0 auto;
-
-    //background/shape
-    background: rgba(#fff, 0.5);
-    backdrop-filter: blur(10px);
-    border-radius: $radius;
-
-    //grid
-    display: grid;
+  .section-container {
     gap: $spacing;
-    padding: $spacing;
-    grid-template-columns: repeat(3, 1fr);
-
-    @include breakpoint(sm) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @include breakpoint($grid-desktop-min-size) {
-      grid-template-columns: repeat(5, 1fr);
-      gap: $spacing-lg;
-      padding: $spacing-lg;
-    }
-
-    @include breakpoint(lg) {
-      grid-template-columns: repeat(7, 1fr);
-    }
-
-    > * {
-      //default until class is added
-      transform: scale(0);
-    }
-
-    &.animated > * {
-      animation: scale-in $anim-duration $ease-out-back;
-      animation-fill-mode: both;
-
-      @for $i from 1 through $skills-icons-count {
-        &:nth-child(#{$i}) {
-          animation-delay: $skills-icons-animation-delay * $i;
-        }
-      }
-    }
   }
 
   footer {
@@ -297,12 +254,71 @@ $skills-icons-animation-delay: 40ms;
   }
 }
 
+.skills-icons-card {
+  //size/position
+  margin: 0 auto;
+  padding: $spacing;
+
+  //background/shape
+  background: rgba(#fff, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: $radius;
+
+  &-title {
+    margin: 0 0 $spacing 0;
+    color: $color-bg;
+  }
+
+  @include breakpoint($grid-desktop-min-size) {
+    padding: $spacing-lg;
+
+    &-title {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &-icons {
+    //grid
+    display: grid;
+    gap: $spacing;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($grid-desktop-min-size) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: $spacing-lg;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    > * {
+      //default until class is added
+      transform: scale(0);
+
+      .skills-icons-animate & {
+        animation: anim-scale-in $anim-duration $ease-out-back;
+        animation-fill-mode: both;
+
+        @for $i from 1 through $skills-icons-count {
+          &:nth-child(#{$i}) {
+            animation-delay: $skills-icons-animation-delay * $i;
+          }
+        }
+      }
+    }
+  }
+}
+
 #contact {
   background-image: url("../../../src/assets/img/contact-bg.jpg");
 
   .section-container {
-    flex-direction: column;
-    justify-content: center;
     max-height: 300px;
     min-height: auto;
   }

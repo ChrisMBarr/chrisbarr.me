@@ -9,7 +9,8 @@ import { Component, ElementRef, HostListener, Inject, ViewChild, OnInit } from '
 export class AboutComponent implements OnInit {
   private readonly window: Window = this.document.defaultView as Window;
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;
-  @ViewChild('skillsIconsContainer', { static: true }) private skillsIconsContainer!: ElementRef<HTMLElement>;
+  @ViewChild('skillsContainer', { static: true }) private skillsContainer!: ElementRef<HTMLElement>;
+  @ViewChild('firstSkillsIconsCard', { static: true }) private firstSkillsIconsCard!: ElementRef<HTMLElement>;
 
   private arrowTimer?: ReturnType<typeof setTimeout>;
   private skillAnimationTriggered = false;
@@ -43,10 +44,10 @@ export class AboutComponent implements OnInit {
     }
 
     if (!this.skillAnimationTriggered) {
-      const iconsTop = this.skillsIconsContainer.nativeElement.getBoundingClientRect().top;
+      const iconsTop = this.firstSkillsIconsCard.nativeElement.getBoundingClientRect().top;
       if (this.window.innerHeight >= iconsTop + 100) {
         this.skillAnimationTriggered = true;
-        this.skillsIconsContainer.nativeElement.classList.add('animated');
+        this.skillsContainer.nativeElement.classList.add('skills-icons-animate');
       }
     }
   }
