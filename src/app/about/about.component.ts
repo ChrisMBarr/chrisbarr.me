@@ -28,7 +28,7 @@ export class AboutComponent implements OnInit {
       if (actualHeight <= maxHeight) {
         this.arrowTimer = setTimeout(() => {
           this.introContainer.nativeElement.classList.add('show-arrow');
-        }, 5000);
+        }, 2500);
       }
     }
   }
