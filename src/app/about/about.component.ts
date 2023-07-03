@@ -25,6 +25,7 @@ export class AboutComponent implements OnInit {
       const maxHeight = parseInt(getComputedStyle(this.introContainer.nativeElement).getPropertyValue('max-height'), 10);
       const actualHeight = this.introContainer.nativeElement.getBoundingClientRect().height;
 
+      this.onWindowScroll();//manually trigger initially
       if (actualHeight <= maxHeight) {
         this.arrowTimer = setTimeout(() => {
           this.introContainer.nativeElement.classList.add('show-arrow');
