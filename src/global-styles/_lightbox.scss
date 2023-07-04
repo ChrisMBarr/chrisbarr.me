@@ -1,36 +1,24 @@
 @use "variables" as *;
-
 @import "~@angular/cdk/overlay-prebuilt.css";
 
+//-------------------------------------------------
+//Overrides for the 3rd party lightbox components
 .g-backdrop {
   background-color: rgba(darken($color-bg, 20%), $transparency) !important;
 }
+.g-slider-content:hover {
+  .lightbox-template {
+    transform: translateY(100%);
+  }
+}
 
+//-------------------------------------------------
+//Thumbnail Display
 .lightbox {
   &-thumbs-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: $spacing;
-
-    @include breakpoint(sm) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @include breakpoint($grid-desktop-min-size) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    @include breakpoint(lg) {
-      grid-template-columns: repeat(7, 1fr);
-    }
-
-    @include breakpoint(xl) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @include breakpoint(xxl) {
-      grid-template-columns: repeat(5, 1fr);
-    }
+    gap: $spacer;
 
     .lightbox-thumb {
       position: relative;
@@ -63,18 +51,18 @@
         text-align: center;
         width: 100%;
         font-size: $font-size-sm;
-        padding: $spacing-xs;
-        background-color: $color-content-light;
+        padding: $spacer-xs;
+        background-color: $color-content-dark;
         z-index: 1;
       }
     }
   }
 
   &-thumb {
-    border: 1px solid $color-highlight;
+    border: $btn-border-width solid $btn-border-color;
     border-radius: $radius;
     overflow: hidden;
-    transition: border-color $anim-duration, color $anim-duration;
+    transition: border-color $anim-duration;
 
     display: flex;
     flex-direction: column;
@@ -84,11 +72,21 @@
 
     img {
       display: block;
-      transition: filter $anim-duration;
+    }
+
+    &-title {
+      transition: all $anim-duration;
     }
 
     &:hover {
       border-color: $color-highlight-light;
+      text-decoration: none;
+
+      .lightbox-thumb-title {
+        background-color: #6d464c; //fake way to get the look of $color-highlight-transparent over the $color-bg-dark
+        border-color: $color-highlight-light;
+        color: $btn-hover-color;
+      }
     }
   }
 
@@ -96,15 +94,9 @@
     margin-top: auto;
     width: 100%;
     text-align: center;
-    padding: $spacing-sm;
+    padding: $spacer-sm;
     background-color: rgba(#000, .5);
     transform: translateY(0);
     transition: transform $anim-duration;
-  }
-}
-
-.g-slider-content:hover {
-  .lightbox-template {
-    transform: translateY(100%);
   }
 }

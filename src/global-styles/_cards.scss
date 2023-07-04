@@ -1,22 +1,37 @@
 @use "variables" as *;
 
 .card {
-  margin: $spacing-lg $spacing;
+  margin: $spacer-lg $spacer;
   border-radius: $radius;
   border: 1px solid $color-content-light;
   background-color: $color-content-dark;
   position: relative; //keeps cards above the BG noise/grain texture
   box-shadow: shadow(md);
 
+  hr {
+    border-color: $color-content-light;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    margin: $spacer-lg 0;
+  }
+
   &-title {
-    margin: 0;
-    padding: $spacing;
-    font-weight: $font-weight-light;
-    font-size: $font-size-lg;
+    padding: $spacer;
+
     border-top: 1px solid transparent;
     border-bottom: 1px solid $color-content-light;
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
+
+    h2 {
+      font-weight: $font-weight-light;
+      font-size: $font-size-md;
+      margin: 0;
+
+      a {
+        display: block;
+      }
+    }
 
     &.is-stuck {
       border-top-color: $color-content-light;
@@ -26,21 +41,31 @@
     }
 
     @include breakpoint($grid-desktop-min-size) {
+      //display
+      display: flex;
+      align-items: center;
+
+      //position
       position: sticky;
       top: $header-height;
+      z-index: 10;
+
+      //style
       background: rgba($color-content-dark, $transparency);
       backdrop-filter: blur($header-blur-bg-desktop);
-      z-index: 10;
+
+      h2 {
+        font-size: $font-size-lg;
+      }
     }
 
     + .card-content {
       border-top-width: 0;
-
     }
   }
 
   &-content {
-    padding: $spacing;
+    padding: $spacer;
 
     p:first-child {
       margin-top: 0;

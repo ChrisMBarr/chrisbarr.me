@@ -3,12 +3,12 @@
   <nav id="navigation" #navContainer>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">About</a>
     <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/dev">Dev</a>
-    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/design">Design</a>
+    <a routerLinkActive="active" routerLink="/design">Design</a>
     <!-- <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/photo">Photo</a> -->
     <span id="navigation-active-bg" #navActiveBg></span>
   </nav>
 </header>
 
-<main role="main" [@routeAnimations]="o.isActivated && enableAnimation? o.activatedRoute : ''">
+<main role="main" [@routeAnimations]="o.isActivated && enableRouteAnimation ? o.activatedRoute : ''">
   <router-outlet #o="outlet"></router-outlet>
 </main>

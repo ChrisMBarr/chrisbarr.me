@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: AboutComponent, title: 'Chris Barr - About' },
   { path: 'dev', component: DevComponent, title: 'Chris Barr - Dev', pathMatch: 'full' },
   { path: 'design', component: DesignComponent, title: 'Chris Barr - Design', pathMatch: 'full' },
+  { path: 'design/:id', component: DesignComponent, title: 'Chris Barr - Design', pathMatch: 'full' },
   // { path: 'photo', component: PhotoComponent, title: 'Chris Barr - Photo', pathMatch: 'full' },
   { path: '**', redirectTo: '' },
 ];

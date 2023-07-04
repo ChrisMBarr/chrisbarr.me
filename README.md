@@ -8,4 +8,3 @@ It's built using Angular 16, with Angular Universal prerendering to help out wit
 # TODO
 * Contact form that sends email
 * photos section + togo videos
-* design/photos sections get sub-pages

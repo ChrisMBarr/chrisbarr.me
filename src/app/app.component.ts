@@ -35,7 +35,7 @@ import { NavigationEnd, Router } from '@angular/router';
   ],
 })
 export class AppComponent implements OnInit {
-  public enableAnimation = false;
+  public enableRouteAnimation = false;
   private readonly window: Window = this.document.defaultView as Window;
   private winWidth = this.window.innerWidth;
   private resizeDebounce?: number;
@@ -53,13 +53,13 @@ export class AppComponent implements OnInit {
           this.window.scrollTo({ top: 0 });
         }
 
-        const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`[href="${event.url}"]`);
-        if (activeLink) {
-          this.positionNavHighlight(activeLink);
-        }
+        //small delay needed on route changes
+        setTimeout(() => {
+          this.positionNavHighlight();
+        });
 
-        if (!this.enableAnimation) {
-          setTimeout(() => (this.enableAnimation = true), 10); //settimeout to not trigger animation right at the end of this cycle
+        if (!this.enableRouteAnimation) {
+          setTimeout(() => (this.enableRouteAnimation = true), 10); //settimeout to not trigger animation right at the end of this cycle
         }
       }
     });
@@ -77,28 +77,28 @@ export class AppComponent implements OnInit {
       this.window.clearTimeout(this.resizeDebounce);
       this.resizeDebounce = this.window.setTimeout(() => {
         this.winWidth = this.window.innerWidth;
-        const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`.active`);
-        if (activeLink) {
-          this.positionNavHighlight(activeLink);
-        }
+        this.positionNavHighlight();
       }, 200);
     }
   }
 
-  private positionNavHighlight(link: HTMLElement) {
-    //prevent errors on SSR build
-    if (typeof link.getBoundingClientRect === 'function') {
-      const rect = link.getBoundingClientRect();
+  private positionNavHighlight() {
+    const activeLink = this.navContainer.nativeElement.querySelector<HTMLElement>(`.active`);
+    if (activeLink) {
+      //prevent errors on SSR build
+      if (typeof activeLink.getBoundingClientRect === 'function') {
+        const rect = activeLink.getBoundingClientRect();
 
-      //Correctly position for mobile devices
-      const headerIsRelative = this.window.getComputedStyle(this.header.nativeElement).position === 'relative'
-      const offsetTop = headerIsRelative ? document.documentElement.scrollTop : 0;
-      const offsetLeft = headerIsRelative ? document.documentElement.scrollLeft : 0;
+        //Correctly position for mobile devices
+        const headerIsRelative = this.window.getComputedStyle(this.header.nativeElement).position === 'relative';
+        const offsetTop = headerIsRelative ? document.documentElement.scrollTop : 0;
+        const offsetLeft = headerIsRelative ? document.documentElement.scrollLeft : 0;
 
-      this.navActiveBg.nativeElement.style.top = `${rect.top + offsetTop}px`;
-      this.navActiveBg.nativeElement.style.left = `${rect.left + offsetLeft}px`;
-      this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
-      this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
+        this.navActiveBg.nativeElement.style.top = `${rect.top + offsetTop}px`;
+        this.navActiveBg.nativeElement.style.left = `${rect.left + offsetLeft}px`;
+        this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
+        this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
+      }
     }
   }
 }

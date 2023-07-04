@@ -51,7 +51,7 @@ $skills-icons-animation-delay: 40ms;
 }
 
 .section-title {
-  margin: 0 $spacing $spacing $spacing;
+  margin: 0 $spacer $spacer $spacer;
   font-weight: $font-weight-thin;
   text-shadow: shadow("xl");
 
@@ -74,7 +74,7 @@ $skills-icons-animation-delay: 40ms;
 #intro {
   --anim-intro-size: 150vw;
   $img-size: 300px;
-  $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacing * 2));
+  $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacer * 2));
 
   overflow: hidden;
   position: relative;
@@ -99,7 +99,7 @@ $skills-icons-animation-delay: 40ms;
   }
 
   .section-container {
-    padding: $spacing;
+    padding: $spacer;
 
     position: relative;
     z-index: 1;
@@ -161,7 +161,7 @@ $skills-icons-animation-delay: 40ms;
     }
 
     img {
-      margin-right: $spacing;
+      margin-right: $spacer;
     }
   }
 }
@@ -195,7 +195,7 @@ $skills-icons-animation-delay: 40ms;
 
     span {
       background-color: $color-bg;
-      padding: $spacing-sm;
+      padding: $spacer-sm;
       border-radius: $radius;
       white-space: nowrap;
 
@@ -225,7 +225,7 @@ $skills-icons-animation-delay: 40ms;
   background-position-x: center; //position-y will be handled by parallax directive
   background-repeat: no-repeat;
   background-size: auto;
-  padding: $spacing 0;
+  padding: $spacer 0;
 
   @include breakpoint(xxl) {
     background-attachment: fixed;
@@ -237,12 +237,12 @@ $skills-icons-animation-delay: 40ms;
   background-image: url("../../../src/assets/img/skills-bg.jpg");
 
   .section-container {
-    gap: $spacing;
+    gap: $spacer;
   }
 
   footer {
     text-align: right;
-    padding: 0 $spacing-sm;
+    padding: 0 $spacer-sm;
     font-size: $font-size-xs;
     opacity: 0.5;
     transition: $anim-duration opacity;
@@ -256,7 +256,7 @@ $skills-icons-animation-delay: 40ms;
 .skills-icons-card {
   //size/position
   margin: 0 auto;
-  padding: $spacing;
+  padding: $spacer;
 
   //background/shape
   background: rgba(#fff, 0.5);
@@ -264,22 +264,22 @@ $skills-icons-animation-delay: 40ms;
   border-radius: $radius;
 
   &-title {
-    margin: 0 0 $spacing 0;
+    margin: 0 0 $spacer 0;
     color: $color-bg;
   }
 
   @include breakpoint($grid-desktop-min-size) {
-    padding: $spacing-lg;
+    padding: $spacer-lg;
 
     &-title {
-      margin-bottom: $spacing-lg;
+      margin-bottom: $spacer-lg;
     }
   }
 
   &-icons {
     //grid
     display: grid;
-    gap: $spacing;
+    gap: $spacer;
 
     grid-template-columns: repeat(3, 1fr);
 
@@ -289,7 +289,7 @@ $skills-icons-animation-delay: 40ms;
 
     @include breakpoint($grid-desktop-min-size) {
       grid-template-columns: repeat(6, 1fr);
-      gap: $spacing-lg;
+      gap: $spacer-lg;
     }
 
     @include breakpoint(lg) {
@@ -323,12 +323,12 @@ $skills-icons-animation-delay: 40ms;
 
   #social {
     display: grid;
-    gap: $spacing;
+    gap: $spacer;
     grid-template-columns: repeat(2, 1fr);
 
     @include breakpoint(sm) {
       grid-template-columns: repeat(4, 1fr);
-      gap: $spacing-lg;
+      gap: $spacer-lg;
     }
 
     .icon {
