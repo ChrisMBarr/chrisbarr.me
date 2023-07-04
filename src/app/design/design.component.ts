@@ -22,7 +22,7 @@ export class DesignComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub$ = this.activatedRoute.url.subscribe((urlSegments) => {
       if (urlSegments.length > 1) {
-        this.projectDetails = this.projects.find((p) => p.id === urlSegments[1].path);
+        this.projectDetails = this.projects.find((p) => p.urlSlug === urlSegments[1].path);
         if (this.projectDetails) {
           this.titleService.setTitle(`${this.titleService.getTitle()} - ${this.projectDetails.title}`);
         }

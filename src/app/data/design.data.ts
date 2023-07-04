@@ -20,7 +20,7 @@ export interface IGallery {
 
 export interface IProject {
   title: string;
-  id: string;
+  urlSlug: string;
   featuredImage: [gallery: number, image: number];
   beginDescription: string;
   endDescription: string;
@@ -30,7 +30,7 @@ export interface IProject {
 export const designProjectList: IProject[] = [
   {
     title: 'Project: AccountChek',
-    id: 'account-chek',
+    urlSlug: 'account-chek',
     featuredImage: [1, 1],
     beginDescription:
       '<p>At <strong>FormFree</strong> I was tasked with redesigning their user-facing <em>AccountChek</em> application. The purpose of <em>AccountChek</em> is to allow a potential home buyer to more easily share their banking details with a mortgage lender than is possible with traditional methods. <em>AccountChek</em> was written in an older version of Angular and had a very plain design. </p><p> I created a more modern design that featured background colors and shapes as an enlarged version of the <em>AccountChek</em> logo. The design process was a long collaboration between me and the stakeholders regarding the appearance, the suitability for present needs, and the capacity to address future components that were in the planning stages. </p>',
@@ -227,7 +227,7 @@ export const designProjectList: IProject[] = [
   },
   {
     title: 'Project: Smoke-Test',
-    id: 'smoke-test',
+    urlSlug: 'smoke-test',
     featuredImage: [0, 1],
     beginDescription:
       '<p> At <strong>Life After Normal</strong> I helped create <em>Smoke-Test</em>. The philosophy behind <em>Smoke-Test</em> is that no matter how many automated tests are used to assess an application, manual testing by a real person is still necessary to ensure a high-quality application. The purpose of <em>Smoke-Test</em> was to allow QA and software testers to more easily manage information and steps for manually testing complex applications. Test managers could record exactly what a tester would need to do for each unique manual test in an application. Tests could be distributed to multiple people to be run simultaneously and to collect results and feedback in real time. </p>',
@@ -279,7 +279,7 @@ export const designProjectList: IProject[] = [
   },
   {
     title: 'Pro Bono Project: Mission Togo',
-    id: 'mission-togo',
+    urlSlug: 'mission-togo',
     featuredImage: [0, 0],
     beginDescription: `<p> Togo is a small country in western Africa. In 2010 I was part of a mission team to Gbentchal ("ben-jaal"), a village in the northern area of the country in great need of help. As the team photographer and videographer, my role was to document all aspects of our main project, which was a children's sports camp. Other groups before and after ours assisted with drilling a fresh water well, planting crops, and helping to build a school. </p><p> To raise awareness of the needs and raise funds for a return trip in 2012, I designed and built a website. The website provided information, photos, videos, and accepted donations via PayPal. It was built in PHP on top of Expression Engine. The photos, and videos featured on the website were all shot by me as well. </p>`,
     endDescription:'',
@@ -305,7 +305,7 @@ export const designProjectList: IProject[] = [
   },
   {
     title: 'Eject Media - Early Career Projects',
-    id: 'eject-media',
+    urlSlug: 'eject-media',
     featuredImage: [0, 2],
     beginDescription:'<p> After graduating from college in 2006, I moved to Panama City, Florida to start a small web design company with a friend. Our company, <strong>Eject Media</strong>, had a diverse clientele, ranging from photographers and businesses to church ministries and musicians. We partnered with a local recording studio to not only build websites for their new and featured artists, but to also create their CD covers, posters, and other print materials. </p>',
     endDescription: `<p> We wanted to allow our clients to have control over the content of their own sites, but minus the complexity of the CMS's of the time. To address this, I built a custom CMS, based on PHP and MySQL, which we added onto every site we built. This allowed our clients to control the most basic features, such as adding, editing, and re-ordering posts, and uploading photos. Most of our clients were not "technical" people and they appreciated the simplicity of our custom CMS. </p><p> Most of these sites are no longer online, but these images show a sampling of the work I did for <strong>Eject Media</strong>. </p>`,

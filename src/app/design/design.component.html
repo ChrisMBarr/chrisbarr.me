@@ -41,13 +41,13 @@
     <section class="card" *ngFor="let proj of projects">
       <div class="card-title" appIsSticky>
         <h2>
-          <a [routerLink]="proj.id">{{ proj.title }}</a>
+          <a [routerLink]="proj.urlSlug">{{ proj.title }}</a>
         </h2>
       </div>
       <div class="card-content">
         <div class="row row-xxl">
           <div>
-            <a [routerLink]="proj.id">
+            <a [routerLink]="proj.urlSlug">
               <img
                 [src]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.src"
                 [alt]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.alt" />
@@ -55,7 +55,7 @@
           </div>
           <div>
             <div [innerHTML]="proj.beginDescription"></div>
-            <a [routerLink]="proj.id">Read More&hellip;</a>
+            <a [routerLink]="proj.urlSlug">Read More&hellip;</a>
           </div>
         </div>
       </div>

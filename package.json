@@ -21,7 +21,8 @@
     "dev:ssr": "ng run chrisbarr.me:serve-ssr",
     "serve:ssr": "node dist/chrisbarr.me/server/main.js",
     "build:ssr": "ng build && ng run chrisbarr.me:server",
-    "prerender": "ng run chrisbarr.me:prerender",
+    "build:routes": "node route-builder.js",
+    "prerender": "npm run build:routes && ng run chrisbarr.me:prerender --routes-file routes.txt",
     "gh-deploy": "npm run lint && npm run prerender"
   },
   "private": true,
@@ -58,8 +59,8 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~4.3.5",
     "@types/node": "^20.3.3",
-    "@typescript-eslint/eslint-plugin": "5.60.1",
-    "@typescript-eslint/parser": "5.60.1",
+    "@typescript-eslint/eslint-plugin": "5.61.0",
+    "@typescript-eslint/parser": "5.61.0",
     "bootstrap": "^5.3.0",
     "eslint": "^8.44.0",
     "typescript": "~5.1.6"
