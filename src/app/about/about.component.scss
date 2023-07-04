@@ -46,7 +46,6 @@ $skills-icons-animation-delay: 40ms;
 
   @include breakpoint($grid-desktop-min-size) {
     //each section can be as tall as the screen, but never more than 1000px
-    min-height: 100vh;
     max-height: 1000px;
   }
 }
@@ -320,7 +319,6 @@ $skills-icons-animation-delay: 40ms;
 
   .section-container {
     max-height: 300px;
-    min-height: auto;
   }
 
   #social {

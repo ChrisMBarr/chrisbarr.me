@@ -14,48 +14,15 @@
 
 <section id="skills" appParallaxScroll>
   <div class="section-container" #skillsContainer>
-    <div class="skills-icons-card" tabindex="0" #firstSkillsIconsCard>
-      <h3 class="skills-icons-card-title">Languages</h3>
+    <div class="skills-icons-card" tabindex="0" *ngFor="let group of skillGroups" #skillsIconsCard>
+      <h3 class="skills-icons-card-title">{{group.groupName}}</h3>
       <div class="skills-icons-card-icons" role="list">
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'typescript', name: 'TypeScript 5' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'javascript', name: 'Javascript' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'css3', name: 'CSS 3' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'sass', name: 'SCSS/SASS' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'html5', name: 'HTML 5' }" />
-      </div>
-    </div>
-
-    <div class="skills-icons-card" tabindex="0">
-      <h3 class="skills-icons-card-title">Frameworks</h3>
-      <div class="skills-icons-card-icons" role="list">
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'angular', name: 'Angular 16' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'dotnet', name: '.NET Core/MVC' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'node', name: 'Node.js' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'npm', name: 'NPM' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'bootstrap', name: 'Bootstrap' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'tailwind', name: 'Tailwind CSS' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'rxjs', name: 'RXJS' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'eslint', name: 'ES Lint' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'gulp', name: 'Gulp' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'jest', name: 'Jest' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'jasmine', name: 'Jasmine' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'karma', name: 'Karma' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'jquery', name: 'jQuery' }" />
-      </div>
-    </div>
-
-    <div class="skills-icons-card" tabindex="0">
-      <h3 class="skills-icons-card-title">Software</h3>
-      <div class="skills-icons-card-icons" role="list">
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'git', name: 'GIT' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'vscode', name: 'VS Code' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'visualstudio', name: 'Visual Studio' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'photoshop', name: 'Photoshop' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'illustrator', name: 'Illustrator' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'xd', name: 'Adobe XD' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'lightroom', name: 'Lightroom' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'jira', name: 'Jira' }" />
-        <ng-container *ngTemplateOutlet="icon; context: { id: 'trello', name: 'Trello' }" />
+        <div class="icon" role="listitem" *ngFor="let skill of group.skillList" [attr.aria-label]="skill.skillName">
+          <svg role="img"><use [attr.xlink:href]="'#' + skill.iconId" /></svg>
+          <h3 aria-hidden="true">
+            <span>{{ skill.skillName }}</span>
+          </h3>
+        </div>
       </div>
     </div>
   </div>
@@ -68,35 +35,20 @@
   <div class="section-container">
     <div id="social" tabindex="0" aria-label="Social Media Links">
       <ng-container
-        *ngTemplateOutlet="
-          icon;
-          context: { id: 'mastodon', name: 'Mastodon', href: 'https://hachyderm.io/@FiniteLooper', rel: 'me' }
-        " />
-      <ng-container *ngTemplateOutlet="icon; context: { id: 'github', name: 'Github', href: 'http://github.com/FiniteLooper' }" />
+        *ngTemplateOutlet="contactIconLink; context: { id: 'mastodon', name: 'Mastodon', href: 'https://hachyderm.io/@FiniteLooper', rel: 'me' }" />
+      <ng-container *ngTemplateOutlet="contactIconLink; context: { id: 'github', name: 'Github', href: 'http://github.com/FiniteLooper' }" />
       <ng-container
-        *ngTemplateOutlet="
-          icon;
-          context: { id: 'linkedin', name: 'LinkedIn', href: 'https://www.linkedin.com/in/chrismbarr/' }
-        " />
+        *ngTemplateOutlet="contactIconLink; context: { id: 'linkedin', name: 'LinkedIn', href: 'https://www.linkedin.com/in/chrismbarr/' }" />
       <ng-container
-        *ngTemplateOutlet="
-          icon;
-          context: { id: 'stackoverflow', name: 'Stack Overflow', href: 'https://stackoverflow.com/users/79677/chris-barr' }
-        " />
+        *ngTemplateOutlet="contactIconLink; context: { id: 'stackoverflow', name: 'Stack Overflow', href: 'https://stackoverflow.com/users/79677/chris-barr' }" />
     </div>
 
     <!-- <app-contact-form></app-contact-form> -->
   </div>
 </section>
 
-<ng-template #icon let-id="id" let-name="name" let-href="href" let-rel="rel">
-  <div *ngIf="!href" class="icon" role="listitem" [attr.aria-label]="name">
-    <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
-    <h3 aria-hidden="true">
-      <span>{{ name }}</span>
-    </h3>
-  </div>
-  <a *ngIf="href" class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
+<ng-template #contactIconLink let-id="id" let-name="name" let-href="href" let-rel="rel">
+  <a class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
     <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
     <h3 aria-hidden="true">
       <span>{{ name }}</span>
