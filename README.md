@@ -6,5 +6,10 @@ It's built using Angular 16, with Angular Universal prerendering to help out wit
 
 
 # TODO
-* Contact form that sends email
+* Home page
+  - featured portfolio section links on home page
+  - larger photos
+* Separate contact page
+  - Contact form that sends email
+  - Resume
 * photos section + togo videos
