@@ -29,6 +29,57 @@ export interface IProject {
 
 export const designProjectList: IProject[] = [
   {
+    title: 'Project: LyricConverter',
+    urlSlug: 'lyric-converter',
+    featuredImage: [0, 1],
+    beginDescription: `<p>LyricConverter is a project I've built and improved, on and off, for years. It was made to extract song data and lyrics from many popular lyric display software packages and convert them to other formats. Many of these software packages do not have great import/export tools so I wanted to build something to help people keep their song libraries as they migrated to new software.</p>`,
+    endDescription:
+      '<p>This is the third iteration of this application, which called for a UI refresh and a much more modern design. It now features randomly loaded full-screen background images, and transparent blurred-glass effects for all of the content areas. The design was made possible with a combination of custom CSS along with the Tailwind CSS library.</p><p>If you want to read more about the technical details of this project you can see it on the <a href="/dev" rel="ng">dev page</a>, see <a href="https://github.com/FiniteLooper/LyricConverter" target="_blank">the github page</a> for this project, or see the live site at <a href="http://lyricconverter.net" target="_blank">lyricconverter.net</a></p>',
+    galleries: [
+      {
+        id: 'lyricconverter',
+        images: [
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/bg1_Thumb.jpg',
+            src: 'assets/design/LyricConverter/bg1.jpg',
+            alt: 'LyricConverter - Random Background Image Example 1',
+            thumbTitle: 'Background 1',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/bg2_Thumb.jpg',
+            src: 'assets/design/LyricConverter/bg2.jpg',
+            alt: 'LyricConverter - Random Background Image Example 2',
+            thumbTitle: 'Background 2',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/bg3_Thumb.jpg',
+            src: 'assets/design/LyricConverter/bg3.jpg',
+            alt: 'LyricConverter - Random Background Image Example 3',
+            thumbTitle: 'Background 3',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/download_Thumb.jpg',
+            src: 'assets/design/LyricConverter/download.jpg',
+            alt: 'LyricConverter - Download Converted files',
+            thumbTitle: 'Download Files',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/slides_Thumb.jpg',
+            src: 'assets/design/LyricConverter/slides.jpg',
+            alt: 'LyricConverter - Display Slides',
+            thumbTitle: '',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LyricConverter/help_Thumb.jpg',
+            src: 'assets/design/LyricConverter/help.jpg',
+            alt: 'LyricConverter - Help Page',
+            thumbTitle: 'Help Page',
+          }),
+        ],
+      },
+    ],
+  },
+  {
     title: 'Project: AccountChek',
     urlSlug: 'account-chek',
     featuredImage: [1, 1],
@@ -282,7 +333,7 @@ export const designProjectList: IProject[] = [
     urlSlug: 'mission-togo',
     featuredImage: [0, 0],
     beginDescription: `<p> Togo is a small country in western Africa. In 2010 I was part of a mission team to Gbentchal ("ben-jaal"), a village in the northern area of the country in great need of help. As the team photographer and videographer, my role was to document all aspects of our main project, which was a children's sports camp. Other groups before and after ours assisted with drilling a fresh water well, planting crops, and helping to build a school. </p><p> To raise awareness of the needs and raise funds for a return trip in 2012, I designed and built a website. The website provided information, photos, videos, and accepted donations via PayPal. It was built in PHP on top of Expression Engine. The photos, and videos featured on the website were all shot by me as well. </p>`,
-    endDescription:'',
+    endDescription: '',
     galleries: [
       {
         id: 'missionTogo',
@@ -307,7 +358,8 @@ export const designProjectList: IProject[] = [
     title: 'Eject Media - Early Career Projects',
     urlSlug: 'eject-media',
     featuredImage: [0, 2],
-    beginDescription:'<p> After graduating from college in 2006, I moved to Panama City, Florida to start a small web design company with a friend. Our company, <strong>Eject Media</strong>, had a diverse clientele, ranging from photographers and businesses to church ministries and musicians. We partnered with a local recording studio to not only build websites for their new and featured artists, but to also create their CD covers, posters, and other print materials. </p>',
+    beginDescription:
+      '<p> After graduating from college in 2006, I moved to Panama City, Florida to start a small web design company with a friend. Our company, <strong>Eject Media</strong>, had a diverse clientele, ranging from photographers and businesses to church ministries and musicians. We partnered with a local recording studio to not only build websites for their new and featured artists, but to also create their CD covers, posters, and other print materials. </p>',
     endDescription: `<p> We wanted to allow our clients to have control over the content of their own sites, but minus the complexity of the CMS's of the time. To address this, I built a custom CMS, based on PHP and MySQL, which we added onto every site we built. This allowed our clients to control the most basic features, such as adding, editing, and re-ordering posts, and uploading photos. Most of our clients were not "technical" people and they appreciated the simplicity of our custom CMS. </p><p> Most of these sites are no longer online, but these images show a sampling of the work I did for <strong>Eject Media</strong>. </p>`,
     galleries: [
       {

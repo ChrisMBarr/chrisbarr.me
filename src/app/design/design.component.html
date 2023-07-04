@@ -72,8 +72,7 @@
       </div>
 
       <div class="card-content">
-        <div [innerHTML]="projectDetails.beginDescription"></div>
-        <div [innerHTML]="projectDetails.endDescription"></div>
+        <div #detailsDescription [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
 
         <hr />
 

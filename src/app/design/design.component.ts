@@ -1,7 +1,7 @@
 import { Component, ElementRef, TemplateRef, ViewChild, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Gallery } from 'ng-gallery';
 import { IProject, designProjectList } from '../data/design.data';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 
@@ -13,11 +13,17 @@ import { Title } from '@angular/platform-browser';
 export class DesignComponent implements OnInit, AfterViewInit, OnDestroy {
   private routeSub$: Subscription = Subscription.EMPTY;
   @ViewChild('lightboxTemplate') lightboxTemplate!: TemplateRef<ElementRef<HTMLElement>>;
+  @ViewChild('detailsDescription') detailsDescription?: ElementRef<HTMLElement>;
 
   projects: IProject[] = [...designProjectList];
   projectDetails?: IProject;
 
-  constructor(public gallery: Gallery, private activatedRoute: ActivatedRoute, private titleService: Title) {}
+  constructor(
+    public gallery: Gallery,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title
+  ) {}
 
   ngOnInit(): void {
     this.routeSub$ = this.activatedRoute.url.subscribe((urlSegments) => {
@@ -25,6 +31,18 @@ export class DesignComponent implements OnInit, AfterViewInit, OnDestroy {
         this.projectDetails = this.projects.find((p) => p.urlSlug === urlSegments[1].path);
         if (this.projectDetails) {
           this.titleService.setTitle(`${this.titleService.getTitle()} - ${this.projectDetails.title}`);
+
+          //Look for any internal links that we need to force to happen inside the router
+          setTimeout(() => {
+            if (this.detailsDescription) {
+              this.detailsDescription.nativeElement.querySelectorAll<HTMLAnchorElement>('a[rel="ng"]').forEach((link) => {
+                link.addEventListener('click', (evt) => {
+                  evt.preventDefault();
+                  void this.router.navigate([link.attributes.getNamedItem('href')?.value]);
+                });
+              });
+            }
+          });
         }
       } else {
         this.projectDetails = undefined;
