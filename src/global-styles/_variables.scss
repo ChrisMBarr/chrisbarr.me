@@ -67,7 +67,7 @@ $header-z-index: 100;
 $header-title-font-size: 70px;
 $header-title-font-weight: $font-weight-thin;
 $nav-margin-default: $spacing 0 0 0;
-$nav-margin-desktop: 0;
+$nav-margin-desktop: 0 0 0 $spacing-lg;
 $nav-link-font-size: 20px;
 $nav-link-font-weight: $font-weight-medium;
 $nav-link-padding: $spacing-sm;
