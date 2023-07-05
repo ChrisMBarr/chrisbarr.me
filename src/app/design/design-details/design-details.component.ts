@@ -1,7 +1,6 @@
-import { Component, AfterViewInit, OnInit, ElementRef, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Gallery } from 'ng-gallery';
 import { IDesignProject, designProjectList } from 'src/app/data/design.data';
 
 @Component({
@@ -9,14 +8,12 @@ import { IDesignProject, designProjectList } from 'src/app/data/design.data';
   templateUrl: './design-details.component.html',
   styleUrls: ['./design-details.component.scss'],
 })
-export class DesignDetailsComponent implements AfterViewInit, OnInit {
-  @ViewChild('lightboxTemplate') lightboxTemplate!: TemplateRef<ElementRef<HTMLElement>>;
+export class DesignDetailsComponent implements OnInit {
   @ViewChild('detailsDescription') detailsDescription?: ElementRef<HTMLElement>;
 
   projectDetails?: IDesignProject;
 
   constructor(
-    public gallery: Gallery,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title
@@ -29,6 +26,7 @@ export class DesignDetailsComponent implements AfterViewInit, OnInit {
         this.titleService.setTitle(this.titleService.getTitle() + ' ' + this.projectDetails.title);
 
         //Look for any internal links that we need to force to happen inside the router
+        setTimeout(()=>{
         if (this.detailsDescription) {
           this.detailsDescription.nativeElement.querySelectorAll<HTMLAnchorElement>('a[rel="ng"]').forEach((link) => {
             link.addEventListener('click', (evt) => {
@@ -37,22 +35,7 @@ export class DesignDetailsComponent implements AfterViewInit, OnInit {
             });
           });
         }
-      }
-    }
-  }
-
-  ngAfterViewInit(): void {
-    if (this.projectDetails) {
-      for (const gallery of this.projectDetails.galleries) {
-        const lightboxRef = this.gallery.ref(gallery.id);
-
-        lightboxRef.setConfig({
-          counter: false,
-          thumbAutosize: true,
-          itemTemplate: this.lightboxTemplate,
-        });
-
-        lightboxRef.load(gallery.images);
+      })
       }
     }
   }

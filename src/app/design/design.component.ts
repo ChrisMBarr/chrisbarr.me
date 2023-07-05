@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Gallery } from 'ng-gallery';
 import { IDesignProject, designProjectList } from '../data/design.data';
 
 @Component({
@@ -9,6 +8,4 @@ import { IDesignProject, designProjectList } from '../data/design.data';
 })
 export class DesignComponent {
   projects: IDesignProject[] = [...designProjectList];
-
-  constructor(public gallery: Gallery) {}
 }

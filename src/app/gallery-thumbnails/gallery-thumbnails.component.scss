@@ -1,0 +1,88 @@
+@use "../../global-styles/variables" as *;
+
+.lightbox {
+  &-thumbs-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacer;
+
+    .lightbox-thumb {
+      position: relative;
+
+      &-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+
+        opacity: 0.5;
+        filter: blur(2px) grayscale(1);
+      }
+
+      img {
+        max-height: 150px;
+        margin: auto 0;
+        z-index: 1;
+
+        box-shadow: shadow('md');
+      }
+
+      &-title {
+        border-top: 1px solid $color-highlight;
+        text-align: center;
+        width: 100%;
+        font-size: $font-size-sm;
+        padding: $spacer-xs;
+        background-color: $color-content-dark;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-thumb {
+    border: $btn-border-width solid $btn-border-color;
+    border-radius: $radius;
+    overflow: hidden;
+    transition: border-color $anim-duration;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+
+    img {
+      display: block;
+    }
+
+    &-title {
+      transition: all $anim-duration;
+    }
+
+    &:hover {
+      border-color: $color-highlight-light;
+      text-decoration: none;
+
+      .lightbox-thumb-title {
+        background-color: #6d464c; //fake way to get the look of $color-highlight-transparent over the $color-bg-dark
+        border-color: $color-highlight-light;
+        color: $btn-hover-color;
+      }
+    }
+  }
+
+  &-template {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: $spacer-sm;
+    background-color: rgba(#000, .5);
+    transform: translateY(0);
+    transition: transform $anim-duration;
+  }
+}

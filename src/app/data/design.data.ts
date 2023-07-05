@@ -1,29 +1,7 @@
-import { ImageItem, ImageItemData } from 'ng-gallery';
+import { CustomImageItem, IGallery, IProjectBase } from './data.model';
 
-interface ICustomImageItemData extends ImageItemData {
-  thumbTitle: string;
-}
-
-export class CustomImageItem extends ImageItem {
-  override readonly data: ImageItemData;
-  constructor(data: ICustomImageItemData) {
-    super(data);
-    this.data = data;
-  }
-}
-
-export interface IGallery {
-  title?: string;
-  id: string;
-  images: CustomImageItem[];
-}
-
-export interface IDesignProject {
-  title: string;
-  urlSlug: string;
+export interface IDesignProject extends IProjectBase {
   featuredImage: [gallery: number, image: number];
-  beginDescription: string;
-  endDescription: string;
   galleries: IGallery[];
 }
 
@@ -34,10 +12,10 @@ export const designProjectList: IDesignProject[] = [
     featuredImage: [0, 1],
     beginDescription: `<p>LyricConverter is a project I've built and improved, on and off, for years. It was made to extract song data and lyrics from many popular lyric display software packages and convert them to other formats. Many of these software packages do not have great import/export tools so I wanted to build something to help people keep their song libraries as they migrated to new software.</p>`,
     endDescription:
-      '<p>This is the third iteration of this application, which called for a UI refresh and a much more modern design. It now features randomly loaded full-screen background images, and transparent blurred-glass effects for all of the content areas. The design was made possible with a combination of custom CSS along with the Tailwind CSS library.</p><p>If you want to read more about the technical details of this project you can see it on the <a href="/dev" rel="ng">dev page</a>, see <a href="https://github.com/FiniteLooper/LyricConverter" target="_blank">the github page</a> for this project, or see the live site at <a href="http://lyricconverter.net" target="_blank">lyricconverter.net</a></p>',
+      '<p>This is the third iteration of this application, which called for a UI refresh and a much more modern design. It now features randomly loaded full-screen background images, and transparent blurred-glass effects for all of the content areas. The design was made possible with a combination of custom CSS along with the Tailwind CSS library.</p><p>If you want to read more about the technical details of this project you can <a href="/dev/lyric-converter" rel="ng">see it in the dev section</a>, see <a href="https://github.com/FiniteLooper/LyricConverter" target="_blank">the github page</a> for this project, or see the live site at <a href="http://lyricconverter.net" target="_blank">lyricconverter.net</a></p>',
     galleries: [
       {
-        id: 'lyricconverter',
+        id: 'lyricConverter',
         images: [
           new CustomImageItem({
             thumb: 'assets/design/LyricConverter/bg1_Thumb.jpg',
