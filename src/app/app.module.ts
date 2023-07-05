@@ -30,6 +30,7 @@ import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbna
     AppComponent,
     AboutComponent,
     DevComponent,
+    DevDetailsComponent,
     DesignComponent,
     DesignDetailsComponent,
     // PhotoComponent,

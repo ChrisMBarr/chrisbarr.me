@@ -1,3 +1,6 @@
+/dev/lyric-converter
+/dev/lyric-libraries
+/design/lyric-converter
 /design/account-chek
 /design/smoke-test
 /design/mission-togo

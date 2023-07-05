@@ -1,0 +1,29 @@
+<div class="container container-lg">
+  <section class="card" *ngIf="!projectDetails">
+    <div class="card-title no-sticky">
+      <a class="btn mr-3" routerLink="/dev"> &larr; Back </a>
+      <h2>Project not found!</h2>
+    </div>
+    <div class="card-content">
+      <p>Something seems to be wrong. There is no dev project at this URL!</p>
+    </div>
+  </section>
+
+  <section class="card" *ngIf="projectDetails">
+    <div class="card-title" appIsSticky>
+      <a class="btn mr-3" routerLink="/design"> &larr; Back </a>
+      <h2>{{ projectDetails.title }}</h2>
+    </div>
+
+    <div class="card-content">
+      <div #detailsDescription [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
+
+      <hr />
+
+      <ng-container *ngIf="projectDetails.gallery">
+        <app-gallery-thumbnails [galleryId]="projectDetails.gallery.id" [imageList]="projectDetails.gallery.images"></app-gallery-thumbnails>
+      </ng-container>
+
+    </div>
+  </section>
+</div>
