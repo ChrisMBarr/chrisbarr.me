@@ -18,7 +18,7 @@ export interface IGallery {
   images: CustomImageItem[];
 }
 
-export interface IProject {
+export interface IDesignProject {
   title: string;
   urlSlug: string;
   featuredImage: [gallery: number, image: number];
@@ -27,7 +27,7 @@ export interface IProject {
   galleries: IGallery[];
 }
 
-export const designProjectList: IProject[] = [
+export const designProjectList: IDesignProject[] = [
   {
     title: 'Project: LyricConverter',
     urlSlug: 'lyric-converter',
@@ -67,7 +67,7 @@ export const designProjectList: IProject[] = [
             thumb: 'assets/design/LyricConverter/slides_Thumb.jpg',
             src: 'assets/design/LyricConverter/slides.jpg',
             alt: 'LyricConverter - Display Slides',
-            thumbTitle: '',
+            thumbTitle: 'Display Slides',
           }),
           new CustomImageItem({
             thumb: 'assets/design/LyricConverter/help_Thumb.jpg',

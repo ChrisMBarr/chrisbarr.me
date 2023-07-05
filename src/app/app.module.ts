@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 // import { ContactFormComponent } from './about/contact-form/contact-form.component';
 import { DevComponent } from './dev/dev.component';
 import { DesignComponent } from './design/design.component';
+import { DesignDetailsComponent } from './design/design-details/design-details.component';
 // import { PhotoComponent } from './photo/photo.component';
 
 //App Directives
@@ -28,6 +29,7 @@ import { IsStickyDirective } from './directives/is-sticky.directive';
     AboutComponent,
     DevComponent,
     DesignComponent,
+    DesignDetailsComponent,
     // PhotoComponent,
     ParallaxScrollDirective,
     IsStickyDirective,

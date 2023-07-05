@@ -1,0 +1,49 @@
+<ng-template #lightboxTemplate let-data="data">
+  <span class="lightbox-template">{{ data?.alt }}</span>
+</ng-template>
+
+<ng-template #thumbLinksTemplate let-list="list" let-id="id">
+  <div class="lightbox-thumbs-container">
+    <a
+      class="lightbox-thumb"
+      href="javascript:;"
+      tabindex="0"
+      *ngFor="let item of list; index as i"
+      [lightbox]="i"
+      [gallery]="id">
+      <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
+      <img [src]="item.data.thumb" [alt]="item.data.alt" />
+      <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+    </a>
+  </div>
+</ng-template>
+
+<div class="container container-lg">
+  <section class="card" *ngIf="!projectDetails">
+    <div class="card-title no-sticky">
+      <a class="btn mr-3" routerLink="/design"> &larr; Back </a>
+      <h2>Project not found!</h2>
+    </div>
+    <div class="card-content">
+      <p>Something seems to be wrong. There is no design project at this URL!</p>
+    </div>
+  </section>
+
+  <section class="card" *ngIf="projectDetails">
+    <div class="card-title" appIsSticky>
+      <a class="btn mr-3" routerLink="/design"> &larr; Back </a>
+      <h2>{{ projectDetails.title }}</h2>
+    </div>
+
+    <div class="card-content">
+      <div #detailsDescription [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
+
+      <hr />
+
+      <ng-container *ngFor="let gallery of projectDetails.galleries">
+        <h3 *ngIf="gallery.title" [innerHTML]="gallery.title"></h3>
+        <ng-container *ngTemplateOutlet="thumbLinksTemplate; context: { list: gallery.images, id: gallery.id }" />
+      </ng-container>
+    </div>
+  </section>
+</div>
