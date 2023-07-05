@@ -1,5 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,7 +49,7 @@ import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbna
     FormsModule,
     HttpClientModule,
   ],
-  providers: [provideClientHydration()],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

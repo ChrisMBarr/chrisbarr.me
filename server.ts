@@ -1,7 +1,7 @@
 import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
-import { ngExpressEngine } from '@nguniversal/express-engine';
+import { RenderOptions, ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -15,7 +15,7 @@ export function app(): express.Express {
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule
+    bootstrap: AppServerModule as NonNullable<RenderOptions['bootstrap']>
   }));
 
   server.set('view engine', 'html');
@@ -37,7 +37,7 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] ?? 4000;
 
   // Start up the Node server
   const server = app();
@@ -51,7 +51,7 @@ function run(): void {
 // The below code is to ensure that the server is run only when not requiring the bundle.
 declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
-const moduleFilename = mainModule && mainModule.filename || '';
+const moduleFilename = mainModule?.filename ?? '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }

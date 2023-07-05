@@ -148,7 +148,7 @@ $skills-icons-animation-delay: 40ms;
 
       @media screen and (min-height: $section-min-height) {
         // only set this when at a desktop width AND the height is over the min-height set
-        min-height: calc(100vh - $header-height);
+        height: calc(100vh - $header-height);
       }
     }
 
