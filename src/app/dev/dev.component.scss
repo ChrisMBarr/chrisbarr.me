@@ -1,8 +1,1 @@
 @use "../../global-styles/variables" as *;
-
-img {
-   //makes the initial load look better
-  aspect-ratio: 251/190;
-  width: 100%;
-  height: auto;
-}

@@ -11,19 +11,31 @@
 
   <section class="card" *ngIf="projectDetails">
     <div class="card-title" appIsSticky>
-      <a class="btn mr-3" routerLink="/design"> &larr; Back </a>
+      <a class="btn mr-3" routerLink="/dev"> &larr; Back </a>
       <h2>{{ projectDetails.title }}</h2>
     </div>
 
     <div class="card-content">
       <div #detailsDescription [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
 
-      <hr />
+      <hr>
+
+      <h3 class="mt-0">Links</h3>
+      <ul>
+        <li *ngFor="let link of projectDetails.links">
+          <a [href]="link.url" target="_blank">
+            <svg role="img" *ngIf="link.iconId"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
+            {{link.text}}
+          </a>
+        </li>
+      </ul>
+
+      <hr *ngIf="projectDetails.gallery" />
 
       <ng-container *ngIf="projectDetails.gallery">
+        <h3 class="mt-0">Images</h3>
         <app-gallery-thumbnails [galleryId]="projectDetails.gallery.id" [imageList]="projectDetails.gallery.images"></app-gallery-thumbnails>
       </ng-container>
-
     </div>
   </section>
 </div>

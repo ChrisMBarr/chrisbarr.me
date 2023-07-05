@@ -64,10 +64,9 @@ $props: (
   .#{$propKey} {
     @each $dirKey, $dirVal in $directions {
       &#{$dirKey} {
-        @each $size in $spacers {
-          $i: index($spacers, $size);
-          &-#{$i} {
-            #{$propVal}-#{$dirVal}: map-get($spacers, $i);
+        @each $spacerSize, $spacerVal in $spacers {
+          &-#{$spacerSize} {
+            #{$propVal}-#{$dirVal}: $spacerVal;
           }
         }
       }
