@@ -4,11 +4,12 @@
 .row {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: $spacer;
+
 
   @include breakpoint(md) {
     //Screens wider than most mobile
     grid-template-columns: repeat(2, 1fr);
+    gap: $spacer;
   }
 
   &.row-lg {

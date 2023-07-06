@@ -1,0 +1,70 @@
+<ng-template #contactIconLink let-id="id" let-name="name" let-href="href" let-rel="rel">
+  <a class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
+    <h3 aria-hidden="true">
+      <span>{{ name }}</span>
+    </h3>
+  </a>
+</ng-template>
+
+<div class="container container-lg">
+  <div class="row row-lg">
+    <div class="card">
+      <div class="card-title no-sticky">
+        <h2>Email Me</h2>
+      </div>
+      <div class="card-content">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" *ngIf="!success">
+          <div class="form-group">
+            <input type="text" class="form-ctrl" id="name" name="name" placeholder="Your Name" required ngModel />
+            <label for="name">Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-ctrl" id="email" name="email" placeholder="name@exmaple.com" required ngModel />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-ctrl" style="display: none" aria-hidden="true">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" ngModel />
+          </div>
+          <div class="form-group">
+            <textarea id="message" class="form-ctrl" name="message" cols="30" rows="10" placeholder="Your Message" required ngModel></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <div id="btn-and-response">
+            <button type="submit" class="btn" [disabled]="contactForm.invalid">Send!</button>
+            <div class="invalid-msg" *ngIf="failureMessage !== ''">{{failureMessage}}</div>
+          </div>
+        </form>
+
+        <p *ngIf="success">
+          Email sent!
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title no-sticky">
+        <h2>Find Me</h2>
+      </div>
+      <div class="card-content" id="social">
+        <a rel="me" href="https://hachyderm.io/@FiniteLooper" target="_blank">
+          <svg role="img"><use xlink:href="#mastodon" /></svg>
+          Mastodon
+        </a>
+        <a href="http://github.com/FiniteLooper" target="_blank">
+          <svg role="img"><use xlink:href="#github" /></svg>
+          Github
+        </a>
+        <a href="https://www.linkedin.com/in/chrismbarr/" target="_blank">
+          <svg role="img"><use xlink:href="#linkedin" /></svg>
+          LinkedIn
+        </a>
+        <a href="https://stackoverflow.com/users/79677/chris-barr" target="_blank">
+          <svg role="img"><use xlink:href="#stackoverflow" /></svg>
+          Stack Overflow
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

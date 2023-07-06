@@ -13,7 +13,6 @@ import { GalleryModule } from 'ng-gallery';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
-// import { ContactFormComponent } from './about/contact-form/contact-form.component';
 import { DevComponent } from './dev/dev.component';
 import { DevDetailsComponent } from './dev/dev-details/dev-details.component';
 import { DesignComponent } from './design/design.component';
@@ -24,6 +23,7 @@ import { DesignDetailsComponent } from './design/design-details/design-details.c
 import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
 import { IsStickyDirective } from './directives/is-sticky.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
+import { ContactComponent } from './contact/contact.component';
 import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-card.component';
 
 @NgModule({
@@ -38,6 +38,7 @@ import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-ca
     ParallaxScrollDirective,
     IsStickyDirective,
     GalleryThumbnailsComponent,
+    ContactComponent,
     SkillGroupCardComponent,
   ],
   imports: [

@@ -1,0 +1,142 @@
+@use "../../global-styles/variables" as *;
+
+$form-label-focus-transforms: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+$form-label-color: $color-bg;
+$form-label-focus-color: rgba($color-bg, 0.65);
+$form-label-padding: 1rem $spacer-sm;
+$form-label-transition-speed: $anim-duration;
+$form-label-transition-easing: $ease-out-back;
+
+$form-ctrl-font-family: $font-family;
+$form-ctrl-font-size: 1rem;
+$form-ctrl-bg: #fff;
+$form-ctrl-border-width: 1px;
+$form-ctrl-border-color: $color-content-light;
+$form-ctrl-radius: $radius-sm;
+$form-ctrl-padding: $spacer-sm;
+$form-ctrl-focus-padding-top: 1.625rem;
+$form-ctrl-focus-padding-bottom: 0.625rem;
+$form-ctrl-transition-speed: $anim-duration-fast;
+$form-ctrl-transition-easing: ease-in-out;
+
+.form-group {
+  position: relative;
+  margin-bottom: $spacer;
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    padding: $form-label-padding;
+    color: $form-label-color;
+    overflow: hidden;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    border: $form-ctrl-border-width solid transparent;
+    transform-origin: 0 0;
+    transition: opacity $form-label-transition-speed $form-label-transition-easing,
+      transform $form-label-transition-speed $form-label-transition-easing;
+  }
+
+  .form-ctrl {
+    display: block;
+    width: 100%;
+    font-family: $form-ctrl-font-family;
+    font-size: $form-ctrl-font-size;
+    padding: $form-ctrl-padding;
+    background-color: $form-ctrl-bg;
+    background-clip: padding-box;
+    border: $form-ctrl-border-width solid $form-ctrl-border-color;
+    border-radius: $form-ctrl-radius;
+
+    height: calc(3.5rem + calc($form-ctrl-border-width * 2));
+    min-height: calc(3.5rem + calc($form-ctrl-border-width * 2));
+    line-height: 1.25;
+
+    transition: outline-color $form-ctrl-transition-speed $form-ctrl-transition-easing,
+      border-color $form-ctrl-transition-speed $form-ctrl-transition-easing,
+      box-shadow $form-ctrl-transition-speed $form-ctrl-transition-easing;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-top: $form-ctrl-focus-padding-top;
+      padding-bottom: $form-ctrl-focus-padding-bottom;
+    }
+    &:-webkit-autofill {
+      padding-top: $form-ctrl-focus-padding-top;
+      padding-bottom: $form-ctrl-focus-padding-bottom;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      ~ label {
+        color: $form-label-focus-color;
+        transform: $form-label-focus-transforms;
+
+        &::after {
+          position: absolute;
+          inset: 1rem 0.375rem;
+          z-index: -1;
+          height: 1.5em;
+          content: "";
+          background-color: transparent;
+          border-radius: $form-ctrl-radius;
+        }
+      }
+    }
+    // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+    &:-webkit-autofill {
+      ~ label {
+        color: $form-label-focus-color;
+        transform: $form-label-focus-transforms;
+      }
+    }
+  }
+
+  textarea.form-ctrl {
+    resize: vertical;
+    min-height: 150px;
+    height: 150px;
+    max-height: 500px;
+  }
+}
+
+#btn-and-response {
+  display: flex;
+}
+
+.invalid-msg {
+  color: red;
+}
+
+#social {
+  display: grid;
+  gap: $spacer;
+  grid-template-columns: repeat(2, 1fr);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacer-lg;
+  }
+}

@@ -17,7 +17,7 @@ $grid-desktop-min-size: md;
 $color-bg: #424153;
 $color-text: #fff;
 $color-highlight: #ff6853;
-$color-highlight-transparent: rgba($color-highlight, .25);
+$color-highlight-transparent: rgba($color-highlight, 0.25);
 $color-highlight-light: lighten($color-highlight, 20%);
 $color-content-dark: darken($color-bg, 3%);
 $color-content-light: lighten($color-bg, 5%);
@@ -47,10 +47,10 @@ $font-weight-medium: 500;
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
-  4: $spacer * 1.5
+  4: $spacer * 1.5,
 );
 
 $spacer-xs: map-get($spacers, 1);
@@ -59,10 +59,12 @@ $spacer-lg: map-get($spacers, 4);
 
 //==================================
 // MISC
-$radius: 0.5rem;
 $transparency: 0.85;
+$focus-shadow: 0 0 5px rgba($color-highlight-light, 0.3);
+$radius: 0.5rem;
 $radius-sm: calc($radius / 2);
 $anim-duration: 300ms;
+$anim-duration-fast: calc($anim-duration / 2);
 $backdrop-blur: 10px;
 $ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 
@@ -70,7 +72,7 @@ $ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 //HEADER/NAV
 $header-height: 102px;
 $header-padding: $spacer;
-$header-color-bg-default:$color-bg;
+$header-color-bg-default: $color-bg;
 $header-color-bg-desktop: rgba($header-color-bg-default, $transparency);
 $header-blur-bg-desktop: $backdrop-blur;
 $header-z-index: 100;
@@ -88,27 +90,31 @@ $nav-link-active-color: $color-text;
 //==================================
 //BUTTONS
 $btn-padding: $spacer-sm;
+$btn-color: $color-highlight;
+$btn-bg: transparent;
 $btn-border-color: $color-highlight;
 $btn-border-width: 1px;
 $btn-border-radius: $radius-sm;
 $btn-hover-border-color: $color-highlight-light;
 $btn-hover-bg-color: $color-highlight-transparent;
 $btn-hover-color: $color-text;
+$btn-disabled-color: lighten($color-content-light, 30%);
+$btn-disabled-border-color: $color-content-light;
+$btn-disabled-bg: rgba($color-content-light, .25);
 
 //==================================
 //MAIN
 $main-font-size: 1.2rem;
 
-
 //==================================
 //MIXINS & functions
 
 //rename bootstrap functions/mixins so we don't have to pass around so many variables
-@function breakpoint-size($size){
+@function breakpoint-size($size) {
   @return breakpoint-min($size, $grid-breakpoints);
 }
 
-@mixin breakpoint($size){
+@mixin breakpoint($size) {
   @include media-breakpoint-up($size, $grid-breakpoints) {
     @content;
   }
@@ -119,7 +125,8 @@ $main-font-size: 1.2rem;
   @if ($size == "sm") {
     filter: drop-shadow(shadow($size));
   }
-  @if ($size == "") { //default size
+  @if ($size == "") {
+    //default size
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   }
   @if ($size == "md") {
@@ -144,7 +151,8 @@ $main-font-size: 1.2rem;
   @if ($size == "sm") {
     @return 0 1px 1px rgb(0 0 0 / 0.05);
   }
-  @if ($size == "") { //default size
+  @if ($size == "") {
+    //default size
     @return 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 1px rgb(0 0 0 / 0.06);
   }
   @if ($size == "md") {
@@ -163,4 +171,3 @@ $main-font-size: 1.2rem;
     @return 0 0 #0000;
   }
 }
-

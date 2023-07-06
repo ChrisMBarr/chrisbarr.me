@@ -43,9 +43,14 @@ html {
 
 a {
   color: $color-highlight;
-  transition: color $anim-duration;
   -webkit-tap-highlight-color: rgba($color-highlight, 0.25);
   text-decoration: none;
+
+  //set up for good looking focus transitions
+  outline: 0 solid transparent;
+  border-radius: $radius-sm;
+  transition: color $anim-duration-fast ease-in-out, outline-color $anim-duration-fast ease-in-out,
+    box-shadow $anim-duration-fast ease-in-out;
 
   &:hover,
   &:focus {
@@ -60,7 +65,7 @@ a {
 
 :focus-visible {
   outline: 2px solid $color-highlight;
-  box-shadow: 0 0 5px rgba($color-highlight-light, 0.3), inset 0 0 5px rgba($color-highlight-light, 0.3);
+  box-shadow: $focus-shadow, inset $focus-shadow;
   border-radius: $radius-sm;
 }
 
