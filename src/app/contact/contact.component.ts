@@ -37,7 +37,7 @@ export class ContactComponent {
         good: true,
       };
       this.http
-        .post<IContactResult>('http://chrisbarr.me/assets/contact.php', JSON.stringify(formData))
+        .post<IContactResult>('../../assets/contact.php', JSON.stringify(formData))
         .pipe(map((res) => res))
         .subscribe({
           next: (data) => {
