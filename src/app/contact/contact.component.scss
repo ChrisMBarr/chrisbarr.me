@@ -107,14 +107,37 @@ $form-ctrl-transition-easing: ease-in-out;
     height: 150px;
     max-height: 500px;
   }
+
+  &.invalid {
+    .form-ctrl {
+      background-color: lighten($color-error, 38%);
+      border-color: $color-error;
+      outline-color: $color-error;
+
+      ~ label {
+        color: $color-error;
+      }
+    }
+
+    label {
+      color: $color-error;
+    }
+  }
 }
 
 #btn-and-response {
   display: flex;
+  gap: $spacer;
 }
 
 .invalid-msg {
-  color: red;
+  color: $color-error;
+}
+
+#success-msg {
+  text-align: center;
+  color: $color-success;
+
 }
 
 #social {

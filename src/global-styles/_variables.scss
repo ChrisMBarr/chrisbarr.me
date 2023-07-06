@@ -21,6 +21,8 @@ $color-highlight-transparent: rgba($color-highlight, 0.25);
 $color-highlight-light: lighten($color-highlight, 20%);
 $color-content-dark: darken($color-bg, 3%);
 $color-content-light: lighten($color-bg, 5%);
+$color-success: darken(adjust-hue($color-highlight, 120deg), 20%);
+$color-error: darken(adjust-hue($color-highlight, -10deg), 7%);
 
 //==================================
 // SPECIAL PROPERTY COLORS

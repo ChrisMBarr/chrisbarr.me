@@ -6,9 +6,7 @@ It's built using Angular 16, with Angular Universal prerendering to help out wit
 
 
 # TODO
-* Home page
-  - larger photos
-* Separate contact page
-  - Contact form that sends email
-  - Resume
+* Larger photo on about/home page
+* Add resume download
+* fix PHP mailer to use SMTP
 * photos section + togo videos
