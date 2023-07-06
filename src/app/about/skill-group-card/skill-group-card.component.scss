@@ -1,0 +1,129 @@
+@use "../../../global-styles/variables" as *;
+@use "../about.component" as *;
+
+$skills-icon-size-default: 75px;
+$skills-icon-size-desktop: 96px;
+$skills-icons-count: 27;
+$skills-icons-animation-delay: 40ms;
+
+@keyframes anim-scale-in {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.icon {
+  width: 100%;
+  position: relative;
+
+  svg {
+    //smaller size on mobile sizes
+    height: $skills-icon-size-default;
+    width: $skills-icon-size-default;
+    transition: $anim-duration transform $ease-out-back;
+
+    @include breakpoint(sm) {
+      //mack to normal sizes for larger screens
+      height: $skills-icon-size-desktop;
+      width: $skills-icon-size-desktop;
+    }
+  }
+
+  h3 {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    width: 200%;
+    font-weight: $font-weight-thin;
+    text-align: center;
+    transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
+    transform: translate(-25%, -10px);
+
+    span {
+      background-color: $color-bg;
+      padding: $spacer-sm;
+      border-radius: $radius;
+      white-space: nowrap;
+
+      @include drop-shadow("lg");
+    }
+  }
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    z-index: 10;
+
+    svg {
+      transform: scale(1.1);
+      @include drop-shadow("lg");
+    }
+    h3 {
+      opacity: 1;
+      transform: translate(-25%, 0);
+    }
+  }
+}
+
+.skills-icons-card {
+  //size/position
+  margin: 0 auto;
+
+  padding: $about-card-padding;
+  background: $about-card-bg;
+  backdrop-filter: blur($about-card-bg-blur);
+  border-radius: $about-card-radius;
+
+  &-title {
+    margin: $about-card-title-margin;
+    color: $color-bg;
+  }
+
+  @include breakpoint($grid-desktop-min-size) {
+    padding: $spacer-lg;
+
+    &-title {
+      margin-bottom: $spacer-lg;
+    }
+  }
+
+  &-icons {
+    //grid
+    display: grid;
+    gap: $spacer;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($grid-desktop-min-size) {
+      grid-template-columns: repeat(6, 1fr);
+      gap: $spacer-lg;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    > * {
+      //default until class is added
+      transform: scale(0);
+
+      .skills-icons-animate & {
+        animation: anim-scale-in $anim-duration $ease-out-back;
+        animation-fill-mode: both;
+
+        @for $i from 1 through $skills-icons-count {
+          &:nth-child(#{$i}) {
+            animation-delay: $skills-icons-animation-delay * $i;
+          }
+        }
+      }
+    }
+  }
+}

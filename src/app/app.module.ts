@@ -24,6 +24,7 @@ import { DesignDetailsComponent } from './design/design-details/design-details.c
 import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
 import { IsStickyDirective } from './directives/is-sticky.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
+import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-card.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbna
     ParallaxScrollDirective,
     IsStickyDirective,
     GalleryThumbnailsComponent,
+    SkillGroupCardComponent,
   ],
   imports: [
     BrowserModule,

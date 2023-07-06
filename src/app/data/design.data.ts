@@ -7,7 +7,7 @@ export interface IDesignProject extends IProjectBase {
 
 export const designProjectList: IDesignProject[] = [
   {
-    title: 'Project: LyricConverter',
+    title: 'LyricConverter',
     urlSlug: 'lyric-converter',
     featuredImage: [0, 1],
     beginDescription: `<p>LyricConverter is a project I've built and improved, on and off, for years. It was made to extract song data and lyrics from many popular lyric display software packages and convert them to other formats. Many of these software packages do not have great import/export tools so I wanted to build something to help people keep their song libraries as they migrated to new software.</p>`,
@@ -58,7 +58,7 @@ export const designProjectList: IDesignProject[] = [
     ],
   },
   {
-    title: 'Project: AccountChek',
+    title: 'AccountChek',
     urlSlug: 'account-chek',
     featuredImage: [1, 1],
     beginDescription:
@@ -307,7 +307,7 @@ export const designProjectList: IDesignProject[] = [
     ],
   },
   {
-    title: 'Pro Bono Project: Mission Togo',
+    title: 'Mission Togo',
     urlSlug: 'mission-togo',
     featuredImage: [0, 0],
     beginDescription: `<p> Togo is a small country in western Africa. In 2010 I was part of a mission team to Gbentchal ("ben-jaal"), a village in the northern area of the country in great need of help. As the team photographer and videographer, my role was to document all aspects of our main project, which was a children's sports camp. Other groups before and after ours assisted with drilling a fresh water well, planting crops, and helping to build a school. </p><p> To raise awareness of the needs and raise funds for a return trip in 2012, I designed and built a website. The website provided information, photos, videos, and accepted donations via PayPal. It was built in PHP on top of Expression Engine. The photos, and videos featured on the website were all shot by me as well. </p>`,

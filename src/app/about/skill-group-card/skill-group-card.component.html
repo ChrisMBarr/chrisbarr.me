@@ -1,0 +1,11 @@
+<div class="skills-icons-card" tabindex="0" #card>
+  <h3 class="skills-icons-card-title">{{group.groupName}}</h3>
+  <div class="skills-icons-card-icons" role="list">
+    <div class="icon" role="listitem" *ngFor="let skill of group.skillList" [attr.aria-label]="skill.skillName">
+      <svg role="img"><use [attr.xlink:href]="'#' + skill.iconId" /></svg>
+      <h3 aria-hidden="true">
+        <span>{{ skill.skillName }}</span>
+      </h3>
+    </div>
+  </div>
+</div>

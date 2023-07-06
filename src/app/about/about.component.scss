@@ -1,48 +1,22 @@
 @use "../../global-styles/variables" as *;
 
-$section-min-height: 500px;
-$skills-icon-size-default: 75px;
-$skills-icon-size-desktop: 96px;
-$skills-icons-count: 27;
-$skills-icons-animation-delay: 40ms;
-
-@keyframes anim-intro-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes anim-arrow-bounce {
-  0%,
-  100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-@keyframes anim-scale-in {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
+$about-card-bg: rgba(#fff, 0.5);
+$about-card-bg-blur: 10px;
+$about-card-radius: $radius;
+$about-card-padding: $spacer;
+$about-card-title-color: $color-bg;
+$about-card-title-margin: 0 0 $spacer 0;
+$about-section-min-height: 500px;
 
 .section-container {
-  min-height: $section-min-height;
+  min-height: $about-section-min-height;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  &-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   @include breakpoint($grid-desktop-min-size) {
     //each section can be as tall as the screen, but never more than 1000px
@@ -54,11 +28,6 @@ $skills-icons-animation-delay: 40ms;
   margin: 0 $spacer $spacer $spacer;
   font-weight: $font-weight-thin;
   text-shadow: shadow("xl");
-
-  @include breakpoint($grid-desktop-min-size) {
-    position: sticky;
-    top: $header-height;
-  }
 
   @include breakpoint(lg) {
     font-size: $font-size-lg;
@@ -72,6 +41,27 @@ $skills-icons-animation-delay: 40ms;
 }
 
 #intro {
+  @keyframes anim-intro-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes anim-arrow-bounce {
+    0%,
+    100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
   --anim-intro-size: 150vw;
   $img-size: 300px;
   $container-width-desktop: calc(breakpoint-size($grid-desktop-min-size) - ($spacer * 2));
@@ -146,7 +136,7 @@ $skills-icons-animation-delay: 40ms;
       width: $container-width-desktop;
       margin: 0 auto;
 
-      @media screen and (min-height: $section-min-height) {
+      @media screen and (min-height: $about-section-min-height) {
         // only set this when at a desktop width AND the height is over the min-height set
         height: calc(100vh - $header-height);
       }
@@ -166,61 +156,8 @@ $skills-icons-animation-delay: 40ms;
   }
 }
 
-.icon {
-  width: 100%;
-  position: relative;
-
-  svg {
-    //smaller size on mobile sizes
-    height: $skills-icon-size-default;
-    width: $skills-icon-size-default;
-    transition: $anim-duration transform;
-
-    @include breakpoint(sm) {
-      //mack to normal sizes for larger screens
-      height: $skills-icon-size-desktop;
-      width: $skills-icon-size-desktop;
-    }
-  }
-
-  h3 {
-    position: absolute;
-    margin: 0;
-    opacity: 0;
-    width: 200%;
-    font-weight: $font-weight-thin;
-    text-align: center;
-    transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
-    transform: translate(-25%, -10px);
-
-    span {
-      background-color: $color-bg;
-      padding: $spacer-sm;
-      border-radius: $radius;
-      white-space: nowrap;
-
-      @include drop-shadow("lg");
-    }
-  }
-
-  &:focus,
-  &:focus-within,
-  &:hover {
-    z-index: 10;
-
-    svg {
-      transform: scale(1.1);
-      @include drop-shadow("lg");
-    }
-    h3 {
-      opacity: 1;
-      transform: translate(-25%, 0);
-    }
-  }
-}
-
-#skills,
-#contact {
+#featured-work,
+#skills {
   background-attachment: scroll;
   background-position-x: center; //position-y will be handled by parallax directive
   background-repeat: no-repeat;
@@ -230,6 +167,42 @@ $skills-icons-animation-delay: 40ms;
   @include breakpoint(xxl) {
     background-attachment: fixed;
     background-size: cover;
+  }
+}
+
+#featured-work {
+  background-image: url("../../../src/assets/img/contact-bg.jpg");
+
+
+
+  .section-container {
+    margin: 0 $spacer;
+
+    @include breakpoint(xl) {
+      max-width: breakpoint-size(xl);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .feature {
+    z-index: 1; //above the grain texture
+    padding: $about-card-padding;
+    background: $about-card-bg;
+    backdrop-filter: blur($about-card-bg-blur);
+    border-radius: $about-card-radius;
+
+    //make them look clickable
+    cursor: pointer;
+
+    &-title {
+      margin: $about-card-title-margin;
+      color: $about-card-title-color;
+    }
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
@@ -249,97 +222,6 @@ $skills-icons-animation-delay: 40ms;
 
     &:hover {
       opacity: 1;
-    }
-  }
-}
-
-.skills-icons-card {
-  //size/position
-  margin: 0 auto;
-  padding: $spacer;
-
-  //background/shape
-  background: rgba(#fff, 0.5);
-  backdrop-filter: blur(10px);
-  border-radius: $radius;
-
-  &-title {
-    margin: 0 0 $spacer 0;
-    color: $color-bg;
-  }
-
-  @include breakpoint($grid-desktop-min-size) {
-    padding: $spacer-lg;
-
-    &-title {
-      margin-bottom: $spacer-lg;
-    }
-  }
-
-  &-icons {
-    //grid
-    display: grid;
-    gap: $spacer;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    @include breakpoint(sm) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    @include breakpoint($grid-desktop-min-size) {
-      grid-template-columns: repeat(6, 1fr);
-      gap: $spacer-lg;
-    }
-
-    @include breakpoint(lg) {
-      grid-template-columns: repeat(7, 1fr);
-    }
-
-    > * {
-      //default until class is added
-      transform: scale(0);
-
-      .skills-icons-animate & {
-        animation: anim-scale-in $anim-duration $ease-out-back;
-        animation-fill-mode: both;
-
-        @for $i from 1 through $skills-icons-count {
-          &:nth-child(#{$i}) {
-            animation-delay: $skills-icons-animation-delay * $i;
-          }
-        }
-      }
-    }
-  }
-}
-
-#contact {
-  background-image: url("../../../src/assets/img/contact-bg.jpg");
-
-  .section-container {
-    max-height: 300px;
-  }
-
-  #social {
-    display: grid;
-    gap: $spacer;
-    grid-template-columns: repeat(2, 1fr);
-
-    @include breakpoint(sm) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: $spacer-lg;
-    }
-
-    .icon {
-      svg {
-        fill: $color-text;
-      }
-      h3 {
-        span {
-          color: $color-text;
-        }
-      }
     }
   }
 }

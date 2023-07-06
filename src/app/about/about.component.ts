@@ -1,6 +1,6 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { ISkillGroup, skillGroups } from '../data/skills.data';
+import { designProjectList } from '../data/design.data';
 
 @Component({
   selector: 'app-about',
@@ -8,17 +8,11 @@ import { ISkillGroup, skillGroups } from '../data/skills.data';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements AfterViewInit {
-  private readonly window: Window = this.document.defaultView as Window;
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;
-  @ViewChild('skillsContainer', { static: true }) private skillsContainer!: ElementRef<HTMLElement>;
-  @ViewChildren('skillsIconsCard') private skillsIconsCard!: QueryList<ElementRef<HTMLElement>>;
 
   private arrowTimer?: ReturnType<typeof setTimeout>;
-  private skillAnimationTriggered = false;
-
-  skillGroups: ISkillGroup[] = skillGroups;
-
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {}
+  readonly designProjects = designProjectList;
+  readonly skillGroups: ISkillGroup[] = skillGroups;
 
   ngAfterViewInit(): void {
     //prevent a build error for SSR
@@ -44,14 +38,6 @@ export class AboutComponent implements AfterViewInit {
       clearTimeout(this.arrowTimer);
       this.arrowTimer = undefined;
       this.introContainer.nativeElement.classList.remove('show-arrow');
-    }
-
-    if (!this.skillAnimationTriggered) {
-      const iconsTop = this.skillsIconsCard.first.nativeElement.getBoundingClientRect().top;
-      if (this.window.innerHeight >= iconsTop + 100) {
-        this.skillAnimationTriggered = true;
-        this.skillsContainer.nativeElement.classList.add('skills-icons-animate');
-      }
     }
   }
 }

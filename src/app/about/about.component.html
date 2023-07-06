@@ -1,5 +1,5 @@
 <section id="intro">
-  <div class="section-container" aria-label="Introduction" tabindex="0" #introContainer>
+  <div class="section-container section-container-flex" aria-label="Introduction" tabindex="0" #introContainer>
     <h2 id="greeting-mobile">Hi, I'm Chris</h2>
     <img src="/assets/img/me.jpg" alt="Photo of Chris Barr" />
     <div>
@@ -12,46 +12,29 @@
   </div>
 </section>
 
-<section id="skills" appParallaxScroll>
-  <div class="section-container" #skillsContainer>
-    <div class="skills-icons-card" tabindex="0" *ngFor="let group of skillGroups" #skillsIconsCard>
-      <h3 class="skills-icons-card-title">{{group.groupName}}</h3>
-      <div class="skills-icons-card-icons" role="list">
-        <div class="icon" role="listitem" *ngFor="let skill of group.skillList" [attr.aria-label]="skill.skillName">
-          <svg role="img"><use [attr.xlink:href]="'#' + skill.iconId" /></svg>
-          <h3 aria-hidden="true">
-            <span>{{ skill.skillName }}</span>
-          </h3>
-        </div>
-      </div>
+<section id="featured-work" appParallaxScroll>
+  <h2 class="section-title">Featured Work</h2>
+  <div class="section-container">
+    <div class="row">
+      <ng-container [ngTemplateOutlet]="featuredProject" [ngTemplateOutletContext]="{ proj: designProjects[0] }" />
+      <ng-container [ngTemplateOutlet]="featuredProject" [ngTemplateOutletContext]="{ proj: designProjects[1] }" />
     </div>
+  </div>
+</section>
+
+<section id="skills" appParallaxScroll>
+  <h2 class="section-title">Skills</h2>
+  <div class="section-container section-container-flex">
+    <app-skill-group-card *ngFor="let group of skillGroups" [group]="group" />
   </div>
   <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>
 </section>
 
-<section id="contact" appParallaxScroll>
-  <h2 class="section-title">Contact</h2>
-
-  <div class="section-container">
-    <div id="social" tabindex="0" aria-label="Social Media Links">
-      <ng-container
-        *ngTemplateOutlet="contactIconLink; context: { id: 'mastodon', name: 'Mastodon', href: 'https://hachyderm.io/@FiniteLooper', rel: 'me' }" />
-      <ng-container *ngTemplateOutlet="contactIconLink; context: { id: 'github', name: 'Github', href: 'http://github.com/FiniteLooper' }" />
-      <ng-container
-        *ngTemplateOutlet="contactIconLink; context: { id: 'linkedin', name: 'LinkedIn', href: 'https://www.linkedin.com/in/chrismbarr/' }" />
-      <ng-container
-        *ngTemplateOutlet="contactIconLink; context: { id: 'stackoverflow', name: 'Stack Overflow', href: 'https://stackoverflow.com/users/79677/chris-barr' }" />
-    </div>
-
-    <!-- <app-contact-form></app-contact-form> -->
+<ng-template #featuredProject let-proj="proj">
+  <div class="feature" [routerLink]="['design', proj.urlSlug]">
+    <h3 class="feature-title">{{ proj.title }}</h3>
+    <img
+      [src]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.src"
+      [alt]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.alt" />
   </div>
-</section>
-
-<ng-template #contactIconLink let-id="id" let-name="name" let-href="href" let-rel="rel">
-  <a class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
-    <svg role="img"><use [attr.xlink:href]="'#' + id" /></svg>
-    <h3 aria-hidden="true">
-      <span>{{ name }}</span>
-    </h3>
-  </a>
 </ng-template>

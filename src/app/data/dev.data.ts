@@ -8,7 +8,7 @@ export interface IDevProject extends IProjectBase {
 
 export const devProjectList: IDevProject[] = [
   {
-    title: 'Lyric Converter',
+    title: 'LyricConverter',
     urlSlug: 'lyric-converter',
     gallery: {
       id: 'lyricConverter',
