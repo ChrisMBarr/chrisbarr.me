@@ -18,9 +18,10 @@
 }
 
 .section-title {
+  position: relative; //above the grain texture
   margin: 0 $spacer $spacer $spacer;
   font-weight: $font-weight-thin;
-  text-shadow: shadow("xl");
+  text-shadow: shadow("lg");
 
   @include breakpoint(lg) {
     font-size: $font-size-lg;
@@ -190,10 +191,21 @@
       margin: $about-card-title-margin;
       color: $about-card-title-color;
     }
+
+    &:focus,
+    &:focus-within,
+    &:hover {
+      img {
+        transform: scale(1.02);
+        @include drop-shadow("lg");
+      }
+    }
   }
 
   img {
     max-width: 100%;
+    border-radius: $radius-sm;
+    transition: $anim-duration transform $ease-out-back;
   }
 }
 
