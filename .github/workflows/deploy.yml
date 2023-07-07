@@ -2,8 +2,8 @@ name: 🚀 Build & Deploy via FTPS
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: ['main']
+    paths-ignore: ['.vscode/**', 'README.md', '.*']
 permissions:
   contents: write
 jobs:
