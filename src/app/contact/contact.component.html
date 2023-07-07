@@ -14,7 +14,6 @@
       </div>
       <div class="card-content">
         <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!success">
-
           <div class="form-group" [ngClass]="{ invalid: name.touched && name.invalid }">
             <input
               type="text"
@@ -25,11 +24,9 @@
               autocomplete="name"
               required
               #name="ngModel"
-              ngModel/>
+              ngModel />
             <label for="name">Name</label>
-            <div class="invalid-msg" *ngIf="name.touched && name.errors?.required">
-              Your name is required!
-            </div>
+            <div class="invalid-msg" [ngClass]="{ shown: name.touched && name.errors?.required }">Your name is required!</div>
           </div>
 
           <div class="form-group" [ngClass]="{ invalid: email.touched && email.invalid }">
@@ -43,12 +40,10 @@
               required
               email
               #email="ngModel"
-              ngModel/>
+              ngModel />
             <label for="email">Email</label>
-            <div class="invalid-msg" *ngIf="email.touched && email.errors?.required">
-              Your email is required!
-            </div>
-            <div class="invalid-msg" *ngIf="email.touched && email.errors?.email">
+            <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.required }">Your email is required!</div>
+            <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.email }">
               This doesn't look like a valid email address
             </div>
           </div>
@@ -72,23 +67,23 @@
               ngModel></textarea>
             <label for="message">Message</label>
 
-            <div class="invalid-msg" *ngIf="message.touched && message.errors?.required">
+            <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.required }">
               A message is required!
             </div>
-            <div class="invalid-msg" *ngIf="message.touched && message.errors?.minlength">
-              Your message is pretty short. It needs to be a little bit longer than that.
+            <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.minlength }">
+              Your message is pretty short. It needs to be at least
+              {{ message.errors?.minlength?.requiredLength - message.errors?.minlength?.actualLength }} characters longer.
             </div>
           </div>
 
           <div id="btn-and-response">
             <button type="submit" class="btn" [disabled]="form.invalid">Send!</button>
             <div *ngIf="isSending">Sending&hellip;</div>
-            <div class="invalid-msg" *ngIf="failureMessage !== ''">
+            <div class="invalid-msg" [ngClass]="{ shown: failureMessage !== '' }">
               <strong>Error:</strong>
               {{ failureMessage }}
             </div>
           </div>
-
         </form>
 
         <div id="success-msg" *ngIf="success">

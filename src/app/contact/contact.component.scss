@@ -132,12 +132,20 @@ $form-ctrl-transition-easing: ease-in-out;
 
 .invalid-msg {
   color: $color-error;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: $anim-duration all $ease-out-back;
+
+  &.shown {
+    opacity: 1;
+    max-height: 3rem;
+  }
 }
 
 #success-msg {
   text-align: center;
   color: $color-success;
-
 }
 
 #social {
