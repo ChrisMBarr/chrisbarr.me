@@ -10,11 +10,15 @@ export class ParallaxScrollDirective implements OnInit {
   constructor(@Inject(DOCUMENT) private readonly document: Document, private el: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
-    this.onWindowScroll(true);
+    //timeout needed when coming from another page
+    setTimeout(() => {
+      //fake event needed as first param since that's what the hostlistener provides there
+      this.onWindowScroll(new Event('scroll'), true);
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(force = false): void {
+  onWindowScroll(_event: Event, force = false): void {
     //add check to prevent error when building prerendered views
     if (typeof this.el.nativeElement.getBoundingClientRect === 'function') {
       const rect = this.el.nativeElement.getBoundingClientRect();
