@@ -1,7 +1,7 @@
 <header #header>
   <h1 id="title">Chris Barr</h1>
   <nav id="navigation" #navContainer>
-    <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">About</a>
+    <a routerLink="/" [class.active]="isAboutPage">About</a>
     <a routerLinkActive="active" routerLink="/dev">Dev</a>
     <a routerLinkActive="active" routerLink="/design">Design</a>
     <a routerLinkActive="active" routerLink="/contact">Contact</a>
