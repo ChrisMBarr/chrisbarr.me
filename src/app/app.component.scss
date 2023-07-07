@@ -48,13 +48,11 @@ header {
 #navigation {
   margin: $nav-margin-default;
 
-  @include breakpoint($grid-desktop-min-size) {
-    margin: $nav-margin-desktop;
-  }
+
 
   > * {
     //text
-    font-size: $nav-link-font-size;
+    font-size: $nav-link-font-size-default;
     font-weight: $nav-link-font-weight;
     text-decoration: none;
     text-transform: uppercase;
@@ -71,9 +69,18 @@ header {
     }
   }
 
+  @include breakpoint($grid-desktop-min-size) {
+    margin: $nav-margin-desktop;
+
+    >* {
+      font-size: $nav-link-font-size-desktop;
+    }
+  }
+
   &-active-bg {
     position: absolute;
     background-color: $nav-link-active-bg;
+    border-radius: $nav-link-active-radius;
     z-index: -1;
 
     transition: all $anim-duration*1.5 $ease-out-back;

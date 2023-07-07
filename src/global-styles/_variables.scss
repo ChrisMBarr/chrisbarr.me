@@ -82,11 +82,13 @@ $header-title-font-size: 70px;
 $header-title-font-weight: $font-weight-thin;
 $nav-margin-default: $spacer 0 0 0;
 $nav-margin-desktop: 0 0 0 $spacer-lg;
-$nav-link-font-size: 20px;
+$nav-link-font-size-default: 17px;
+$nav-link-font-size-desktop: 20px;
 $nav-link-font-weight: $font-weight-medium;
 $nav-link-padding: $spacer-sm;
 $nav-link-hover-color: $color-text;
 $nav-link-active-bg: $color-highlight-transparent;
+$nav-link-active-radius: $radius-sm;
 $nav-link-active-color: $color-text;
 
 //==================================
