@@ -1,0 +1,9 @@
+@use "../../global-styles/variables" as *;
+
+$about-card-bg: rgba(#fff, 0.5);
+$about-card-bg-blur: 10px;
+$about-card-radius: $radius;
+$about-card-padding: $spacer;
+$about-card-title-color: $color-bg;
+$about-card-title-margin: 0 0 $spacer 0;
+$about-section-min-height: 500px;

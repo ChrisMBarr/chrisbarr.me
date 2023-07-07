@@ -1,5 +1,5 @@
 @use "../../../global-styles/variables" as *;
-@use "../about.component" as *;
+@use "../about-variables" as *;
 
 $skills-icon-size-default: 75px;
 $skills-icon-size-desktop: 96px;
@@ -18,6 +18,8 @@ $skills-icons-animation-delay: 40ms;
 .icon {
   width: 100%;
   position: relative;
+  //default until class is added
+  transform: scale(0);
 
   svg {
     //smaller size on mobile sizes
@@ -47,7 +49,6 @@ $skills-icons-animation-delay: 40ms;
       padding: $spacer-sm;
       border-radius: $radius;
       white-space: nowrap;
-
       @include drop-shadow("lg");
     }
   }
@@ -64,6 +65,17 @@ $skills-icons-animation-delay: 40ms;
     h3 {
       opacity: 1;
       transform: translate(-25%, 0);
+    }
+  }
+
+  .skills-icons-animate & {
+    animation: anim-scale-in $anim-duration $ease-out-back;
+    animation-fill-mode: both;
+
+    @for $i from 1 through $skills-icons-count {
+      &:nth-child(#{$i}) {
+        animation-delay: $skills-icons-animation-delay * $i;
+      }
     }
   }
 }
@@ -94,7 +106,6 @@ $skills-icons-animation-delay: 40ms;
     //grid
     display: grid;
     gap: $spacer;
-
     grid-template-columns: repeat(3, 1fr);
 
     @include breakpoint(sm) {
@@ -108,22 +119,6 @@ $skills-icons-animation-delay: 40ms;
 
     @include breakpoint(lg) {
       grid-template-columns: repeat(7, 1fr);
-    }
-
-    > * {
-      //default until class is added
-      transform: scale(0);
-
-      .skills-icons-animate & {
-        animation: anim-scale-in $anim-duration $ease-out-back;
-        animation-fill-mode: both;
-
-        @for $i from 1 through $skills-icons-count {
-          &:nth-child(#{$i}) {
-            animation-delay: $skills-icons-animation-delay * $i;
-          }
-        }
-      }
     }
   }
 }
