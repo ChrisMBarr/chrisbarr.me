@@ -8,7 +8,7 @@ export interface IProjectBase {
 }
 
 interface ICustomImageItemData extends ImageItemData {
-  thumbTitle: string;
+  thumbTitle?: string;
 }
 
 export class CustomImageItem extends ImageItem {

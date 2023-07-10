@@ -6,6 +6,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $spacer;
 
+    &.lightbox-thumbs-dense {
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
     .lightbox-thumb {
       position: relative;
 
@@ -76,6 +82,7 @@
     }
   }
 
+  //the hover state is in `_lightbox.scss` since it has to apply a hover effect on an element not in this component
   &-template {
     margin-top: auto;
     width: 100%;
@@ -84,5 +91,9 @@
     background-color: rgba(#000, .5);
     transform: translateY(0);
     transition: transform $anim-duration;
+
+    &.no-text {
+      display: none;
+    }
   }
 }

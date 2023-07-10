@@ -12,6 +12,7 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
 
   @Input() galleryId = '';
   @Input() imageList: CustomImageItem[] = [];
+  @Input() dense = false;
 
   constructor(private gallery: Gallery) {}
 

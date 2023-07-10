@@ -6,3 +6,10 @@
 /design/smoke-test
 /design/mission-togo
 /design/eject-media
+/photo/engagements
+/photo/weddings-bridals
+/photo/portraits
+/photo/live-events
+/photo/africa
+/photo/art
+/photo/still-life

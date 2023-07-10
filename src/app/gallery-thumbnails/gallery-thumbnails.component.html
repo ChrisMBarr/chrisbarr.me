@@ -1,8 +1,8 @@
 <ng-template #lightboxTemplate let-data="data">
-  <span class="lightbox-template">{{ data?.alt }}</span>
+  <span class="lightbox-template" [class.no-text]="!data?.alt">{{ data?.alt }}</span>
 </ng-template>
 
-<div class="lightbox-thumbs-container">
+<div class="lightbox-thumbs-container" [class.lightbox-thumbs-dense]="dense">
   <a
     class="lightbox-thumb"
     href="javascript:;"
@@ -12,6 +12,6 @@
     [gallery]="galleryId">
     <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
     <img [src]="item.data.thumb" [alt]="item.data.alt" />
-    <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+    <span class="lightbox-thumb-title" *ngIf="$any(item.data).thumbTitle">{{ $any(item.data).thumbTitle }}</span>
   </a>
 </div>

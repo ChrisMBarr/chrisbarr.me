@@ -1,1 +1,28 @@
-<p>photo works!</p>
+<div class="container container-lg">
+  <section class="card card-intro">
+    <div class="card-title no-sticky">
+      <h2>Photo Portfolio</h2>
+    </div>
+    <div class="card-content">
+      <p>I've loved photography for quite a long time now. This page shows off some of my best work across a few different categories.</p>
+      <p>I've shot a few things on film for school and occasionally for fun, but strictly shot digital now. I currently own a Canon EOS 7D, but some of my earlier work was shot with a Nikon D70</p>
+    </div>
+  </section>
+</div>
+
+<div class="row row-lg row-dense">
+  <section class="card" *ngFor="let cat of photoCategories">
+    <div class="card-title" appIsSticky>
+      <h2>
+        <a [routerLink]="cat.urlSlug">{{ cat.title }}</a>
+      </h2>
+    </div>
+    <div class="card-content">
+      <a [routerLink]="cat.urlSlug">
+        <img
+          [src]="cat.photos[cat.featuredImage].data.src"
+          [alt]="cat.photos[cat.featuredImage].data.alt" />
+      </a>
+    </div>
+  </section>
+</div>

@@ -18,6 +18,17 @@
       //Screens wider than most mobile
       grid-template-columns: repeat(2, 1fr);
     }
+
+    &.row-dense {
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoint(lg) {
+        //Screens wider than most mobile
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 
   &.row-xl {

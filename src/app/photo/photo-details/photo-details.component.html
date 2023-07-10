@@ -1,0 +1,38 @@
+<div class="container container-lg">
+  <section class="card" *ngIf="!photoCategory">
+    <div class="card-title no-sticky">
+      <a class="btn mr-3" routerLink="/photo"> &larr; Back </a>
+      <h2>Photo category not found!</h2>
+    </div>
+    <div class="card-content">
+      <p>Something seems to be wrong. There are no photos at this URL!</p>
+    </div>
+  </section>
+
+  <section class="card" *ngIf="photoCategory">
+    <div class="card-title" appIsSticky>
+      <a class="btn mr-3" routerLink="/photo"> &larr; Back </a>
+      <h2>{{ photoCategory.title }}</h2>
+    </div>
+
+    <div class="card-content">
+      <div *ngIf="photoCategory.description"  #detailsDescription [innerHTML]="photoCategory.description"></div>
+
+      <iframe
+        *ngIf="photoCategory.urlSlug === 'africa'"
+        title="vimeo-player"
+        src="https://player.vimeo.com/video/20539494?h=c716f46681"
+        width="640"
+        height="360"
+        frameborder="0"
+        allowfullscreen></iframe>
+
+      <hr *ngIf="photoCategory.description" />
+
+      <app-gallery-thumbnails
+        [galleryId]="photoCategory.urlSlug"
+        [imageList]="photoCategory.photos"
+        [dense]="true"></app-gallery-thumbnails>
+    </div>
+  </section>
+</div>

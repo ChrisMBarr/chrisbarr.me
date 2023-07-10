@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPhotoCategory, photosList } from '../data/photo.data';
 
 @Component({
   selector: 'app-photo',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./photo.component.scss']
 })
 export class PhotoComponent {
-
+  photoCategories: IPhotoCategory[] = [...photosList];
 }

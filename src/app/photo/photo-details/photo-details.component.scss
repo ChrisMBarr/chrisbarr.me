@@ -1,0 +1,7 @@
+@use "../../../global-styles/variables" as *;
+
+iframe {
+  display: block;
+  max-width: 100%;
+  margin: $spacer-lg auto 0 auto;
+}

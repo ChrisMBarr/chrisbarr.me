@@ -17,28 +17,34 @@ import { DevComponent } from './dev/dev.component';
 import { DevDetailsComponent } from './dev/dev-details/dev-details.component';
 import { DesignComponent } from './design/design.component';
 import { DesignDetailsComponent } from './design/design-details/design-details.component';
-// import { PhotoComponent } from './photo/photo.component';
+import { PhotoComponent } from './photo/photo.component';
+import { PhotoDetailsComponent } from './photo/photo-details/photo-details.component';
+import { ContactComponent } from './contact/contact.component';
 
 //App Directives/Components
 import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
 import { IsStickyDirective } from './directives/is-sticky.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
-import { ContactComponent } from './contact/contact.component';
 import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    //Page Components
     AboutComponent,
     DevComponent,
     DevDetailsComponent,
     DesignComponent,
     DesignDetailsComponent,
-    // PhotoComponent,
+    PhotoComponent,
+    PhotoDetailsComponent,
+    ContactComponent,
+
+    //App Directives/Components
     ParallaxScrollDirective,
     IsStickyDirective,
     GalleryThumbnailsComponent,
-    ContactComponent,
     SkillGroupCardComponent,
   ],
   imports: [
