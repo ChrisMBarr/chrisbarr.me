@@ -1,8 +1,8 @@
 @use "../../global-styles/variables" as *;
-@use "about-variables" as *;
+@use "home-variables" as *;
 
 .section-container {
-  min-height: $about-section-min-height;
+  min-height: $home-section-min-height;
 
   &-flex {
     display: flex;
@@ -130,7 +130,7 @@
       width: $container-width-desktop;
       margin: 0 auto;
 
-      @media screen and (min-height: $about-section-min-height) {
+      @media screen and (min-height: $home-section-min-height) {
         // only set this when at a desktop width AND the height is over the min-height set
         height: calc(100vh - $header-height);
       }
@@ -179,17 +179,17 @@
 
   .feature {
     z-index: 1; //above the grain texture
-    padding: $about-card-padding;
-    background: $about-card-bg;
-    backdrop-filter: blur($about-card-bg-blur);
-    border-radius: $about-card-radius;
+    padding: $home-card-padding;
+    background: $home-card-bg;
+    backdrop-filter: blur($home-card-bg-blur);
+    border-radius: $home-card-radius;
 
     //make them look clickable
     cursor: pointer;
 
     &-title {
-      margin: $about-card-title-margin;
-      color: $about-card-title-color;
+      margin: $home-card-title-margin;
+      color: $home-card-title-color;
     }
 
     &:focus,

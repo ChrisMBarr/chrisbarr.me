@@ -36,7 +36,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public enableRouteAnimation = false;
-  public isAboutPage = false;
+  public isHomePage = false;
   private readonly window: Window = this.document.defaultView as Window;
   private winWidth = this.window.innerWidth;
   private resizeDebounce?: number;
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
           this.window.scrollTo({ top: 0 });
         }
 
-        this.isAboutPage = event.url === '/' || event.url.startsWith('/?');
+        this.isHomePage = event.url === '/' || event.url.startsWith('/?');
 
         //small delay needed on route changes
         setTimeout(() => {

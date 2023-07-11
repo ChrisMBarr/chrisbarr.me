@@ -3,11 +3,11 @@ import { ISkillGroup, skillGroups } from '../data/skills.data';
 import { designProjectList } from '../data/design.data';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class AboutComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit {
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;
 
   private arrowTimer?: ReturnType<typeof setTimeout>;

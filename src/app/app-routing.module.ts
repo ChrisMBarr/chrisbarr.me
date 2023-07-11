@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 import { DevComponent } from './dev/dev.component';
 import { DevDetailsComponent } from './dev/dev-details/dev-details.component';
 import { DesignComponent } from './design/design.component';
@@ -10,7 +10,7 @@ import { PhotoDetailsComponent } from './photo/photo-details/photo-details.compo
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent, title: 'Chris Barr - About'},
+  { path: '', component: HomeComponent, title: 'Chris Barr'},
   { path: 'dev', component: DevComponent, title: 'Chris Barr - Dev', pathMatch: 'full' },
   { path: 'dev/:id', component: DevDetailsComponent, title: 'Chris Barr - Dev - ', pathMatch: 'full' },
   { path: 'design', component: DesignComponent, title: 'Chris Barr - Design', pathMatch: 'full' },

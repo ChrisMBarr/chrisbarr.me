@@ -1,0 +1,9 @@
+@use "../../global-styles/variables" as *;
+
+$home-card-bg: rgba(#fff, 0.5);
+$home-card-bg-blur: 10px;
+$home-card-radius: $radius;
+$home-card-padding: $spacer;
+$home-card-title-color: $color-bg;
+$home-card-title-margin: 0 0 $spacer 0;
+$home-section-min-height: 500px;

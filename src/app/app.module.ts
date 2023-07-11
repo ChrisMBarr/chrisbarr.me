@@ -12,7 +12,7 @@ import { GalleryModule } from 'ng-gallery';
 //App Modules/Page Components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 import { DevComponent } from './dev/dev.component';
 import { DevDetailsComponent } from './dev/dev-details/dev-details.component';
 import { DesignComponent } from './design/design.component';
@@ -26,14 +26,14 @@ import { ParallaxScrollDirective } from './directives/parallax-scroll.directive'
 import { IsStickyDirective } from './directives/is-sticky.directive';
 import { InternalRouteLinksDirective } from './directives/internal-route-links.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
-import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-card.component';
+import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
     //Page Components
-    AboutComponent,
+    HomeComponent,
     DevComponent,
     DevDetailsComponent,
     DesignComponent,

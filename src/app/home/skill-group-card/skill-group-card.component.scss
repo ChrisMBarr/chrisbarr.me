@@ -1,5 +1,5 @@
 @use "../../../global-styles/variables" as *;
-@use "../about-variables" as *;
+@use "../home-variables" as *;
 
 $skills-icon-size-default: 75px;
 $skills-icon-size-desktop: 96px;
@@ -84,13 +84,13 @@ $skills-icons-animation-delay: 40ms;
   //size/position
   margin: 0 auto;
 
-  padding: $about-card-padding;
-  background: $about-card-bg;
-  backdrop-filter: blur($about-card-bg-blur);
-  border-radius: $about-card-radius;
+  padding: $home-card-padding;
+  background: $home-card-bg;
+  backdrop-filter: blur($home-card-bg-blur);
+  border-radius: $home-card-radius;
 
   &-title {
-    margin: $about-card-title-margin;
+    margin: $home-card-title-margin;
     color: $color-bg;
   }
 
