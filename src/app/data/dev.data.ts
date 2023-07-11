@@ -24,7 +24,7 @@ export const devProjectList: IDevProject[] = [
     techStack: 'TypeScript 5, Angular 16, RXJS, SCSS, Bootstrap, Jasmine',
     links: [
       {
-        url: 'http://lyricconverter.net/',
+        url: 'https://lyricconverter.net/',
         text: 'LyricConverter.net',
         iconId: '',
       },
