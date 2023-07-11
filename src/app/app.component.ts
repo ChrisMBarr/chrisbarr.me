@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
           this.window.scrollTo({ top: 0 });
         }
 
-        this.isHomePage = event.url === '/' || event.url.startsWith('/?');
+        this.isHomePage = event.urlAfterRedirects === '/' || event.urlAfterRedirects.startsWith('/?');
 
         //small delay needed on route changes
         setTimeout(() => {
