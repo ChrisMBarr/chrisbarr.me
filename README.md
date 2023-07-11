@@ -6,9 +6,7 @@ It's built using Angular 16, with Angular Universal prerendering to help out wit
 
 
 # TODO
-* Larger photo on home page
 * Figure out HTTPS cert
 * Add resume download
 * signals?
-* Re-record gif for design page
 * fix PHP mailer to use SMTP

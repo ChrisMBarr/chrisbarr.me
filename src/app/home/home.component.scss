@@ -177,35 +177,43 @@
     }
   }
 
-  .feature {
-    z-index: 1; //above the grain texture
-    padding: $home-card-padding;
-    background: $home-card-bg;
-    backdrop-filter: blur($home-card-bg-blur);
-    border-radius: $home-card-radius;
-
-    //make them look clickable
-    cursor: pointer;
-
-    &-title {
-      margin: $home-card-title-margin;
-      color: $home-card-title-color;
-    }
-
-    &:focus,
-    &:focus-within,
-    &:hover {
-      img {
-        transform: scale(1.02);
-        @include drop-shadow("lg");
-      }
-    }
-  }
-
   img {
     max-width: 100%;
     border-radius: $radius-sm;
     transition: $anim-duration transform $ease-out-back;
+  }
+}
+
+.feature {
+  z-index: 1; //above the grain texture
+  padding: $home-card-padding;
+  background: $home-card-bg;
+  backdrop-filter: blur($home-card-bg-blur);
+  border-radius: $home-card-radius;
+
+  //make them look clickable
+  cursor: pointer;
+
+  & + & {
+    margin-top: $home-card-padding;
+
+    @include breakpoint($grid-desktop-min-size) {
+      margin-top: 0;
+    }
+  }
+
+  &-title {
+    margin: $home-card-title-margin;
+    color: $home-card-title-color;
+  }
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    img {
+      transform: scale(1.02);
+      @include drop-shadow("lg");
+    }
   }
 }
 

@@ -45,13 +45,13 @@ export const devProjectList: IDevProject[] = [
       images: [
         new CustomImageItem({
           src: '/assets/dev/portfolio-site-desktop.gif',
-          thumb: '/assets/dev/portfolio-site-desktop_Thumb.png',
+          thumb: '/assets/dev/portfolio-site-desktop_Thumb.jpg',
           alt: 'Portfolio Website - Desktop Screen Size',
           thumbTitle: 'Desktop Screen Size'
         }),
         new CustomImageItem({
           src: '/assets/dev/portfolio-site-mobile.gif',
-          thumb: '/assets/dev/portfolio-site-mobile_Thumb.png',
+          thumb: '/assets/dev/portfolio-site-mobile_Thumb.jpg',
           alt: 'Portfolio Website - Mobile Screen Size',
           thumbTitle: 'Mobile Screen Size'
         }),
