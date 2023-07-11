@@ -16,7 +16,7 @@
     </div>
 
     <div class="card-content">
-      <div *ngIf="photoCategory.description"  #detailsDescription [innerHTML]="photoCategory.description"></div>
+      <div *ngIf="photoCategory.description" [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
 
       <iframe
         *ngIf="photoCategory.urlSlug === 'africa'"

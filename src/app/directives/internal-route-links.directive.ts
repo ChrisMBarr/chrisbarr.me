@@ -1,0 +1,19 @@
+import { AfterViewInit, Directive, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Directive({
+  selector: '[appInternalRouteLinks]',
+})
+export class InternalRouteLinksDirective implements AfterViewInit {
+  constructor(private el: ElementRef<HTMLElement>, private router: Router) {}
+
+  ngAfterViewInit(): void {
+    //Look for any internal links that we need to force to happen inside the router
+    this.el.nativeElement.querySelectorAll<HTMLAnchorElement>('a[rel="ng"]').forEach((link) => {
+      link.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        void this.router.navigate([link.attributes.getNamedItem('href')?.value]);
+      });
+    });
+  }
+}

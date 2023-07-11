@@ -24,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
 //App Directives/Components
 import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
 import { IsStickyDirective } from './directives/is-sticky.directive';
+import { InternalRouteLinksDirective } from './directives/internal-route-links.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
 import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-card.component';
 
@@ -44,6 +45,7 @@ import { SkillGroupCardComponent } from './about/skill-group-card/skill-group-ca
     //App Directives/Components
     ParallaxScrollDirective,
     IsStickyDirective,
+    InternalRouteLinksDirective,
     GalleryThumbnailsComponent,
     SkillGroupCardComponent,
   ],
