@@ -2,7 +2,6 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //3rd party modules
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
@@ -52,7 +51,6 @@ import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-car
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     NgxGoogleAnalyticsModule.forRoot(isDevMode() ? '' : 'G-XBQPNRYEHJ'),
     NgxGoogleAnalyticsRouterModule,
     GalleryModule,
