@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
@@ -8,7 +8,7 @@ import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
   templateUrl: './photo-details.component.html',
   styleUrls: ['./photo-details.component.scss'],
 })
-export class PhotoDetailsComponent {
+export class PhotoDetailsComponent implements OnInit {
   photoCategory?: IPhotoCategory;
 
   constructor(private activatedRoute: ActivatedRoute, private titleService: Title) {}
