@@ -49,8 +49,8 @@
           </div>
 
           <div class="form-group" style="display: none" aria-hidden="true">
+            <input type="text" class="form-ctrl" id="subject" name="subject" placeholder="subject" #subject="ngModel" ngModel />
             <label for="subject">Subject</label>
-            <input type="text" class="form-ctrl" id="subject" name="subject" #subject="ngModel" ngModel />
           </div>
 
           <div class="form-group" [ngClass]="{ invalid: message.touched && message.invalid }">
