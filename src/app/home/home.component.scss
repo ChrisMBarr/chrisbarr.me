@@ -205,9 +205,9 @@
   background-image: url("../../../src/assets/img/contact-bg.jpg");
 
   .home-column-card {
-    //make them look clickable
-    cursor: pointer;
-
+    a {
+      display: block;
+    }
     img {
       max-width: 100%;
       border-radius: $radius-sm;

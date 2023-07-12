@@ -47,10 +47,12 @@
 </section>
 
 <ng-template #featuredProject let-proj="proj">
-  <div class="home-column-card" [routerLink]="['design', proj.urlSlug]">
+  <div class="home-column-card">
     <h3 class="home-column-card-title">{{ proj.title }}</h3>
-    <img
-      [src]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.src"
-      [alt]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.alt" />
+    <a [routerLink]="['design', proj.urlSlug]">
+      <img
+        [src]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.src"
+        [alt]="proj.galleries[proj.featuredImage[0]].images[proj.featuredImage[1]].data.alt" />
+    </a>
   </div>
 </ng-template>
