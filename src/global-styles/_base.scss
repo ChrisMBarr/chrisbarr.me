@@ -24,7 +24,11 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: $scrollbar-color-thumb;
-  border: 2px solid $scrollbar-color-track;
+  border: $scrollbar-padding solid $scrollbar-color-track;
+
+  &:hover {
+    background-color: $scrollbar-color-thumb-hover
+  }
 }
 
 html,

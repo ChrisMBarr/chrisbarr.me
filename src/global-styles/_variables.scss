@@ -29,8 +29,10 @@ $color-error: darken(adjust-hue($color-highlight, -10deg), 7%);
 $selection-color-bg: $color-highlight;
 $selection-color-text: $color-text;
 $scrollbar-width: 8px;
+$scrollbar-padding: 2px;
 $scrollbar-color-track: darken($color-bg, 5%);
 $scrollbar-color-thumb: $color-highlight;
+$scrollbar-color-thumb-hover: lighten($color-highlight, 5%);
 
 //==================================
 // FONTS
