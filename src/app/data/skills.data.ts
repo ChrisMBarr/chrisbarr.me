@@ -17,6 +17,7 @@ export const skillGroups: ISkillGroup[] = [
       { iconId: 'css3', skillName: 'CSS 3' },
       { iconId: 'sass', skillName: 'SCSS/SASS' },
       { iconId: 'html5', skillName: 'HTML 5' },
+      { iconId: 'csharp', skillName: 'C♯' },
     ],
   },
   {
@@ -41,6 +42,7 @@ export const skillGroups: ISkillGroup[] = [
     groupName: 'Software',
     skillList: [
       { iconId: 'git', skillName: 'GIT' },
+      { iconId: 'github', skillName: 'Github' },
       { iconId: 'vscode', skillName: 'VS Code' },
       { iconId: 'visualstudio', skillName: 'Visual Studio' },
       { iconId: 'photoshop', skillName: 'Photoshop' },
