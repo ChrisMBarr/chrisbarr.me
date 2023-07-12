@@ -19,12 +19,7 @@ jobs:
           npm ci
           npm run gh-deploy
 
-      - name: 📂 Upload files via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          server: chrisbarr.me
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/chrisbarr.me/browser/
-          server-dir: ./
-          protocol: ftps
+          folder: dist/chrisbarr.me/browser
