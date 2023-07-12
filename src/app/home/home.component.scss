@@ -4,11 +4,21 @@
 .section-container {
   min-height: $home-section-min-height;
 
-  &-flex {
+  &-vertical {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+  }
+
+  &-horizontal {
+    margin: 0 $spacer;
+
+    @include breakpoint(xl) {
+      max-width: breakpoint-size(xl);
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   @include breakpoint($grid-desktop-min-size) {
@@ -31,6 +41,33 @@
     max-width: breakpoint-size(xl);
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.home-column-card {
+  z-index: 1; //above the grain texture
+  padding: $home-card-padding;
+  background: $home-card-bg;
+  backdrop-filter: blur($home-card-bg-blur);
+  border-radius: $home-card-radius;
+  color: $home-card-color;
+
+  & + & {
+    //vertically stacked
+    margin-top: $home-card-padding;
+
+    @include breakpoint($grid-desktop-min-size) {
+      //side-by-side
+      margin-top: 0;
+    }
+  }
+
+  &-title {
+    margin: $home-card-title-margin;
+  }
+
+  a {
+    color: $home-card-link-color;
   }
 }
 
@@ -151,15 +188,15 @@
 }
 
 #featured-work,
-#skills {
-  background-attachment: scroll;
+#skills,
+#education {
   background-position-x: center; //position-y will be handled by parallax directive
   background-repeat: no-repeat;
   background-size: auto;
+  background-attachment: fixed;
   padding: $spacer 0;
 
-  @include breakpoint(xxl) {
-    background-attachment: fixed;
+  @include breakpoint(lg) {
     background-size: cover;
   }
 }
@@ -167,52 +204,23 @@
 #featured-work {
   background-image: url("../../../src/assets/img/contact-bg.jpg");
 
-  .section-container {
-    margin: 0 $spacer;
+  .home-column-card {
+    //make them look clickable
+    cursor: pointer;
 
-    @include breakpoint(xl) {
-      max-width: breakpoint-size(xl);
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  img {
-    max-width: 100%;
-    border-radius: $radius-sm;
-    transition: $anim-duration transform $ease-out-back;
-  }
-}
-
-.feature {
-  z-index: 1; //above the grain texture
-  padding: $home-card-padding;
-  background: $home-card-bg;
-  backdrop-filter: blur($home-card-bg-blur);
-  border-radius: $home-card-radius;
-
-  //make them look clickable
-  cursor: pointer;
-
-  & + & {
-    margin-top: $home-card-padding;
-
-    @include breakpoint($grid-desktop-min-size) {
-      margin-top: 0;
-    }
-  }
-
-  &-title {
-    margin: $home-card-title-margin;
-    color: $home-card-title-color;
-  }
-
-  &:focus,
-  &:focus-within,
-  &:hover {
     img {
-      transform: scale(1.02);
-      @include drop-shadow("lg");
+      max-width: 100%;
+      border-radius: $radius-sm;
+      transition: $anim-duration transform $ease-out-back;
+    }
+
+    &:focus,
+    &:focus-within,
+    &:hover {
+      img {
+        transform: scale(1.02);
+        @include drop-shadow("lg");
+      }
     }
   }
 }
@@ -234,5 +242,13 @@
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+#education {
+  background-image: url("../../../src/assets/img/education-bg.jpg");
+
+  .section-container {
+    min-height: 250px;
   }
 }

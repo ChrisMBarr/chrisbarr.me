@@ -4,6 +4,7 @@ $home-card-bg: rgba(#fff, 0.5);
 $home-card-bg-blur: 10px;
 $home-card-radius: $radius;
 $home-card-padding: $spacer;
-$home-card-title-color: $color-bg;
+$home-card-color: $color-bg;
+$home-card-link-color: darken($color-highlight, 40%);
 $home-card-title-margin: 0 0 $spacer 0;
 $home-section-min-height: 500px;
