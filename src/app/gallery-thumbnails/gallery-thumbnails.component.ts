@@ -22,7 +22,7 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
     lightboxRef.setConfig({
       counter: false,
       thumbAutosize: true,
-      thumb: this.imageList.length > 1,
+      thumb: false,
       itemTemplate: this.lightboxTemplate,
     });
 
