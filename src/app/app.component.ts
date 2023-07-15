@@ -39,6 +39,11 @@ export class AppComponent implements OnInit {
     //Some browsers need this so the first positioning (due to routing) is re-calculated after a short delay
     //This is due to things like fonts being loaded that might cause element sizes to be different
     this.onWindowResize(true);
+
+    //do it again on the first load, sometimes the very first load is weird and hard to reproduce
+    setTimeout(() => {
+      this.onWindowResize(true);
+    }, 500);
   }
 
   @HostListener('window:resize', ['$event'])
