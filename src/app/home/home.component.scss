@@ -190,19 +190,27 @@
 #featured-work,
 #skills,
 #education {
-  background-position-x: center; //position-y will be handled by parallax directive
+  background-attachment: scroll;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: auto;
-  background-attachment: fixed;
   padding: $spacer 0;
 
-  @include breakpoint(lg) {
+  @include breakpoint($grid-desktop-min-size) {
+    background-position: center;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
 #featured-work {
-  background-image: url("../../../src/assets/img/contact-bg.jpg");
+  background-image: url("../../../src/assets/svg/disk.svg");
+  background-size: 184% 100%;
+  background-position: 100% 0;
+
+  @include breakpoint($grid-desktop-min-size) {
+    background-size: cover;
+    background-position: center;
+  }
 
   .home-column-card {
     a {
@@ -226,7 +234,7 @@
 }
 
 #skills {
-  background-image: url("../../../src/assets/img/skills-bg.jpg");
+  background-image: url("../../../src/assets/svg/wave.svg");
 
   .section-container {
     gap: $spacer;
@@ -246,7 +254,14 @@
 }
 
 #education {
-  background-image: url("../../../src/assets/img/education-bg.jpg");
+  background-image: url("../../../src/assets/svg/rain.svg");
+  background-size: 400%;
+  background-position: center 100%;
+
+  @include breakpoint($grid-desktop-min-size) {
+    background-size: cover;
+    background-position: center;
+  }
 
   .section-container {
     min-height: 250px;
