@@ -20,9 +20,11 @@ header {
     background: $header-color-bg-desktop;
     backdrop-filter: blur($header-blur-bg-desktop);
 
-    //layout - sticky header for desktop sizes
-    position: sticky;
+    //layout - fixed header for desktop sizes
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
 
     flex-direction: row;
   }
@@ -41,14 +43,16 @@ header {
 }
 
 @keyframes anim-fade-in {
-  from{opacity: 0;}
-  to{opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #navigation {
   margin: $nav-margin-default;
-
-
 
   > * {
     //text
@@ -72,7 +76,7 @@ header {
   @include breakpoint($grid-desktop-min-size) {
     margin: $nav-margin-desktop;
 
-    >* {
+    > * {
       font-size: $nav-link-font-size-desktop;
     }
   }
@@ -83,13 +87,17 @@ header {
     border-radius: $nav-link-active-radius;
     z-index: -1;
 
-    transition: all $anim-duration*1.5 $ease-out-back;
+    transition: all $anim-duration * 1.5 $ease-out-back;
 
     //fade this element in initially, on a delay so we don't see it flash unstyled/unpositioned on the first load
-    animation: anim-fade-in $anim-duration $anim-duration*1.5 both;
+    animation: anim-fade-in $anim-duration $anim-duration * 1.5 both;
   }
 }
 
 main {
   font-size: $main-font-size;
+
+  @include breakpoint($grid-desktop-min-size) {
+    padding-top: $header-height;
+  }
 }
