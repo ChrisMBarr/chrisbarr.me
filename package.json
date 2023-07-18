@@ -58,7 +58,7 @@
     "@nguniversal/builders": "^16.1.1",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~4.3.5",
-    "@types/node": "^20.4.1",
+    "@types/node": "^20.4.2",
     "@typescript-eslint/eslint-plugin": "6.0.0",
     "@typescript-eslint/parser": "6.0.0",
     "bootstrap": "^5.3.0",
