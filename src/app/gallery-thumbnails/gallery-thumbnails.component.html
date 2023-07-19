@@ -1,6 +1,6 @@
-<ng-template #lightboxTemplate let-data="data">
-  <span class="lightbox-template" [class.no-text]="!data?.alt">{{ data?.alt }}</span>
-</ng-template>
+<div *galleryImageDef="let item" class="lightbox-template" [class.no-text]="!item?.alt">
+  {{ item?.alt }}
+</div>
 
 <div class="lightbox-thumbs-container" [class.lightbox-thumbs-dense]="dense">
   <a

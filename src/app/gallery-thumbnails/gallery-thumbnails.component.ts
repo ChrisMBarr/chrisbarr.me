@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { CustomImageItem } from '../data/data.model';
-import { Gallery } from 'ng-gallery';
+import { Gallery, GalleryImageDef } from 'ng-gallery';
 
 @Component({
   selector: 'app-gallery-thumbnails',
@@ -8,7 +8,7 @@ import { Gallery } from 'ng-gallery';
   styleUrls: ['./gallery-thumbnails.component.scss'],
 })
 export class GalleryThumbnailsComponent implements AfterViewInit {
-  @ViewChild('lightboxTemplate') lightboxTemplate!: TemplateRef<ElementRef<HTMLElement>>;
+  @ViewChild(GalleryImageDef, { static: true }) imageDef!: GalleryImageDef;
 
   @Input() galleryId = '';
   @Input() imageList: CustomImageItem[] = [];
@@ -17,15 +17,13 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
   constructor(private gallery: Gallery) {}
 
   ngAfterViewInit(): void {
-    const lightboxRef = this.gallery.ref(this.galleryId);
-
-    lightboxRef.setConfig({
-      counter: false,
-      thumbAutosize: true,
-      thumb: false,
-      itemTemplate: this.lightboxTemplate,
-    });
-
-    lightboxRef.load(this.imageList);
+    this.gallery
+      .ref(this.galleryId, {
+        counter: false,
+        thumbAutosize: true,
+        thumb: false,
+        imageTemplate: this.imageDef.templateRef,
+      })
+      .load(this.imageList);
   }
 }

@@ -89,8 +89,8 @@
     text-align: center;
     padding: $spacer-sm;
     background-color: rgba(#000, .5);
-    transform: translateY(0);
-    transition: transform $anim-duration;
+    opacity: 1;
+    transition: opacity $anim-duration;
 
     &.no-text {
       display: none;
