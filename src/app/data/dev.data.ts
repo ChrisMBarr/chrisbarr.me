@@ -66,7 +66,7 @@ export const devProjectList: IDevProject[] = [
       },
     ],
     beginDescription: `<p>This website you are looking at right now is my portfolio, and it is also a piece of my development portfolio! It's built using Angular 16 and makes use of Angular Universal to prerender all the pages to make the app load quicker and make it more SEO friendly.</p>`,
-    endDescription: `<p>This portfolio site uses a completely original design I created without relying on any frameworks like Bootstrap or Tailwind. It features animations, parallax scrolling effects, SVG icons, and an SVG grain/noise filter on the background to give it a "grainy film" look. It also has a CI/CD deployment script on github so that any changes pushed from git are automatically built and deployed to this live site you are seeing now, which includes pre-rendering each individual Angular route.</p>`,
+    endDescription: `<p>This portfolio site uses a completely original design I created without relying on any frameworks like Bootstrap or Tailwind. It features animations, SVG icons, and an SVG grain/noise filter on the background to give it a "grainy film" look. It also has a CI/CD deployment script on github so that any changes pushed from git are automatically built and deployed to this live site you are seeing now, which includes pre-rendering each individual Angular route.</p>`,
   },
   {
     title: 'Song Lyric File Format Parsing Libraries',

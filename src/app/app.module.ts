@@ -22,7 +22,6 @@ import { PhotoDetailsComponent } from './photo/photo-details/photo-details.compo
 import { ContactComponent } from './contact/contact.component';
 
 //App Directives/Components
-import { ParallaxScrollDirective } from './directives/parallax-scroll.directive';
 import { IsStickyDirective } from './directives/is-sticky.directive';
 import { InternalRouteLinksDirective } from './directives/internal-route-links.directive';
 import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbnails.component';
@@ -43,7 +42,6 @@ import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-car
     ContactComponent,
 
     //App Directives/Components
-    ParallaxScrollDirective,
     IsStickyDirective,
     InternalRouteLinksDirective,
     GalleryThumbnailsComponent,
