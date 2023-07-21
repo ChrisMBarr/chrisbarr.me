@@ -1,4 +1,4 @@
-name: 🚀 Build & Deploy via FTPS
+name: 🚀 Build & Deploy
 on:
   workflow_dispatch:
   push:
