@@ -282,6 +282,10 @@
 
   .section-container {
     gap: $spacer;
+
+    &.skills-list-view {
+      align-items: stretch;
+    }
   }
 
   footer {

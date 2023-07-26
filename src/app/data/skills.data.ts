@@ -12,11 +12,11 @@ export const skillGroups: ISkillGroup[] = [
   {
     groupName: 'Languages',
     skillList: [
-      { iconId: 'typescript', skillName: 'TypeScript 5' },
-      { iconId: 'javascript', skillName: 'Javascript' },
-      { iconId: 'css3', skillName: 'CSS 3' },
-      { iconId: 'sass', skillName: 'SCSS/SASS' },
       { iconId: 'html5', skillName: 'HTML 5' },
+      { iconId: 'css3', skillName: 'CSS 3' },
+      { iconId: 'javascript', skillName: 'JavaScript' },
+      { iconId: 'typescript', skillName: 'TypeScript 5' },
+      { iconId: 'sass', skillName: 'SCSS/SASS' },
       { iconId: 'csharp', skillName: 'C♯' },
     ],
   },

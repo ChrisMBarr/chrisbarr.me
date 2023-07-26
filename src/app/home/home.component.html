@@ -42,9 +42,12 @@
 </section>
 
 <section id="skills">
-  <h2 class="section-title">Skills</h2>
-  <div class="section-container section-container-vertical">
-    <app-skill-group-card *ngFor="let group of skillGroups" [group]="group" />
+  <h2 class="section-title">
+    Skills
+    <small><button type="button" class="btn-link" (click)="toggleSkillsView()" >view as {{skillsAsList ? 'icons' : 'list'}}</button></small>
+  </h2>
+  <div class="section-container section-container-vertical" [class.skills-list-view]="skillsAsList">
+    <app-skill-group-card *ngFor="let group of skillGroups" [group]="group" [viewAsList]="skillsAsList" />
   </div>
   <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>
 </section>

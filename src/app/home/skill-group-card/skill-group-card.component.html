@@ -1,4 +1,4 @@
-<div class="skills-icons-card" tabindex="0" #card>
+<div class="skills-icons-card" tabindex="0" #card  [class.icon-view]="!viewAsList" [class.list-view]="viewAsList">
   <h3 class="skills-icons-card-title">{{group.groupName}}</h3>
   <div class="skills-icons-card-icons" role="list">
     <div class="icon" role="listitem" *ngFor="let skill of group.skillList" [attr.aria-label]="skill.skillName">

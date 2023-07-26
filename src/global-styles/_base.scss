@@ -45,7 +45,8 @@ html {
   overflow-y: scroll; //scrollbar always visible to prevent jump when content length changes
 }
 
-a {
+a,
+.btn-link{
   color: $color-highlight;
   -webkit-tap-highlight-color: rgba($color-highlight, 0.25);
   text-decoration: none;

@@ -13,6 +13,7 @@ export class HomeComponent implements AfterViewInit {
   private arrowTimer?: ReturnType<typeof setTimeout>;
   readonly designProjects = designProjectList;
   readonly skillGroups: ISkillGroup[] = skillGroups;
+  skillsAsList = false;
 
   ngAfterViewInit(): void {
     //prevent a build error for SSR
@@ -39,5 +40,9 @@ export class HomeComponent implements AfterViewInit {
       this.arrowTimer = undefined;
       this.introContainer.nativeElement.classList.remove('show-arrow');
     }
+  }
+
+  toggleSkillsView(): void {
+    this.skillsAsList = !this.skillsAsList;
   }
 }

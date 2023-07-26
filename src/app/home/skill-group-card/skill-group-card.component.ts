@@ -12,6 +12,7 @@ export class SkillGroupCardComponent {
   private skillAnimationTriggered = false;
   @ViewChild('card') card!: ElementRef<HTMLElement>;
   @Input() group!: ISkillGroup;
+  @Input() viewAsList = false;
 
   constructor(@Inject(DOCUMENT) private readonly document: Document, private el: ElementRef<HTMLElement>) {}
 
