@@ -7,113 +7,85 @@
 </ng-template>
 
 <div class="container container-lg">
-  <div class="row row-lg">
-    <div class="card">
-      <div class="card-title no-sticky">
-        <h2>Email Me</h2>
-      </div>
-      <div class="card-content">
-        <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!success">
-          <div class="form-group" [ngClass]="{ invalid: name.touched && name.invalid }">
-            <input
-              type="text"
-              class="form-ctrl"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              autocomplete="name"
-              required
-              #name="ngModel"
-              ngModel />
-            <label for="name">Name</label>
-            <div class="invalid-msg" [ngClass]="{ shown: name.touched && name.errors?.required }">Your name is required!</div>
-          </div>
-
-          <div class="form-group" [ngClass]="{ invalid: email.touched && email.invalid }">
-            <input
-              type="email"
-              class="form-ctrl"
-              id="email"
-              name="email"
-              autocomplete="email"
-              placeholder="name@exmaple.com"
-              required
-              email
-              #email="ngModel"
-              ngModel />
-            <label for="email">Email</label>
-            <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.required }">Your email is required!</div>
-            <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.email }">
-              This doesn't look like a valid email address
-            </div>
-          </div>
-
-          <div class="form-group" style="display: none" aria-hidden="true">
-            <input type="text" class="form-ctrl" id="subject" name="subject" placeholder="subject" #subject="ngModel" ngModel />
-            <label for="subject">Subject</label>
-          </div>
-
-          <div class="form-group" [ngClass]="{ invalid: message.touched && message.invalid }">
-            <textarea
-              id="message"
-              class="form-ctrl"
-              name="message"
-              cols="30"
-              rows="10"
-              placeholder="Your Message"
-              required
-              minlength="20"
-              #message="ngModel"
-              ngModel></textarea>
-            <label for="message">Message</label>
-
-            <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.required }">
-              A message is required!
-            </div>
-            <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.minlength }">
-              Your message is pretty short. It needs to be at least
-              {{ message.errors?.minlength?.requiredLength - message.errors?.minlength?.actualLength }} characters longer.
-            </div>
-          </div>
-
-          <div id="btn-and-response">
-            <button type="submit" class="btn" [disabled]="form.invalid">Send!</button>
-            <div *ngIf="isSending">Sending&hellip;</div>
-            <div class="invalid-msg" [ngClass]="{ shown: failureMessage !== '' }">
-              <strong>Error:</strong>
-              {{ failureMessage }}
-            </div>
-          </div>
-        </form>
-
-        <div id="success-msg" *ngIf="success">
-          <h3 class="mt-0">Your email has been sent!</h3>
-          <p>I'll try to respond as soon as I can.</p>
-        </div>
-      </div>
+  <div class="card" id="contact-card">
+    <div class="card-title no-sticky">
+      <h2>Send Me a Message</h2>
     </div>
+    <div class="card-content">
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!success">
+        <div class="form-group" [ngClass]="{ invalid: name.touched && name.invalid }">
+          <input
+            type="text"
+            class="form-ctrl"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            autocomplete="name"
+            required
+            #name="ngModel"
+            ngModel />
+          <label for="name">Name</label>
+          <div class="invalid-msg" [ngClass]="{ shown: name.touched && name.errors?.required }">Your name is required!</div>
+        </div>
 
-    <div class="card">
-      <div class="card-title no-sticky">
-        <h2>Find Me</h2>
-      </div>
-      <div class="card-content" id="social">
-        <a rel="me" href="https://hachyderm.io/@FiniteLooper" target="_blank">
-          <svg role="img"><use xlink:href="#mastodon" /></svg>
-          Mastodon
-        </a>
-        <a href="http://github.com/FiniteLooper" target="_blank">
-          <svg role="img"><use xlink:href="#github" /></svg>
-          Github
-        </a>
-        <a href="https://www.linkedin.com/in/chrismbarr/" target="_blank">
-          <svg role="img"><use xlink:href="#linkedin" /></svg>
-          LinkedIn
-        </a>
-        <a href="https://stackoverflow.com/users/79677/chris-barr" target="_blank">
-          <svg role="img"><use xlink:href="#stackoverflow" /></svg>
-          Stack Overflow
-        </a>
+        <div class="form-group" [ngClass]="{ invalid: email.touched && email.invalid }">
+          <input
+            type="email"
+            class="form-ctrl"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="name@exmaple.com"
+            required
+            email
+            #email="ngModel"
+            ngModel />
+          <label for="email">Email</label>
+          <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.required }">Your email is required!</div>
+          <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.email }">
+            This doesn't look like a valid email address
+          </div>
+        </div>
+
+        <div class="form-group" style="display: none" aria-hidden="true">
+          <input type="text" class="form-ctrl" id="subject" name="subject" placeholder="subject" #subject="ngModel" ngModel />
+          <label for="subject">Subject</label>
+        </div>
+
+        <div class="form-group" [ngClass]="{ invalid: message.touched && message.invalid }">
+          <textarea
+            id="message"
+            class="form-ctrl"
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+            minlength="20"
+            #message="ngModel"
+            ngModel></textarea>
+          <label for="message">Message</label>
+
+          <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.required }">A message is required!</div>
+          <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.minlength }">
+            Your message is pretty short. It needs to be at least
+            {{ message.errors?.minlength?.requiredLength - message.errors?.minlength?.actualLength }} characters longer.
+          </div>
+        </div>
+
+        <div id="btn-and-response">
+          <button type="submit" class="btn" [disabled]="form.invalid">Send!</button>
+          <div *ngIf="isSending">Sending&hellip;</div>
+          <div class="invalid-msg" [ngClass]="{ shown: failureMessage !== '' }">
+            <strong>Error:</strong>
+            {{ failureMessage }}
+          </div>
+        </div>
+      </form>
+
+      <div id="success-msg" *ngIf="success">
+        <h3 class="mt-0">Your email has been sent!</h3>
+        <p>I'll try to respond as soon as I can.</p>
       </div>
     </div>
   </div>

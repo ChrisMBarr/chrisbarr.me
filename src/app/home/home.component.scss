@@ -121,6 +121,7 @@
 
   .section-container {
     padding: $spacer;
+    flex-wrap: wrap;
 
     position: relative;
     z-index: 1;
@@ -161,6 +162,11 @@
     display: none;
   }
 
+  #intro-text,
+  img {
+    flex: 1;
+  }
+
   @include breakpoint($grid-desktop-min-size) {
     .section-container {
       flex-direction: row;
@@ -184,6 +190,32 @@
     img {
       margin-right: $spacer;
     }
+  }
+}
+
+#social {
+  flex: 1; //puts this on a new line
+  display: grid;
+  gap: $spacer;
+  grid-template-columns: repeat(2, 1fr);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  svg {
+    fill: currentColor;
+    width: 50px;
+    height: 50px;
+  }
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacer-lg;
   }
 }
 
