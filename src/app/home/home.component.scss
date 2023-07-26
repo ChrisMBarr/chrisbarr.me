@@ -163,7 +163,7 @@
     display: none;
   }
 
-  #intro-text{
+  #intro-text {
     flex: 1;
     text-align: center;
   }
@@ -180,7 +180,7 @@
       }
     }
 
-    #intro-text{
+    #intro-text {
       text-align: left;
     }
 
@@ -210,6 +210,13 @@
     align-items: center;
     font-size: 20px;
     text-align: center;
+
+    &:hover {
+      //same look as top navigation
+      text-decoration: none;
+      color: $nav-link-hover-color;
+      background-color: $nav-link-active-bg;
+    }
   }
 
   svg {
