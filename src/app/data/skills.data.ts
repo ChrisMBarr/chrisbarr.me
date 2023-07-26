@@ -24,7 +24,7 @@ export const skillGroups: ISkillGroup[] = [
     groupName: 'Frameworks',
     skillList: [
       { iconId: 'angular', skillName: 'Angular 16' },
-      { iconId: 'dotnet', skillName: '.NET Core/MVC' },
+      { iconId: 'dotnet', skillName: '.NET Core' },
       { iconId: 'node', skillName: 'Node.js' },
       { iconId: 'npm', skillName: 'NPM' },
       { iconId: 'bootstrap', skillName: 'Bootstrap' },

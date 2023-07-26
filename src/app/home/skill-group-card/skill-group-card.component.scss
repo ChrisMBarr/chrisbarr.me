@@ -5,6 +5,7 @@ $skills-icon-size-default: 75px;
 $skills-icon-size-desktop: 96px;
 $skills-icons-count: 27;
 $skills-icons-animation-delay: 40ms;
+$skills-title-width: 150%;
 
 @keyframes anim-scale-in {
   from {
@@ -38,18 +39,18 @@ $skills-icons-animation-delay: 40ms;
     position: absolute;
     margin: 0;
     opacity: 0;
-    width: 200%;
+    width: $skills-title-width;
     font-weight: $font-weight-thin;
     text-align: center;
     transition: $anim-duration opacity $ease-out-back, $anim-duration transform $ease-out-back;
-    transform: translate(-25%, -10px);
+    transform: translate(- calc($skills-title-width / 10), -10px);
 
     span {
       background-color: $color-bg;
       padding: $spacer-sm;
       border-radius: $radius;
       white-space: nowrap;
-      @include drop-shadow("lg");
+      box-shadow: shadow("lg");
     }
   }
 
@@ -64,7 +65,7 @@ $skills-icons-animation-delay: 40ms;
     }
     h3 {
       opacity: 1;
-      transform: translate(-25%, 0);
+      transform: translate(- calc($skills-title-width / 10), 0);
     }
   }
 
