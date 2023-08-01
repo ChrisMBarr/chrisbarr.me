@@ -7,9 +7,9 @@
   box-sizing: border-box;
 }
 
-* {
+:root {
+  scrollbar-color:$scrollbar-color-thumb $scrollbar-color-track;
   scrollbar-width: $scrollbar-width;
-  scrollbar-color: $scrollbar-color-track $scrollbar-color-thumb;
 }
 
 ::selection {
