@@ -199,7 +199,7 @@
 }
 
 #social {
-  flex: 1; //puts this on a new line
+  flex-basis: 100%; //puts this on a new line
   display: grid;
   gap: $spacer;
   grid-template-columns: repeat(2, 1fr);
