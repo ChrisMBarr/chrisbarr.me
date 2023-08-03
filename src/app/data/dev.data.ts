@@ -17,7 +17,7 @@ export const devProjectList: IDevProject[] = [
           src: 'https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true',
           thumb: '/assets/dev/lyric-converter_Thumb.png',
           alt: 'LyricConverter Screen Recording',
-          thumbTitle: 'LyricConverter Screen Recording'
+          thumbTitle: 'LyricConverter Screen Recording',
         }),
       ],
     },
@@ -47,13 +47,13 @@ export const devProjectList: IDevProject[] = [
           src: '/assets/dev/portfolio-site-desktop.gif',
           thumb: '/assets/dev/portfolio-site-desktop_Thumb.jpg',
           alt: 'Portfolio Website - Desktop Screen Size',
-          thumbTitle: 'Desktop Screen Size'
+          thumbTitle: 'Desktop Screen Size',
         }),
         new CustomImageItem({
           src: '/assets/dev/portfolio-site-mobile.gif',
           thumb: '/assets/dev/portfolio-site-mobile_Thumb.jpg',
           alt: 'Portfolio Website - Mobile Screen Size',
-          thumbTitle: 'Mobile Screen Size'
+          thumbTitle: 'Mobile Screen Size',
         }),
       ],
     },
@@ -67,6 +67,60 @@ export const devProjectList: IDevProject[] = [
     ],
     beginDescription: `<p>This website you are looking at right now is my portfolio, and it is also a piece of my development portfolio! It's built using Angular 16 and makes use of Angular Universal to prerender all the pages to make the app load quicker and make it more SEO friendly.</p>`,
     endDescription: `<p>This portfolio site uses a completely original design I created without relying on any frameworks like Bootstrap or Tailwind. It features animations, SVG icons, and an SVG grain/noise filter on the background to give it a "grainy film" look. It also has a CI/CD deployment script on github so that any changes pushed from git are automatically built and deployed to this live site you are seeing now, which includes pre-rendering each individual Angular route.</p>`,
+  },
+  {
+    title: 'Noise Maker',
+    urlSlug: 'noise-maker',
+    techStack: 'JavaScript, SVG, Bootstrap 5',
+    gallery: {
+      id: 'noise-maker',
+      images: [
+        new CustomImageItem({
+          src: '/assets/dev/noise-maker-2.png',
+          thumb: '/assets/dev/noise-maker-2_Thumb.png',
+          alt: 'Noise Maker - Cinder Texture',
+          thumbTitle: 'Cinder Texture',
+        }),
+        new CustomImageItem({
+          src: '/assets/dev/noise-maker-1.png',
+          thumb: '/assets/dev/noise-maker-1_Thumb.png',
+          alt: 'Noise Maker - Wood Grain Texture',
+          thumbTitle: 'Wood Grain Texture',
+        }),
+        new CustomImageItem({
+          src: '/assets/dev/noise-maker-3.png',
+          thumb: '/assets/dev/noise-maker-3_Thumb.png',
+          alt: 'Noise Maker - Dark Liquid Texture',
+          thumbTitle: 'Dark Liquid Texture',
+        }),
+        new CustomImageItem({
+          src: '/assets/dev/noise-maker-4.png',
+          thumb: '/assets/dev/noise-maker-4_Thumb.png',
+          alt: 'Noise Maker - Point Lighting Effects',
+          thumbTitle: 'Point Lighting Effects',
+        }),
+        new CustomImageItem({
+          src: '/assets/dev/noise-maker-recording.gif',
+          thumb: '/assets/dev/noise-maker-recording_Thumb.png',
+          alt: 'Noise Maker - Screen Recording',
+          thumbTitle: 'Screen Recording',
+        }),
+      ],
+    },
+    links: [
+      {
+        url: 'https://finitelooper.github.io/noise-maker/',
+        text: 'View Demo',
+        iconId: '',
+      },
+      {
+        url: 'https://github.com/FiniteLooper/noise-maker',
+        text: 'Source Code',
+        iconId: 'github',
+      },
+    ],
+    beginDescription: `<p>A JavaScript based tool I made that allows you to create any noise-based SVG texture. It shows you a live preview of what you are making and will generate the code for you to apply it as a background image on your website.</p>`,
+    endDescription: `<p> This taps in to the power of SVG based imagery built into all our web browsers. It first generates some random noise, and you can control the size an general pattern of the noise. On top of that you can apply various 3D lighting effects, and then some 2D filter effects.  The combinations are nearly endless, and I even surprised myself while building this as to the wide variety of patterns it can generate.  To show the features off this tool also features some presets built in, to give you an idea of where you might be able to take the pattern next!</p>`,
   },
   {
     title: 'Song Lyric File Format Parsing Libraries',
