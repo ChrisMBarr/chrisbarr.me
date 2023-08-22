@@ -1,4 +1,3 @@
-import { IframeItem, VideoItem } from 'ng-gallery';
 import { CustomIFrameItem, CustomImageItem, CustomYoutubeItem, IImageGallery, IProjectBase, IVideoGallery } from './data.model';
 
 export interface IDesignProject extends IProjectBase {
