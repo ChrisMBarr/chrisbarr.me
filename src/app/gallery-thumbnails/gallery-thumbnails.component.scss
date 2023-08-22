@@ -3,10 +3,20 @@
 .lightbox {
   &-thumbs-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: $spacer;
 
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($grid-desktop-min-size) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     &.lightbox-thumbs-dense {
+      grid-template-columns: repeat(3, 1fr);
+
       @include breakpoint(lg) {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -26,6 +36,7 @@
         left: 0;
         bottom: 0;
 
+        transition: all $anim-duration;
         opacity: 0.5;
         filter: blur(2px) grayscale(1);
       }
@@ -35,7 +46,7 @@
         margin: auto 0;
         z-index: 1;
 
-        box-shadow: shadow('md');
+        box-shadow: shadow("md");
       }
 
       &-title {
@@ -74,6 +85,11 @@
       border-color: $color-highlight-light;
       text-decoration: none;
 
+      .lightbox-thumb-bg {
+        filter: blur(5px) grayscale(1);
+        transform: scale(1.05);
+      }
+
       .lightbox-thumb-title {
         background-color: #6d464c; //fake way to get the look of $color-highlight-transparent over the $color-bg-dark
         border-color: $color-highlight-light;
@@ -88,7 +104,7 @@
     width: 100%;
     text-align: center;
     padding: $spacer-sm;
-    background-color: rgba(#000, .5);
+    background-color: rgba(#000, 0.5);
     opacity: 1;
     transition: opacity $anim-duration;
 

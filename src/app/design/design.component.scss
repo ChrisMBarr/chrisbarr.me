@@ -1,12 +1,1 @@
 @use "../../global-styles/variables" as *;
-
-.lightbox-thumbs-container {
-
-  @include breakpoint(sm) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @include breakpoint($grid-desktop-min-size) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
