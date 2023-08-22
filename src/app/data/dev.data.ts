@@ -1,7 +1,7 @@
-import { CustomImageItem, IGallery, IProjectBase } from './data.model';
+import { CustomImageItem, IImageGallery, IProjectBase } from './data.model';
 
 export interface IDevProject extends IProjectBase {
-  gallery?: IGallery;
+  gallery?: IImageGallery;
   techStack: string;
   links: { url: string; text: string; iconId: string }[];
 }

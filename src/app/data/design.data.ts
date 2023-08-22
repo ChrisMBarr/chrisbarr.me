@@ -1,8 +1,10 @@
-import { CustomImageItem, IGallery, IProjectBase } from './data.model';
+import { IframeItem, VideoItem } from 'ng-gallery';
+import { CustomIFrameItem, CustomImageItem, CustomYoutubeItem, IImageGallery, IProjectBase, IVideoGallery } from './data.model';
 
 export interface IDesignProject extends IProjectBase {
   featuredImage: [gallery: number, image: number];
-  galleries: IGallery[];
+  galleries: IImageGallery[];
+  videoGallery?: IVideoGallery;
 }
 
 export const designProjectList: IDesignProject[] = [
@@ -262,7 +264,8 @@ export const designProjectList: IDesignProject[] = [
     endDescription: ``,
     galleries: [
       {
-        id: 'logos',
+        id: 'logos-graphic',
+        title: 'Logos: Graphic Design',
         images: [
           new CustomImageItem({
             thumb: 'assets/design/Logos/landmark_thumb.png',
@@ -309,6 +312,25 @@ export const designProjectList: IDesignProject[] = [
         ],
       },
     ],
+    videoGallery: {
+      id: 'logos-motion',
+      title: 'Logos: Motion Design',
+      videos: [
+        new CustomYoutubeItem({
+          src: 'bnEFhJc9jhw',
+          thumbTitle: 'Eject Media Credits',
+        }),
+        new CustomYoutubeItem({
+          src: '1Ovcl3FYL3Y',
+          thumbTitle: 'Paradigm',
+        }),
+        new CustomIFrameItem({
+          src: 'https://player.vimeo.com/video/961922',
+          thumb: 'https://vumbnail.com/00961922.jpg',
+          thumbTitle: 'Highland Park',
+        }),
+      ],
+    },
   },
   {
     title: 'Smoke-Test',

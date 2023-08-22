@@ -26,7 +26,13 @@
 
       <ng-container *ngFor="let gallery of projectDetails.galleries">
         <h3 *ngIf="gallery.title" [innerHTML]="gallery.title"></h3>
-        <app-gallery-thumbnails [galleryId]="gallery.id" [imageList]="gallery.images"></app-gallery-thumbnails>
+        <app-gallery-thumbnails [galleryId]="gallery.id" [itemList]="gallery.images"></app-gallery-thumbnails>
+      </ng-container>
+
+      <ng-container *ngIf="projectDetails.videoGallery">
+        <hr>
+        <h3 [innerHTML]="projectDetails.videoGallery.title"></h3>
+        <app-gallery-thumbnails [galleryId]="projectDetails.videoGallery.id" [itemList]="projectDetails.videoGallery.videos"></app-gallery-thumbnails>
       </ng-container>
     </div>
   </section>

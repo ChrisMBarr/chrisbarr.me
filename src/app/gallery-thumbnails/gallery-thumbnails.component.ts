@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
-import { CustomImageItem } from '../data/data.model';
+import { CustomImageItem, CustomYoutubeItem } from '../data/data.model';
 import { Gallery, GalleryImageDef } from 'ng-gallery';
 
 @Component({
@@ -11,7 +11,7 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
   @ViewChild(GalleryImageDef, { static: true }) imageDef!: GalleryImageDef;
 
   @Input() galleryId = '';
-  @Input() imageList: CustomImageItem[] = [];
+  @Input() itemList: CustomImageItem[] | CustomYoutubeItem[] = [];
   @Input() dense = false;
 
   constructor(private gallery: Gallery) {}
@@ -24,6 +24,6 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
         thumb: false,
         imageTemplate: this.imageDef.templateRef,
       })
-      .load(this.imageList);
+      .load(this.itemList);
   }
 }
