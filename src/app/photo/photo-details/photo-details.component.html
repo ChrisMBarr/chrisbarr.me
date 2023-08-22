@@ -1,7 +1,9 @@
 <div class="container container-lg">
   <section class="card" *ngIf="!photoCategory">
     <div class="card-title no-sticky">
-      <a class="btn mr-3" routerLink="/photo"> &larr; Back </a>
+      <a class="btn mr-3" routerLink="/photo">
+        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+      </a>
       <h2>Photo category not found!</h2>
     </div>
     <div class="card-content">
@@ -11,7 +13,9 @@
 
   <section class="card" *ngIf="photoCategory">
     <div class="card-title" appIsSticky>
-      <a class="btn mr-3" routerLink="/photo"> &larr; Back </a>
+      <a class="btn mr-3" routerLink="/photo">
+        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+      </a>
       <h2>{{ photoCategory.title }}</h2>
     </div>
 
