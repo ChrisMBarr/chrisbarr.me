@@ -255,7 +255,63 @@ export const designProjectList: IDesignProject[] = [
     ],
   },
   {
-    title: 'Project: Smoke-Test',
+    title: 'Logo Design',
+    urlSlug: 'logo-design',
+    featuredImage: [0, 0],
+    beginDescription: `<p>These are a few of the logos I have created for various companies and projects over the years.</p>`,
+    endDescription: ``,
+    galleries: [
+      {
+        id: 'logos',
+        images: [
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/landmark_thumb.png',
+            src: 'assets/design/Logos/landmark.png',
+            alt: 'Landmark Analytics: The logo for a business analytics, consulting, and software company',
+            thumbTitle: 'Landmark Analytics',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/lyric-converter_thumb.png',
+            src: 'assets/design/Logos/lyric-converter.png',
+            alt: 'Logo Design - LyricConverter: The logo for my lyric file format converter project',
+            thumbTitle: 'LyricConverter',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/cawtcha_thumb.png',
+            src: 'assets/design/Logos/cawtcha.png',
+            alt: 'Cawtcha: The logo for a threat detection software company',
+            thumbTitle: 'Cawtcha',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/eject-media_thumb.png',
+            src: 'assets/design/Logos/eject-media.png',
+            alt: 'Eject Media: Some variations on a logo I created for my old web design company',
+            thumbTitle: 'Eject Media',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/burnside_thumb.png',
+            src: 'assets/design/Logos/burnside.png',
+            alt: 'Burnside Recordings: A logo I created for a small recording studio',
+            thumbTitle: 'Burnside Recordings',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/cypher-edge_thumb.png',
+            src: 'assets/design/Logos/cypher-edge.png',
+            alt: 'Cypher Edge: A logo I created for a small game development studio',
+            thumbTitle: 'Cypher Edge',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/paradigm_thumb.png',
+            src: 'assets/design/Logos/paradigm.png',
+            alt: 'Paradigm Communications Group: A logo I created for a small video production company',
+            thumbTitle: 'Paradigm',
+          }),
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Smoke-Test',
     urlSlug: 'smoke-test',
     featuredImage: [0, 1],
     beginDescription:
