@@ -334,11 +334,11 @@ export const designProjectList: IDesignProject[] = [
   {
     title: 'Smoke-Test',
     urlSlug: 'smoke-test',
-    featuredImage: [0, 1],
+    featuredImage: [0, 0],
     beginDescription:
       '<p> At <strong>Life After Normal</strong> I helped create <em>Smoke-Test</em>. The philosophy behind <em>Smoke-Test</em> is that no matter how many automated tests are used to assess an application, manual testing by a real person is still necessary to ensure a high-quality application. The purpose of <em>Smoke-Test</em> was to allow QA and software testers to more easily manage information and steps for manually testing complex applications. Test managers could record exactly what a tester would need to do for each unique manual test in an application. Tests could be distributed to multiple people to be run simultaneously and to collect results and feedback in real time. </p>',
     endDescription:
-      '<p> I designed the original branding for the logo, website, and emails. I created and implemented the design for <em>Smoke-Test</em>, which was built in Angular on top of an ASP MVC backend. </p><p> Unfortunately, the <em>Smoke-Test</em> project was shut down before customers could be secured. Here are my design mockups. </p>',
+      '<p> I designed the original branding for the logo, website, and emails. I created and implemented the design for <em>Smoke-Test</em>, which was built in Angular on top of an ASP MVC backend. </p><p> Unfortunately, the <em>Smoke-Test</em> project was shut down before customers could be secured. Here are my design mockups and live interaction demos. </p>',
     galleries: [
       {
         id: 'smokeTest',
@@ -350,22 +350,16 @@ export const designProjectList: IDesignProject[] = [
             thumbTitle: 'Desktop',
           }),
           new CustomImageItem({
-            thumb: 'assets/design/SmokeTest/03 - Desktop Site - opened menu_Thumb.png',
-            src: 'assets/design/SmokeTest/03 - Desktop Site - opened menu.png',
-            alt: 'Smoke Test - Desktop - Opened Menu',
-            thumbTitle: 'Desktop - Menu',
+            thumb: 'assets/design/SmokeTest/smoke-test-desktop_Thumb.png',
+            src: 'assets/design/SmokeTest/smoke-test-desktop.gif',
+            alt: 'Smoke Test - Desktop - Screen Recording',
+            thumbTitle: 'Desktop - Screen Recording',
           }),
           new CustomImageItem({
-            thumb: 'assets/design/SmokeTest/05 - Mobile Site_Thumb.png',
-            src: 'assets/design/SmokeTest/05 - Mobile Site.png',
-            alt: 'Smoke Test - Mobile',
-            thumbTitle: 'Mobile',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/SmokeTest/06 - Mobile Site - Open Menu_Thumb.png',
-            src: 'assets/design/SmokeTest/06 - Mobile Site - Open Menu.png',
-            alt: 'Smoke Test - Mobile - Sidebar',
-            thumbTitle: 'Mobile - Sidebar',
+            thumb: 'assets/design/SmokeTest/smoke-test-mobile_Thumb.png',
+            src: 'assets/design/SmokeTest/smoke-test-mobile.gif',
+            alt: 'Smoke Test - Mobile - Screen Recording',
+            thumbTitle: 'Mobile - Screen Recording',
           }),
           new CustomImageItem({
             thumb: 'assets/design/SmokeTest/01 - Style Guide_Thumb.png',
