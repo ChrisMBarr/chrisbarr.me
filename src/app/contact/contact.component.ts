@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { map } from 'rxjs';
 
 interface IFormSpreeResult {
   next: string;
@@ -33,7 +32,6 @@ export class ContactComponent {
         };
         this.http
           .post<IFormSpreeResult>('https://formspree.io/f/mwkdkank', JSON.stringify(formData))
-          .pipe(map((res) => res))
           .subscribe({
             next: (data) => {
               // console.log(data);
