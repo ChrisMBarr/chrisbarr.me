@@ -275,8 +275,14 @@ export const designProjectList: IDesignProject[] = [
           new CustomImageItem({
             thumb: 'assets/design/Logos/lyric-converter_thumb.png',
             src: 'assets/design/Logos/lyric-converter.png',
-            alt: 'Logo Design - LyricConverter: The logo for my lyric file format converter project',
+            alt: 'LyricConverter: The logo for my lyric file format converter project',
             thumbTitle: 'LyricConverter',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/smoke-test_thumb.png',
+            src: 'assets/design/Logos/smoke-test.png',
+            alt: 'Smoke Test: The logo for a QA testing management software company',
+            thumbTitle: 'Smoke Test',
           }),
           new CustomImageItem({
             thumb: 'assets/design/Logos/cawtcha_thumb.png',
