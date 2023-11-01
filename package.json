@@ -55,7 +55,7 @@
     "@angular-eslint/schematics": "16.2.0",
     "@angular-eslint/template-parser": "16.2.0",
     "@angular/cli": "~16.2.6",
-    "@angular/compiler-cli": "^16.2.9",
+    "@angular/compiler-cli": "^16.2.11",
     "@nguniversal/builders": "^16.2.0",
     "@types/express": "^4.17.19",
     "@types/jasmine": "~5.1.0",
