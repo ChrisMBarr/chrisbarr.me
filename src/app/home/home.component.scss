@@ -200,9 +200,10 @@
 
 #social {
   flex-basis: 100%; //puts this on a new line
-  display: grid;
-  gap: $spacer;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
 
   a {
     display: flex;
@@ -226,8 +227,7 @@
   }
 
   @include breakpoint(sm) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: $spacer-lg;
+    justify-content: space-between;
   }
 }
 
