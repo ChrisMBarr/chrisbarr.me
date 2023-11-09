@@ -1,11 +1,13 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, HostListener, Input, ViewChild, inject } from '@angular/core';
-import { ISkillGroup } from 'src/app/data/skills.data';
+
+import { ISkillGroup } from '../../data/skills.data';
 
 @Component({
   selector: 'app-skill-group-card',
   templateUrl: './skill-group-card.component.html',
   styleUrls: ['./skill-group-card.component.scss'],
+  standalone: true,
 })
 export class SkillGroupCardComponent {
   private readonly document = inject(DOCUMENT);

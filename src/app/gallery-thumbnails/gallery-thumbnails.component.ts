@@ -1,11 +1,16 @@
 import { AfterViewInit, Component, Input, ViewChild, inject } from '@angular/core';
-import { CustomImageItem, CustomYoutubeItem } from '../data/data.model';
+import { NgStyle } from '@angular/common';
 import { Gallery, GalleryImageDef } from 'ng-gallery';
+import { LightboxDirective } from 'ng-gallery/lightbox';
+
+import { CustomImageItem, CustomYoutubeItem } from '../data/data.model';
 
 @Component({
   selector: 'app-gallery-thumbnails',
   templateUrl: './gallery-thumbnails.component.html',
   styleUrls: ['./gallery-thumbnails.component.scss'],
+  standalone: true,
+  imports: [GalleryImageDef, LightboxDirective, NgStyle],
 })
 export class GalleryThumbnailsComponent implements AfterViewInit {
   private readonly gallery = inject(Gallery);

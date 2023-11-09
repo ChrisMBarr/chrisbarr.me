@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 interface IFormSpreeResult {
   next: string;
@@ -11,6 +12,8 @@ interface IFormSpreeResult {
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
+  standalone: true,
+  imports: [FormsModule, NgClass],
 })
 export class ContactComponent {
   private readonly http = inject(HttpClient);

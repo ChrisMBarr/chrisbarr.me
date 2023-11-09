@@ -1,11 +1,13 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, HostListener, OnInit, ViewChild, inject } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
 })
 export class AppComponent implements OnInit {
   private readonly document = inject(DOCUMENT);
