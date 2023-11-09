@@ -45,7 +45,7 @@
     "ngx-google-analytics": "^14.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
-    "zone.js": "~0.13.3"
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.9",
@@ -57,13 +57,13 @@
     "@angular/cli": "~16.2.9",
     "@angular/compiler-cli": "^16.2.11",
     "@nguniversal/builders": "^16.2.0",
-    "@types/express": "^4.17.20",
-    "@types/jasmine": "~5.1.1",
-    "@types/node": "^20.8.10",
-    "@typescript-eslint/eslint-plugin": "6.9.1",
-    "@typescript-eslint/parser": "6.9.1",
+    "@types/express": "^4.17.21",
+    "@types/jasmine": "~5.1.2",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "@typescript-eslint/parser": "6.10.0",
     "bootstrap": "^5.3.2",
-    "eslint": "^8.52.0",
-    "typescript": "~5.1.6"
+    "eslint": "^8.53.0",
+    "typescript": "~5.2.2"
   }
 }
