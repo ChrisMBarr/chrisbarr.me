@@ -6,7 +6,6 @@ import { IDesignProject, designProjectList } from 'src/app/data/design.data';
 @Component({
   selector: 'app-design-details',
   templateUrl: './design-details.component.html',
-  styleUrls: ['./design-details.component.scss'],
 })
 export class DesignDetailsComponent implements OnInit {
   projectDetails?: IDesignProject;

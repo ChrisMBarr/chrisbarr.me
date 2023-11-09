@@ -7,7 +7,6 @@ import { IDevProject } from 'src/app/data/dev.data';
 @Component({
   selector: 'app-dev-details',
   templateUrl: './dev-details.component.html',
-  styleUrls: ['./dev-details.component.scss'],
 })
 export class DevDetailsComponent implements OnInit {
   projectDetails?: IDevProject;
