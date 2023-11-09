@@ -12,7 +12,8 @@
       <h2>Send Me a Message</h2>
     </div>
     <div class="card-content">
-      <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!success">
+      @if (!success) {
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
         <div class="form-group" [ngClass]="{ invalid: name.touched && name.invalid }">
           <input
             type="text"
@@ -75,18 +76,21 @@
 
         <div id="btn-and-response">
           <button type="submit" class="btn" [disabled]="form.invalid">Send!</button>
-          <div *ngIf="isSending">Sending&hellip;</div>
+          @if (isSending) {
+          <div>Sending&hellip;</div>
+          }
           <div class="invalid-msg" [ngClass]="{ shown: failureMessage !== '' }">
             <strong>Error:</strong>
             {{ failureMessage }}
           </div>
         </div>
       </form>
-
-      <div id="success-msg" *ngIf="success">
+      } @if (success) {
+      <div id="success-msg">
         <h3 class="mt-0">Your email has been sent!</h3>
         <p>I'll try to respond as soon as I can.</p>
       </div>
+      }
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 <div class="container container-lg">
-  <section class="card" *ngIf="!projectDetails">
+  @if (!projectDetails) {
+  <section class="card">
     <div class="card-title no-sticky">
       <a class="btn mr-3" routerLink="/dev">
         <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
@@ -10,8 +11,8 @@
       <p>Something seems to be wrong. There is no dev project at this URL!</p>
     </div>
   </section>
-
-  <section class="card" *ngIf="projectDetails">
+  } @else {
+  <section class="card">
     <div class="card-title" appIsSticky>
       <a class="btn mr-3" routerLink="/dev">
         <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
@@ -26,22 +27,28 @@
 
       <h3 class="mt-0">Links</h3>
       <ul>
-        <li *ngFor="let link of projectDetails.links">
+        @for (link of projectDetails.links; track link) {
+        <li>
           <a [href]="link.url" target="_blank">
-            <svg role="img" *ngIf="link.iconId"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
+            @if (link.iconId) {
+            <svg role="img"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
+            }
             {{ link.text }}
           </a>
         </li>
+        }
       </ul>
 
-      <hr *ngIf="projectDetails.gallery" />
+      @if (projectDetails.gallery) {
+      <hr />
 
-      <ng-container *ngIf="projectDetails.gallery">
-        <h3 class="mt-0">Images</h3>
-        <app-gallery-thumbnails
-          [galleryId]="projectDetails.gallery.id"
-          [itemList]="projectDetails.gallery.images"></app-gallery-thumbnails>
-      </ng-container>
+      <h3 class="mt-0">Images</h3>
+      <app-gallery-thumbnails
+        [galleryId]="projectDetails.gallery.id"
+        [itemList]="projectDetails.gallery.images"></app-gallery-thumbnails>
+
+      }
     </div>
   </section>
+  }
 </div>

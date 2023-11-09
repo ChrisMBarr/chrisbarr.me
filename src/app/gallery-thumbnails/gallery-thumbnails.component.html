@@ -3,15 +3,13 @@
 </div>
 
 <div class="lightbox-thumbs-container" [class.lightbox-thumbs-dense]="dense">
-  <a
-    class="lightbox-thumb"
-    href="javascript:;"
-    tabindex="0"
-    *ngFor="let item of itemList; index as i"
-    [lightbox]="i"
-    [gallery]="galleryId">
+  @for (item of itemList; track item; let i = $index) {
+  <a class="lightbox-thumb" href="javascript:;" tabindex="0" [lightbox]="i" [gallery]="galleryId">
     <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
     <img [src]="item.data.thumb" [alt]="item.data.alt" />
-    <span class="lightbox-thumb-title" *ngIf="$any(item.data).thumbTitle">{{ $any(item.data).thumbTitle }}</span>
+    @if ($any(item.data).thumbTitle) {
+    <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
+    }
   </a>
+  }
 </div>

@@ -1,5 +1,6 @@
 <div class="container container-lg">
-  <section class="card" *ngIf="!photoCategory">
+  @if (!photoCategory) {
+  <section class="card">
     <div class="card-title no-sticky">
       <a class="btn mr-3" routerLink="/photo">
         <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
@@ -10,8 +11,8 @@
       <p>Something seems to be wrong. There are no photos at this URL!</p>
     </div>
   </section>
-
-  <section class="card" *ngIf="photoCategory">
+  } @if (photoCategory) {
+  <section class="card">
     <div class="card-title" appIsSticky>
       <a class="btn mr-3" routerLink="/photo">
         <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
@@ -20,18 +21,19 @@
     </div>
 
     <div class="card-content">
-      <div *ngIf="photoCategory.description" [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
-
+      @if (photoCategory.description) {
+      <div [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
+      } @if (photoCategory.urlSlug === 'africa') {
       <iframe
-        *ngIf="photoCategory.urlSlug === 'africa'"
         title="vimeo-player"
         src="https://player.vimeo.com/video/20539494?h=c716f46681"
         width="640"
         height="360"
         frameborder="0"
         allowfullscreen></iframe>
-
-      <hr *ngIf="photoCategory.description" />
+      } @if (photoCategory.description) {
+      <hr />
+      }
 
       <app-gallery-thumbnails
         [galleryId]="photoCategory.urlSlug"
@@ -39,4 +41,5 @@
         [dense]="true"></app-gallery-thumbnails>
     </div>
   </section>
+  }
 </div>

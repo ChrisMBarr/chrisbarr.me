@@ -5,8 +5,8 @@
       <h2>Hi, I'm Chris</h2>
       <img src="/assets/img/me.jpg" alt="Photo of Chris Barr" id="intro-photo-mobile" />
       <p>
-        I&apos;m a full-stack web developer and designer in Charlotte, NC. I&apos;ve been in the web programming field for over 12 years. I
-        primarily work with Angular and Typescript <em>(and all the standard web languages or course!)</em>
+        I&apos;m a full-stack web developer and designer in Charlotte, NC. I&apos;ve been in the web programming field for over 12
+        years. I primarily work with Angular and Typescript <em>(and all the standard web languages or course!)</em>
       </p>
     </div>
 
@@ -49,10 +49,16 @@
 <section id="skills">
   <h2 class="section-title">
     Skills
-    <small><button type="button" class="btn-link" (click)="toggleSkillsView()" >view as {{skillsAsList ? 'icons' : 'list'}}</button></small>
+    <small
+      ><button type="button" class="btn-link" (click)="toggleSkillsView()">
+        view as {{ skillsAsList ? "icons" : "list" }}
+      </button></small
+    >
   </h2>
   <div class="section-container section-container-vertical" [class.skills-list-view]="skillsAsList">
-    <app-skill-group-card *ngFor="let group of skillGroups" [group]="group" [viewAsList]="skillsAsList" />
+    @for (group of skillGroups; track group) {
+    <app-skill-group-card [group]="group" [viewAsList]="skillsAsList" />
+    }
   </div>
   <footer>icons: <a href="http://icons8.com" target="_blank">icons8</a></footer>
 </section>

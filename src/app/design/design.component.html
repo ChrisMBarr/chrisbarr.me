@@ -17,7 +17,8 @@
 </div>
 
 <div class="row row-lg">
-  <section class="card" *ngFor="let proj of projects">
+  @for (proj of projects; track proj) {
+  <section class="card">
     <div class="card-title" appIsSticky>
       <h2>
         <a [routerLink]="proj.urlSlug">{{ proj.title }}</a>
@@ -39,4 +40,5 @@
       </div>
     </div>
   </section>
+  }
 </div>
