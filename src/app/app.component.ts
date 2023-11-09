@@ -68,8 +68,8 @@ export class AppComponent implements OnInit {
 
         //Correctly position for mobile devices
         const headerIsRelative = this.window.getComputedStyle(this.header.nativeElement).position === 'relative';
-        const offsetTop = headerIsRelative ? document.documentElement.scrollTop : 0;
-        const offsetLeft = headerIsRelative ? document.documentElement.scrollLeft : 0;
+        const offsetTop = headerIsRelative ? this.document.documentElement.scrollTop : 0;
+        const offsetLeft = headerIsRelative ? this.document.documentElement.scrollLeft : 0;
 
         this.navActiveBg.nativeElement.style.top = `${rect.top + offsetTop}px`;
         this.navActiveBg.nativeElement.style.left = `${rect.left + offsetLeft}px`;
