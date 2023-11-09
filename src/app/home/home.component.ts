@@ -1,17 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
-import { NgTemplateOutlet } from '@angular/common';
-import { RouterLink } from '@angular/router';
-
 import { ISkillGroup, skillGroups } from '../data/skills.data';
 import { designProjectList } from '../data/design.data';
-import { SkillGroupCardComponent } from './skill-group-card/skill-group-card.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  standalone: true,
-  imports: [NgTemplateOutlet, SkillGroupCardComponent, RouterLink],
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;

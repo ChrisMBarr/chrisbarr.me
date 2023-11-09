@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 @Directive({
   selector: '[appInternalRouteLinks]',
-  standalone: true,
 })
 export class InternalRouteLinksDirective implements AfterViewInit {
   private readonly el = inject(ElementRef) as ElementRef<HTMLElement>;

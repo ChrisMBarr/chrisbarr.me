@@ -1,27 +1,7 @@
-import { importProvidersFrom, isDevMode } from '@angular/core';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { GalleryModule } from 'ng-gallery';
-import { LightboxModule } from 'ng-gallery/lightbox';
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppComponent } from './app/app.component';
-import { AppRoutingModule } from './app/app-routing.module';
+import { AppModule } from './app/app.module';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    importProvidersFrom(
-      BrowserModule,
-      AppRoutingModule,
-      NgxGoogleAnalyticsModule.forRoot(isDevMode() ? '' : 'G-XBQPNRYEHJ'),
-      NgxGoogleAnalyticsRouterModule,
-      GalleryModule,
-      LightboxModule,
-      FormsModule
-    ),
-    provideAnimations(),
-    provideHttpClient(withInterceptorsFromDi()),
-  ],
-}).catch((err) => console.error(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));

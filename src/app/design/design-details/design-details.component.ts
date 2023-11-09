@@ -1,17 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-
-import { IDesignProject, designProjectList } from '../../data/design.data';
-import { GalleryThumbnailsComponent } from '../../gallery-thumbnails/gallery-thumbnails.component';
-import { InternalRouteLinksDirective } from '../../directives/internal-route-links.directive';
-import { IsStickyDirective } from '../../directives/is-sticky.directive';
+import { ActivatedRoute } from '@angular/router';
+import { IDesignProject, designProjectList } from 'src/app/data/design.data';
 
 @Component({
   selector: 'app-design-details',
   templateUrl: './design-details.component.html',
-  standalone: true,
-  imports: [RouterLink, IsStickyDirective, InternalRouteLinksDirective, GalleryThumbnailsComponent],
 })
 export class DesignDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

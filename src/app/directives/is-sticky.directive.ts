@@ -2,7 +2,6 @@ import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 
 @Directive({
   selector: '[appIsSticky]',
-  standalone: true,
 })
 export class IsStickyDirective {
   private readonly el = inject(ElementRef) as ElementRef<HTMLElement>;
