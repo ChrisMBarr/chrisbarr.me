@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { devProjectList } from 'src/app/data/dev.data';
@@ -9,9 +9,10 @@ import { IDevProject } from 'src/app/data/dev.data';
   templateUrl: './dev-details.component.html',
 })
 export class DevDetailsComponent implements OnInit {
-  projectDetails?: IDevProject;
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly titleService = inject(Title);
 
-  constructor(private activatedRoute: ActivatedRoute, private titleService: Title) {}
+  projectDetails?: IDevProject;
 
   ngOnInit(): void {
     if (this.activatedRoute.snapshot.url.length > 1) {

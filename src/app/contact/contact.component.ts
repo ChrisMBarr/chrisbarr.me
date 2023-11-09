@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 interface IFormSpreeResult {
@@ -13,10 +13,11 @@ interface IFormSpreeResult {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  private readonly http = inject(HttpClient);
+
   isSending = false;
   success = false;
   failureMessage = '';
-  constructor(private http: HttpClient) {}
 
   onSubmit(contactForm: NgForm): void {
     if (contactForm.form.controls.subject.value !== '') {
@@ -30,24 +31,22 @@ export class ContactComponent {
           email: contactForm.form.controls.email.value as string,
           message: contactForm.form.controls.message.value as string,
         };
-        this.http
-          .post<IFormSpreeResult>('https://formspree.io/f/mwkdkank', JSON.stringify(formData))
-          .subscribe({
-            next: (data) => {
-              // console.log(data);
-              if (data.ok) {
-                this.success = true;
-                this.isSending = false;
-                this.failureMessage = '';
-              } else {
-                this.formError();
-              }
-            },
-            error: (err: Error) => {
-              console.error('error', err);
+        this.http.post<IFormSpreeResult>('https://formspree.io/f/mwkdkank', JSON.stringify(formData)).subscribe({
+          next: (data) => {
+            // console.log(data);
+            if (data.ok) {
+              this.success = true;
+              this.isSending = false;
+              this.failureMessage = '';
+            } else {
               this.formError();
-            },
-          });
+            }
+          },
+          error: (err: Error) => {
+            console.error('error', err);
+            this.formError();
+          },
+        });
       }
     }
   }

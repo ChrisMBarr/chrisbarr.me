@@ -1,11 +1,12 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 
 @Directive({
   selector: '[appIsSticky]',
 })
 export class IsStickyDirective {
+  private readonly el = inject(ElementRef) as ElementRef<HTMLElement>;
+
   private readonly stuckClass = 'is-stuck';
-  constructor(private el: ElementRef<HTMLElement>) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(): void {

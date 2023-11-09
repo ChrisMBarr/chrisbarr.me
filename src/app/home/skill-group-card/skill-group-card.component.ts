@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild, inject } from '@angular/core';
 import { ISkillGroup } from 'src/app/data/skills.data';
 
 @Component({
@@ -8,13 +8,14 @@ import { ISkillGroup } from 'src/app/data/skills.data';
   styleUrls: ['./skill-group-card.component.scss'],
 })
 export class SkillGroupCardComponent {
+  private readonly document = inject(DOCUMENT);
+  private readonly el = inject(ElementRef) as ElementRef<HTMLElement>;
+
   private readonly window: Window = this.document.defaultView as Window;
   private skillAnimationTriggered = false;
   @ViewChild('card') card!: ElementRef<HTMLElement>;
   @Input() group!: ISkillGroup;
   @Input() viewAsList = false;
-
-  constructor(@Inject(DOCUMENT) private readonly document: Document, private el: ElementRef<HTMLElement>) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(): void {

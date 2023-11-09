@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
@@ -9,9 +9,10 @@ import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
   styleUrls: ['./photo-details.component.scss'],
 })
 export class PhotoDetailsComponent implements OnInit {
-  photoCategory?: IPhotoCategory;
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly titleService = inject(Title);
 
-  constructor(private activatedRoute: ActivatedRoute, private titleService: Title) {}
+  photoCategory?: IPhotoCategory;
 
   ngOnInit(): void {
     if (this.activatedRoute.snapshot.url.length > 1) {

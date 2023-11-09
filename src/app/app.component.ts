@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,9 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
+
   public isHomePage = false;
   private readonly window: Window = this.document.defaultView as Window;
   private winWidth = this.window.innerWidth;
@@ -16,8 +19,6 @@ export class AppComponent implements OnInit {
   @ViewChild('header') private header!: ElementRef<HTMLElement>;
   @ViewChild('navContainer') private navContainer!: ElementRef<HTMLElement>;
   @ViewChild('navActiveBg') private navActiveBg!: ElementRef<HTMLElement>;
-
-  constructor(@Inject(DOCUMENT) private readonly document: Document, private router: Router) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
