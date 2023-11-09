@@ -1,8 +1,10 @@
 /dev/lyric-converter
 /dev/portfolio-site
+/dev/noise-maker
 /dev/lyric-libraries
 /design/lyric-converter
 /design/account-chek
+/design/logo-design
 /design/smoke-test
 /design/mission-togo
 /design/eject-media
