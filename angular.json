@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "chrisbarr.me:build:production"
+              "buildTarget": "chrisbarr.me:build:production"
             },
             "development": {
-              "browserTarget": "chrisbarr.me:build:development"
+              "buildTarget": "chrisbarr.me:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chrisbarr.me:build"
+            "buildTarget": "chrisbarr.me:build"
           }
         },
         "lint": {
@@ -112,7 +112,7 @@
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "chrisbarr.me:build:development",
@@ -126,7 +126,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
               "/"
