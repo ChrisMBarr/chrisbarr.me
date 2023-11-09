@@ -14,7 +14,7 @@ interface ICustomImageItemData extends ImageItemData {
 }
 
 export class CustomImageItem extends ImageItem {
-  override readonly data: ImageItemData;
+  override readonly data: ICustomImageItemData;
   constructor(data: ICustomImageItemData) {
     super(data);
     this.data = data;
@@ -32,16 +32,18 @@ export interface IImageGallery {
 //--------------------------------------------------------
 interface ICustomYoutubeItemData extends YoutubeItemData {
   thumbTitle?: string;
+  alt?: string;
 }
 
 export class CustomYoutubeItem extends YoutubeItem {
-  override readonly data: YoutubeItemData;
+  override readonly data: ICustomYoutubeItemData;
   constructor(data: ICustomYoutubeItemData) {
     super(data);
     const src = data.src as string;
     this.data = {
       ...data,
       ...{
+        alt:'',
         src: `https://youtube.com/embed/${src}`,
         thumb: data.thumb ? data.thumb : `//img.youtube.com/vi/${src}/default.jpg`,
       },
