@@ -45,8 +45,11 @@
         max-height: 150px;
         margin: auto 0;
         z-index: 1;
-
         box-shadow: shadow("md");
+
+        //Unset defaults set elsewhere
+        min-height: 80px;
+        background: none;
       }
 
       &-title {

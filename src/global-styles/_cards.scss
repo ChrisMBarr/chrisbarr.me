@@ -80,6 +80,12 @@
 
   img {
     max-width: 100%;
+
+    //Helps with slow-loading images to show a placeholder
+    display: block;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
   }
 
   a {
