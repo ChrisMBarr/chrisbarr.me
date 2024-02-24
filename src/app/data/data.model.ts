@@ -43,7 +43,7 @@ export class CustomYoutubeItem extends YoutubeItem {
     this.data = {
       ...data,
       ...{
-        alt:'',
+        alt: '',
         src: `https://youtube.com/embed/${src}`,
         thumb: data.thumb ? data.thumb : `//img.youtube.com/vi/${src}/default.jpg`,
       },

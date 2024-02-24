@@ -10,7 +10,7 @@ import { PhotoDetailsComponent } from './photo/photo-details/photo-details.compo
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Chris Barr'},
+  { path: '', component: HomeComponent, title: 'Chris Barr' },
   { path: 'dev', component: DevComponent, title: 'Chris Barr - Dev', pathMatch: 'full' },
   { path: 'dev/:id', component: DevDetailsComponent, title: 'Chris Barr - Dev - ', pathMatch: 'full' },
   { path: 'design', component: DesignComponent, title: 'Chris Barr - Design', pathMatch: 'full' },

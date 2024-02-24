@@ -629,7 +629,8 @@ export const photosList: IPhotoCategory[] = [
     title: 'Art',
     urlSlug: 'art',
     featuredImage: 1,
-    description: 'Abstract & art photography is what first drew me in to photography. I love to experiment and play with light and perspective. A few of my best long exposure pieces are below',
+    description:
+      'Abstract & art photography is what first drew me in to photography. I love to experiment and play with light and perspective. A few of my best long exposure pieces are below',
     photos: [
       new CustomImageItem({
         thumb: 'assets/photo/art/DSC_0075_thumb.jpg',

@@ -6,6 +6,5 @@ import { IDevProject, devProjectList } from '../data/dev.data';
   templateUrl: './dev.component.html',
 })
 export class DevComponent {
-
   projects: IDevProject[] = [...devProjectList];
 }
