@@ -24,7 +24,8 @@
               autocomplete="name"
               required
               #name="ngModel"
-              ngModel />
+              ngModel
+            />
             <label for="name">Name</label>
             <div class="invalid-msg" [ngClass]="{ shown: name.touched && name.errors?.required }">Your name is required!</div>
           </div>
@@ -40,7 +41,8 @@
               required
               email
               #email="ngModel"
-              ngModel />
+              ngModel
+            />
             <label for="email">Email</label>
             <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.required }">Your email is required!</div>
             <div class="invalid-msg" [ngClass]="{ shown: email.touched && email.errors?.email }">
@@ -64,7 +66,8 @@
               required
               minlength="20"
               #message="ngModel"
-              ngModel></textarea>
+              ngModel
+            ></textarea>
             <label for="message">Message</label>
 
             <div class="invalid-msg" [ngClass]="{ shown: message.touched && message.errors?.required }">

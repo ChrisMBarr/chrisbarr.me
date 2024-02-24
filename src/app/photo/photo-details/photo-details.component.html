@@ -32,7 +32,8 @@
             width="640"
             height="360"
             frameborder="0"
-            allowfullscreen></iframe>
+            allowfullscreen
+          ></iframe>
         }
         @if (photoCategory.description) {
           <hr />
@@ -41,7 +42,8 @@
         <app-gallery-thumbnails
           [galleryId]="photoCategory.urlSlug"
           [itemList]="photoCategory.photos"
-          [dense]="true"></app-gallery-thumbnails>
+          [dense]="true"
+        ></app-gallery-thumbnails>
       </div>
     </section>
   }
