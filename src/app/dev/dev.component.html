@@ -18,28 +18,28 @@
 
 <div class="row row-lg">
   @for (proj of projects; track proj) {
-  <section class="card">
-    <div class="card-title" appIsSticky>
-      <h2>
-        <a [routerLink]="proj.urlSlug">{{ proj.title }}</a>
-      </h2>
-    </div>
-    <div class="card-content">
-      <div class="row row-xxl">
-        <div>
-          <p><strong>Tech Stack:</strong> {{ proj.techStack }}</p>
-          <div [innerHTML]="proj.beginDescription"></div>
-          <a [routerLink]="proj.urlSlug">Read More&hellip;</a>
-        </div>
-        <div>
-          @if (proj.gallery) {
-          <a [routerLink]="proj.urlSlug">
-            <img [src]="proj.gallery.images[0].data.src" [alt]="proj.gallery.images[0].data.alt" />
-          </a>
-          }
+    <section class="card">
+      <div class="card-title" appIsSticky>
+        <h2>
+          <a [routerLink]="proj.urlSlug">{{ proj.title }}</a>
+        </h2>
+      </div>
+      <div class="card-content">
+        <div class="row row-xxl">
+          <div>
+            <p><strong>Tech Stack:</strong> {{ proj.techStack }}</p>
+            <div [innerHTML]="proj.beginDescription"></div>
+            <a [routerLink]="proj.urlSlug">Read More&hellip;</a>
+          </div>
+          <div>
+            @if (proj.gallery) {
+              <a [routerLink]="proj.urlSlug">
+                <img [src]="proj.gallery.images[0].data.src" [alt]="proj.gallery.images[0].data.alt" />
+              </a>
+            }
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   }
 </div>

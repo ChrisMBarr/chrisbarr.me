@@ -9,8 +9,8 @@
         categories.
       </p>
       <p>
-        I've shot a few things on film for school and occasionally for fun, but strictly shoot digital now. I currently own a Canon
-        EOS 7D, but some of my earlier work was shot with a Nikon D70
+        I've shot a few things on film for school and occasionally for fun, but strictly shoot digital now. I currently own a
+        Canon EOS 7D, but some of my earlier work was shot with a Nikon D70
       </p>
     </div>
   </section>
@@ -18,17 +18,17 @@
 
 <div class="row row-xxl row-dense">
   @for (cat of photoCategories; track cat) {
-  <section class="card">
-    <div class="card-title" appIsSticky>
-      <h2>
-        <a [routerLink]="cat.urlSlug">{{ cat.title }}</a>
-      </h2>
-    </div>
-    <div class="card-content">
-      <a [routerLink]="cat.urlSlug">
-        <img [src]="cat.photos[cat.featuredImage].data.src" [alt]="cat.photos[cat.featuredImage].data.alt" />
-      </a>
-    </div>
-  </section>
+    <section class="card">
+      <div class="card-title" appIsSticky>
+        <h2>
+          <a [routerLink]="cat.urlSlug">{{ cat.title }}</a>
+        </h2>
+      </div>
+      <div class="card-content">
+        <a [routerLink]="cat.urlSlug">
+          <img [src]="cat.photos[cat.featuredImage].data.src" [alt]="cat.photos[cat.featuredImage].data.alt" />
+        </a>
+      </div>
+    </section>
   }
 </div>

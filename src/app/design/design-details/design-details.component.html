@@ -1,45 +1,44 @@
 <div class="container container-lg">
   @if (!projectDetails) {
-  <section class="card">
-    <div class="card-title no-sticky">
-      <a class="btn mr-3" routerLink="/design">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>Project not found!</h2>
-    </div>
-    <div class="card-content">
-      <p>Something seems to be wrong. There is no design project at this URL!</p>
-    </div>
-  </section>
+    <section class="card">
+      <div class="card-title no-sticky">
+        <a class="btn mr-3" routerLink="/design">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>Project not found!</h2>
+      </div>
+      <div class="card-content">
+        <p>Something seems to be wrong. There is no design project at this URL!</p>
+      </div>
+    </section>
   } @else {
-  <section class="card">
-    <div class="card-title" appIsSticky>
-      <a class="btn mr-3" routerLink="/design">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>{{ projectDetails.title }}</h2>
-    </div>
+    <section class="card">
+      <div class="card-title" appIsSticky>
+        <a class="btn mr-3" routerLink="/design">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>{{ projectDetails.title }}</h2>
+      </div>
 
-    <div class="card-content">
-      <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
+      <div class="card-content">
+        <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
 
-      <hr />
+        <hr />
 
-      @for (gallery of projectDetails.galleries; track gallery) { @if (gallery.title) {
-      <h3 [innerHTML]="gallery.title"></h3>
-      }
-      <app-gallery-thumbnails [galleryId]="gallery.id" [itemList]="gallery.images"></app-gallery-thumbnails>
-
-      } @if (projectDetails.videoGallery) {
-
-      <hr />
-      <h3 [innerHTML]="projectDetails.videoGallery.title"></h3>
-      <app-gallery-thumbnails
-        [galleryId]="projectDetails.videoGallery.id"
-        [itemList]="projectDetails.videoGallery.videos"></app-gallery-thumbnails>
-
-      }
-    </div>
-  </section>
+        @for (gallery of projectDetails.galleries; track gallery) {
+          @if (gallery.title) {
+            <h3 [innerHTML]="gallery.title"></h3>
+          }
+          <app-gallery-thumbnails [galleryId]="gallery.id" [itemList]="gallery.images"></app-gallery-thumbnails>
+        }
+        @if (projectDetails.videoGallery) {
+          <hr />
+          <h3 [innerHTML]="projectDetails.videoGallery.title"></h3>
+          <app-gallery-thumbnails
+            [galleryId]="projectDetails.videoGallery.id"
+            [itemList]="projectDetails.videoGallery.videos"></app-gallery-thumbnails>
+        }
+      </div>
+    </section>
   }
 </div>

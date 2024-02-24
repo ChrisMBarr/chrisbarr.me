@@ -1,54 +1,53 @@
 <div class="container container-lg">
   @if (!projectDetails) {
-  <section class="card">
-    <div class="card-title no-sticky">
-      <a class="btn mr-3" routerLink="/dev">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>Project not found!</h2>
-    </div>
-    <div class="card-content">
-      <p>Something seems to be wrong. There is no dev project at this URL!</p>
-    </div>
-  </section>
+    <section class="card">
+      <div class="card-title no-sticky">
+        <a class="btn mr-3" routerLink="/dev">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>Project not found!</h2>
+      </div>
+      <div class="card-content">
+        <p>Something seems to be wrong. There is no dev project at this URL!</p>
+      </div>
+    </section>
   } @else {
-  <section class="card">
-    <div class="card-title" appIsSticky>
-      <a class="btn mr-3" routerLink="/dev">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>{{ projectDetails.title }}</h2>
-    </div>
+    <section class="card">
+      <div class="card-title" appIsSticky>
+        <a class="btn mr-3" routerLink="/dev">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>{{ projectDetails.title }}</h2>
+      </div>
 
-    <div class="card-content">
-      <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
+      <div class="card-content">
+        <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
 
-      <hr />
+        <hr />
 
-      <h3 class="mt-0">Links</h3>
-      <ul>
-        @for (link of projectDetails.links; track link) {
-        <li>
-          <a [href]="link.url" target="_blank">
-            @if (link.iconId) {
-            <svg role="img"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
-            }
-            {{ link.text }}
-          </a>
-        </li>
+        <h3 class="mt-0">Links</h3>
+        <ul>
+          @for (link of projectDetails.links; track link) {
+            <li>
+              <a [href]="link.url" target="_blank">
+                @if (link.iconId) {
+                  <svg role="img"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
+                }
+                {{ link.text }}
+              </a>
+            </li>
+          }
+        </ul>
+
+        @if (projectDetails.gallery) {
+          <hr />
+
+          <h3 class="mt-0">Images</h3>
+          <app-gallery-thumbnails
+            [galleryId]="projectDetails.gallery.id"
+            [itemList]="projectDetails.gallery.images"></app-gallery-thumbnails>
         }
-      </ul>
-
-      @if (projectDetails.gallery) {
-      <hr />
-
-      <h3 class="mt-0">Images</h3>
-      <app-gallery-thumbnails
-        [galleryId]="projectDetails.gallery.id"
-        [itemList]="projectDetails.gallery.images"></app-gallery-thumbnails>
-
-      }
-    </div>
-  </section>
+      </div>
+    </section>
   }
 </div>

@@ -1,45 +1,48 @@
 <div class="container container-lg">
   @if (!photoCategory) {
-  <section class="card">
-    <div class="card-title no-sticky">
-      <a class="btn mr-3" routerLink="/photo">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>Photo category not found!</h2>
-    </div>
-    <div class="card-content">
-      <p>Something seems to be wrong. There are no photos at this URL!</p>
-    </div>
-  </section>
-  } @if (photoCategory) {
-  <section class="card">
-    <div class="card-title" appIsSticky>
-      <a class="btn mr-3" routerLink="/photo">
-        <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
-      </a>
-      <h2>{{ photoCategory.title }}</h2>
-    </div>
+    <section class="card">
+      <div class="card-title no-sticky">
+        <a class="btn mr-3" routerLink="/photo">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>Photo category not found!</h2>
+      </div>
+      <div class="card-content">
+        <p>Something seems to be wrong. There are no photos at this URL!</p>
+      </div>
+    </section>
+  }
+  @if (photoCategory) {
+    <section class="card">
+      <div class="card-title" appIsSticky>
+        <a class="btn mr-3" routerLink="/photo">
+          <svg role="img"><use xlink:href="#chevron-left" /></svg> Back
+        </a>
+        <h2>{{ photoCategory.title }}</h2>
+      </div>
 
-    <div class="card-content">
-      @if (photoCategory.description) {
-      <div [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
-      } @if (photoCategory.urlSlug === 'africa') {
-      <iframe
-        title="vimeo-player"
-        src="https://player.vimeo.com/video/20539494?h=c716f46681"
-        width="640"
-        height="360"
-        frameborder="0"
-        allowfullscreen></iframe>
-      } @if (photoCategory.description) {
-      <hr />
-      }
+      <div class="card-content">
+        @if (photoCategory.description) {
+          <div [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
+        }
+        @if (photoCategory.urlSlug === "africa") {
+          <iframe
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/20539494?h=c716f46681"
+            width="640"
+            height="360"
+            frameborder="0"
+            allowfullscreen></iframe>
+        }
+        @if (photoCategory.description) {
+          <hr />
+        }
 
-      <app-gallery-thumbnails
-        [galleryId]="photoCategory.urlSlug"
-        [itemList]="photoCategory.photos"
-        [dense]="true"></app-gallery-thumbnails>
-    </div>
-  </section>
+        <app-gallery-thumbnails
+          [galleryId]="photoCategory.urlSlug"
+          [itemList]="photoCategory.photos"
+          [dense]="true"></app-gallery-thumbnails>
+      </div>
+    </section>
   }
 </div>

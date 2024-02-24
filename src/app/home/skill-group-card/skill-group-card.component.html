@@ -2,12 +2,12 @@
   <h3 class="skills-icons-card-title">{{ group.groupName }}</h3>
   <div class="skills-icons-card-icons" role="list">
     @for (skill of group.skillList; track skill) {
-    <div class="icon" role="listitem" [attr.aria-label]="skill.skillName">
-      <svg role="img"><use [attr.xlink:href]="'#' + skill.iconId" /></svg>
-      <h3 aria-hidden="true">
-        <span>{{ skill.skillName }}</span>
-      </h3>
-    </div>
+      <div class="icon" role="listitem" [attr.aria-label]="skill.skillName">
+        <svg role="img"><use [attr.xlink:href]="'#' + skill.iconId" /></svg>
+        <h3 aria-hidden="true">
+          <span>{{ skill.skillName }}</span>
+        </h3>
+      </div>
     }
   </div>
 </div>
