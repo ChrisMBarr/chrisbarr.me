@@ -71,10 +71,10 @@ export class AppComponent implements OnInit {
         const offsetTop = headerIsRelative ? this.document.documentElement.scrollTop : 0;
         const offsetLeft = headerIsRelative ? this.document.documentElement.scrollLeft : 0;
 
-        this.navActiveBg.nativeElement.style.top = `${rect.top + offsetTop}px`;
-        this.navActiveBg.nativeElement.style.left = `${rect.left + offsetLeft}px`;
-        this.navActiveBg.nativeElement.style.height = `${rect.height}px`;
-        this.navActiveBg.nativeElement.style.width = `${rect.width}px`;
+        this.navActiveBg.nativeElement.style.top = `${(rect.top + offsetTop).toString()}px`;
+        this.navActiveBg.nativeElement.style.left = `${(rect.left + offsetLeft).toString()}px`;
+        this.navActiveBg.nativeElement.style.height = `${rect.height.toString()}px`;
+        this.navActiveBg.nativeElement.style.width = `${rect.width.toString()}px`;
       }
     }
   }
