@@ -163,4 +163,40 @@ export const devProjectList: IDevProject[] = [
     beginDescription: `<p>While developing the LyricConverter project mentioned here I had to separate the concerns of my code. The parsing or building of any individual file format needed be made into its own project to be used stand-alone. I wanted to move as much code out of LyricConverter as I could, while also making useful NPM packages for other developers to use. </p>`,
     endDescription: `<p> Currently this has been done for four of the many formats LyricConverter supports. I created a parser for <strong>SongShow Plus</strong> files, a parser and a file builder for <strong>ProPresenter XML</strong> files, and a parser and a file builder for <strong>OpenLyrics XML</strong> files. All of these projects have 100% (or over 99+%) code coverage, clean code enforced by linting, and a CI/CD system for new contributions. As far as I know, there are no other similar projects online anywhere to deal with these file types. </p><p> The fourth project deals with parsing the <strong>SongPro</strong> file format. I did not originally create this parser library, but when I discovered it I was frustrated because it was broken in a way where I could not use it in LyricConverter. I forked this project on github and completely rewrote it in TypeScript 5 to make it easier to maintain, safer to code against, and to give any TypeScript consumers of this package a better development experience with the generated type definitions. I added more unit tests and this project now has 100% code coverage! Because of my contributions to this project I have been made a contributor for <a href="https://github.com/SongProOrg">the SongPro organization</a>. </p>`,
   },
+  {
+    title: 'Debbie Barr',
+    urlSlug: 'debbie-barr',
+    techStack: 'Eleventy, SCSS, Bootstrap 5',
+    beginDescription: `<p><strong>Debbie Barr</strong> (who happens to be my mom!) is an accomplished author with 10 published books. She needed a website to showcase her work, read the backstories behind each book, find places to purchase them, and provide a way to get in touch with her.</p>`,
+    endDescription: `<p>I built this site using the Eleventy framework which allows me to generate a flat file website based on JSON data and nunjucks templates. This was my first deep dive in to Eleventy and I really enjoyed building this site with it and learning how it works.</p><p>If you'd like to see more images and read about the UI design you can <a href="/design/debbie-barr" rel="ng">see it in the design section</a>.</p>`,
+    gallery: {
+      id: 'debbiebarr',
+      images: [
+        new CustomImageItem({
+          thumb: 'assets/design/DebbieBarr/desktop-home_Thumb.png',
+          src: 'assets/design/DebbieBarr/desktop-home.png',
+          alt: 'DebbieBarr.com - Home Page | Desktop',
+          thumbTitle: 'Home | Desktop',
+        }),
+        new CustomImageItem({
+          thumb: 'assets/design/DebbieBarr/mobile-home_Thumb.png', //same as above image on purpose!
+          src: 'assets/design/DebbieBarr/mobile-animation.gif',
+          alt: 'DebbieBarr.com - Screen Animation | Mobile',
+          thumbTitle: 'Screen Animation | Mobile',
+        }),
+      ],
+    },
+    links: [
+      {
+        url: 'https://debbiebarr.com',
+        text: 'debbiebarr.com',
+        iconId: 'play',
+      },
+      {
+        url: 'https://github.com/FiniteLooper/debbiebarr.com',
+        text: 'Source Code',
+        iconId: 'github',
+      },
+    ],
+  },
 ];

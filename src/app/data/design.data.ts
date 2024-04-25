@@ -59,6 +59,144 @@ export const designProjectList: IDesignProject[] = [
     ],
   },
   {
+    title: 'Debbie Barr',
+    urlSlug: 'debbie-barr',
+    featuredImage: [0, 0],
+    beginDescription: `<p><strong>Debbie Barr</strong> (who happens to be my mom!) is an accomplished author with 10 published books. She needed a website to showcase her work, read the backstories behind each book, find places to purchase them, and provide a way to get in touch with her.</p>`,
+    endDescription: `<p>She had a lot of great ideas, and we worked together to refine the site design to that it looks and works great on both desktop and mobile web browsers. You can view the live site at <a href="https://debbiebarr.com"target="_blank">debbiebarr.com</a></p><p>If you'd like to read about some of the technical details of this site you can <a href="/dev/debbie-barr" rel="ng">see it in the dev section</a>.</p>`,
+    galleries: [
+      {
+        id: 'debbiebarr',
+        images: [
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/desktop-home_Thumb.png',
+            src: 'assets/design/DebbieBarr/desktop-home.png',
+            alt: 'DebbieBarr.com - Home Page | Desktop',
+            thumbTitle: 'Home | Desktop',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/desktop-books_Thumb.png',
+            src: 'assets/design/DebbieBarr/desktop-books.png',
+            alt: 'DebbieBarr.com - Books Page | Desktop',
+            thumbTitle: 'Books | Desktop',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/desktop-book-details_Thumb.png',
+            src: 'assets/design/DebbieBarr/desktop-book-details.png',
+            alt: 'DebbieBarr.com - Book Details Page | Desktop',
+            thumbTitle: 'Book Details | Desktop',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/mobile-home_Thumb.png',
+            src: 'assets/design/DebbieBarr/mobile-home.png',
+            alt: 'DebbieBarr.com - Home Page | Mobile',
+            thumbTitle: 'Home | Mobile',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/mobile-menu_Thumb.png',
+            src: 'assets/design/DebbieBarr/mobile-menu.png',
+            alt: 'DebbieBarr.com - Open Menu | Mobile',
+            thumbTitle: 'Menu | Mobile',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/mobile-books_Thumb.png',
+            src: 'assets/design/DebbieBarr/mobile-books.png',
+            alt: 'DebbieBarr.com - Books Page | Mobile',
+            thumbTitle: 'Books | Mobile',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/DebbieBarr/mobile-home_Thumb.png', //same as above image on purpose!
+            src: 'assets/design/DebbieBarr/mobile-animation.gif',
+            alt: 'DebbieBarr.com - Screen Animation | Mobile',
+            thumbTitle: 'Screen Animation | Mobile',
+          }),
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Logo Design',
+    urlSlug: 'logo-design',
+    featuredImage: [0, 0],
+    beginDescription: `<p>These are a few of the logos I have created for various companies and projects over the years.</p>`,
+    endDescription: ``,
+    galleries: [
+      {
+        id: 'logos-graphic',
+        title: 'Logos: Graphic Design',
+        images: [
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/landmark_thumb.png',
+            src: 'assets/design/Logos/landmark.png',
+            alt: 'Landmark Analytics: The logo for a business analytics, consulting, and software company',
+            thumbTitle: 'Landmark Analytics',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/lyric-converter_thumb.png',
+            src: 'assets/design/Logos/lyric-converter.png',
+            alt: 'LyricConverter: The logo for my lyric file format converter project',
+            thumbTitle: 'LyricConverter',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/smoke-test_thumb.png',
+            src: 'assets/design/Logos/smoke-test.png',
+            alt: 'Smoke Test: The logo for a QA testing management software company',
+            thumbTitle: 'Smoke Test',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/cawtcha_thumb.png',
+            src: 'assets/design/Logos/cawtcha.png',
+            alt: 'Cawtcha: The logo for a threat detection software company',
+            thumbTitle: 'Cawtcha',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/eject-media_thumb.png',
+            src: 'assets/design/Logos/eject-media.png',
+            alt: 'Eject Media: Some variations on a logo I created for my old web design company',
+            thumbTitle: 'Eject Media',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/burnside_thumb.png',
+            src: 'assets/design/Logos/burnside.png',
+            alt: 'Burnside Recordings: A logo I created for a small recording studio',
+            thumbTitle: 'Burnside Recordings',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/cypher-edge_thumb.png',
+            src: 'assets/design/Logos/cypher-edge.png',
+            alt: 'Cypher Edge: A logo I created for a small game development studio',
+            thumbTitle: 'Cypher Edge',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/Logos/paradigm_thumb.png',
+            src: 'assets/design/Logos/paradigm.png',
+            alt: 'Paradigm Communications Group: A logo I created for a small video production company',
+            thumbTitle: 'Paradigm',
+          }),
+        ],
+      },
+    ],
+    videoGallery: {
+      id: 'logos-motion',
+      title: 'Logos: Motion Design',
+      videos: [
+        new CustomYoutubeItem({
+          src: 'bnEFhJc9jhw',
+          thumbTitle: 'Eject Media Credits',
+        }),
+        new CustomYoutubeItem({
+          src: '1Ovcl3FYL3Y',
+          thumbTitle: 'Paradigm',
+        }),
+        new CustomIFrameItem({
+          src: 'https://player.vimeo.com/video/961922',
+          thumb: 'https://vumbnail.com/00961922.jpg',
+          thumbTitle: 'Highland Park',
+        }),
+      ],
+    },
+  },
+  {
     title: 'AccountChek',
     urlSlug: 'account-chek',
     featuredImage: [1, 1],
@@ -254,88 +392,6 @@ export const designProjectList: IDesignProject[] = [
         ],
       },
     ],
-  },
-  {
-    title: 'Logo Design',
-    urlSlug: 'logo-design',
-    featuredImage: [0, 0],
-    beginDescription: `<p>These are a few of the logos I have created for various companies and projects over the years.</p>`,
-    endDescription: ``,
-    galleries: [
-      {
-        id: 'logos-graphic',
-        title: 'Logos: Graphic Design',
-        images: [
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/landmark_thumb.png',
-            src: 'assets/design/Logos/landmark.png',
-            alt: 'Landmark Analytics: The logo for a business analytics, consulting, and software company',
-            thumbTitle: 'Landmark Analytics',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/lyric-converter_thumb.png',
-            src: 'assets/design/Logos/lyric-converter.png',
-            alt: 'LyricConverter: The logo for my lyric file format converter project',
-            thumbTitle: 'LyricConverter',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/smoke-test_thumb.png',
-            src: 'assets/design/Logos/smoke-test.png',
-            alt: 'Smoke Test: The logo for a QA testing management software company',
-            thumbTitle: 'Smoke Test',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/cawtcha_thumb.png',
-            src: 'assets/design/Logos/cawtcha.png',
-            alt: 'Cawtcha: The logo for a threat detection software company',
-            thumbTitle: 'Cawtcha',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/eject-media_thumb.png',
-            src: 'assets/design/Logos/eject-media.png',
-            alt: 'Eject Media: Some variations on a logo I created for my old web design company',
-            thumbTitle: 'Eject Media',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/burnside_thumb.png',
-            src: 'assets/design/Logos/burnside.png',
-            alt: 'Burnside Recordings: A logo I created for a small recording studio',
-            thumbTitle: 'Burnside Recordings',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/cypher-edge_thumb.png',
-            src: 'assets/design/Logos/cypher-edge.png',
-            alt: 'Cypher Edge: A logo I created for a small game development studio',
-            thumbTitle: 'Cypher Edge',
-          }),
-          new CustomImageItem({
-            thumb: 'assets/design/Logos/paradigm_thumb.png',
-            src: 'assets/design/Logos/paradigm.png',
-            alt: 'Paradigm Communications Group: A logo I created for a small video production company',
-            thumbTitle: 'Paradigm',
-          }),
-        ],
-      },
-    ],
-    videoGallery: {
-      id: 'logos-motion',
-      title: 'Logos: Motion Design',
-      videos: [
-        new CustomYoutubeItem({
-          src: 'bnEFhJc9jhw',
-          thumbTitle: 'Eject Media Credits',
-        }),
-        new CustomYoutubeItem({
-          src: '1Ovcl3FYL3Y',
-          thumbTitle: 'Paradigm',
-        }),
-        new CustomIFrameItem({
-          src: 'https://player.vimeo.com/video/961922',
-          thumb: 'https://vumbnail.com/00961922.jpg',
-          thumbTitle: 'Highland Park',
-        }),
-      ],
-    },
   },
   {
     title: 'Smoke-Test',
