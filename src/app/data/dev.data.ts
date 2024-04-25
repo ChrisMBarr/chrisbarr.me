@@ -199,4 +199,35 @@ export const devProjectList: IDevProject[] = [
       },
     ],
   },
+  {
+    title: 'Landmark Analytics',
+    urlSlug: 'landmark-analytics',
+    techStack: 'Eleventy, SCSS, Bootstrap 5',
+    beginDescription: `<p><strong>Landmark Analytics</strong> is a technology company that I worked for building web-based business applications. Landmark also specializes in data analytics, Oracle database management &amp; planning, and converting complex Excel spreadsheets into real business applications.</p>`,
+    endDescription: `<p>I built using the Eleventy framework that allows me to use a simple tempting system to generate flat files to deploy. You can view the live site at <a href="https://landmarkanalytics.com" target="_blank">landmarkanalytics.com</a></p><p>If you'd like to see more images and read about the UI design you can <a href="/design/landmark-analytics" rel="ng">see it in the design section</a>.</p>`,
+    gallery: {
+      id: 'landmark',
+      images: [
+        new CustomImageItem({
+          thumb: 'assets/design/LandmarkAnalytics/desktop-home_Thumb.png',
+          src: 'assets/design/LandmarkAnalytics/desktop-home.png',
+          alt: 'Landmark Analytics - Home Page | Desktop',
+          thumbTitle: 'Home | Desktop',
+        }),
+        new CustomImageItem({
+          thumb: 'assets/design/LandmarkAnalytics/mobile-home_Thumb.png',
+          src: 'assets/design/LandmarkAnalytics/mobile-home.png',
+          alt: 'Landmark Analytics - Home Page | Mobile',
+          thumbTitle: 'Home | Mobile',
+        }),
+      ],
+    },
+    links: [
+      {
+        url: 'https://landmarkanalytics.com',
+        text: 'landmarkanalytics.com',
+        iconId: 'play',
+      },
+    ],
+  },
 ];

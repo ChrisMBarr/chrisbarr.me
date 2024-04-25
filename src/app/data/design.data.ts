@@ -115,6 +115,50 @@ export const designProjectList: IDesignProject[] = [
     ],
   },
   {
+    title: 'Landmark Analytics',
+    urlSlug: 'landmark-analytics',
+    featuredImage: [0, 0],
+    beginDescription: `<p><strong>Landmark Analytics</strong> is a technology company that I worked for building web-based business applications. Landmark also specializes in data analytics, Oracle database management &amp; planning, and converting complex Excel spreadsheets into real business applications.</p>`,
+    endDescription: `<p>One project I worked on at Landmark was to come up with a simple website design that was very clear and straightforward. This site is designed to work on both desktop and mobile web browsers, and it was built using the Eleventy framework that allows me to use a simple tempting system to generate flat files to deploy. You can view the live site at <a href="https://landmarkanalytics.com" target="_blank">landmarkanalytics.com</a></p><p>If you'd like to read about some of the technical details of this site you can <a href="/dev/landmark-analytics" rel="ng">see it in the dev section</a>.</p>`,
+    galleries: [
+      {
+        id: 'landmark',
+        images: [
+          new CustomImageItem({
+            thumb: 'assets/design/LandmarkAnalytics/desktop-home_Thumb.png',
+            src: 'assets/design/LandmarkAnalytics/desktop-home.png',
+            alt: 'Landmark Analytics - Home Page | Desktop',
+            thumbTitle: 'Home | Desktop',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LandmarkAnalytics/desktop-contact_Thumb.png',
+            src: 'assets/design/LandmarkAnalytics/desktop-contact.png',
+            alt: 'Landmark Analytics - Contact Page | Desktop',
+            thumbTitle: 'Contact | Desktop',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LandmarkAnalytics/mobile-home_Thumb.png',
+            src: 'assets/design/LandmarkAnalytics/mobile-home.png',
+            alt: 'Landmark Analytics - Home Page | Mobile',
+            thumbTitle: 'Home | Mobile',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LandmarkAnalytics/mobile-menu_Thumb.png',
+            src: 'assets/design/LandmarkAnalytics/mobile-menu.png',
+            alt: 'Landmark Analytics - Open Menu | Mobile',
+            thumbTitle: 'Open Menu | Mobile',
+          }),
+          new CustomImageItem({
+            thumb: 'assets/design/LandmarkAnalytics/mobile-contact_Thumb.png',
+            src: 'assets/design/LandmarkAnalytics/mobile-contact.png',
+            alt: 'Landmark Analytics - Contact Page | Mobile',
+            thumbTitle: 'Contact | Mobile',
+          }),
+        ],
+      },
+    ],
+  },
+  {
     title: 'Logo Design',
     urlSlug: 'logo-design',
     featuredImage: [0, 0],
