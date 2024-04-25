@@ -3,6 +3,7 @@
     "**/.gitignore": true,
     "**/.gitkeep": true,
     ".angular": true,
+    ".nx": true,
     ".editorconfig": true,
     ".prettierrc": true,
     ".prettierignore": true,
