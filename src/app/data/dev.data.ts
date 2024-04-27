@@ -14,7 +14,7 @@ export const devProjectList: IDevProject[] = [
       id: 'lyricConverter',
       images: [
         new CustomImageItem({
-          src: 'https://github.com/FiniteLooper/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true',
+          src: 'https://github.com/ChrisMBarr/LyricConverter/raw/master/lyric-converter-demo.gif?raw=true',
           thumb: '/assets/dev/lyric-converter_Thumb.png',
           alt: 'LyricConverter Screen Recording',
           thumbTitle: 'LyricConverter Screen Recording',
@@ -29,7 +29,7 @@ export const devProjectList: IDevProject[] = [
         iconId: 'play',
       },
       {
-        url: 'https://github.com/FiniteLooper/LyricConverter',
+        url: 'https://github.com/ChrisMBarr/LyricConverter',
         text: 'Source Code',
         iconId: 'github',
       },
@@ -60,7 +60,7 @@ export const devProjectList: IDevProject[] = [
     techStack: 'TypeScript 5, SCSS, Angular 16, Angular Universal',
     links: [
       {
-        url: 'https://github.com/FiniteLooper/chrisbarr.me',
+        url: 'https://github.com/ChrisMBarr/chrisbarr.me',
         text: 'Source Code',
         iconId: 'github',
       },
@@ -121,12 +121,12 @@ export const devProjectList: IDevProject[] = [
     },
     links: [
       {
-        url: 'https://finitelooper.github.io/noise-maker/',
+        url: 'https://chrismbarr.github.io/noise-maker/',
         text: 'View Demo',
         iconId: 'play',
       },
       {
-        url: 'https://github.com/FiniteLooper/noise-maker',
+        url: 'https://github.com/ChrisMBarr/noise-maker',
         text: 'Source Code',
         iconId: 'github',
       },
@@ -140,17 +140,17 @@ export const devProjectList: IDevProject[] = [
     techStack: 'TypeScript 5, Jest',
     links: [
       {
-        url: 'https://github.com/FiniteLooper/ProPresenter-Parser',
+        url: 'https://github.com/ChrisMBarr/ProPresenter-Parser',
         text: 'ProPresenter-Parser',
         iconId: 'github',
       },
       {
-        url: 'https://github.com/FiniteLooper/OpenLyrics-Parser',
+        url: 'https://github.com/ChrisMBarr/OpenLyrics-Parser',
         text: 'OpenLyrics-Parser',
         iconId: 'github',
       },
       {
-        url: 'https://github.com/FiniteLooper/SongShowPlus-Parser',
+        url: 'https://github.com/ChrisMBarr/SongShowPlus-Parser',
         text: 'SongShowPlus-Parser',
         iconId: 'github',
       },
@@ -193,7 +193,7 @@ export const devProjectList: IDevProject[] = [
         iconId: 'play',
       },
       {
-        url: 'https://github.com/FiniteLooper/debbiebarr.com',
+        url: 'https://github.com/ChrisMBarr/debbiebarr.com',
         text: 'Source Code',
         iconId: 'github',
       },

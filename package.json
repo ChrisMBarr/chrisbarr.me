@@ -7,10 +7,10 @@
   "homepage": "https://chrisbarr.me",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FiniteLooper/chrisbarr.me.git"
+    "url": "git+https://github.com/ChrisMBarr/chrisbarr.me.git"
   },
   "bugs": {
-    "url": "https://github.com/FiniteLooper/chrisbarr.me/issues"
+    "url": "https://github.com/ChrisMBarr/chrisbarr.me/issues"
   },
   "scripts": {
     "ng": "ng",
