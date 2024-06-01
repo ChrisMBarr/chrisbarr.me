@@ -43,7 +43,7 @@
     "hammerjs": "^2.0.8",
     "ng-gallery": "^11.0.0",
     "tslib": "^2.6.2",
-    "zone.js": "~0.14.5"
+    "zone.js": "~0.14.6"
   },
   "devDependencies": {
     "@angular-devkit/architect": "^0.1703.8",
