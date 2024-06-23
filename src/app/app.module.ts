@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //3rd party modules
@@ -29,7 +29,6 @@ import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-car
 @NgModule({
   declarations: [
     AppComponent,
-
     //Page Components
     HomeComponent,
     DevComponent,
@@ -39,23 +38,14 @@ import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-car
     PhotoComponent,
     PhotoDetailsComponent,
     ContactComponent,
-
     //App Directives/Components
     IsStickyDirective,
     InternalRouteLinksDirective,
     GalleryThumbnailsComponent,
     SkillGroupCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    GalleryModule,
-    LightboxModule,
-    FormsModule,
-    HttpClientModule,
-  ],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, GalleryModule, LightboxModule, FormsModule],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -31,12 +31,7 @@
           }
         ],
         "@typescript-eslint/no-extraneous-class": "off",
-        "prettier/prettier": [
-          "warn",
-          {
-            "endOfLine": "auto"
-          }
-        ]
+        "prettier/prettier": ["warn", { "endOfLine": "auto" }]
       }
     },
     {
@@ -46,7 +41,10 @@
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility",
         "plugin:prettier/recommended"
-      ]
+      ],
+      "rules": {
+        "prettier/prettier": ["warn", { "endOfLine": "auto" }]
+      }
     }
   ]
 }
