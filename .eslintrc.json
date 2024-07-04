@@ -8,28 +8,16 @@
         "project": ["tsconfig.(app|server).json"]
       },
       "extends": [
-        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/all",
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:@typescript-eslint/strict-type-checked",
         "plugin:prettier/recommended"
       ],
       "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
+        "@angular-eslint/directive-selector": ["warn", { "type": "attribute", "prefix": "app", "style": "camelCase" }],
+        "@angular-eslint/component-selector": ["warn", { "type": "element", "prefix": "app", "style": "kebab-case" }],
+        "@angular-eslint/prefer-standalone":"off",
+        "@angular-eslint/prefer-standalone-component":"off",
         "@typescript-eslint/no-extraneous-class": "off",
         "prettier/prettier": ["warn", { "endOfLine": "auto" }]
       }
@@ -37,12 +25,12 @@
     {
       "files": ["*.html"],
       "parser": "@angular-eslint/template-parser",
-      "extends": [
-        "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility",
-        "plugin:prettier/recommended"
-      ],
+      "extends": ["plugin:@angular-eslint/template/all", "plugin:prettier/recommended"],
       "rules": {
+        "@angular-eslint/template/i18n": "off",
+        "@angular-eslint/template/prefer-ngsrc": "off",
+        "@angular-eslint/template/no-inline-styles": "off",
+        "@angular-eslint/template/no-any": "off",
         "prettier/prettier": ["warn", { "endOfLine": "auto" }]
       }
     }

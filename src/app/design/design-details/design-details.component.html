@@ -21,7 +21,7 @@
       </div>
 
       <div class="card-content">
-        <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
+        <div appInternalRouteLinks [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
 
         <hr />
 
@@ -29,15 +29,12 @@
           @if (gallery.title) {
             <h3 [innerHTML]="gallery.title"></h3>
           }
-          <app-gallery-thumbnails [galleryId]="gallery.id" [itemList]="gallery.images"></app-gallery-thumbnails>
+          <app-gallery-thumbnails [galleryId]="gallery.id" [itemList]="gallery.images" />
         }
         @if (projectDetails.videoGallery) {
           <hr />
           <h3 [innerHTML]="projectDetails.videoGallery.title"></h3>
-          <app-gallery-thumbnails
-            [galleryId]="projectDetails.videoGallery.id"
-            [itemList]="projectDetails.videoGallery.videos"
-          ></app-gallery-thumbnails>
+          <app-gallery-thumbnails [galleryId]="projectDetails.videoGallery.id" [itemList]="projectDetails.videoGallery.videos" />
         }
       </div>
     </section>

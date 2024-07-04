@@ -1,12 +1,13 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-photo-details',
   templateUrl: './photo-details.component.html',
-  styleUrls: ['./photo-details.component.scss'],
+  styleUrl: './photo-details.component.scss',
 })
 export class PhotoDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

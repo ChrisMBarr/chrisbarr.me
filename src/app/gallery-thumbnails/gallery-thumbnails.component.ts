@@ -1,11 +1,12 @@
-import { AfterViewInit, Component, Input, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CustomImageItem, CustomYoutubeItem } from '../data/data.model';
 import { Gallery, GalleryImageDef } from 'ng-gallery';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-gallery-thumbnails',
   templateUrl: './gallery-thumbnails.component.html',
-  styleUrls: ['./gallery-thumbnails.component.scss'],
+  styleUrl: './gallery-thumbnails.component.scss',
 })
 export class GalleryThumbnailsComponent implements AfterViewInit {
   private readonly gallery = inject(Gallery);

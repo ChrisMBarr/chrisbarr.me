@@ -1,4 +1,4 @@
-<div class="skills-icons-card" tabindex="0" #card [class.icon-view]="!viewAsList" [class.list-view]="viewAsList">
+<div #card class="skills-icons-card" tabindex="0" [class.icon-view]="!viewAsList" [class.list-view]="viewAsList">
   <h3 class="skills-icons-card-title">{{ group.groupName }}</h3>
   <div class="skills-icons-card-icons" role="list">
     @for (skill of group.skillList; track skill) {

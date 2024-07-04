@@ -21,7 +21,7 @@
       </div>
 
       <div class="card-content">
-        <div [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription" appInternalRouteLinks></div>
+        <div appInternalRouteLinks [innerHTML]="projectDetails.beginDescription + projectDetails.endDescription"></div>
 
         <hr />
 
@@ -29,7 +29,7 @@
         <ul>
           @for (link of projectDetails.links; track link) {
             <li>
-              <a [href]="link.url" target="_blank">
+              <a target="_blank" [href]="link.url">
                 @if (link.iconId) {
                   <svg role="img"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
                 }
@@ -43,10 +43,7 @@
           <hr />
 
           <h3 class="mt-0">Images</h3>
-          <app-gallery-thumbnails
-            [galleryId]="projectDetails.gallery.id"
-            [itemList]="projectDetails.gallery.images"
-          ></app-gallery-thumbnails>
+          <app-gallery-thumbnails [galleryId]="projectDetails.gallery.id" [itemList]="projectDetails.gallery.images" />
         }
       </div>
     </section>

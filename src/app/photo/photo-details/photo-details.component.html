@@ -23,7 +23,7 @@
 
       <div class="card-content">
         @if (photoCategory.description) {
-          <div [innerHTML]="photoCategory.description" appInternalRouteLinks></div>
+          <div appInternalRouteLinks [innerHTML]="photoCategory.description"></div>
         }
         @if (photoCategory.urlSlug === "africa") {
           <iframe
@@ -39,11 +39,7 @@
           <hr />
         }
 
-        <app-gallery-thumbnails
-          [galleryId]="photoCategory.urlSlug"
-          [itemList]="photoCategory.photos"
-          [dense]="true"
-        ></app-gallery-thumbnails>
+        <app-gallery-thumbnails [galleryId]="photoCategory.urlSlug" [itemList]="photoCategory.photos" [dense]="true" />
       </div>
     </section>
   }

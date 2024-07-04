@@ -17,7 +17,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "lint": "ng lint --fix",
+    "lint": "ng lint --fix=true",
     "update": "ncu -u",
     "dev:ssr": "ng run chrisbarr.me:serve-ssr",
     "serve:ssr": "node dist/chrisbarr.me/server/main.js",

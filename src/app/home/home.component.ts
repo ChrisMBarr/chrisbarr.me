@@ -1,11 +1,12 @@
-import { Component, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { ISkillGroup, skillGroups } from '../data/skills.data';
 import { designProjectList } from '../data/design.data';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;

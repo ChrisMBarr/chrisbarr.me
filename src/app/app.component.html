@@ -1,15 +1,15 @@
 <header #header>
   <h1 id="title">Chris Barr</h1>
-  <nav id="navigation" #navContainer>
+  <nav #navContainer id="navigation">
     <a routerLink="/" [class.active]="isHomePage">Home</a>
     <a routerLinkActive="active" routerLink="/dev">Dev</a>
     <a routerLinkActive="active" routerLink="/design">Design</a>
     <a routerLinkActive="active" routerLink="/photo">Photo</a>
     <a routerLinkActive="active" routerLink="/contact">Contact</a>
-    <span id="navigation-active-bg" #navActiveBg></span>
+    <span #navActiveBg id="navigation-active-bg"></span>
   </nav>
 </header>
 
 <main role="main">
-  <router-outlet #o="outlet"></router-outlet>
+  <router-outlet #o="outlet" />
 </main>

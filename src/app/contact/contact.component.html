@@ -1,5 +1,5 @@
 <ng-template #contactIconLink let-id="id" let-name="name" let-href="href" let-rel="rel">
-  <a class="icon" [href]="href" target="_blank" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
+  <a class="icon" target="_blank" [href]="href" [attr.rel]="rel ? rel : null" [attr.aria-label]="name">
     <h3 aria-hidden="true">
       <span>{{ name }}</span>
     </h3>
@@ -13,9 +13,10 @@
     </div>
     <div class="card-content">
       @if (!success) {
-        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
           <div class="form-group" [ngClass]="{ invalid: name.touched && name.invalid }">
             <input
+              #name="ngModel"
               type="text"
               class="form-ctrl"
               id="name"
@@ -23,7 +24,6 @@
               placeholder="Your Name"
               autocomplete="name"
               required
-              #name="ngModel"
               ngModel
             />
             <label for="name">Name</label>
@@ -32,6 +32,7 @@
 
           <div class="form-group" [ngClass]="{ invalid: email.touched && email.invalid }">
             <input
+              #email="ngModel"
               type="email"
               class="form-ctrl"
               id="email"
@@ -40,7 +41,6 @@
               placeholder="name@exmaple.com"
               required
               email
-              #email="ngModel"
               ngModel
             />
             <label for="email">Email</label>
@@ -51,12 +51,13 @@
           </div>
 
           <div class="form-group" style="display: none" aria-hidden="true">
-            <input type="text" class="form-ctrl" id="subject" name="subject" placeholder="subject" #subject="ngModel" ngModel />
+            <input #subject="ngModel" type="text" class="form-ctrl" id="subject" name="subject" placeholder="subject" ngModel />
             <label for="subject">Subject</label>
           </div>
 
           <div class="form-group" [ngClass]="{ invalid: message.touched && message.invalid }">
             <textarea
+              #message="ngModel"
               id="message"
               class="form-ctrl"
               name="message"
@@ -65,7 +66,6 @@
               placeholder="Your Message"
               required
               minlength="20"
-              #message="ngModel"
               ngModel
             ></textarea>
             <label for="message">Message</label>
