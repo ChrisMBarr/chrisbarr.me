@@ -67,5 +67,8 @@
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "3.3.3",
     "typescript": "~5.5.4"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "*"
   }
 }
