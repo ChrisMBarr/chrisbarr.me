@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
-import { CustomImageItem, CustomYoutubeItem } from '../data/data.model';
-import { Gallery, GalleryImageDef } from 'ng-gallery';
+import * as dataModel from '../data/data.model';
+import * as ngGallery from 'ng-gallery';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,12 +9,12 @@ import { Gallery, GalleryImageDef } from 'ng-gallery';
   styleUrl: './gallery-thumbnails.component.scss',
 })
 export class GalleryThumbnailsComponent implements AfterViewInit {
-  private readonly gallery = inject(Gallery);
+  private readonly gallery = inject(ngGallery.Gallery);
 
-  @ViewChild(GalleryImageDef, { static: true }) imageDef!: GalleryImageDef;
+  @ViewChild(ngGallery.GalleryImageDef, { static: true }) imageDef!: ngGallery.GalleryImageDef;
 
   @Input() galleryId = '';
-  @Input() itemList: CustomImageItem[] | CustomYoutubeItem[] = [];
+  @Input() itemList: Array<dataModel.CustomImageItem | ngGallery.YoutubeItem | ngGallery.VimeoItem> = [];
   @Input() dense = false;
 
   ngAfterViewInit(): void {
@@ -22,7 +22,7 @@ export class GalleryThumbnailsComponent implements AfterViewInit {
       .ref(this.galleryId, {
         counter: false,
         thumbAutosize: true,
-        thumb: false,
+        thumbs: false,
         imageTemplate: this.imageDef.templateRef,
       })
       .load(this.itemList);

@@ -6,7 +6,7 @@
   @for (item of itemList; track item; let i = $index) {
     <a class="lightbox-thumb" href="javascript:;" tabindex="0" [lightbox]="i" [gallery]="galleryId">
       <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
-      <img [src]="item.data.thumb" [attr.alt]="item.data.alt ? item.data.alt : null" />
+      <img [src]="item.data.thumb" [attr.alt]="$any(item.data).alt ? $any(item.data).alt : null" />
       @if ($any(item.data).thumbTitle) {
         <span class="lightbox-thumb-title">{{ $any(item.data).thumbTitle }}</span>
       }

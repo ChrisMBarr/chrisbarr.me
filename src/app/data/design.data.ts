@@ -1,9 +1,10 @@
-import { CustomIFrameItem, CustomImageItem, CustomYoutubeItem, IImageGallery, IProjectBase, IVideoGallery } from './data.model';
+import * as dataModel from './data.model';
+import * as ngGallery from 'ng-gallery';
 
-export interface IDesignProject extends IProjectBase {
+export interface IDesignProject extends dataModel.IProjectBase {
   featuredImage: [gallery: number, image: number];
-  galleries: IImageGallery[];
-  videoGallery?: IVideoGallery;
+  galleries: dataModel.IImageGallery[];
+  videoGallery?: dataModel.IVideoGallery;
 }
 
 export const designProjectList: IDesignProject[] = [
@@ -18,37 +19,37 @@ export const designProjectList: IDesignProject[] = [
       {
         id: 'lyricConverter',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/bg1_Thumb.jpg',
             src: 'assets/design/LyricConverter/bg1.jpg',
             alt: 'LyricConverter - Random Background Image Example 1',
             thumbTitle: 'Background 1',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/bg2_Thumb.jpg',
             src: 'assets/design/LyricConverter/bg2.jpg',
             alt: 'LyricConverter - Random Background Image Example 2',
             thumbTitle: 'Background 2',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/bg3_Thumb.jpg',
             src: 'assets/design/LyricConverter/bg3.jpg',
             alt: 'LyricConverter - Random Background Image Example 3',
             thumbTitle: 'Background 3',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/download_Thumb.jpg',
             src: 'assets/design/LyricConverter/download.jpg',
             alt: 'LyricConverter - Download Converted files',
             thumbTitle: 'Download Files',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/slides_Thumb.jpg',
             src: 'assets/design/LyricConverter/slides.jpg',
             alt: 'LyricConverter - Display Slides',
             thumbTitle: 'Display Slides',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LyricConverter/help_Thumb.jpg',
             src: 'assets/design/LyricConverter/help.jpg',
             alt: 'LyricConverter - Help Page',
@@ -68,43 +69,43 @@ export const designProjectList: IDesignProject[] = [
       {
         id: 'debbiebarr',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/desktop-home_Thumb.png',
             src: 'assets/design/DebbieBarr/desktop-home.png',
             alt: 'DebbieBarr.com - Home Page | Desktop',
             thumbTitle: 'Home | Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/desktop-books_Thumb.png',
             src: 'assets/design/DebbieBarr/desktop-books.png',
             alt: 'DebbieBarr.com - Books Page | Desktop',
             thumbTitle: 'Books | Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/desktop-book-details_Thumb.png',
             src: 'assets/design/DebbieBarr/desktop-book-details.png',
             alt: 'DebbieBarr.com - Book Details Page | Desktop',
             thumbTitle: 'Book Details | Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/mobile-home_Thumb.png',
             src: 'assets/design/DebbieBarr/mobile-home.png',
             alt: 'DebbieBarr.com - Home Page | Mobile',
             thumbTitle: 'Home | Mobile',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/mobile-menu_Thumb.png',
             src: 'assets/design/DebbieBarr/mobile-menu.png',
             alt: 'DebbieBarr.com - Open Menu | Mobile',
             thumbTitle: 'Menu | Mobile',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/mobile-books_Thumb.png',
             src: 'assets/design/DebbieBarr/mobile-books.png',
             alt: 'DebbieBarr.com - Books Page | Mobile',
             thumbTitle: 'Books | Mobile',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/DebbieBarr/mobile-home_Thumb.png', //same as above image on purpose!
             src: 'assets/design/DebbieBarr/mobile-animation.gif',
             alt: 'DebbieBarr.com - Screen Animation | Mobile',
@@ -124,31 +125,31 @@ export const designProjectList: IDesignProject[] = [
       {
         id: 'landmark',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LandmarkAnalytics/desktop-home_Thumb.png',
             src: 'assets/design/LandmarkAnalytics/desktop-home.png',
             alt: 'Landmark Analytics - Home Page | Desktop',
             thumbTitle: 'Home | Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LandmarkAnalytics/desktop-contact_Thumb.png',
             src: 'assets/design/LandmarkAnalytics/desktop-contact.png',
             alt: 'Landmark Analytics - Contact Page | Desktop',
             thumbTitle: 'Contact | Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LandmarkAnalytics/mobile-home_Thumb.png',
             src: 'assets/design/LandmarkAnalytics/mobile-home.png',
             alt: 'Landmark Analytics - Home Page | Mobile',
             thumbTitle: 'Home | Mobile',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LandmarkAnalytics/mobile-menu_Thumb.png',
             src: 'assets/design/LandmarkAnalytics/mobile-menu.png',
             alt: 'Landmark Analytics - Open Menu | Mobile',
             thumbTitle: 'Open Menu | Mobile',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/LandmarkAnalytics/mobile-contact_Thumb.png',
             src: 'assets/design/LandmarkAnalytics/mobile-contact.png',
             alt: 'Landmark Analytics - Contact Page | Mobile',
@@ -169,49 +170,49 @@ export const designProjectList: IDesignProject[] = [
         id: 'logos-graphic',
         title: 'Logos: Graphic Design',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/landmark_thumb.png',
             src: 'assets/design/Logos/landmark.png',
             alt: 'Landmark Analytics: The logo for a business analytics, consulting, and software company',
             thumbTitle: 'Landmark Analytics',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/lyric-converter_thumb.png',
             src: 'assets/design/Logos/lyric-converter.png',
             alt: 'LyricConverter: The logo for my lyric file format converter project',
             thumbTitle: 'LyricConverter',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/smoke-test_thumb.png',
             src: 'assets/design/Logos/smoke-test.png',
             alt: 'Smoke Test: The logo for a QA testing management software company',
             thumbTitle: 'Smoke Test',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/cawtcha_thumb.png',
             src: 'assets/design/Logos/cawtcha.png',
             alt: 'Cawtcha: The logo for a threat detection software company',
             thumbTitle: 'Cawtcha',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/eject-media_thumb.png',
             src: 'assets/design/Logos/eject-media.png',
             alt: 'Eject Media: Some variations on a logo I created for my old web design company',
             thumbTitle: 'Eject Media',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/burnside_thumb.png',
             src: 'assets/design/Logos/burnside.png',
             alt: 'Burnside Recordings: A logo I created for a small recording studio',
             thumbTitle: 'Burnside Recordings',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/cypher-edge_thumb.png',
             src: 'assets/design/Logos/cypher-edge.png',
             alt: 'Cypher Edge: A logo I created for a small game development studio',
             thumbTitle: 'Cypher Edge',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Logos/paradigm_thumb.png',
             src: 'assets/design/Logos/paradigm.png',
             alt: 'Paradigm Communications Group: A logo I created for a small video production company',
@@ -224,17 +225,19 @@ export const designProjectList: IDesignProject[] = [
       id: 'logos-motion',
       title: 'Logos: Motion Design',
       videos: [
-        new CustomYoutubeItem({
+        new ngGallery.YoutubeItem({
           src: 'bnEFhJc9jhw',
+          //@ts-expect-error -- Just adding a property, forcing it is easier than adding a bunch of custom stuff
           thumbTitle: 'Eject Media Credits',
         }),
-        new CustomYoutubeItem({
+        new ngGallery.YoutubeItem({
           src: '1Ovcl3FYL3Y',
+          //@ts-expect-error -- Just adding a property, forcing it is easier than adding a bunch of custom stuff
           thumbTitle: 'Paradigm',
         }),
-        new CustomIFrameItem({
-          src: 'https://player.vimeo.com/video/961922',
-          thumb: 'https://vumbnail.com/00961922.jpg',
+        new ngGallery.VimeoItem({
+          src: '961922',
+          //@ts-expect-error -- Just adding a property, forcing it is easier than adding a bunch of custom stuff
           thumbTitle: 'Highland Park',
         }),
       ],
@@ -253,43 +256,43 @@ export const designProjectList: IDesignProject[] = [
         title: 'Previous <em>AccountChek</em> Design - Desktop',
         id: 'prevAccountCheckDesktop',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-1-login_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-1-login.png',
             alt: 'AccountChek - Previous Design - Desktop - Login',
             thumbTitle: 'Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-2-find-accounts_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-2-find-accounts.png',
             alt: 'AccountChek - Previous Design - Desktop - Find Accounts',
             thumbTitle: 'Find Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-3-menu_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-3-menu.png',
             alt: 'AccountChek - Previous Design - Desktop - Menu',
             thumbTitle: 'Menu',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-4-search_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-4-search.png',
             alt: 'AccountChek - Previous Design - Desktop - Search',
             thumbTitle: 'Search',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-5-bank-login_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-5-bank-login.png',
             alt: 'AccountChek - Previous Design - Desktop - Bank Login',
             thumbTitle: 'Bank Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-6-accounts_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-6-accounts.png',
             alt: 'AccountChek - Previous Design - Desktop - Accounts',
             thumbTitle: 'Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-desktop-7-success_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-desktop-7-success.png',
             alt: 'AccountChek - Previous Design - Desktop - Success',
@@ -301,37 +304,37 @@ export const designProjectList: IDesignProject[] = [
         title: 'My <em>AccountChek</em> Redesign - Desktop',
         id: 'redesignAccountCheckDesktop',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-1-login_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-1-login.png',
             alt: 'AccountChek - Redesign - Desktop - Login',
             thumbTitle: 'Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-2-find-accounts_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-2-find-accounts.png',
             alt: 'AccountChek - Redesign - Desktop - Find Accounts',
             thumbTitle: 'Find Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-3-search_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-3-search.png',
             alt: 'AccountChek - Redesign - Desktop - Search',
             thumbTitle: 'Search',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-4-bank-login_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-4-bank-login.png',
             alt: 'AccountChek - Redesign - Desktop - Bank Login',
             thumbTitle: 'Bank Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-5-accounts_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-5-accounts.png',
             alt: 'AccountChek - Redesign - Desktop - Accounts',
             thumbTitle: 'Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-desktop-6-success_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-desktop-6-success.png',
             alt: 'AccountChek - Redesign - Desktop - Success',
@@ -343,43 +346,43 @@ export const designProjectList: IDesignProject[] = [
         title: 'Previous <em>AccountChek</em> Design - Mobile',
         id: 'prevAccountCheckMobile',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-1-login_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-1-login.png',
             alt: 'AccountChek - Previous Design - Mobile - Login',
             thumbTitle: 'Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-2-find-accounts_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-2-find-accounts.png',
             alt: 'AccountChek - Previous Design - Mobile - Find Accounts',
             thumbTitle: 'Find Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-3-side-menu_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-3-side-menu.png',
             alt: 'AccountChek - Previous Design - Mobile - Menu',
             thumbTitle: 'Menu',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-4-search_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-4-search.png',
             alt: 'AccountChek - Previous Design - Mobile - Search',
             thumbTitle: 'Search',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-5-bank-login_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-5-bank-login.png',
             alt: 'AccountChek - Previous Design - Mobile - Bank Login',
             thumbTitle: 'Bank Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-6-accounts_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-6-accounts.png',
             alt: 'AccountChek - Previous Design - Mobile - Accounts',
             thumbTitle: 'Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Previous Design/previous-mobile-7-success_Thumb.png',
             src: 'assets/design/FormFree/Previous Design/previous-mobile-7-success.png',
             alt: 'AccountChek - Previous Design - Mobile - Success',
@@ -391,43 +394,43 @@ export const designProjectList: IDesignProject[] = [
         title: 'My <em>AccountChek</em> Redesign - Mobile',
         id: 'redesignAccountCheckMobile',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-1-login_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-1-login.png',
             alt: 'AccountChek - Redesign - Mobile - Login',
             thumbTitle: 'Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-2-find-accounts_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-2-find-accounts.png',
             alt: 'AccountChek - Redesign - Mobile - Find Accounts',
             thumbTitle: 'Find Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-3-side-menu_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-3-side-menu.png',
             alt: 'AccountChek - Redesign - Mobile - Menu',
             thumbTitle: 'Menu',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-4-search_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-4-search.png',
             alt: 'AccountChek - Redesign - Mobile - Search',
             thumbTitle: 'Search',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-5-bank-login_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-5-bank-login.png',
             alt: 'AccountChek - Redesign - Mobile - Bank Login',
             thumbTitle: 'Bank Login',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-6-accounts_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-6-accounts.png',
             alt: 'AccountChek - Redesign - Mobile - Accounts',
             thumbTitle: 'Accounts',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/FormFree/Redesign/redesign-mobile-7-success_Thumb.png',
             src: 'assets/design/FormFree/Redesign/redesign-mobile-7-success.png',
             alt: 'AccountChek - Redesign - Mobile - Success',
@@ -449,31 +452,31 @@ export const designProjectList: IDesignProject[] = [
       {
         id: 'smokeTest',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/SmokeTest/02 - Desktop Site_Thumb.png',
             src: 'assets/design/SmokeTest/02 - Desktop Site.png',
             alt: 'Smoke Test - Desktop',
             thumbTitle: 'Desktop',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/SmokeTest/smoke-test-desktop_Thumb.png',
             src: 'assets/design/SmokeTest/smoke-test-desktop.gif',
             alt: 'Smoke Test - Desktop - Screen Recording',
             thumbTitle: 'Desktop - Screen Recording',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/SmokeTest/smoke-test-mobile_Thumb.png',
             src: 'assets/design/SmokeTest/smoke-test-mobile.gif',
             alt: 'Smoke Test - Mobile - Screen Recording',
             thumbTitle: 'Mobile - Screen Recording',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/SmokeTest/01 - Style Guide_Thumb.png',
             src: 'assets/design/SmokeTest/01 - Style Guide.png',
             alt: 'Smoke Test - Style Guide',
             thumbTitle: 'Style Guide',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/SmokeTest/07 - Settings Content Example_Thumb.png',
             src: 'assets/design/SmokeTest/07 - Settings Content Example.png',
             alt: 'Smoke Test - Settings Content Example',
@@ -493,13 +496,13 @@ export const designProjectList: IDesignProject[] = [
       {
         id: 'missionTogo',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Mission Togo/Mission Togo About_Thumb.png',
             src: 'assets/design/Mission Togo/Mission Togo About.png',
             alt: 'Mission Togo - About Page',
             thumbTitle: 'About Page',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             thumb: 'assets/design/Mission Togo/Mission Togo Photos_Thumb.png',
             src: 'assets/design/Mission Togo/Mission Togo Photos.png',
             alt: 'Mission Togo - Photos Page',
@@ -521,61 +524,61 @@ export const designProjectList: IDesignProject[] = [
         title: 'Web Design',
         id: 'ejmWeb',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/ejm_admin.png',
             thumb: 'assets/design/Eject Media/ejm_admin_Thumb.png',
             alt: 'Eject Media - Web Design - Custom CMS/Admin Area',
             thumbTitle: 'Custom CMS',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/amy_web.png',
             thumb: 'assets/design/Eject Media/amy_web_Thumb.png',
             alt: 'Eject Media - Web Design - Amy Gann',
             thumbTitle: 'Amy Gann',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/awcsite.jpg',
             thumb: 'assets/design/Eject Media/awcsite_Thumb.jpg',
             alt: 'Eject Media - Web Design - Auto Warehousing Company',
             thumbTitle: 'Auto Warehousing Company',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/bethany_web.jpg',
             thumb: 'assets/design/Eject Media/bethany_web_Thumb.jpg',
             alt: 'Eject Media - Web Design - Bethany Kirkland',
             thumbTitle: 'Bethany Kirkland',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/hp_wired.jpg',
             thumb: 'assets/design/Eject Media/hp_wired_Thumb.jpg',
             alt: 'Eject Media - Web Design - HP Wired',
             thumbTitle: 'HP Wired',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/Paradigm Music Group.png',
             thumb: 'assets/design/Eject Media/Paradigm Music Group_Thumb.png',
             alt: 'Eject Media - Web Design - Paradigm Music Group',
             thumbTitle: 'Paradigm Music Group',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/RedBirdGallerySite.jpg',
             thumb: 'assets/design/Eject Media/RedBirdGallerySite_Thumb.jpg',
             alt: 'Eject Media - Web Design - Red Bird Gallery',
             thumbTitle: 'Red Bird Gallery',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/tammy_web_happy.png',
             thumb: 'assets/design/Eject Media/tammy_web_happy_Thumb.png',
             alt: 'Eject Media - Web Design - Tammy Kirkland',
             thumbTitle: 'Tammy Kirkland',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/tammy_web_xmas.jpg',
             thumb: 'assets/design/Eject Media/tammy_web_xmas_Thumb.jpg',
             alt: 'Eject Media - Web Design - Tammy Kirkland (Christmas)',
             thumbTitle: 'Tammy Kirkland (Christmas)',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/undivided_web.png',
             thumb: 'assets/design/Eject Media/undivided_web_Thumb.png',
             alt: 'Eject Media - Web Design - Undivided',
@@ -587,49 +590,49 @@ export const designProjectList: IDesignProject[] = [
         title: 'Graphic & Print Design',
         id: 'ejmGraphic',
         images: [
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/amy_cd.png',
             thumb: 'assets/design/Eject Media/amy_cd_Thumb.png',
             alt: 'Eject Media - Graphic & Print Design - Amy Gann CD',
             thumbTitle: 'Amy Gann CD',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/darlene_cd.png',
             thumb: 'assets/design/Eject Media/darlene_cd_Thumb.png',
             alt: 'Eject Media - Graphic & Print Design - Darlene Chapman CD',
             thumbTitle: 'Darlene Chapman CD',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/tammy_happy.png',
             thumb: 'assets/design/Eject Media/tammy_happy_Thumb.png',
             alt: 'Eject Media - Graphic & Print Design - Tammy Kirkland CD',
             thumbTitle: 'Tammy Kirkland CD',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/Tammy_christmas.png',
             thumb: 'assets/design/Eject Media/Tammy_christmas_Thumb.png',
             alt: 'Eject Media - Graphic & Print Design - Tammy Kirkland CD (Christmas)',
             thumbTitle: 'Tammy Kirkland - CD (Christmas)',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/Undivided_cd.png',
             thumb: 'assets/design/Eject Media/Undivided_cd_Thumb.png',
             alt: 'Eject Media - Graphic & Print Design - Undivided CD',
             thumbTitle: 'Undivided CD',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/bethany_card.jpg',
             thumb: 'assets/design/Eject Media/bethany_card_Thumb.jpg',
             alt: 'Eject Media - Graphic & Print Design - Bethany Kirkland Card',
             thumbTitle: 'Bethany Kirkland Card',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/ejm_card_old.jpg',
             thumb: 'assets/design/Eject Media/ejm_card_old_Thumb.jpg',
             alt: 'Eject Media - Graphic & Print Design - Business Card v1',
             thumbTitle: 'Eject Media Card v1',
           }),
-          new CustomImageItem({
+          new dataModel.CustomImageItem({
             src: 'assets/design/Eject Media/ejm_card_new.jpg',
             thumb: 'assets/design/Eject Media/ejm_card_new_Thumb.jpg',
             alt: 'Eject Media - Graphic & Print Design - Business Card v2',
