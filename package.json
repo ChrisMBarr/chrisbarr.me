@@ -21,7 +21,7 @@
     "update": "npx npm-check-updates -u",
     "update-angular": "ng update @angular/cli @angular/core --allow-dirty",
     "build:routes": "node route-builder.js",
-    "gh-deploy": "npm run lint && npm run prerender",
+    "gh-deploy": "npm run lint && npm run build:routes",
     "serve:ssr:chrisbarr.me": "node dist/chrisbarr.me/server/server.mjs"
   },
   "private": true,

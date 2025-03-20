@@ -2,9 +2,13 @@
 /dev/portfolio-site
 /dev/noise-maker
 /dev/lyric-libraries
+/dev/debbie-barr
+/dev/landmark-analytics
 /design/lyric-converter
-/design/account-chek
+/design/debbie-barr
+/design/landmark-analytics
 /design/logo-design
+/design/account-chek
 /design/smoke-test
 /design/mission-togo
 /design/eject-media
