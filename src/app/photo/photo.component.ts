@@ -5,6 +5,7 @@ import { IPhotoCategory, photosList } from '../data/photo.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-photo',
   templateUrl: './photo.component.html',
+  standalone: false,
 })
 export class PhotoComponent {
   photoCategories: IPhotoCategory[] = [...photosList];

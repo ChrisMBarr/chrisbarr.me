@@ -7,6 +7,7 @@ import { IDesignProject, designProjectList } from 'src/app/data/design.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-design-details',
   templateUrl: './design-details.component.html',
+  standalone: false,
 })
 export class DesignDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

@@ -8,6 +8,7 @@ import { IDevProject } from 'src/app/data/dev.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-dev-details',
   templateUrl: './dev-details.component.html',
+  standalone: false,
 })
 export class DevDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

@@ -7,6 +7,7 @@ import { ISkillGroup } from 'src/app/data/skills.data';
   selector: 'app-skill-group-card',
   templateUrl: './skill-group-card.component.html',
   styleUrl: './skill-group-card.component.scss',
+  standalone: false,
 })
 export class SkillGroupCardComponent {
   private readonly document = inject(DOCUMENT);

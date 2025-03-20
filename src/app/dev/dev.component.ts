@@ -5,6 +5,7 @@ import { IDevProject, devProjectList } from '../data/dev.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-dev',
   templateUrl: './dev.component.html',
+  standalone: false,
 })
 export class DevComponent {
   projects: IDevProject[] = [...devProjectList];

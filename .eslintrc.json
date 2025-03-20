@@ -16,8 +16,9 @@
       "rules": {
         "@angular-eslint/directive-selector": ["warn", { "type": "attribute", "prefix": "app", "style": "camelCase" }],
         "@angular-eslint/component-selector": ["warn", { "type": "element", "prefix": "app", "style": "kebab-case" }],
-        "@angular-eslint/prefer-standalone":"off",
-        "@angular-eslint/prefer-standalone-component":"off",
+        "@angular-eslint/prefer-standalone": "off",
+        "@angular-eslint/prefer-standalone-component": "off",
+        "@angular-eslint/prefer-signals": "off",
         "@typescript-eslint/no-extraneous-class": "off",
         "prettier/prettier": ["warn", { "endOfLine": "auto" }]
       }

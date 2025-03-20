@@ -5,6 +5,7 @@ import { IDesignProject, designProjectList } from '../data/design.data';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-design',
   templateUrl: './design.component.html',
+  standalone: false,
 })
 export class DesignComponent {
   projects: IDesignProject[] = [...designProjectList];

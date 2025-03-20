@@ -8,6 +8,7 @@ import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
   selector: 'app-photo-details',
   templateUrl: './photo-details.component.html',
   styleUrl: './photo-details.component.scss',
+  standalone: false,
 })
 export class PhotoDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
