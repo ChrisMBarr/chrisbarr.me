@@ -3,6 +3,8 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Start",
+      "icon": { "id": "play", "color": "terminal.ansiGreen" },
       "type": "npm",
       "script": "start",
       "isBackground": true,
@@ -21,8 +23,10 @@
       }
     },
     {
+      "label": "Lint",
+      "icon": { "id": "bracket", "color": "terminal.ansiYellow" },
       "type": "npm",
-      "script": "test",
+      "script": "lint",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -33,7 +37,7 @@
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "All files pass linting."
           }
         }
       }

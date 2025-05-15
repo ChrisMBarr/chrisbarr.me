@@ -3,8 +3,8 @@
 </div>
 
 <div class="lightbox-thumbs-container" [class.lightbox-thumbs-dense]="dense">
-  @for (item of itemList; track item; let i = $index) {
-    <a class="lightbox-thumb" href="javascript:;" tabindex="0" [lightbox]="i" [gallery]="galleryId">
+  @for (item of itemList; track item) {
+    <a class="lightbox-thumb" href="javascript:;" tabindex="0" [lightbox]="$index" [gallery]="galleryId">
       <span class="lightbox-thumb-bg" [ngStyle]="{ 'background-image': 'url(&quot;' + item.data.thumb + '&quot;)' }"></span>
       <img [src]="item.data.thumb" [attr.alt]="$any(item.data).alt ? $any(item.data).alt : null" />
       @if ($any(item.data).thumbTitle) {
