@@ -31,7 +31,7 @@
             <li>
               <a target="_blank" [href]="link.url">
                 @if (link.iconId) {
-                  <svg role="img"><use [attr.xlink:href]="'#' + link.iconId" /></svg>
+                  <svg role="img"><use [attr.xlink:href]="`#${link.iconId}`" /></svg>
                 }
                 {{ link.text }}
               </a>
