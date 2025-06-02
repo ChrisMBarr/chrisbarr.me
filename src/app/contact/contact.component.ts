@@ -8,11 +8,11 @@ interface IFormSpreeResult {
 }
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-contact',
+  standalone: false,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
   private readonly http = inject(HttpClient);

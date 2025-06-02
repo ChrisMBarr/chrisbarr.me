@@ -3,11 +3,11 @@ import { Component, ElementRef, HostListener, Input, ViewChild, inject, ChangeDe
 import { ISkillGroup } from 'src/app/data/skills.data';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-skill-group-card',
+  standalone: false,
   templateUrl: './skill-group-card.component.html',
   styleUrl: './skill-group-card.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SkillGroupCardComponent {
   private readonly document = inject(DOCUMENT);

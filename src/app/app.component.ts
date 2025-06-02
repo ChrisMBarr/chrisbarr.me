@@ -3,11 +3,11 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild, inject, ChangeD
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   private readonly document = inject(DOCUMENT);

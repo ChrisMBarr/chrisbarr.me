@@ -5,10 +5,10 @@ import { devProjectList } from 'src/app/data/dev.data';
 import { IDevProject } from 'src/app/data/dev.data';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-dev-details',
-  templateUrl: './dev-details.component.html',
   standalone: false,
+  templateUrl: './dev-details.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DevDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

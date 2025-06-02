@@ -3,11 +3,11 @@ import { ISkillGroup, skillGroups } from '../data/skills.data';
 import { designProjectList } from '../data/design.data';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-home',
+  standalone: false,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;

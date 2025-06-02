@@ -3,11 +3,11 @@ import * as dataModel from '../data/data.model';
 import * as ngGallery from 'ng-gallery';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-gallery-thumbnails',
+  standalone: false,
   templateUrl: './gallery-thumbnails.component.html',
   styleUrl: './gallery-thumbnails.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GalleryThumbnailsComponent implements AfterViewInit {
   private readonly gallery = inject(ngGallery.Gallery);

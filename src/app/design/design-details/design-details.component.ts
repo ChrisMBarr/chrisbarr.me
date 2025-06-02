@@ -4,10 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { IDesignProject, designProjectList } from 'src/app/data/design.data';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-design-details',
-  templateUrl: './design-details.component.html',
   standalone: false,
+  templateUrl: './design-details.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DesignDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);

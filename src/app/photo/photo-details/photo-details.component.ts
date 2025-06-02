@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { IPhotoCategory, photosList } from 'src/app/data/photo.data';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-photo-details',
+  standalone: false,
   templateUrl: './photo-details.component.html',
   styleUrl: './photo-details.component.scss',
-  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoDetailsComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
