@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({

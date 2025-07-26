@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, HostListener, Input, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
 import { ISkillGroup } from 'src/app/data/skills.data';
 
 @Component({

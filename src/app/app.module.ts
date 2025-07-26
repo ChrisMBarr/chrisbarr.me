@@ -27,6 +27,7 @@ import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbna
 import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-card.component';
 
 @NgModule({
+  imports: [AppRoutingModule, BrowserAnimationsModule, BrowserModule, FormsModule, GalleryModule, LightboxModule],
   declarations: [
     AppComponent,
     //Page Components
@@ -44,7 +45,6 @@ import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-car
     PhotoDetailsComponent,
     SkillGroupCardComponent,
   ],
-  imports: [AppRoutingModule, BrowserAnimationsModule, BrowserModule, FormsModule, GalleryModule, LightboxModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })
