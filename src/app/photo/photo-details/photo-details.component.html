@@ -11,8 +11,7 @@
         <p>Something seems to be wrong. There are no photos at this URL!</p>
       </div>
     </section>
-  }
-  @if (photoCategory) {
+  } @else {
     <section class="card">
       <div class="card-title" appIsSticky>
         <a class="btn mr-3" routerLink="/photo">

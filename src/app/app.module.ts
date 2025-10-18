@@ -27,6 +27,7 @@ import { GalleryThumbnailsComponent } from './gallery-thumbnails/gallery-thumbna
 import { SkillGroupCardComponent } from './home/skill-group-card/skill-group-card.component';
 
 @NgModule({
+  //eslint-disable-next-line @typescript-eslint/no-deprecated -- Fine for now, will refactor later
   imports: [AppRoutingModule, BrowserAnimationsModule, BrowserModule, FormsModule, GalleryModule, LightboxModule],
   declarations: [
     AppComponent,
