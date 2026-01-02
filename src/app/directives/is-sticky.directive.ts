@@ -1,25 +1,19 @@
-import { Directive, ElementRef, HostListener, inject } from '@angular/core';
+import { Directive, ElementRef, inject } from '@angular/core';
 
 @Directive({
   selector: '[appIsSticky]',
   standalone: false,
+  host: {
+    '(window:scroll)': 'determineIfStuck()',
+    '(window:resize)': 'determineIfStuck()',
+  },
 })
 export class IsStickyDirective {
   private readonly el = inject(ElementRef) as ElementRef<HTMLElement>;
 
   private readonly stuckClass = 'is-stuck';
 
-  @HostListener('window:scroll')
-  onWindowScroll(): void {
-    this.isStuck();
-  }
-
-  @HostListener('window:resize')
-  onWindowResize(): void {
-    this.isStuck();
-  }
-
-  private isStuck() {
+  public determineIfStuck(): void {
     const computedStyles = getComputedStyle(this.el.nativeElement);
     const computedTopPos = parseInt(computedStyles.top, 10);
     const topPos = this.el.nativeElement.getBoundingClientRect().top;

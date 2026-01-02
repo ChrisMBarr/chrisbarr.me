@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { ISkillGroup, skillGroups } from '../data/skills.data';
 import { designProjectList } from '../data/design.data';
 
@@ -8,6 +8,9 @@ import { designProjectList } from '../data/design.data';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(window:scroll)': 'onWindowScroll()',
+  },
 })
 export class HomeComponent implements AfterViewInit {
   @ViewChild('introContainer', { static: true }) private introContainer!: ElementRef<HTMLElement>;
@@ -35,7 +38,6 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
-  @HostListener('window:scroll')
   onWindowScroll(): void {
     if (this.arrowTimer) {
       clearTimeout(this.arrowTimer);

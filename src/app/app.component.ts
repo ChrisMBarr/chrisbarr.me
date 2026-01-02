@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,9 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(window:resize)': 'onWindowResize()',
+  },
 })
 export class AppComponent implements OnInit {
   private readonly document = inject(DOCUMENT);
@@ -48,7 +51,6 @@ export class AppComponent implements OnInit {
     }, 500);
   }
 
-  @HostListener('window:resize')
   onWindowResize(force = false): void {
     //iOS triggers resize events on scroll, this checks if it has actually changed or not
     if (this.window.innerWidth !== this.winWidth || force) {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, inject, ChangeDetectionStrategy, DOCUMENT } from '@angular/core';
 import { ISkillGroup } from 'src/app/data/skills.data';
 
 @Component({
@@ -7,6 +7,9 @@ import { ISkillGroup } from 'src/app/data/skills.data';
   templateUrl: './skill-group-card.component.html',
   styleUrl: './skill-group-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(window:scroll)': 'onWindowScroll()',
+  },
 })
 export class SkillGroupCardComponent {
   private readonly document = inject(DOCUMENT);
@@ -18,7 +21,6 @@ export class SkillGroupCardComponent {
   @Input() group!: ISkillGroup;
   @Input() viewAsList = false;
 
-  @HostListener('window:scroll')
   onWindowScroll(): void {
     if (!this.skillAnimationTriggered) {
       const iconsTop = this.el.nativeElement.getBoundingClientRect().top;
