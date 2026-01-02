@@ -18,7 +18,7 @@ export class SkillGroupCardComponent {
   @Input() group!: ISkillGroup;
   @Input() viewAsList = false;
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     if (!this.skillAnimationTriggered) {
       const iconsTop = this.el.nativeElement.getBoundingClientRect().top;

@@ -35,7 +35,7 @@ export class HomeComponent implements AfterViewInit {
     }
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     if (this.arrowTimer) {
       clearTimeout(this.arrowTimer);

@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
     }, 500);
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onWindowResize(force = false): void {
     //iOS triggers resize events on scroll, this checks if it has actually changed or not
     if (this.window.innerWidth !== this.winWidth || force) {

@@ -9,12 +9,12 @@ export class IsStickyDirective {
 
   private readonly stuckClass = 'is-stuck';
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
     this.isStuck();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onWindowResize(): void {
     this.isStuck();
   }
